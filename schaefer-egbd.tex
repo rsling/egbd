@@ -1,0 +1,121 @@
+\documentclass[number=2
+  ,series=tbls
+  ,isbn=978-3-946234-94-4
+  ,url=http://langsci-press.org/catalog/book/101
+  ,output=short
+  %,blackandwhite
+  %,smallfont
+  %,draftmode  
+  ,biblatex
+]{LSP/langsci}    
+
+\usepackage{localmetadata}
+\usepackage{localpackages}
+\usepackage{localhyphenation}
+\usepackage{localcommands}
+
+\usepackage{makeidx}
+
+%\usepackage{showidx}
+
+\bibliography{localbibliography}
+
+\makeindex
+
+%\includeonly{chapters/einleitung}
+%\includeonly{chapters/grammatik}
+%\includeonly{chapters/grundbegriffe}
+
+%\includeonly{chapters/phonetik}
+%\includeonly{chapters/phonologie}
+%\includeonly{chapters/phonetik,chapters/phonologie}
+%\includeonly{chapters/phonologie,chapters/loesungen}
+
+%\includeonly{chapters/wortklassen}
+%\includeonly{chapters/grundbegriffe,chapters/wortklassen}
+%\includeonly{chapters/morphologie}
+%\includeonly{chapters/wortklassen, chapters/morphologie}
+%\includeonly{chapters/wortbildung}
+%\includeonly{chapters/nomina}
+%\includeonly{chapters/verben}
+%\includeonly{chapters/nomina, chapters/verben}
+
+%\includeonly{chapters/phonologie,chapters/konstituentenstruktur}
+%\includeonly{chapters/phrasen}
+%\includeonly{chapters/phonologie,chapters/konstituentenstruktur,chapters/phrasen,chapters/saetze}
+%\includeonly{chapters/phonologie,chapters/konstituentenstruktur,chapters/phrasen}
+%\includeonly{chapters/saetze}
+%\includeonly{chapters/phrasen, chapters/saetze}
+%\includeonly{chapters/relationen}
+%\includeonly{chapters/phrasen, chapters/saetze, chapters/relationen}
+
+%\includeonly{chapters/phonschrift}
+%\includeonly{chapters/andereschrift}
+%\includeonly{chapters/phonschrift, chapters/andereschrift}
+
+%\includeonly{chapters/loesungen}
+
+
+\begin{document}       
+
+\maketitle                
+\frontmatter
+
+\tableofcontents      
+
+\mainmatter         
+
+\include{chapters/einleitung}
+
+\part{Sprache und Sprachsystem}
+
+\include{chapters/grammatik}
+\include{chapters/grundbegriffe}
+
+\part{Laut und Lautsystem}\label{part:laut}
+
+\include{chapters/phonetik}
+\include{chapters/phonologie}
+
+\part{Wort und Wortform}\label{part:wort}
+
+\include{chapters/wortklassen}
+\include{chapters/morphologie}
+\include{chapters/wortbildung}
+\include{chapters/nomina}
+\include{chapters/verben}
+
+\part{Satz und Satzglied}\label{part:syntax}
+
+\include{chapters/konstituentenstruktur}
+\include{chapters/phrasen}
+\include{chapters/saetze}
+\include{chapters/relationen}
+
+\part{Sprache und Schrift}\label{part:schrift}
+\include{chapters/phonschrift}
+\include{chapters/andereschrift}
+
+\include{chapters/loesungen}
+\clearpage
+
+\backmatter
+
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Bibliographie}
+\begin{sloppypar}
+  \printbibliography
+\end{sloppypar}
+
+\clearpage
+   
+\input{indices}
+
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Index}
+%\ohead{Index} 
+\begin{flushleft}
+  \printindex
+\end{flushleft}
+
+\end{document} 

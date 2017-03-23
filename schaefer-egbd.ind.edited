@@ -1,0 +1,668 @@
+\begin{theindex}
+  \providecommand*\lettergroupDefault[1]{}
+  \providecommand*\lettergroup[1]{%
+      \par\textbf{#1}\par
+      \nopagebreak
+  }
+
+  \lettergroup{A}
+  \item Ablaut, \hyperpage{208}, \hyperpage{316}
+  \item Adjektiv, \hyperpage{174}, \hyperpage{176}, \hyperpage{185}, \hyperpage{247}
+    \subitem adjektival, \hyperpage{291}
+    \subitem adverbial, \hyperpage{287}
+    \subitem attributiv, \hyperpage{286}
+    \subitem Flexion, \hyperpage{290}, \hyperpage{291}
+    \subitem Komparation
+      \subsubitem Flexion, \hyperpage{294}
+      \subsubitem Funktion, \hyperpage{292}
+    \subitem Kurzform, \hyperpage{287}
+    \subitem prädikativ, \hyperpage{287}
+    \subitem schwach, \hyperpage{289}, \hyperpage{290}
+    \subitem skalar, \hyperpage{293}
+    \subitem stark, \hyperpage{289}, \hyperpage{290}
+    \subitem Stärke, \hyperpage{184}, \hyperpage{288}
+    \subitem Valenz, \hyperpage{288}
+  \item Adjektivphrase, \hyperpage{371}, \hyperpage{382}
+  \item Adkopula, \hyperpage{188}
+  \item Adverb, \hyperpage{188}
+  \item Adverbialsatz, \hyperpage{434}, \hyperpage{435}
+  \item Adverbphrase, \hyperpage{388}
+  \item Affigierung, \hyperpage{216}
+  \item Affix, \hyperpage{209}
+  \item Affrikate, \hyperpage{82}, \hyperpage{91}
+  \item Agens, \hyperpage{441}, \hyperpage{458}--\hyperpage{460}
+  \item Akkusativ, \hyperpage{198}, \hyperpage{200}, \hyperpage{258}, \hyperpage{375}, \hyperpage{452}, \hyperpage{462}
+    \subitem Doppel--, \hyperpage{463}
+  \item Akronym, \hyperpage{531}
+  \item Akzent, \hyperpage{148}, \hyperpage{149}
+    \subitem Haupt--, \hyperpage{151}
+    \subitem in Komposita, \hyperpage{151}
+    \subitem metrisch vs.\ lexikalisch, \hyperpage{150}
+    \subitem Neben--, \hyperpage{151}
+    \subitem Präfixe und Partikeln, \hyperpage{152}
+    \subitem Schreibung, \hyperpage{516}
+    \subitem Stamm--, \hyperpage{151}
+  \item Akzeptabilität, \hyperpage{17}, \hyperpage{19}, \hyperpage{25}
+  \item Allomorph, \hyperpage{219}
+  \item Allophon, \hyperpage{159}
+  \item Alphabet
+    \subitem deutsch, \hyperpage{502}
+    \subitem phonetisch, \hyperpage{87}
+  \item Alveolar, \hyperpage{90}
+  \item Ambiguität, \hyperpage{355}
+  \item Anapher, \hyperpage{262}
+  \item Angabe, \hyperpage{61}, \hyperpage{443}
+    \subitem Akkusativ--, \hyperpage{463}
+    \subitem Dativ--, \hyperpage{466}
+    \subitem präpositional, \hyperpage{443}
+  \item Antezedens, \hyperpage{262}
+  \item Apostroph, \hyperpage{533}
+  \item Approximant, \hyperpage{83}
+  \item Artikel
+    \subitem definit, \hyperpage{281}, \hyperpage{283}
+    \subitem Flexionsklassen, \hyperpage{280}
+    \subitem indefinit, \hyperpage{285}, \hyperpage{533}
+    \subitem NP ohne, \hyperpage{380}
+    \subitem Position, \hyperpage{371}
+    \subitem possessiv, \hyperpage{285}
+    \subitem vs.\ Pronomen, \hyperpage{277}
+  \item Artikelfunktion, \hyperpage{278}
+  \item Artikelwort, \hyperpage{277}, \hyperpage{363}, \hyperpage{371}
+  \item Artikulationsart, \hyperpage{80}
+  \item Artikulator, \hyperpage{79}
+  \item Assimilation, \hyperpage{98}, \hyperpage{117}
+  \item Ast, \hyperpage{356}
+  \item Attribut, \hyperpage{371}
+  \item Auslautverhärtung, \hyperpage{97}, \hyperpage{108}, \hyperpage{111}
+    \subitem Schreibung, \hyperpage{504}
+
+  \indexspace
+
+  \lettergroup{B}
+  \item Baumdiagramm, \hyperpage{51}, \hyperpage{210}, \hyperpage{356}, \hyperpage{367}, \hyperpage{397}
+  \item Befragung, \hyperpage{33}
+  \item Bewegung, \hyperpage{408}, \hyperpage{419}
+  \item Bindestrich, \hyperpage{529}
+  \item Bindung, \hyperpage{470}
+  \item Bindungstheorie, \hyperpage{471}
+  \item Buchstabe, \hyperpage{71}
+    \subitem konsonantisch, \hyperpage{502}
+    \subitem vokalisch, \hyperpage{505}
+
+  \indexspace
+
+  \lettergroup{D}
+  \item Dativ, \hyperpage{200}, \hyperpage{270}, \hyperpage{463}
+    \subitem Bewertungs--, \hyperpage{461}, \hyperpage{465}, \hyperpage{466}
+    \subitem frei, \hyperpage{443}, \hyperpage{464}
+    \subitem Funktion, \hyperpage{259}
+    \subitem Nutznießer--, \hyperpage{465}
+    \subitem Pertinenz--, \hyperpage{465}
+  \item Defektivität, \hyperpage{328}
+  \item Dehnungsschreibung, \hyperpage{505}, \hyperpage{508}, \hyperpage{536}
+  \item Deixis, \hyperpage{261}
+  \item Dependenz, \hyperpage{360}
+\enlargethispage{1\baselineskip}
+  \item Derivation, \hyperpage{242}, \hyperpage{243}
+    \subitem mit Worklassenwechsel, \hyperpage{246}
+    \subitem ohne Wortklassenwechsel, \hyperpage{243}
+  \item Diakritikon, \hyperpage{88}
+  \item Dialekt, \hyperpage{29}, \hyperpage{31}
+  \item Diminutiv, \hyperpage{248}
+  \item Diphthong, \hyperpage{94}
+    \subitem Schreibung, \hyperpage{506}
+    \subitem sekundär, \hyperpage{100}, \hyperpage{147}
+  \item dritte Konstruktion, \hyperpage{480}
+
+  \indexspace
+
+  \lettergroup{E}
+  \item Eigenname, \hyperpage{271}
+    \subitem Schreibung, \hyperpage{528}
+  \item Einheit, \hyperpage{39}
+  \item Einsilbler, \hyperpage{124}, \hyperpage{140}
+  \item Elativ, \hyperpage{294}
+  \item Ellipse, \hyperpage{351}
+  \item Empirie, \hyperpage{32}
+  \item Erbwort, \hyperpage{21}
+  \item Ereigniszeitpunkt, \hyperpage{301}
+  \item Ergänzung, \hyperpage{61}, \hyperpage{62}, \hyperpage{443}
+    \subitem Akkusativ--, \hyperpage{463}
+    \subitem Dativ--, \hyperpage{466}
+    \subitem fakultativ und obligatorisch, \hyperpage{57}
+    \subitem Nominativ--, \hyperpage{448}
+    \subitem PP--, \hyperpage{467}
+    \subitem prädikativ, \hyperpage{446}
+  \item Experiencer, \hyperpage{441}
+  \item Experiment, \hyperpage{33}
+  \item Extrasilbizität, \hyperpage{132}
+    \subitem und Flexionssuffixe, \hyperpage{139}
+
+  \indexspace
+
+  \lettergroup{F}
+  \item Feldermodell, \hyperpage{411}
+  \item Filtermethode, \hyperpage{181}
+  \item Flexion, \hyperpage{178}, \hyperpage{198}, \hyperpage{215}, \hyperpage{253}
+  \item Fremdwort, \hyperpage{21}
+  \item Frikativ, \hyperpage{82}
+  \item Funktionswort, \hyperpage{363}
+  \item Fuß, \hyperpage{22}, \hyperpage{153}
+\enlargethispage{1\baselineskip}
+  \item Futur, \hyperpage{306}
+    \subitem Bedeutung, \hyperpage{302}
+  \item Futurperfekt, \hyperpage{472}
+    \subitem Bedeutung, \hyperpage{304}
+
+  \indexspace
+
+  \lettergroup{G}
+  \item Gaumensegel, \hyperpage{77}
+  \item Gebrauchsschreibung, \hyperpage{499}, \hyperpage{517}, \hyperpage{532}
+  \item Gedankenstrich, \hyperpage{539}
+  \item Generalisierung, \hyperpage{28}
+  \item Genitiv, \hyperpage{270}
+    \subitem Attributs--, \hyperpage{259}
+    \subitem Funktion, \hyperpage{259}
+    \subitem Objekts--, \hyperpage{375}
+    \subitem postnominal, \hyperpage{373}, \hyperpage{375}
+    \subitem pränominal, \hyperpage{371}, \hyperpage{375}, \hyperpage{428}
+    \subitem sächsisch, \hyperpage{534}
+    \subitem Subjekts--, \hyperpage{376}
+  \item Genus, \hyperpage{42}, \hyperpage{184}, \hyperpage{263}, \hyperpage{275}
+  \item Glottalverschluss, \hyperpage{89}, \hyperpage{110}, \hyperpage{155}
+  \item Gradierungselement, \hyperpage{382}
+  \item Grammatik, \hyperpage{18}, \hyperpage{49}
+    \subitem als Kombinationssystem, \hyperpage{15}
+    \subitem deskriptiv, \hyperpage{26}
+    \subitem Ebene, \hyperpage{20}
+    \subitem formbasiert, \hyperpage{16}
+    \subitem präskriptiv, \hyperpage{26}
+    \subitem Sprachsystem, \hyperpage{16}
+  \item Grammatikalisierung, \hyperpage{250}, \hyperpage{524}
+  \item Grammatikalität, \hyperpage{18}, \hyperpage{19}, \hyperpage{25}, \hyperpage{341}
+  \item Grammatikerfrage, \hyperpage{256}, \hyperpage{463}
+  \item Graphematik, \hyperpage{20}, \hyperpage{71}, \hyperpage{74}, \hyperpage{496}
+
+  \indexspace
+
+  \lettergroup{H}
+  \item Hilfsverb, \hyperpage{315}
+  \item Häufigkeit, \hyperpage{22}
+  \item homorgan, \hyperpage{82}
+
+  \indexspace
+
+  \lettergroup{I}
+  \item Idiosynkrasie, \hyperpage{255}
+  \item Imperativ, \hyperpage{325}, \hyperpage{450}
+    \subitem Satz, \hyperpage{422}
+  \item Index, \hyperpage{262}
+  \item Infinitiv, \hyperpage{46}, \hyperpage{544}
+  \item Introspektion, \hyperpage{33}
+  \item IPA, \hyperpage{87}
+  \item Iterierbarkeit, \hyperpage{59}
+
+  \indexspace
+
+  \lettergroup{K}
+  \item Kante, \hyperpage{356}
+  \item Kasus, \hyperpage{171}, \hyperpage{203}, \hyperpage{256}
+    \subitem Bedeutung, \hyperpage{60}, \hyperpage{258}
+    \subitem Funktion, \hyperpage{198}
+    \subitem Hierarchie, \hyperpage{256}
+    \subitem oblik, \hyperpage{260}
+    \subitem strukturell, \hyperpage{260}
+  \item Kategorie, \hyperpage{40}, \hyperpage{42}, \hyperpage{44}
+  \item Kehlkopf, \hyperpage{76}
+  \item Kern, \hyperpage{21}
+    \subitem Wortschatz, \hyperpage{21}, \hyperpage{501}, \hyperpage{518}
+  \item Klammer, \hyperpage{539}
+  \item Klitikon, \hyperpage{532}
+  \item Knoten, \hyperpage{356}
+    \subitem Mutter--, \hyperpage{356}
+    \subitem Tochter--, \hyperpage{356}
+    \subitem Wurzel--, \hyperpage{356}
+  \item Kohärenz, \hyperpage{477}, \hyperpage{480}, \hyperpage{481}
+    \subitem Schreibung, \hyperpage{544}
+  \item Komma, \hyperpage{538}
+  \item Komparativ, \hyperpage{294}
+  \item Kompetenz, \hyperpage{346}
+  \item Komplementierer, \hyperpage{186}, \hyperpage{389}, \hyperpage{411}, \hyperpage{434}
+  \item Komplementiererphrase, \hyperpage{389}
+  \item Komplementsatz, \hyperpage{375}, \hyperpage{414}, \hyperpage{431}, \hyperpage{450}, \hyperpage{544}
+  \item Kompositionalität, \hyperpage{14}, \hyperpage{228}
+  \item Kompositum, \hyperpage{227}
+    \subitem Ambiguität, \hyperpage{233}
+    \subitem Determinativ--, \hyperpage{230}
+    \subitem Fuge, \hyperpage{236}
+    \subitem Fugenelement, \hyperpage{235}
+    \subitem Rektions--, \hyperpage{230}
+    \subitem Schreibung, \hyperpage{529}
+  \item Konditionalsatz, \hyperpage{435}
+  \item Konditionierung, \hyperpage{220}
+  \item Kongruenz, \hyperpage{55}
+    \subitem Genus--, \hyperpage{286}
+    \subitem Numerus--, \hyperpage{255}, \hyperpage{286}
+    \subitem Possessor--, \hyperpage{279}
+    \subitem Subjekt--Verb--, \hyperpage{310}, \hyperpage{481}
+  \item Konjunktion, \hyperpage{190}, \hyperpage{363}, \hyperpage{368}, \hyperpage{538}
+  \item Konnektor, \hyperpage{414}
+  \item Konnektorfeld, \hyperpage{414}
+  \item Konsonant, \hyperpage{86}
+    \subitem Schreibung, \hyperpage{502}
+  \item Konstituente, \hyperpage{51}, \hyperpage{407}
+    \subitem atomar, \hyperpage{354}
+    \subitem mittelbar, \hyperpage{52}
+    \subitem unmittelbar, \hyperpage{52}
+  \item Konstituententest, \hyperpage{347}
+  \item Kontrast, \hyperpage{107}
+  \item Kontrolle, \hyperpage{484}
+  \item Konversion, \hyperpage{237}, \hyperpage{238}, \hyperpage{526}
+    \subitem im Deutschen, \hyperpage{239}
+  \item Koordination, \hyperpage{256}, \hyperpage{368}
+    \subitem Schreibung, \hyperpage{538}
+  \item Koordinationstest, \hyperpage{350}
+  \item Kopf
+    \subitem Komposition, \hyperpage{229}
+    \subitem Kopf-Merkmal-Prinzip, \hyperpage{362}
+    \subitem Phrase, \hyperpage{361}
+  \item Kopula, \hyperpage{188}, \hyperpage{287}, \hyperpage{315}, \hyperpage{424}, \hyperpage{446}
+    \subitem Satz, \hyperpage{424}
+  \item Korpus, \hyperpage{23}, \hyperpage{35}
+  \item Korreferenz, \hyperpage{262}
+  \item Korrelat, \hyperpage{432}, \hyperpage{453}, \hyperpage{456}, \hyperpage{483}
+  \item Kurzwort, \hyperpage{252}, \hyperpage{531}
+
+  \indexspace
+
+  \lettergroup{L}
+  \item Labial, \hyperpage{91}
+  \item Laryngal, \hyperpage{88}
+  \item Lehnwort, \hyperpage{21}, \hyperpage{214}
+  \item Lexem, \hyperpage{219}
+  \item Lexikon, \hyperpage{42}, \hyperpage{110}, \hyperpage{111}
+    \subitem Regel, \hyperpage{217}, \hyperpage{458}
+    \subitem Unbegrenztheit, \hyperpage{213}
+  \item Ligatur, \hyperpage{91}
+  \item Lippen, \hyperpage{78}
+  \item Liquid, \hyperpage{127}, \hyperpage{147}
+  \item Lizenzierung, \hyperpage{58}
+  \item Luftröhre, \hyperpage{75}
+  \item Lunge, \hyperpage{75}
+
+  \indexspace
+
+  \lettergroup{M}
+  \item Majuskel, \hyperpage{501}, \hyperpage{516}, \hyperpage{525}, \hyperpage{530}
+  \item Markierungsfunktion, \hyperpage{202}, \hyperpage{223}
+    \subitem lexikalisch, \hyperpage{205}
+  \item Matrix, \hyperpage{406}
+  \item Medium
+    \subitem akustisch, \hyperpage{69}
+    \subitem gestisch, \hyperpage{69}
+    \subitem schriftlich, \hyperpage{496}
+  \item Merkmal, \hyperpage{39}, \hyperpage{40}, \hyperpage{47}, \hyperpage{64}
+    \subitem Motivation, \hyperpage{48}
+    \subitem statisch, \hyperpage{212}
+  \item Merkmale, \hyperpage{95}
+  \item Minimalpaar, \hyperpage{107}
+  \item Minuskel, \hyperpage{501}
+  \item Mitspieler, \hyperpage{440}
+  \item Mittelfeld, \hyperpage{411}, \hyperpage{432}, \hyperpage{434}
+  \item Modifizierer, \hyperpage{382}, \hyperpage{385}
+  \item Monoflexion, \hyperpage{290}
+  \item More, \hyperpage{142}
+  \item Morph, \hyperpage{202}
+  \item Morphem, \hyperpage{219}
+  \item Morphologie, \hyperpage{20}, \hyperpage{201}
+  \item Mundraum, \hyperpage{77}
+
+  \indexspace
+
+  \lettergroup{N}
+  \item Nachfeld, \hyperpage{414}, \hyperpage{431}, \hyperpage{434}
+  \item Nasal, \hyperpage{84}
+  \item Nasenhöhle, \hyperpage{78}
+  \item Nebensatz, \hyperpage{46}, \hyperpage{186}, \hyperpage{432}, \hyperpage{449}
+    \subitem Schreibung, \hyperpage{543}
+  \item Neutralisierung, \hyperpage{108}
+  \item Nomen, \hyperpage{182}, \hyperpage{243}
+    \subitem vs.\ Substantiv, \hyperpage{372}
+  \item Nominalisierung, \hyperpage{375}
+  \item Nominalphrase, \hyperpage{254}, \hyperpage{371}
+  \item Nominativ, \hyperpage{258}, \hyperpage{448}, \hyperpage{452}
+  \item Numerus, \hyperpage{43}, \hyperpage{171}, \hyperpage{181}, \hyperpage{203}, \hyperpage{275}
+    \subitem Nomen, \hyperpage{254}
+    \subitem Verb, \hyperpage{299}, \hyperpage{319}
+
+  \indexspace
+
+  \lettergroup{O}
+  \item Oberfeldumstellung, \hyperpage{476}, \hyperpage{477}
+  \item Objekt, \hyperpage{199}
+    \subitem direkt, \hyperpage{463}
+    \subitem indirekt, \hyperpage{464}
+    \subitem Infinitiv, \hyperpage{483}
+    \subitem präpositional, \hyperpage{467}
+    \subitem Satz, \hyperpage{431}
+  \item Obstruent, \hyperpage{81}, \hyperpage{86}
+  \item Obstruktion, \hyperpage{79}
+  \item Orthographie, \hyperpage{71}, \hyperpage{499}
+
+  \indexspace
+
+  \lettergroup{P}
+  \item Palatal, \hyperpage{90}
+  \item Palatoalveolar, \hyperpage{90}
+  \item Paradigma, \hyperpage{45}, \hyperpage{171}, \hyperpage{176}, \hyperpage{177}
+    \subitem Genus--, \hyperpage{48}
+    \subitem Numerus--, \hyperpage{48}
+  \item Parenthese, \hyperpage{538}
+  \item Partikel, \hyperpage{187}, \hyperpage{363}
+  \item Passiv, \hyperpage{312}, \hyperpage{450}
+    \subitem als Valenzänderung, \hyperpage{458}, \hyperpage{460}
+    \subitem bekommen--, \hyperpage{460}
+    \subitem unpersönlich, \hyperpage{457}
+    \subitem werden--, \hyperpage{456}, \hyperpage{458}
+  \item Perfekt, \hyperpage{306}
+    \subitem Doppel--, \hyperpage{473}
+    \subitem Semantik, \hyperpage{474}
+  \item Performanz, \hyperpage{346}
+  \item Peripherie, \hyperpage{21}
+  \item Person
+    \subitem Nomen, \hyperpage{261}
+    \subitem Verb, \hyperpage{299}, \hyperpage{319}
+  \item Phon, \hyperpage{158}
+  \item Phonem, \hyperpage{158}
+  \item Phonetik, \hyperpage{70}
+  \item Phonologie, \hyperpage{20}, \hyperpage{110}
+  \item phonologischer Prozess, \hyperpage{109}
+  \item Phonotaktik, \hyperpage{120}
+  \item Phrase, \hyperpage{359}
+  \item Phrasenschema, \hyperpage{367}
+  \item Plosiv, \hyperpage{81}
+  \item Pluraletantum, \hyperpage{255}
+  \item Positiv, \hyperpage{294}
+  \item Postposition, \hyperpage{385}
+  \item Produktivität, \hyperpage{228}
+  \item Prädikat, \hyperpage{444}
+    \subitem resultativ, \hyperpage{446}
+  \item Prädikativ, \hyperpage{447}
+  \item Prädikatsnomen, \hyperpage{446}
+  \item Präfix, \hyperpage{209}
+  \item Präposition, \hyperpage{185}
+    \subitem flektierbar, \hyperpage{386}
+    \subitem Wechsel--, \hyperpage{200}
+  \item Präpositionalobjekt, \hyperpage{467}
+  \item Präpositionalphrase, \hyperpage{385}
+  \item Präsens, \hyperpage{306}, \hyperpage{321}, \hyperpage{322}
+    \subitem Bedeutung, \hyperpage{302}
+  \item Präsensperfekt, \hyperpage{472}
+  \item Präteritalpräsens, \hyperpage{327}
+\enlargethispage{1\baselineskip}
+  \item Präteritum, \hyperpage{306}, \hyperpage{321}, \hyperpage{322}
+    \subitem Bedeutung, \hyperpage{303}
+  \item Präteritumsperfekt, \hyperpage{306}, \hyperpage{472}
+    \subitem Bedeutung, \hyperpage{304}
+  \item Pronomen, \hyperpage{185}
+    \subitem anaphorisch, \hyperpage{262}
+    \subitem definit, \hyperpage{281}
+    \subitem deiktisch, \hyperpage{261}
+    \subitem expletiv, \hyperpage{152}, \hyperpage{455}
+    \subitem flektierend, \hyperpage{280}
+    \subitem Flexion, \hyperpage{282}
+    \subitem Flexionsklassen, \hyperpage{280}
+    \subitem nicht-flektierend, \hyperpage{280}
+    \subitem Personal--, \hyperpage{261}, \hyperpage{281}
+    \subitem positional, \hyperpage{455}, \hyperpage{456}
+    \subitem possessiv, \hyperpage{279}
+    \subitem reflexiv, \hyperpage{470}
+    \subitem vs.\ Artikel, \hyperpage{277}
+  \item Pronominaladverb, \hyperpage{195}
+  \item Pronominalfunktion, \hyperpage{278}
+  \item Pronominalisierungstest, \hyperpage{347}
+  \item Prosodie, \hyperpage{148}
+  \item Punkt, \hyperpage{539}
+
+  \indexspace
+
+  \lettergroup{R}
+  \item Rachen, \hyperpage{76}
+  \item Rectum, \hyperpage{53}
+  \item Referenzzeitpunkt, \hyperpage{303}
+  \item Regel, \hyperpage{28}
+  \item Regens, \hyperpage{53}
+  \item Regularität, \hyperpage{14}, \hyperpage{16}, \hyperpage{28}
+  \item Rektion, \hyperpage{53}, \hyperpage{62}
+  \item Rekursion, \hyperpage{232}, \hyperpage{234}, \hyperpage{394}
+    \subitem in der Morphologie, \hyperpage{235}
+    \subitem in der Syntax, \hyperpage{345}
+  \item Relation, \hyperpage{52}
+    \subitem syntaktisch, \hyperpage{52}
+  \item Relativadverb, \hyperpage{428}
+  \item Relativphrase, \hyperpage{427}
+  \item Relativsatz, \hyperpage{371}, \hyperpage{412}, \hyperpage{414}, \hyperpage{426}
+    \subitem frei, \hyperpage{429}
+  \item Rolle, \hyperpage{60}, \hyperpage{440}, \hyperpage{442}, \hyperpage{443}, \hyperpage{481}
+  \item Rückbildung, \hyperpage{249}
+  \item r-Vokalisierung, \hyperpage{100}
+    \subitem Schreibung, \hyperpage{504}
+
+  \indexspace
+
+  \lettergroup{S}
+  \item Satz, \hyperpage{405}
+    \subitem Echofrage, \hyperpage{411}
+    \subitem Entscheidungsfrage--, \hyperpage{422}
+    \subitem Frage--, \hyperpage{411}
+      \subsubitem eingebettet, \hyperpage{412}
+    \subitem graphematisch, \hyperpage{541}
+    \subitem Koordination, \hyperpage{540}
+    \subitem Schreibung, \hyperpage{539}
+    \subitem Verb-Erst--, \hyperpage{389}, \hyperpage{413}, \hyperpage{422}, \hyperpage{435}
+    \subitem Verb-Letzt--, \hyperpage{389}, \hyperpage{413}
+    \subitem Verb-Zweit--, \hyperpage{389}, \hyperpage{413}, \hyperpage{419}
+    \subitem w-Frage--, \hyperpage{29}, \hyperpage{411}, \hyperpage{415}
+  \item Satzglied, \hyperpage{257}, \hyperpage{353}, \hyperpage{445}
+  \item Satzklammer, \hyperpage{411}
+  \item Satzäquivalent, \hyperpage{189}
+  \item Schärfungsschreibung, \hyperpage{505}, \hyperpage{508}, \hyperpage{510}
+  \item Schreibprinzip
+    \subitem Konstanz, \hyperpage{535}
+    \subitem phonologisch, \hyperpage{505}
+    \subitem Spatienschreibung, \hyperpage{523}
+  \item Schwa, \hyperpage{94}
+    \subitem Tilgung, \hyperpage{269}, \hyperpage{271}, \hyperpage{323}
+  \item Scrambling, \hyperpage{393}
+  \item Segment, \hyperpage{73}, \hyperpage{105}
+  \item Silbe, \hyperpage{120}, \hyperpage{122}
+    \subitem Ambisyllabizität, \hyperpage{143}
+    \subitem Anfangsrand, \hyperpage{123}, \hyperpage{143}
+      \subsubitem komplex, \hyperpage{134}, \hyperpage{136}
+    \subitem Endrand, \hyperpage{123}, \hyperpage{143}
+      \subsubitem komplex, \hyperpage{136}, \hyperpage{140}
+    \subitem extrametrisch, \hyperpage{154}
+    \subitem Gelenk, \hyperpage{143}
+      \subsubitem Auslautverhärtung, \hyperpage{145}
+    \subitem geschlossen, \hyperpage{142}
+    \subitem Gewicht, \hyperpage{142}, \hyperpage{510}
+    \subitem Grenze, \hyperpage{121}, \hyperpage{143}, \hyperpage{146}, \hyperpage{510}, \hyperpage{511}, \hyperpage{515}
+    \subitem Kern, \hyperpage{123}
+    \subitem Klatschmethode, \hyperpage{120}
+    \subitem offen, \hyperpage{142}
+    \subitem Rand, \hyperpage{134}
+    \subitem Reim, \hyperpage{123}
+    \subitem Schreibung, \hyperpage{509}
+    \subitem Silbifizierung, \hyperpage{140}
+  \item Simplex, \hyperpage{509}
+  \item Singularetantum, \hyperpage{255}
+  \item Sonorant, \hyperpage{86}
+  \item Sonorität, \hyperpage{131}
+    \subitem Hierarchie, \hyperpage{130}
+  \item Spatium, \hyperpage{523}, \hyperpage{530}
+  \item Sprache, \hyperpage{13}
+  \item Sprechzeitpunkt, \hyperpage{301}
+  \item Spur, \hyperpage{410}, \hyperpage{419}, \hyperpage{433}
+  \item Stamm, \hyperpage{205}
+  \item Stammkonversion, \hyperpage{238}
+  \item Standarddeutsch, \hyperpage{27}, \hyperpage{31}, \hyperpage{34}, \hyperpage{36}
+  \item Status, \hyperpage{310}, \hyperpage{324}, \hyperpage{394}, \hyperpage{477}
+  \item Stimmbänder, \hyperpage{76}
+  \item Stimmhaftigkeit, \hyperpage{71}, \hyperpage{80}
+  \item Stimmlippen, \hyperpage{76}
+  \item Stimmton, \hyperpage{76}
+  \item Stoffsubstantiv, \hyperpage{380}
+  \item Struktur, \hyperpage{50}
+  \item Strukturbedingung, \hyperpage{110}
+  \item Subjekt, \hyperpage{199}, \hyperpage{444}, \hyperpage{448}, \hyperpage{450}, \hyperpage{481}, \hyperpage{482}
+    \subitem Infinitiv, \hyperpage{483}
+    \subitem Satz, \hyperpage{431}
+  \item Substantiv, \hyperpage{47}, \hyperpage{176}, \hyperpage{183}, \hyperpage{247}
+    \subitem Großschreibung, \hyperpage{526}
+    \subitem Kasusflexion, \hyperpage{270}
+    \subitem Numerusflexion, \hyperpage{267}
+    \subitem Plural, \hyperpage{267}
+    \subitem schwach, \hyperpage{22}, \hyperpage{272}
+    \subitem s-Flexion, \hyperpage{531}
+    \subitem Stärke, \hyperpage{266}, \hyperpage{272}
+    \subitem Subklassen, \hyperpage{266}, \hyperpage{275}
+  \item Substantivierung, \hyperpage{526}
+  \item Suffix, \hyperpage{209}
+  \item Superlativ, \hyperpage{294}
+  \item Suppletivität, \hyperpage{330}
+  \item Symbolsystem, \hyperpage{13}
+  \item Synkretismus, \hyperpage{49}
+  \item Syntagma, \hyperpage{47}, \hyperpage{171}
+  \item Syntax, \hyperpage{20}, \hyperpage{341}
+
+  \indexspace
+
+  \lettergroup{T}
+  \item Tempus, \hyperpage{183}, \hyperpage{301}
+    \subitem analytisch, \hyperpage{393}, \hyperpage{472}
+    \subitem einfach, \hyperpage{300}, \hyperpage{301}
+    \subitem Folge, \hyperpage{305}
+    \subitem komplex, \hyperpage{305}
+    \subitem synthetisch vs.\ analytisch, \hyperpage{307}
+  \item Token, \hyperpage{22}
+  \item Transkription, \hyperpage{88}, \hyperpage{97}
+  \item Transparenz, \hyperpage{229}
+  \item Typ, \hyperpage{22}
+
+  \indexspace
+
+  \lettergroup{U}
+  \item Umlaut, \hyperpage{207}
+    \subitem Schreibung, \hyperpage{536}
+  \item Univerbierung, \hyperpage{249}, \hyperpage{524}, \hyperpage{527}
+  \item Uvular, \hyperpage{89}
+
+  \indexspace
+
+  \lettergroup{V}
+  \item Valenz, \hyperpage{56}, \hyperpage{63}, \hyperpage{64}, \hyperpage{185}, \hyperpage{359}, \hyperpage{443}, \hyperpage{457}, \hyperpage{460}, \hyperpage{465}
+    \subitem Adjektiv, \hyperpage{288}
+    \subitem Substantiv, \hyperpage{375}
+    \subitem Verb, \hyperpage{391}
+  \item Variation, \hyperpage{31}, \hyperpage{34}
+  \item Velar, \hyperpage{89}
+  \item Verb, \hyperpage{176}, \hyperpage{182}, \hyperpage{244}, \hyperpage{247}
+    \subitem ditransitiv, \hyperpage{64}
+    \subitem Experiencer--, \hyperpage{454}, \hyperpage{456}
+    \subitem Finitheit, \hyperpage{183}, \hyperpage{310}
+    \subitem Flexion
+      \subsubitem finit, \hyperpage{322}
+      \subsubitem Imperativ, \hyperpage{325}
+      \subsubitem infinit, \hyperpage{324}
+      \subsubitem unregelmäßig, \hyperpage{328}
+    \subitem Flexionsklassen, \hyperpage{22}, \hyperpage{314}
+    \subitem Futur, \hyperpage{472}
+    \subitem gemischt, \hyperpage{329}
+    \subitem Halbmodal--, \hyperpage{482}
+    \subitem Hilfs--, \hyperpage{472}
+    \subitem Indikativ, \hyperpage{318}, \hyperpage{319}
+    \subitem Infinitheit, \hyperpage{310}
+    \subitem Infinitiv, \hyperpage{324}, \hyperpage{477}
+      \subsubitem Ersatz--, \hyperpage{476}, \hyperpage{477}
+      \subsubitem zu--, \hyperpage{483}
+    \subitem intransitiv, \hyperpage{64}, \hyperpage{458}
+    \subitem Konjunktiv, \hyperpage{321}, \hyperpage{322}
+      \subsubitem Flexion, \hyperpage{321}
+      \subsubitem Form vs.\ Funktion, \hyperpage{320}
+    \subitem Kontroll--, \hyperpage{482}
+    \subitem Modal--, \hyperpage{315}, \hyperpage{480}, \hyperpage{482}
+      \subsubitem Flexion, \hyperpage{22}, \hyperpage{327}
+    \subitem Partikel--, \hyperpage{423}
+    \subitem Partizip, \hyperpage{324}, \hyperpage{477}
+    \subitem Perfekt, \hyperpage{472}
+    \subitem Person-Numerus-Suffixe, \hyperpage{319}
+    \subitem Präfix-- vs.\ Partikel--, \hyperpage{324}
+    \subitem Präsens, \hyperpage{318}, \hyperpage{319}
+    \subitem Präteritum, \hyperpage{318}, \hyperpage{319}
+    \subitem schwach, \hyperpage{318}, \hyperpage{321}
+    \subitem stark, \hyperpage{319}, \hyperpage{322}
+    \subitem Status, \hyperpage{472}, \hyperpage{477}, \hyperpage{480}
+    \subitem Stärke, \hyperpage{317}, \hyperpage{328}
+    \subitem transitiv, \hyperpage{64}, \hyperpage{457}
+    \subitem unakkusativ, \hyperpage{458}
+    \subitem unergativ, \hyperpage{458}, \hyperpage{461}
+    \subitem Vokalstufe, \hyperpage{317}
+    \subitem Voll--, \hyperpage{314}
+    \subitem Wetter--, \hyperpage{454}, \hyperpage{456}
+  \item Verbkomplex, \hyperpage{394}, \hyperpage{407}, \hyperpage{423}, \hyperpage{477}
+  \item Verbphrase, \hyperpage{391}, \hyperpage{407}, \hyperpage{477}
+  \item Vergleichselement, \hyperpage{295}
+  \item Verteilung, \hyperpage{105}, \hyperpage{106}, \hyperpage{179}
+    \subitem komplementär, \hyperpage{107}
+  \item Vokal, \hyperpage{85}, \hyperpage{92}
+    \subitem Gespanntheit, \hyperpage{112}, \hyperpage{142}, \hyperpage{505}, \hyperpage{508}
+    \subitem Höhe, \hyperpage{92}
+    \subitem Lage, \hyperpage{92}
+    \subitem Länge, \hyperpage{71}, \hyperpage{112}, \hyperpage{508}
+    \subitem Rundung, \hyperpage{92}, \hyperpage{93}
+    \subitem Schreibung, \hyperpage{505}
+  \item Vokaltrapez, \hyperpage{93}, \hyperpage{101}, \hyperpage{114}, \hyperpage{206}
+  \item Vokativ, \hyperpage{325}
+  \item Vorfeld, \hyperpage{30}, \hyperpage{187}, \hyperpage{411}
+  \item Vorfeldtest, \hyperpage{348}
+
+  \indexspace
+
+  \lettergroup{W}
+  \item Wackernagel-Position, \hyperpage{466}
+  \item Wert, \hyperpage{39}
+  \item Wort, \hyperpage{42}, \hyperpage{167}, \hyperpage{203}
+    \subitem Bedeutung, \hyperpage{203}
+    \subitem flektierbar, \hyperpage{43}, \hyperpage{181}
+    \subitem graphematisch, \hyperpage{523}
+    \subitem lexikalisch, \hyperpage{172}
+    \subitem phonologisch, \hyperpage{141}, \hyperpage{156}
+    \subitem prosodisch, \hyperpage{156}
+    \subitem Stamm, \hyperpage{238}
+    \subitem syntaktisch, \hyperpage{172}
+  \item Wortbildung, \hyperpage{178}, \hyperpage{215}
+    \subitem Komparation als --, \hyperpage{294}
+  \item Wortformenkonversion, \hyperpage{238}
+  \item Wortklasse, \hyperpage{43}, \hyperpage{212}, \hyperpage{238}, \hyperpage{243}
+    \subitem morphologisch, \hyperpage{177}
+    \subitem Schreibung, \hyperpage{525}
+    \subitem semantisch, \hyperpage{173}
+  \item Wortzeichen, \hyperpage{530}
+
+  \indexspace
+
+  \lettergroup{Z}
+  \item Zahndamm, \hyperpage{78}
+  \item Zeichen
+    \subitem syntaktisch, \hyperpage{538}
+    \subitem Wort--, \hyperpage{530}
+  \item Zirkumfix, \hyperpage{209}
+  \item Zähne, \hyperpage{78}
+  \item Zäpfchen, \hyperpage{77}
+  \item zugrundeliegende Form, \hyperpage{110}, \hyperpage{147}
+  \item Zunge, \hyperpage{77}
+  \item Zweisilbler, \hyperpage{140}
+  \item Zwerchfell, \hyperpage{75}
+
+\end{theindex}
