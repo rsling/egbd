@@ -200,49 +200,6 @@
 \newcommand{\Phantom}{\phantomsection}
 
 
-% Basic gray box
-\newcommand{\htb}[4][] % {headline}{color}{text}{icon}
-{%
-  \setlength{\fboxsep}{5mm}
-  \vspace{9mm}
-  \noindent\colorbox{#2}{
-  \begin{minipage}[h]{\textwidth-1.15cm}
-    \begin{flushleft}
-      \hspace*{0mm}\raisebox{0mm}[0mm][0mm]{%
-        \color{white}%
-        \includegraphics[width=10mm]{langsci/graphics/#4}%
-      }
-    \end{flushleft}
-    \vspace{-1mm}
-    \sffamily\large \textbf{#1}\\[3mm]
-    \rmfamily\normalsize #3 \hfill
-  \end{minipage}
-  \vspace{1.0mm}
-  }
-  \vspace{0.5cm}
-}
-
-
-
-% Basic framed box
-\newcommand{\hfb}[3][] % {headline}{color}{text}{icon}
-{%
-  \setlength{\fboxsep}{5mm}
-  \fboxrule.8mm
-  \vspace{5mm}
-  \noindent\color{#2}\fbox{
-  \begin{minipage}[h]{\textwidth-1.15cm-1.6mm}
-    \color{black}
-    \sffamily\large \textbf{#1}\\[4mm]
-    \rmfamily\normalsize #3 \hfill
-  \end{minipage}
-  }
-  \color{black}
-  \vspace{0.5cm}
-}
-
-
-
 \newcommand{\Definition}[2]{
   \refstepcounter{dgdef}
   \tblscolorbox[report]{lsLightGray}{#1\hfill Definition~\thechapter.\arabic{dgdef}}{#2}
@@ -280,11 +237,6 @@
   }{law}
 }
 
-
-
-\newcommand{\KTest}[2]{
-  \htb[#1]{lsLightgray}{#2}{law}
-}
 
 
 
