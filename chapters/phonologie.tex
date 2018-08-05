@@ -649,6 +649,27 @@ Die Verallgemeinerung zu mehrsilbigen Wörtern erfolgt nach einer theoretischen 
 
 \subsection{Silbenstruktur}
 
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    ake/.style={tier=terminal}
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+	[C][C]
+      ]
+      [Reim
+	[Kern,ake,calign=first
+	  [V]
+	]
+	[Endrand, ake, calign=last
+	  [C][C]
+	]
+      ]
+    ]
+  \end{forest}
+  \caption{Allgemeines Schema für die Silbenstruktur}
+  \label{fig:silbenstruktur}
+\end{figure}
 \label{sec:silbenstruktur}
 
 In diesem Abschnitt wird die Terminologie eingeführt, mit der man über Positionen in der Silbe redet.
@@ -671,29 +692,6 @@ Kern und Endrand bilden den \textit{Reim}.
 \index{Silbe!Endrand}
 \index{Silbe!Reim}
 }
-
-\begin{figure}[!htbp]
-  \centering
-  \begin{forest}
-    ake/.style={tier=terminal}
-    [Silbe, calign=last
-      [Anfangsrand, ake, calign=first
-	[C][C]
-      ]
-      [Reim
-	[Kern,ake,calign=first
-	  [V]
-	]
-	[Endrand, ake, calign=last
-	  [C][C]
-	]
-      ]
-    ]
-  \end{forest}
-  \caption{Allgemeines Schema für die Silbenstruktur}
-  \label{fig:silbenstruktur}
-\end{figure}
-
 
 \begin{figure}[!htbp]
   \centering
@@ -1932,6 +1930,7 @@ Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \texti
 
 \begin{figure}[!htbp]
   \centering
+  \scalebox{1}{
   \begin{forest}
     ake/.style={
       tier=terminal,
@@ -1974,7 +1973,7 @@ Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \texti
 	]
       ]
     ]
-  \end{forest}
+  \end{forest}}
   \label{fig:verbrauchen}
   \caption{Fußstruktur von \textit{verbrauchen} mit extrametrischer Silbe}
 \end{figure}
@@ -2037,6 +2036,7 @@ Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt s
 
 \begin{figure}[!htbp]
  \centering
+ \scalebox{1}{
   \begin{forest}
     ake/.style={
       tier=terminal,
@@ -2101,7 +2101,7 @@ Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt s
 	]
       ]
     ]
-  \end{forest}
+  \end{forest}}
  \caption{Phonologische Analyse des Wortes \textit{Rettungsverein}}
  \label{fig:rettungsverein}
 \end{figure}
