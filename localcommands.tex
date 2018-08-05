@@ -317,18 +317,52 @@
 \newcommand{\liq}{1.5}
 \newcommand{\vok}{2}
 
+% Save text.
+\newcommand{\lastsaved}{}
+\newcommand{\textsave}[1]{\gdef\lastsaved{#1}#1}
 
-\newcommand{\SonDiag}[1]{%
+\newcommand{\SonDiag}[2][0]{%
   \begin{tikzpicture}
-    \tikzset{tip/.style={execute at begin node=\tipaencoding}}
+    \textsave{.}
+    \tikzset{
+      tip/.style={execute at begin node=\tipaencoding},
+      normalseg/.style={tip, fill=white},
+      extrasyll/.style={tip, circle, draw, fill=white},
+      sylljoint/.style={tip, diamons, draw, fill=white}
+    }
     \node at (0,\plo) {P};
     \node at (0,\fri) {F};
     \node at (0,\nas) {N};
     \node at (0,\liq) {L};
     \node at (0,\vok) {V};
-    \foreach [count=\x from 1, remember=\x as \lastx] \p / \y in #1 {
-      \node (\x) [tip] at (\x,\y) {\p};
-      \ifthenelse{\x > 1}{\draw [->] (\lastx) to (\x);}{}
+
+    % Draw the helper lines if required. TODO Might be possible w/o passing number explicitly.
+    \ifthenelse{\equal{#1}{0}}{}{%
+      \foreach \y in {\plo, \fri, \nas, \liq,\vok} {%
+	\draw [dotted, |-|] (0.25, \y) -- (#1.75, \y);
+      }
+    }
+
+    \foreach [count=\x from 1, remember=\x as \lastx] \p / \y / \g in #2 {
+      \ifthenelse{\equal{\y}{-1}}{\textsave{.}}{%
+
+	% Draw the node, either plain, as Silbenbgelenk, or as extrasyllabic.
+        \ifthenelse{\equal{\g}{1}}{%
+	  \node (\x) [sylljoint] at (\x,\y) {\p};
+	}{%
+	  \ifthenelse{\equal{\g}{2}}{%
+	    \node (\x) [extrasyll] at (\x, \y) {\p};
+	  }{%
+	    \node (\x) [normalseg] at (\x, \y) {\p};
+	  }
+	}
+
+	% Draw the connection unless the previous node was not or was empty.
+	\ifthenelse{\NOT\equal{\lastsaved}{.}}{%
+	  \draw [->] (\lastx) to (\x);
+	}{}
+	\textsave{1}
+      }
     }
   \end{tikzpicture}
 }

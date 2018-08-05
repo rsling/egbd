@@ -710,14 +710,14 @@ Kern und Endrand bilden den \textit{Reim}.
 	[Kern,ake
 	  [E]
 	]
-	[Endrand, ake, calign=last
+	[Endrand, ake, calign=first
 	  [m][t]
 	]
       ]
     ]
   \end{forest}
 
-  \caption{Beispiel für Silbenstruktur}
+  \caption{Beispiel für Silbenstruktur (\textit{fremd})}
   \label{fig:phonstr}
 \end{figure}
 
@@ -1024,42 +1024,46 @@ Sie weisen also eine steigende--fallende \textit{Sonoritätskontur} auf.
 \index{Sonorität}
 }
 
-\begin{table}[!htbp]
-  \centering
-    \begin{tabular}{cccccccccccp{0.5mm}l}
-      \lsptoprule
-      \textbf{(F)} & \textbf{P} & \textbf{F} & \textbf{N} & \textbf{L} & \textbf{V} & \textbf{L} & \textbf{N} & \textbf{F} & \textbf{P} & \textbf{(F)} && \\
-      \midrule
-	& k &&&& \textipa{u:} &&&&&&& \textit{Kuh} \\
-	&&& n && \textipa{i:} &&&&&&& \textit{nie} \\
-	& k && n && \textipa{i:} &&&&&&& \textit{Knie} \\
-	& d &&& \textipa{K} & \textipa{o:} &&&&&&& \textit{droh} \\
-	\textipa{S} & t &&&& \textipa{e:} &&&&&&& \textit{steh} \\
-	\textipa{S} &&& n && \textipa{e:} &&&&&&& \textit{Schnee} \\
-	\textipa{S} & p & && \textipa{K} & \textipa{y:} &&&&&&& \textit{sprüh} \\
-	&&&&&&&&&& \\
-	& \textipa{P} &&&& a &&&& p &&& \textit{ab} \\
-	& \textipa{P} &&&& a && n &&&&& \textit{an} \\
-	& \textipa{P} &&&& a &&& \textipa{X} & t &&& \textit{acht} \\
-	& \textipa{P} &&&& a & l & m &&&&& \textit{Alm} \\
-	&&&&&&&&&& \\
-	&& && \textipa{K} & a &&&& p & s && \textit{Raps}\\
-      \lspbottomrule
-    \end{tabular}
-  \caption{Einordnung einiger Konsonatengruppen in das Silbenschema}
-  \label{tab:silbenbau}
-\end{table}
+\begin{exe}
+  \ex\label{ex:silbenbau} 
+  \begin{xlist}
+    \ex\label{ex:silbenbau1} \textit{Kuh}\leavevmode\newline
+      \SonDiag[2]{{k/\plo/0, u:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{nie}\leavevmode\newline
+      \SonDiag[2]{{n/\nas/0, i:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{Knie}\leavevmode\newline
+      \SonDiag[3]{{k/\plo/0, n/\nas/0, i:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{droh}\leavevmode\newline
+      \SonDiag[3]{{d/\plo/0, K/\liq/0, o:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{steh}\leavevmode\newline
+      \SonDiag[3]{{S/\fri/2, t/\plo/0, e:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{Schnee}\leavevmode\newline
+      \SonDiag[3]{{S/\fri/0, n/\nas/0, e:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{sprüh}\leavevmode\newline
+      \SonDiag[4]{{S/\fri/2, p/\plo/0, K/\liq/0, y:/\vok/0}}
+    \ex\label{ex:silbenbau1} \textit{ab}\leavevmode\newline
+      \SonDiag[3]{{P/\plo/0, a/\vok/0, p/\plo/0}}
+    \ex\label{ex:silbenbau1} \textit{an}\leavevmode\newline
+      \SonDiag[3]{{P/\plo/0, a/\vok/0, n/\nas/0}}
+    \ex\label{ex:silbenbau1} \textit{acht}\leavevmode\newline
+      \SonDiag[4]{{P/\plo/0, a/\vok/0, X/\fri/0, t/\plo/0}}
+    \ex\label{ex:silbenbau1} \textit{Alm}\leavevmode\newline
+      \SonDiag[4]{{P/\plo/0, a/\vok/0, l/\liq/0, m/\nas/0}}
+    \ex\label{ex:silbenbau1} \textit{Raps}\leavevmode\newline
+      \SonDiag[4]{{K/\fri/0, a/\vok/0, p/\plo/0, s/\fri/2}}
+  \end{xlist}
+\end{exe}
 
-In Tabelle~\ref{tab:silbenbau} werden zur Illustration einige deutsche Wörter in das Schema eingeordnet.
+In (\ref{ex:silbenbau}) werden zur Illustration einige kurze einsilbige deutsche Wörter in \textit{Sonoritätsdiagrammen} in das Schema eingeordnet.
 Das ideale Bild der Sonoritätskontur wird dabei weitgehend bestätigt.
-Die einzige Ausnahme ist das Auftreten von \textipa{[S]} vor Plosiven im Anfangsrand (\textit{sprüh}) und [s] nach Plosiven im Endrand (\textit{Raps}).
+Die einzige Ausnahme ist das Auftreten von den in den Diagrammen eingekreisten \textipa{[S]} vor Plosiven im Anfangsrand (\textit{sprüh}) und [s] nach Plosiven im Endrand (\textit{Raps}).
 Da Frikative eine höhere Sonorität haben als Plosive, steigt in diesen Fällen die Sonorität zum Rand hin wieder an.
 In Wörtern wie \textit{trittst} setzt sich das Problem sogar noch weiter fort, weil nach dem Anstieg ein weiterer Abfall folgt.
 In \textit{Herbsts} folgt nach dem [p] sogar eine Kontur aus Anstieg, Abstieg und erneutem Anstieg, s.\ Abbildung~\ref{fig:sonhierherbsts}.
 
 \begin{figure}[!htbp]
   \centering
-  \SonDiag{{h/\fri, \t{E@}/\vok, p/\plo, s/\fri, t/\plo, s/\fri}}
+  \SonDiag[6]{{h/\fri/0, \t{E@}/\vok/0, p/\plo/0, s/\fri/2, t/\plo/2, s/\fri/2}}
   \caption{Sonorität am Beispiel von \textit{Herbsts}}
   \label{fig:sonhierherbsts}
 \end{figure}
@@ -1086,24 +1090,11 @@ In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, da
 
 Außerdem kann die Sonorität auch gleich bleiben, so dass sich \textit{Plateaus} aus zwei Plosiven (\textit{Abt}), zwei Frikativen (\textit{Reichs}) usw.\ bilden.
 Abbildung~\ref{fig:sonhiersstrolchst} zeigt die Kontur des Wortes \textit{strolchst} mit extrasilbischem \textipa{[S]} vor dem Anfangsrand und einem Frikativ-Plateau im Endrand.
-In Abschnitt~\ref{sec:systematikderraender} werden Plateaus allerdings eliminiert, indem Plateaus bildendes Material auch als extrasilbisch aufgefasst wird.
+In Abschnitt~\ref{sec:systematikderraender} werden Plateaus allerdings eliminiert, indem plateaubildendes Material auch als extrasilbisch aufgefasst wird.
 
 \begin{figure}[!htbp]
   \centering
-  \begin{tabular}{ccccccccc}
-    V &&&& \rnode{V1}{\textipa{O}} &&&& \\
-    L &&& \rnode{F11}{\textipa{K}} && \rnode{L21}{\textipa{l}} &&& \\
-    N &&&&&&&& \\
-    F & \rnode{S11}{\textipa{S}} &&&&& \rnode{F21}{\textipa{\c{c}}} & \rnode{F31}{\textipa{s}} & \\
-    P && \rnode{P11}{\textipa{t}} &&&&&& \rnode{P21}{\textipa{t}} \\
-  \end{tabular}
-  \ncline[nodesep=3pt]{->}{S11}{P11}
-  \ncline[nodesep=3pt]{->}{P11}{F11}
-  \ncline[nodesep=3pt]{->}{F11}{V1}
-  \ncline[nodesep=3pt]{->}{V1}{L21}
-  \ncline[nodesep=3pt]{->}{L21}{F21}
-  \ncline[nodesep=3pt]{->}{F21}{F31}
-  \ncline[nodesep=3pt]{->}{F31}{P21}
+  \SonDiag[8]{{S/\fri/0, t/\plo/0, K/\liq/0, O/\vok/0, l/\liq/0, ç/\fri/0, s/\fri/0, t/\plo/0}}
   \caption{Sonorität am Beispiel von \textit{strolchst}}
   \label{fig:sonhiersstrolchst}
 \end{figure}
@@ -1129,23 +1120,45 @@ Zudem sind die einzigen Anfangsränder mit drei Segmenten solche, bei denen das 
 Das Segment \textipa{[S]} verhält sich im Silbenbau offensichtlich besonders, und es wurde mit Definition~\ref{def:extrasilbisch} aus der eigentlichen Silbe in einen erweiterten Bereich verschoben, in dem die Sonoritätskontur nicht eingehalten werden muss.
 Es ist \textit{extrasilbisch}.
 
-\newcommand{\Rxx}[3]{\POS[]+(#1,-1.2)\ar@{-}[#3]-(#2,1.2)}
-\newcommand{\Rxxx}[4]{\POS[]+(#1,-1.2)\ar@{-}[#4]-(#2,#3)}
-\newcommand{\Rxxxx}[5]{\POS[]+(#1,#2)\ar@{-}[#5]-(#3,#4)}
-
 \begin{figure}[!htbp]
   \centering
-  \Tree[3]{
-     \K{\small\textbf{extrasilbisch}} & \K{\small\textbf{Anfangsrand}} && \K{\small\textbf{Kern}} \\
-     \K{\textipa{S}}\R[--]{r} & \K{p\ t}\R{ddddrr}^{\text{Plosiv}}              &&           \\
-     & \K{b\ d\ k\ g\ (\textipa{P})}\Rxx{9.5}{9.75}{r}                &&           \\
-     \K{\textipa{S}}\R[--]{r} & \K{v}\R{ddrr}_{\text{Frikativ}}             &&           \\
-     & \K{f\ \textipa{S}\ h\ z\ \textipa{J}}\Rxxx{8.5}{9}{7.6}{ur}           &&           \\
-     &          && \K{~~~Vokal} \\
-     \K{\textipa{S}}\R[--]{r} & \K{~~m\ n}\Rxx{6}{3.7}{urr}_{\text{Nasal}}  &&           \\
-     &                                         &&           \\
-     \K{\textipa{S}}\R[--]{r} & \K{l\ \textipa{K}}\R{uuurr}_{\text{Liquid}}         &&           \\
-  }
+  \begin{tikzpicture}[text height=1.5ex, text depth=.25ex, text centered]
+    \tikzset{%
+      segm/.style={fill=white, draw, rounded corners, execute at begin node=\tipaencoding},
+      extrasyl/.style={segm, dashed}
+      }
+    \node at (0, 12) {\textbf{\small Extrasilbisch}};
+    \node at (3, 12) {\textbf{\small Anfangsrand}};
+    \node at (8, 12) {\textbf{\small Kern}};
+%     \draw [dashed, |-|, gray, very thick] (0,0.5) -- (0,11.5);
+%     \draw [dashed, |-|, gray, very thick] (3,0.5) -- (3,11.5);
+%     \draw [dashed, |-|, gray, very thick] (8,0.5) -- (8,11.5);
+
+    \node [fill=gray, rounded corners] (vok) at (8, 5.5) {\textcolor{white}{Vokal}};
+    
+    \node [segm] (plu) at (3,11) {p t};
+    \node [extrasyl] (Splu) at (0,11) {S};
+    \draw [dashed] (Splu) to (plu);
+    \node [segm] (plv) at (3,9) {b d k g (P)};
+    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Plosiv} (5, 10) -- (plu.east);
+    \draw (vok.west) -- (5, 10) -- (plv.east);
+    
+    \node [segm] (vov) at (3,7) {v};
+    \node [extrasyl] (Svov) at (0,7) {S};
+    \draw [dashed] (Svov) to (vov);
+    \node [segm] (fri) at (3,5) {f S h z J};
+    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (5, 6) -- (vov.east);
+    \draw (vok.west) -- (5, 6) -- (fri.east);
+
+    \node [segm] (nas) at (3,3) {m n};
+    \node [extrasyl] (Snas) at (0,3) {S};
+    \draw [dashed] (Snas) to (nas);
+    \node [segm] (liq) at (3,1) {l K};
+    \node [extrasyl] (Sliq) at (0,1) {S};
+    \draw [dashed] (Sliq) to (liq);
+    \draw (vok.west) to node [pos=0.7, above, sloped] {\footnotesize Nasal} (nas.east);
+    \draw (vok.west) to node [pos=0.7, above, sloped] {\footnotesize Liquid} (liq.east);
+  \end{tikzpicture}
   \caption{Struktur des simplexen Anfangsrands}
   \label{fig:anfangsrandsimplex}
 \end{figure}
@@ -1182,19 +1195,68 @@ Extrasilbisch tritt ggf.\ \textipa{[S]} vor den Anfangsrand.\index{Silbe!Anfangs
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[3]{
-     \K{\small\textbf{extrasilbisch}} & \K{\small\textbf{Anfangsrand}}\Below{\small\textbf{erste Pos.}} & \K{\small\textbf{Anfangsrand}}\Below{\small\textbf{zweite Pos.}} && \K{\small\textbf{Kern}} \\
-     & \K{k}\R{r}^{\text{Plosiv}} & \K{v}\R{ddddrr}^{\text{Frikativ}} &&  \\
-     & \K{k\ g}\Rxx{5}{3.7}{r}^{\text{Plosiv}} & \K{n}\R{dddrr}_{\text{Nasal}} &&  \\
-     \K{\textipa{S}}\R[--]{r} & \K{p\ t}\R{ddr}^{\text{Plosiv}} &&&  \\
-     & \K{b\ d\ k\ g~~~~~~~}\Rxx{4}{11.65}{r} &&&  \\
-     & & \K{\textipa{K}}\Rxxx{3.7}{-2.75}{-14}{dddr} && \K{~~~Vokal} \\
-     & \K{f}\Rxx{4}{11.65}{r} &&&  \\
-     \K{\textipa{S}}\R[--]{r} & \K{v}\R{uur}_{\text{Frikativ}} &&&  \\
-     \K{\textipa{S}}\R[--]{r} & \K{p}\R{dr}^{\text{Plosiv}} &&&  \\
-     & \K{b\ k\ g}\Rxxx{7}{10.25}{8.25}{ur} & \K{l}\R{uuuurr}_{\text{Liquid}} &&  \\
-     & \K{f}\R{ur}_{\text{Frikativ}} &&&  \\
-  }
+  \resizebox{!}{0.95\textheight}{
+  \begin{tikzpicture}[text height=1.5ex, text depth=.25ex, text centered]
+    \tikzset{%
+      segm/.style={fill=white, draw, rounded corners, execute at begin node=\tipaencoding},
+      extrasyl/.style={segm, dashed}
+      }
+    \node at (0, 18) {\textbf{\small Extrasilbisch}};
+    \node at (5, 18) {\textbf{\small Anfangsrand}};
+    \node at (10, 18) {\textbf{\small Kern}};
+%     \draw [dashed, |-|, gray, very thick] (0,0.5) -- (0,18.5);
+%     \draw [dashed, |-, gray, very thick] (3,0.5) -- (3,18);
+%     \draw [dashed, |-, gray, very thick] (7,0.5) -- (7,18);
+%     \draw [dashed, -, gray, very thick] (3,18) -- (5,18);
+%     \draw [dashed, -|, gray, very thick] (7,18) -- (5,18) -- (5,18.5);
+%     \draw [dashed, |-|, gray, very thick] (10,0.5) -- (10,18.5);
+   
+    \node [fill=gray, rounded corners] (vok) at (10, 8.5) {\textcolor{white}{Vokal}};
+
+    \node [segm] (k) at (3,17) {k};
+    \node [segm] (v) at (7,17) {v};
+    \draw (k.east) -- node [pos=0.7, above] {\footnotesize Plosiv} (v.west);
+    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (v.east);
+
+    \node [segm] (kg) at (3,15) {k g};
+    \node [segm] (n) at (7,15) {n};
+    \draw (kg.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (n.west);
+    \draw (vok.west) -- node [pos=0.7, below, sloped] {\footnotesize Nasal} (n.east);
+
+    \node [segm] (pt) at (3,13) {p t};
+    \node [extrasyl] (Spt) at (0,13) {S};
+    \draw [dashed] (Spt) to (pt);
+    \node [segm] (bdkg) at (3,11) {b d k g};
+    \node [segm] (f) at (3,9) {f};
+    \node [segm] (v1) at (3,7) {v};
+    \node [extrasyl] (Sv1) at (0,7) {S};
+    \draw [dashed] (Sv1) to (v1);
+
+    \node [segm] (R) at (7,10) {K};
+    \draw (pt.east) -- (5,12);
+    \draw (bdkg.east) -- (5,12);
+    \draw (5,12) -- node [pos=0.3, above, sloped] {\footnotesize Plosiv} (R.west);
+    \draw (f.east) -- (5,8);
+    \draw (v1.east) -- (5,8);
+    \draw (5,8) -- node [pos=0.3, above, sloped] {\footnotesize Frikativ} (R.west);
+
+    \node [segm] (p) at (3,5) {p};
+    \node [extrasyl] (Sp) at (0,5) {S};
+    \draw [dashed] (Sp) to (p);
+    \node [segm] (bkg) at (3,3) {b k g};
+    \node [segm] (ff) at (3,1) {f};
+
+    \node [segm] (l) at (7,3) {l};
+    \draw (p.east) -- (5,4);
+    \draw (bkg.east) -- (5,4);
+    \draw (5,4) -- node [pos=0.2, above, sloped] {\footnotesize Plosiv} (l.west);
+    \draw (ff.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (l.west);
+    
+    \draw (R.east) -- (8,7);
+    \draw (l.east) -- (8,7);
+    \draw (8,7) -- node [pos=0.5, below, sloped] {\footnotesize Liquid} (vok.west);
+
+  \end{tikzpicture}}
   \caption{Struktur des duplexen Anfangsrands}
   \label{fig:anfangsrandduplex}
 \end{figure}
@@ -1204,6 +1266,10 @@ Wir beschreiben jetzt zunächst den duplexen Endrand und versuchen, davon ausgeh
 Alle Kombinationen, die eine Verletzung der Sonoritätskontur darstellen würden, werden dabei gleich ausgeschlossen.
 Außerdem wird \textipa{[N]} als zugrundeliegendes Segment aus dem System eliminiert (mehr dazu weiter unten).
 Es ergibt sich Abbildung~\ref{fig:endranduplex}, die den duplexen Endrand ohne extrasilbisches Material abbildet.
+
+\newcommand{\Rxx}[3]{\POS[]+(#1,-1.2)\ar@{-}[#3]-(#2,1.2)}
+\newcommand{\Rxxx}[4]{\POS[]+(#1,-1.2)\ar@{-}[#4]-(#2,#3)}
+\newcommand{\Rxxxx}[5]{\POS[]+(#1,#2)\ar@{-}[#5]-(#3,#4)}
 
 \begin{figure}[!htbp]
   \Tree[3]{
