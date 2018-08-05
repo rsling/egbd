@@ -1130,9 +1130,6 @@ Es ist \textit{extrasilbisch}.
     \node at (0, 12) {\textbf{\small Extrasilbisch}};
     \node at (3, 12) {\textbf{\small Anfangsrand}};
     \node at (8, 12) {\textbf{\small Kern}};
-%     \draw [dashed, |-|, gray, very thick] (0,0.5) -- (0,11.5);
-%     \draw [dashed, |-|, gray, very thick] (3,0.5) -- (3,11.5);
-%     \draw [dashed, |-|, gray, very thick] (8,0.5) -- (8,11.5);
 
     \node [fill=gray, rounded corners] (vok) at (8, 5.5) {\textcolor{white}{Vokal}};
     
@@ -1204,18 +1201,12 @@ Extrasilbisch tritt ggf.\ \textipa{[S]} vor den Anfangsrand.\index{Silbe!Anfangs
     \node at (0, 18) {\textbf{\small Extrasilbisch}};
     \node at (5, 18) {\textbf{\small Anfangsrand}};
     \node at (10, 18) {\textbf{\small Kern}};
-%     \draw [dashed, |-|, gray, very thick] (0,0.5) -- (0,18.5);
-%     \draw [dashed, |-, gray, very thick] (3,0.5) -- (3,18);
-%     \draw [dashed, |-, gray, very thick] (7,0.5) -- (7,18);
-%     \draw [dashed, -, gray, very thick] (3,18) -- (5,18);
-%     \draw [dashed, -|, gray, very thick] (7,18) -- (5,18) -- (5,18.5);
-%     \draw [dashed, |-|, gray, very thick] (10,0.5) -- (10,18.5);
    
     \node [fill=gray, rounded corners] (vok) at (10, 8.5) {\textcolor{white}{Vokal}};
 
     \node [segm] (k) at (3,17) {k};
     \node [segm] (v) at (7,17) {v};
-    \draw (k.east) -- node [pos=0.7, above] {\footnotesize Plosiv} (v.west);
+    \draw (k.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (v.west);
     \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (v.east);
 
     \node [segm] (kg) at (3,15) {k g};
@@ -1267,21 +1258,47 @@ Alle Kombinationen, die eine Verletzung der Sonoritätskontur darstellen würden
 Außerdem wird \textipa{[N]} als zugrundeliegendes Segment aus dem System eliminiert (mehr dazu weiter unten).
 Es ergibt sich Abbildung~\ref{fig:endranduplex}, die den duplexen Endrand ohne extrasilbisches Material abbildet.
 
-\newcommand{\Rxx}[3]{\POS[]+(#1,-1.2)\ar@{-}[#3]-(#2,1.2)}
-\newcommand{\Rxxx}[4]{\POS[]+(#1,-1.2)\ar@{-}[#4]-(#2,#3)}
-\newcommand{\Rxxxx}[5]{\POS[]+(#1,#2)\ar@{-}[#5]-(#3,#4)}
-
 \begin{figure}[!htbp]
-  \Tree[3]{
-  \K{\textbf{Kern}} && \K{\textbf{Endrand}}\Below{\textbf{erste Pos.}} & \K{\textbf{Endrand}}\Below{\textbf{zweite Pos.}} \\
-               &&             & \K{k (g)} \\
-               && \K{n}\Rxx{3.7}{5}{r}_{\text{Frikativ}}\Rxx{3.7}{5}{ur}^{\text{Plosiv}} & \K{f\ \textipa{S}} \\
-               & \K{}\Rxxxx{5}{1.75}{3.7}{1.2}{r} & \K{m}\R{r}^{\text{Plosiv}}\R{dr}_{\text{Frikativ}} & \K{p} \\
-  \K{Vokal~~~}\R{uurr}^{\text{Nasal}}\R{ddrr}_{\text{Liquid}} &&& \K{\textipa{S}} \\
-               &&             & \K{p\ k} \\
-               && \K{\textipa{K}\ l}\Rxx{3.7}{5.5}{r}^{\text{~~~~~~~Frikativ}}\Rxx{3.7}{4.5}{ur}^{\text{Plosiv}}\R{dr}_{\text{Nasal}} & \K{f\ \textipa{S}\ \textipa{\c{c}}} \\
-               &&             & \K{m\ n} \\
-  }
+  \begin{tikzpicture}[text height=1.5ex, text depth=.25ex, text centered]
+    \tikzset{%
+      segm/.style={fill=white, draw, rounded corners, execute at begin node=\tipaencoding},
+      extrasyl/.style={segm, dashed}
+      }
+    \node at (0, 14) {\textbf{\small Kern}};
+    \node at (4.5, 14) {\textbf{\small Endrand}};
+
+    \node [fill=gray, rounded corners] (vok) at (0, 6.5) {\textcolor{white}{Vokal}};
+    
+     \node [segm] (kg) at (6,13) {k (g)};
+     \node [segm] (fS) at (6,11) {f S};
+
+     \node [segm] (n) at (3,12) {n};
+     \draw (n.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (kg.west);
+     \draw (n.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (fS.west);
+
+     \node [segm] (p) at (6,9) {p};
+     \node [segm] (S) at (6,7) {S};
+
+     \node [segm] (m) at (3,8) {m};
+     \draw (m.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (p.west);
+     \draw (m.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (S.west);
+
+     \draw (vok.east) --  node [pos=0.5, above, sloped] {\footnotesize Nasal} (1.5,10);
+     \draw (1.5,10) -- (n.west);
+     \draw (1.5,10) -- (m.west);
+
+     \node [segm] (pk) at (6,5) {p k};
+     \node [segm] (fSc) at (6,3) {f S ç};
+     \node [segm] (mn) at (6,1) {m n};
+
+     \node [segm] (Rl) at (3,3) {K l};
+     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (pk.west);
+     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (fSc.west);
+     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Nasal} (mn.west);
+     
+     \draw (vok.east) -- node [pos=0.5, above, sloped] {\footnotesize Liquid} (Rl.west);
+
+  \end{tikzpicture}
   \caption{Struktur des duplexen Endrands}
   \label{fig:endranduplex}
 \end{figure}
