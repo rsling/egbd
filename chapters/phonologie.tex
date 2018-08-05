@@ -1140,30 +1140,30 @@ Es ist \textit{extrasilbisch}.
     \node at (3, 12) {\textbf{\small Anfangsrand}};
     \node at (8, 12) {\textbf{\small Kern}};
 
-    \node [fill=gray, rounded corners] (vok) at (8, 5.5) {\textcolor{white}{Vokal}};
+    \node [fill=gray, rounded corners] (Xvok) at (8, 5.5) {\textcolor{white}{Vokal}};
     
-    \node [segm] (plu) at (3,11) {p t};
-    \node [extrasyl] (Splu) at (0,11) {S};
-    \draw [dashed] (Splu) to (plu);
-    \node [segm] (plv) at (3,9) {b d k g (P)};
-    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Plosiv} (5, 10) -- (plu.east);
-    \draw (vok.west) -- (5, 10) -- (plv.east);
+    \node [segm] (Xplu) at (3,11) {p t};
+    \node [extrasyl] (XSplu) at (0,11) {S};
+    \draw [dashed] (XSplu) to (Xplu);
+    \node [segm] (Xplv) at (3,9) {b d k g (P)};
+    \draw (Xvok.west) -- node [pos=0.7, above, sloped] {\footnotesize Plosiv} (5, 10) -- (Xplu.east);
+    \draw (Xvok.west) -- (5, 10) -- (Xplv.east);
     
-    \node [segm] (vov) at (3,7) {v};
-    \node [extrasyl] (Svov) at (0,7) {S};
-    \draw [dashed] (Svov) to (vov);
-    \node [segm] (fri) at (3,5) {f S h z J};
-    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (5, 6) -- (vov.east);
-    \draw (vok.west) -- (5, 6) -- (fri.east);
+    \node [segm] (Xvov) at (3,7) {v};
+    \node [extrasyl] (XSvov) at (0,7) {S};
+    \draw [dashed] (XSvov) to (Xvov);
+    \node [segm] (Xfri) at (3,5) {f S h z J};
+    \draw (Xvok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (5, 6) -- (Xvov.east);
+    \draw (Xvok.west) -- (5, 6) -- (Xfri.east);
 
-    \node [segm] (nas) at (3,3) {m n};
-    \node [extrasyl] (Snas) at (0,3) {S};
-    \draw [dashed] (Snas) to (nas);
-    \node [segm] (liq) at (3,1) {l K};
-    \node [extrasyl] (Sliq) at (0,1) {S};
-    \draw [dashed] (Sliq) to (liq);
-    \draw (vok.west) to node [pos=0.7, above, sloped] {\footnotesize Nasal} (nas.east);
-    \draw (vok.west) to node [pos=0.7, above, sloped] {\footnotesize Liquid} (liq.east);
+    \node [segm] (Xnas) at (3,3) {m n};
+    \node [extrasyl] (XSnas) at (0,3) {S};
+    \draw [dashed] (XSnas) to (Xnas);
+    \node [segm] (Xliq) at (3,1) {l K};
+    \node [extrasyl] (XSliq) at (0,1) {S};
+    \draw [dashed] (XSliq) to (Xliq);
+    \draw (Xvok.west) to node [pos=0.7, above, sloped] {\footnotesize Nasal} (Xnas.east);
+    \draw (Xvok.west) to node [pos=0.7, above, sloped] {\footnotesize Liquid} (Xliq.east);
   \end{tikzpicture}
   \caption{Struktur des simplexen Anfangsrands}
   \label{fig:anfangsrandsimplex}
@@ -1211,50 +1211,50 @@ Extrasilbisch tritt ggf.\ \textipa{[S]} vor den Anfangsrand.\index{Silbe!Anfangs
     \node at (5, 18) {\textbf{\small Anfangsrand}};
     \node at (10, 18) {\textbf{\small Kern}};
    
-    \node [fill=gray, rounded corners] (vok) at (10, 8.5) {\textcolor{white}{Vokal}};
+    \node [fill=gray, rounded corners] (Yvok) at (10, 8.5) {\textcolor{white}{Vokal}};
 
-    \node [segm] (k) at (3,17) {k};
-    \node [segm] (v) at (7,17) {v};
-    \draw (k.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (v.west);
-    \draw (vok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (v.east);
+    \node [segm] (Yk) at (3,17) {k};
+    \node [segm] (Yv) at (7,17) {v};
+    \draw (Yk.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (Yv.west);
+    \draw (Yvok.west) -- node [pos=0.7, above, sloped] {\footnotesize Frikativ} (Yv.east);
 
-    \node [segm] (kg) at (3,15) {k g};
-    \node [segm] (n) at (7,15) {n};
-    \draw (kg.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (n.west);
-    \draw (vok.west) -- node [pos=0.7, below, sloped] {\footnotesize Nasal} (n.east);
+    \node [segm] (Ykg) at (3,15) {k g};
+    \node [segm] (Yn) at (7,15) {n};
+    \draw (Ykg.east) -- node [pos=0.5, above] {\footnotesize Plosiv} (Yn.west);
+    \draw (Yvok.west) -- node [pos=0.7, below, sloped] {\footnotesize Nasal} (Yn.east);
 
-    \node [segm] (pt) at (3,13) {p t};
-    \node [extrasyl] (Spt) at (0,13) {S};
-    \draw [dashed] (Spt) to (pt);
-    \node [segm] (bdkg) at (3,11) {b d k g};
-    \node [segm] (f) at (3,9) {f};
-    \node [segm] (v1) at (3,7) {v};
-    \node [extrasyl] (Sv1) at (0,7) {S};
-    \draw [dashed] (Sv1) to (v1);
+    \node [segm] (Ypt) at (3,13) {p t};
+    \node [extrasyl] (YSpt) at (0,13) {S};
+    \draw [dashed] (YSpt) to (Ypt);
+    \node [segm] (Ybdkg) at (3,11) {b d k g};
+    \node [segm] (Yf) at (3,9) {f};
+    \node [segm] (Yv1) at (3,7) {v};
+    \node [extrasyl] (YSv1) at (0,7) {S};
+    \draw [dashed] (YSv1) to (Yv1);
 
-    \node [segm] (R) at (7,10) {K};
-    \draw (pt.east) -- (5,12);
-    \draw (bdkg.east) -- (5,12);
-    \draw (5,12) -- node [pos=0.3, above, sloped] {\footnotesize Plosiv} (R.west);
-    \draw (f.east) -- (5,8);
-    \draw (v1.east) -- (5,8);
-    \draw (5,8) -- node [pos=0.3, above, sloped] {\footnotesize Frikativ} (R.west);
+    \node [segm] (YR) at (7,10) {K};
+    \draw (Ypt.east) -- (5,12);
+    \draw (Ybdkg.east) -- (5,12);
+    \draw (5,12) -- node [pos=0.3, above, sloped] {\footnotesize Plosiv} (YR.west);
+    \draw (Yf.east) -- (5,8);
+    \draw (Yv1.east) -- (5,8);
+    \draw (5,8) -- node [pos=0.3, above, sloped] {\footnotesize Frikativ} (YR.west);
 
-    \node [segm] (p) at (3,5) {p};
-    \node [extrasyl] (Sp) at (0,5) {S};
-    \draw [dashed] (Sp) to (p);
-    \node [segm] (bkg) at (3,3) {b k g};
-    \node [segm] (ff) at (3,1) {f};
+    \node [segm] (Yp) at (3,5) {p};
+    \node [extrasyl] (YSp) at (0,5) {S};
+    \draw [dashed] (YSp) to (Yp);
+    \node [segm] (Ybkg) at (3,3) {b k g};
+    \node [segm] (Yff) at (3,1) {f};
 
-    \node [segm] (l) at (7,3) {l};
-    \draw (p.east) -- (5,4);
-    \draw (bkg.east) -- (5,4);
-    \draw (5,4) -- node [pos=0.2, above, sloped] {\footnotesize Plosiv} (l.west);
-    \draw (ff.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (l.west);
+    \node [segm] (Yl) at (7,3) {l};
+    \draw (Yp.east) -- (5,4);
+    \draw (Ybkg.east) -- (5,4);
+    \draw (5,4) -- node [pos=0.2, above, sloped] {\footnotesize Plosiv} (Yl.west);
+    \draw (Yff.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (Yl.west);
     
-    \draw (R.east) -- (8,7);
-    \draw (l.east) -- (8,7);
-    \draw (8,7) -- node [pos=0.5, below, sloped] {\footnotesize Liquid} (vok.west);
+    \draw (YR.east) -- (8,7);
+    \draw (Yl.east) -- (8,7);
+    \draw (8,7) -- node [pos=0.5, below, sloped] {\footnotesize Liquid} (Yvok.west);
 
   \end{tikzpicture}}
   \caption{Struktur des duplexen Anfangsrands}
@@ -1276,36 +1276,36 @@ Es ergibt sich Abbildung~\ref{fig:endranduplex}, die den duplexen Endrand ohne e
     \node at (0, 14) {\textbf{\small Kern}};
     \node at (4.5, 14) {\textbf{\small Endrand}};
 
-    \node [fill=gray, rounded corners] (vok) at (0, 6.5) {\textcolor{white}{Vokal}};
+    \node [fill=gray, rounded corners] (Zvok) at (0, 6.5) {\textcolor{white}{Vokal}};
     
-     \node [segm] (kg) at (6,13) {k (g)};
-     \node [segm] (fS) at (6,11) {f S};
+     \node [segm] (Zkg) at (6,13) {k (g)};
+     \node [segm] (ZfS) at (6,11) {f S};
 
-     \node [segm] (n) at (3,12) {n};
-     \draw (n.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (kg.west);
-     \draw (n.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (fS.west);
+     \node [segm] (Zn) at (3,12) {n};
+     \draw (Zn.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zkg.west);
+     \draw (Zn.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZfS.west);
 
-     \node [segm] (p) at (6,9) {p};
-     \node [segm] (S) at (6,7) {S};
+     \node [segm] (Zp) at (6,9) {p};
+     \node [segm] (ZS) at (6,7) {S};
 
-     \node [segm] (m) at (3,8) {m};
-     \draw (m.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (p.west);
-     \draw (m.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (S.west);
+     \node [segm] (Zm) at (3,8) {m};
+     \draw (Zm.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zp.west);
+     \draw (Zm.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZS.west);
 
-     \draw (vok.east) --  node [pos=0.5, above, sloped] {\footnotesize Nasal} (1.5,10);
-     \draw (1.5,10) -- (n.west);
-     \draw (1.5,10) -- (m.west);
+     \draw (Zvok.east) --  node [pos=0.5, above, sloped] {\footnotesize Nasal} (1.5,10);
+     \draw (1.5,10) -- (Zn.west);
+     \draw (1.5,10) -- (Zm.west);
 
-     \node [segm] (pk) at (6,5) {p k};
-     \node [segm] (fSc) at (6,3) {f S ç};
-     \node [segm] (mn) at (6,1) {m n};
+     \node [segm] (Zpk) at (6,5) {p k};
+     \node [segm] (ZfSc) at (6,3) {f S ç};
+     \node [segm] (Zmn) at (6,1) {m n};
 
-     \node [segm] (Rl) at (3,3) {K l};
-     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (pk.west);
-     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (fSc.west);
-     \draw (Rl.east) -- node [pos=0.5, above, sloped] {\footnotesize Nasal} (mn.west);
+     \node [segm] (ZRl) at (3,3) {K l};
+     \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zpk.west);
+     \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZfSc.west);
+     \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Nasal} (Zmn.west);
      
-     \draw (vok.east) -- node [pos=0.5, above, sloped] {\footnotesize Liquid} (Rl.west);
+     \draw (Zvok.east) -- node [pos=0.5, above, sloped] {\footnotesize Liquid} (ZRl.west);
 
   \end{tikzpicture}
   \caption{Struktur des duplexen Endrands}
@@ -1536,7 +1536,7 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
       ]
       [Silbe, calign=last
 	[Anfangsrand, ake
-	  [t, name=AR]
+	  [t]
 	  {\draw[-] (.north) -- (ERBaum.south);}
 	]
 	[Reim

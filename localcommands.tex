@@ -311,6 +311,44 @@
 %%% TikZ %%%
 %%%%%%%%%%%%
 
+% Undefining node names.
+
+\makeatletter
+
+\long\def\ifnodedefined#1#2#3{%
+  \@ifundefined{pgf@sh@ns@#1}{#3}{#2}}
+
+\newcommand\aeundefinenode[1]{%
+  \expandafter\ifx\csname pgf@sh@ns@#1\endcsname\relax
+  \else
+    \typeout{===>Undefining node "#1"}%
+    \global\expandafter\let\csname pgf@sh@ns@#1\endcsname\relax
+  \fi
+}
+
+\newcommand\aeundefinethesenodes[1]{%
+  \foreach \myn  in {#1}
+    {%
+      \ifnodedefined{\myn}{%
+      \expandafter\aeundefinenode\expandafter{\myn}%
+    }{}
+    }%
+}
+
+\newcommand\aeundefinenumericnodes{%
+  \foreach \myn in {1,2,...,20}
+    {%
+      \ifnodedefined{\myn}{%
+      \expandafter\aeundefinenode\expandafter{\myn}%
+    }{}
+    }%
+}
+
+
+\makeatother
+
+% Drawing sonority diagrams.
+
 \newcommand{\plo}{0}
 \newcommand{\fri}{0.5}
 \newcommand{\nas}{1}
@@ -336,7 +374,7 @@
     \node at (0,\liq) {L};
     \node at (0,\vok) {V};
 
-    % Draw the helper lines if required. TODO Might be possible w/o passing number explicitly.
+    % Draw the helper lines if required.
     \ifthenelse{\equal{#1}{0}}{}{%
       \foreach \y in {\plo, \fri, \nas, \liq,\vok} {%
 	\draw [dotted, |-|] (0.25, \y) -- (#1.75, \y);
@@ -348,7 +386,7 @@
 
 	% Draw the node, either plain, as Silbenbgelenk, or as extrasyllabic.
         \ifthenelse{\equal{\g}{1}}{%
-	  \node (\x) [sylljoint] at (\x,\y) {\p};
+	  \node (\x) [sylljoint] at (\x, \y) {\p};
 	}{%
 	  \ifthenelse{\equal{\g}{2}}{%
 	    \node (\x) [extrasyll] at (\x, \y) {\p};
@@ -364,6 +402,8 @@
 	\textsave{1}
       }
     }
+    \aeundefinenumericnodes
   \end{tikzpicture}
 }
+
 

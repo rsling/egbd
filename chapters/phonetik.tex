@@ -478,11 +478,34 @@ Typischerweise, aber nicht immer sind Sonoranten stimmhaft.
 
 \begin{figure}[!htbp]
   \centering
-  \Treek[2.5]{4}{
-    & \K{\textbf{Sonoranten}}\Below{(Klanglaute)}\BBel{dl}\BBel{d}\BBel{dr} &&& \K{\textbf{Obstruenten}}\Below{(Geräuschlaute)}\BBel{dl}\BBel{d}\BBel{dr} \\
-    \K{\textbf{Vokale}}\Below{(silbisch)} & \K{Approximanten}\B{drr} & \K{Nasale}\B{dr} & \K{Plosive}\B{d} & \K{Frikative}\B{dl} & \K{Affrikaten}\B{dll} \\
-    &&& \K{\textbf{Konsonanten}}\Below{(nicht silbisch)} \\
-  }
+  \resizebox{\textwidth}{!}{
+  \begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (UeVok) at (0,2)  {\textbf{Vokale}\\(protoyp.\\silbisch)};
+    \node (UeApr) at (2.5,2)  {Approximanten};
+    \node (UeNas) at (5,2)  {Nasale};
+    \node (UePlo) at (7.5,2)  {Plosive};
+    \node (UeFri) at (10,2)  {Frikative};
+    \node (UeAfr) at (12.5,2) {Affrikaten};
+
+    \node (UeSon) at (2.5,4) {\textbf{Sonoranten}\\(Klanglaute)};
+    \node (UeObs) at (10,4) {\textbf{Obstruenten}\\(Geräuschlaute)};
+
+    \node (UeKon) at (7.5,0) {\textbf{Konsonanten}\\(prototyp.\\nicht silbisch)};
+
+    \draw (UeSon) -- (UeVok);
+    \draw (UeSon) -- (UeApr);
+    \draw (UeSon) -- (UeNas);
+
+    \draw (UeObs) -- (UePlo);
+    \draw (UeObs) -- (UeFri);
+    \draw (UeObs) -- (UeAfr);
+
+    \draw (UeApr) -- (UeKon);
+    \draw (UeNas) -- (UeKon);
+    \draw (UePlo) -- (UeKon);
+    \draw (UeFri) -- (UeKon);
+    \draw (UeAfr) -- (UeKon);
+  \end{tikzpicture}}
   \caption{Grobe Klassifikation der Segmente in der Phonetik}
   \label{fig:lautklassen}
 \end{figure}
@@ -744,15 +767,15 @@ Der Rest dieses Abschnitts erläutert diese Begrifflichkeiten und die Darstellun
   \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
   % Draw the horizontal lines first.
-  \draw [gray] (\V(0,0)) -- (\V(0,2));
-  \draw [gray] (\V(1,0)) -- (\V(1,2));
-  \draw [gray] (\V(2,0)) -- (\V(2,2));
-  \draw [gray] (\V(3,0)) -- (\V(3,2));
+  \draw [gray, thick] (\V(0,0)) -- (\V(0,2));
+  \draw [gray, thick] (\V(1,0)) -- (\V(1,2));
+  \draw [gray, thick] (\V(2,0)) -- (\V(2,2));
+  \draw [gray, thick] (\V(3,0)) -- (\V(3,2));
 
   % Draw the vertical lines.
-  \draw [gray] (\V(0,0)) -- (\V(3,0));
-  \draw [gray] (\V(0,1)) -- (\V(3,1));
-  \draw [gray] (\V(0,2)) -- (\V(3,2));
+  \draw [gray, thick] (\V(0,0)) -- (\V(3,0));
+  \draw [gray, thick] (\V(0,1)) -- (\V(3,1));
+  \draw [gray, thick] (\V(0,2)) -- (\V(3,2));
 
   % Place all the unrounded-rounded pairs next, on top of the horizontal lines.
   \path (\V(0,0))     node[vowel, left] {i} node[vowel, right] (y) {y} node[dot] {};
@@ -769,10 +792,9 @@ Der Rest dieses Abschnitts erläutert diese Begrifflichkeiten und die Darstellun
   \path (\V (0,2))	node[vowel]	 (u) 	{u};
   \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
 
-
-  \path (a) edge [-{Latex[round]},bend right=15] (oo);
-  \path (a) edge [-{Latex[round]},bend left=15] (E);
-  \path (oo) edge [-{Latex[round]},bend right=15] (ee);
+  \path (a) edge [-{Latex[round]}, thick, bend right=15] (oo);
+  \path (a) edge [-{Latex[round]}, thick, bend left=15] (E);
+  \path (oo) edge [-{Latex[round]}, thick, bend right=15] (ee);
 
 \end{tikzpicture}
   \caption{IPA-Vokaltrapez für das Deutsche. Bei allen vorderen Vokalen gibt es eine ungerundete Variante (links) und eine gerundete (rechts). Die Diphthonge werden durch Pfeile dargestellt.}
@@ -1118,15 +1140,15 @@ Es werden jeweils die ungerundete und die gerundete Variante (wenn beide existie
   \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
   % Draw the horizontal lines first.
-  \draw [gray] (\V(0,0)) -- (\V(0,2));
-  \draw [gray] (\V(1,0)) -- (\V(1,2));
-  \draw [gray] (\V(2,0)) -- (\V(2,2));
-  \draw [gray] (\V(3,0)) -- (\V(3,2));
+  \draw [gray, thick] (\V(0,0)) -- (\V(0,2));
+  \draw [gray, thick] (\V(1,0)) -- (\V(1,2));
+  \draw [gray, thick] (\V(2,0)) -- (\V(2,2));
+  \draw [gray, thick] (\V(3,0)) -- (\V(3,2));
 
   % Draw the vertical lines.
-  \draw [gray] (\V(0,0)) -- (\V(3,0));
-  \draw [gray] (\V(0,1)) -- (\V(3,1));
-  \draw [gray] (\V(0,2)) -- (\V(3,2));
+  \draw [gray, thick] (\V(0,0)) -- (\V(3,0));
+  \draw [gray, thick] (\V(0,1)) -- (\V(3,1));
+  \draw [gray, thick] (\V(0,2)) -- (\V(3,2));
 
   % Place all the unrounded-rounded pairs next, on top of the horizontal lines.
   \path (\V(0,0))     node[vowel, left] {i} node[vowel, right] (y) {y} node[dot] {};
@@ -1144,15 +1166,15 @@ Es werden jeweils die ungerundete und die gerundete Variante (wenn beide existie
   \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
 
   % Draw connections
-  \path (y) edge [-{Latex[round]},bend right=3] (schwaa);	
-  \draw [-{Latex[round]}] (Y) -- (schwa);
-  \path (e) edge [-{Latex[round]},bend right=10] (schwaa);
-  \path (ee) edge [-{Latex[round]},bend left=20] (schwa);
-  \path (a) edge [-{Latex[round]},bend right=40] (schwa);
-  \path (oo) edge [-{Latex[round]},bend right=20] (schwa);
-  \path (o) edge [-{Latex[round]},bend left=15] (schwaa);	
-  \path (u) edge [-{Latex[round]},bend left=10] (schwaa);	
-  \draw [-{Latex[round]},bend right] (uu) -- (schwa);
+  \path (y) edge [-{Latex[round]}, thick, bend right=3] (schwaa);	
+  \draw [-{Latex[round]}, thick] (Y) -- (schwa);
+  \path (e) edge [-{Latex[round]}, thick,bend right=10] (schwaa);
+  \path (ee) edge [-{Latex[round]}, thick,bend left=20] (schwa);
+  \path (a) edge [-{Latex[round]}, thick,bend right=40] (schwa);
+  \path (oo) edge [-{Latex[round]}, thick,bend right=20] (schwa);
+  \path (o) edge [-{Latex[round]}, thick,bend left=15] (schwaa);	
+  \path (u) edge [-{Latex[round]}, thick,bend left=10] (schwaa);	
+  \draw [-{Latex[round]}, thick, bend right] (uu) -- (schwa);
 
   \end{tikzpicture}
   \caption{Vokaltrapez für die sekundären Diphthonge}

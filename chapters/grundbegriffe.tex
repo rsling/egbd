@@ -130,12 +130,14 @@ Wir können also das Lexikon zumindest in Kategorien von Wörtern aufteilen, die
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-  & \K{Wort}\B{dl}\B{dr}\\
-  \K{hat \textsc{Genus}} && \K{hat kein \textsc{Genus}}
-  }
-\caption{Vorschlag lexikalischer Kategorien}
-\label{fig:lexkat01}
+  \begin{forest}
+    [Wort
+      [hat \textsc{Genus}]
+      [hat kein \textsc{Genus}]
+    ]
+  \end{forest}
+  \caption{Vorschlag lexikalischer Kategorien}
+  \label{fig:lexkat01}
 \end{figure}
 
 Eventuell sind dies nicht die einzigen Kategorien, in die man das Lexikon aufteilen sollte.
@@ -143,11 +145,22 @@ Wenn wir Beispielwörter hinzufügen, wird dies wahrscheinlich sofort deutlich (
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    &&& \K{Wort}\B{dll}\B{drr}\\
-    & \K{hat \textsc{Genus}}\B{dl}\B{d}\B{dr} &&&& \K{hat kein \textsc{Genus}}\B{dll}\B{dl}\B{d}\B{dr}\B{drr} \\
-    \K{\textit{Birne}} & \K{\textit{Apfel}} & \K{\textit{Kompott}} & \K{\textit{laufen}} & \K{\textit{essen}} & \K{\textit{bald}} & \K{\textit{unter}} & \K{\textit{dass}}
-  }
+  \begin{forest}
+    [Wort
+      [hat \textsc{Genus}, delay={for children={content=\textit{#1}}}
+	[Birne]
+	[Apfel]
+	[Kompott]
+      ]
+      [hat kein \textsc{Genus}, delay={for children={content=\textit{#1}}}
+	[laufen]
+	[essen]
+	[bald]
+	[unter]
+	[dass]
+      ]
+    ]
+  \end{forest}
   \caption{Einige Wörter in lexikalischen Kategorien}
   \label{fig:lexkat1woerter}
 \end{figure}
@@ -164,12 +177,26 @@ Die Unterscheidung in Wörter mit und ohne \textsc{Numerus} entspricht der tradi
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&&& \K{Wort}\B{dlll}\B{drrr}\\
-    &&& \K{hat \textsc{Numerus}}\B{dll}\B{drr} &&&&&& \K{hat kein \textsc{Numerus}}\B{ddl}\B{dd}\B{ddr}\\
-    & \K{hat \textsc{Genus}}\B{dl}\B{d}\B{dr} &&&& \K{hat kein \textsc{Genus}}\B{dl}\B{dr}\\
-    \K{\textit{Birne}} & \K{\textit{Apfel}} & \K{\ \ \textit{Kompott}} && \K{\textit{laufen}} && \K{\textit{essen}} && \K{\textit{bald}} & \K{\textit{unter}} & \K{\textit{dass}}
-  }
+  \begin{forest}
+    [Wort
+      [hat \textsc{Numerus}
+	[hat \textsc{Genus}, delay={for children={content=\textit{#1}}}
+	  [Birne, tier=term]
+	  [Apfel]
+	  [Kompott]
+	]
+	[hat kein \textsc{Genus}, delay={for children={content=\textit{#1}}}
+	  [laufen, tier=term]
+	  [essen]
+	]
+      ]
+      [Hat kein \textsc{Numerus}, delay={for children={content=\textit{#1}}}
+	[bald, tier=term]
+	[unter, tier=term]
+	[dass, tier=term]
+      ]
+    ]
+  \end{forest}
   \caption{Genauerer Vorschlag lexikalischer Kategorien}
   \label{fig:lexkat2}
 \end{figure}
@@ -428,22 +455,36 @@ Einige Ausschnitte von Bäumen zu Beispiel (\ref{ex:gb58365}) finden sich in den
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    &&& \K{Alexandra schießt den Ball ins gegnerische Tor}\B{dlll}\B{dll}\B{d}\B{drrr}\\
-    \K{Alexandra}\B{d} & \K{schießt}\B{d} && \K{den Ball}\B{dl}\B{dr} &&& \K{ins gegnerische Tor}\B{dl}\B{d}\B{dr}\\
-    \K{Alexandra} & \K{schießt} & \K{den} && \K{Ball} & \K{ins} & \K{gegnerische} & \K{Tor}
-  }
+  \begin{forest}
+    [Alexandra schießt den Ball ins gegnerische Tor
+      [Alexandra [Alexandra]]
+      [schießt [schießt]]
+      [den Ball
+	[den]
+	[Ball]
+      ]
+      [ins gegenerische Tor
+	[ins]
+	[gegnerische]
+	[Tor]
+      ]
+    ]
+  \end{forest}
   \caption{Strukturen auf Satzebene (Syntax)}
   \label{fig:gb5836a}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    && \K{gegnerische}\B{dl}\B{dr} \\
-    & \K{gegnerisch}\B{dl}\B{dr} && \K{e} \\
-    \K{gegner} && \K{isch} \\
-  }
+  \begin{forest}
+    [gegnerische
+      [generisch
+	[gegner]
+	[isch]
+      ]
+      [e]
+    ]
+  \end{forest}
   \caption{Strukturen auf Wortebene (Morphologie)}
   \label{fig:gb5836b}
 \end{figure}
