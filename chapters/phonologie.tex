@@ -274,78 +274,68 @@ Schwa und \textipa{[5]} fehlen hier, weil sie außerhalb des Systems der gespann
 \begin{figure}[!htpb]
   \centering
   \begin{tikzpicture}[scale=3.5,baseline=default]
-  \large
-  \tikzset{
-  vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
-  vowelgespannt/.style={circle,fill=gray!30, anchor=mid, text depth=0ex, text height=1ex,minimum size=4ex},
-  dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
-  }
-  \coordinate (hf) at (0,2); % high front
-  \coordinate (hb) at (2,2); % high back
-  \coordinate (lf) at (1,0); % low front
-  \coordinate (lb) at (2,0); % low back
-  \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
+    \large
+    \tikzset{
+    vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
+    vowelgespannt/.style={circle,fill=gray!30, anchor=mid, text depth=0ex, text height=1ex,minimum size=4ex},
+    dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
+    }
+    \coordinate (hf) at (0,2); % high front
+    \coordinate (hb) at (2,2); % high back
+    \coordinate (lf) at (1,0); % low front
+    \coordinate (lb) at (2,0); % low back
+    \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
 
-  % Draw the chart key (vorne -- hinten)
-  \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
-  \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
-  \path (\V (-.25,1)) node[above] {\footnotesize zentral};
+    % Draw the chart key (vorne -- hinten)
+    \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
+    \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
+    \path (\V (-.25,1)) node[above] {\footnotesize zentral};
 
-  % hoch--tief
-  \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
-  \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
-  \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
+    % hoch--tief
+    \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
+    \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
+    \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
-  % Draw the horizontal lines first.
-  \draw [gray] (\V(0,0)) -- (\V(0,2));
-%  \draw [gray] (\V(1,0)) -- (\V(1,2));
-%  \draw [gray] (\V(2,0)) -- (\V(2,2));
-  \draw [gray] (\V(3,0)) -- (\V(3,2));
+    % Draw the horizontal lines first.
+    \draw [gray,thick] (\V(0,0)) -- (\V(0,2));
+    \draw [gray,thick] (\V(3,0)) -- (\V(3,2));
 
-  % Draw the vertical lines.
-  \draw [gray] (\V(0,0)) -- (\V(3,0));
-%  \draw [gray] (\V(0,1)) -- (\V(3,1));
-  \draw [gray] (\V(0,2)) -- (\V(3,2));
+    % Draw the vertical lines.
+    \draw [gray,thick] (\V(0,0)) -- (\V(3,0));
+    \draw [gray,thick] (\V(0,2)) -- (\V(3,2));
 
-  \path (\V(0,0))   node[vowelgespannt]   (i)   {i};
-  \path (\V(0.25,0))   node[vowelgespannt]   (y)   {y};
+    \path (\V(0,0))      node[vowelgespannt] (i)   {i};
+    \path (\V(0.25,0))   node[vowelgespannt] (y)   {y};
 
-  \path (\V(0.4,0.5))   node[vowel]   (ii)   {ɪ};
-  \path (\V(0.65,0.5))   node[vowel]   (yy)   {ʏ};
-  
-  \path (\V(1,0))   node[vowelgespannt]   (e)   {e};
-  \path (\V(1.25,0))   node[vowelgespannt]   (oe)   {ø};
+    \path (\V(0.4,0.5))  node[vowel]         (ii)  {ɪ};
+    \path (\V(0.65,0.5)) node[vowel]         (yy)  {ʏ};
+    
+    \path (\V(1,0))      node[vowelgespannt] (e)   {e};
+    \path (\V(1.25,0))   node[vowelgespannt] (oe)  {ø};
 
-  \path (\V(2,0))   node[vowelgespannt]   (ee)   {ɛ};
- 
-  \path (\V(1.4,0.7))   node[vowel]   (eee)   {ɛ̆};
-  \path (\V(1.65,0.7))   node[vowel]   (oee)   {œ};
-  
-%  \path (\V(1.35,1))   node[vowel]   (schwa)   {ə};
-%  \path (\V(1.55,1))   node[vowel]   (schwaa)  {ɐ};
+    \path (\V(2,0))      node[vowelgespannt] (ee)  {ɛ};
+   
+    \path (\V(1.4,0.7))  node[vowel]         (eee) {ɛ̆};
+    \path (\V(1.65,0.7)) node[vowel]         (oee) {œ};
+    
+    \path (\V(3,1))      node[vowelgespannt] (a)   {a};
+    \path (\V(2.5,1))    node[vowel]         (aa)  {ă};
 
-  \path (\V(3,1))	node[vowelgespannt]	(a)  	{a};
-  \path (\V(2.5,1))   node[vowel]   (aa)  {ă};
+    \path (\V (1,2))     node[vowelgespannt] (o)   {o};
+    \path (\V (1.5,1.4)) node[vowel]         (oo)  {ɔ};
 
-  \path (\V (1,2))	node[vowelgespannt]	 (o) 	{o};
-  \path (\V (1.5,1.4))	node[vowel]	(oo)  	{ɔ};
+    \path (\V (0,2))     node[vowelgespannt] (u)   {u};
+    \path (\V (0.5,1.5)) node[vowel]         (uu)  {ʊ};
 
-  \path (\V (0,2))	node[vowelgespannt]	 (u) 	{u};
-  \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
-
-%  \draw [dashed] (i) -- (ii);
-
-  \draw (i) -- (ii);
-  \draw (y) -- (yy);
-  \draw (e) -- (eee);
-  \draw (oe) -- (oee);
-  \draw (ee) -- (eee);
-  \draw (a) -- (aa);
-  \draw (o) -- (oo);
-  \draw (u) -- (uu);
-
-
-\end{tikzpicture}
+    \draw [thick] (i)  -- (ii);
+    \draw [thick] (y)  -- (yy);
+    \draw [thick] (e)  -- (eee);
+    \draw [thick] (oe) -- (oee);
+    \draw [thick] (ee) -- (eee);
+    \draw [thick] (a)  -- (aa);
+    \draw [thick] (o)  -- (oo);
+    \draw [thick] (u)  -- (uu);
+  \end{tikzpicture}
   \caption[Phonologisches Vokaltrapez]{Phonologisches Vokaltrapez (Grau für [\textsc{Gespannt}: $+$])}
   \label{fig:vokalviereckmitgespannt}
   \index{Vokaltrapez}
@@ -684,12 +674,22 @@ Kern und Endrand bilden den \textit{Reim}.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-	 & & \K{Silbe}\B{ddll}\B{d} & & \\
-	 & & \K{Reim}\B{d}\B{drr} & & \\
-	\K{Anfangsrand}\B{d}\B{dr} & & \K{Kern}\B{d} & & \K{Endrand}\B{dl}\B{d} \\
-	\K{C} & \K{C} & \K{V} & \K{C} & \K{C} \\
-  }
+  \begin{forest}
+    ake/.style={tier=terminal}
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+	[C][C]
+      ]
+      [Reim
+	[Kern,ake,calign=first
+	  [V]
+	]
+	[Endrand, ake, calign=first
+	  [C][C]
+	]
+      ]
+    ]
+  \end{forest}
   \caption{Allgemeines Schema für die Silbenstruktur}
   \label{fig:silbenstruktur}
 \end{figure}
@@ -697,7 +697,26 @@ Kern und Endrand bilden den \textit{Reim}.
 
 \begin{figure}[!htbp]
   \centering
-  \ThePhonStr
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+	[f][K]
+      ]
+      [Reim, calign=first
+	[Kern,ake
+	  [E]
+	]
+	[Endrand, ake, calign=last
+	  [m][t]
+	]
+      ]
+    ]
+  \end{forest}
+
   \caption{Beispiel für Silbenstruktur}
   \label{fig:phonstr}
 \end{figure}
@@ -954,35 +973,41 @@ Auch hier behandeln wir also \textipa{[K]} und [l] wieder als eine Klasse (Liqui
 
 \begin{figure}[!htbp]
   \centering
-  \begin{tabular}{cp{0mm}c}
-     \rnode{SOb}{maximal sonor} && \textbf{Vokale} \\
-                                && \textbf{Liquide} \\
-                                && \textbf{Nasale} \\
-                                && \textbf{Frikative} \\
-     \rnode{SUn}{minimal sonor} && \textbf{Plosive} \\
-  \end{tabular}
-  \ncline[nodesep=3pt]{->}{SUn}{SOb}
+  \begin{tikzpicture}
+    \node (min)                             {minimal sonor};
+    \node (plo) at ([shift={( 3,0)}]   min) {\textbf{Plosive}};
+    \node (fri) at ([shift={( 0,0.5)}] plo) {\textbf{Frikative}};
+    \node (nas) at ([shift={( 0,0.5)}] fri) {\textbf{Nasale}};
+    \node (liq) at ([shift={( 0,0.5)}] nas) {\textbf{Liquide}};
+    \node (vok) at ([shift={( 0,0.5)}] liq) {\textbf{Vokale}};
+    \node (max) at ([shift={(-3,0)}]   vok) {maximal sonor};
+    \draw [->, thick] (min) to (max);
+  \end{tikzpicture}
   \caption{Sonoritätshierarchie}
   \label{fig:sonoritaetshierarchie}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \begin{tabular}{ccccccccccc}
-  &&&& \rnode{V}{V} &&&& \\
-  &&& \rnode{L1}{L} && \rnode{L2}{L} &&& \\
-  && \rnode{N1}{N} &&&& \rnode{N2}{N} && \\
-  & \rnode{F1}{F} &&&&&& \rnode{F2}{F} & \\
-  \rnode{P1}{P} &&&&&&&& \rnode{P2}{P} \\
-  \end{tabular}
-  \ncline[nodesep=3pt]{->}{P1}{F1}
-  \ncline[nodesep=3pt]{->}{F1}{N1}
-  \ncline[nodesep=3pt]{->}{N1}{L1}
-  \ncline[nodesep=3pt]{->}{L1}{V}
-  \ncline[nodesep=3pt]{->}{V}{L2}
-  \ncline[nodesep=3pt]{->}{L2}{N2}
-  \ncline[nodesep=3pt]{->}{N2}{F2}
-  \ncline[nodesep=3pt]{->}{F2}{P2}
+  \begin{tikzpicture}
+    \node (P1) at (0, 0.0) {P};
+    \node (F1) at (1, 0.5) {F};
+    \node (N1) at (2, 1.0) {N};
+    \node (L1) at (3, 1.5) {L};
+    \node (V0) at (4, 2.0) {V};
+    \node (L2) at (5, 1.5) {L};
+    \node (N2) at (6, 1.0) {N};
+    \node (F2) at (7, 0.5) {F};
+    \node (P2) at (8, 0.0) {P};
+    \draw [->] (P1) to (F1);
+    \draw [->] (F1) to (N1);
+    \draw [->] (N1) to (L1);
+    \draw [->] (L1) to (V0);
+    \draw [->] (V0) to (L2);
+    \draw [->] (L2) to (N2);
+    \draw [->] (N2) to (F2);
+    \draw [->] (F2) to (P2);
+  \end{tikzpicture}
   \caption{Sonorität für die Segmentklassen in der schematischen Silbe}
   \label{fig:sonhier}
 \end{figure}
@@ -1034,25 +1059,12 @@ In \textit{Herbsts} folgt nach dem [p] sogar eine Kontur aus Anstieg, Abstieg un
 
 \begin{figure}[!htbp]
   \centering
-  \begin{tabular}{cccccccc}
-    V & & \rnode{herbsts02}{\textipa{\t{E@}}} & & & & & \\
-    L & & & & & & & \\
-    N & & & & & & & \\
-    F & \rnode{herbsts01}{\textipa{h}} & & & & \rnode{herbsts05}{\textipa{s}} & & \rnode{herbsts07}{\textipa{s}} \\
-    P & & & & \rnode{herbsts04}{\textipa{p}} & & \rnode{herbsts06}{\textipa{t}} & \\
-  \end{tabular}
-  \ncline[nodesep=3pt]{->}{herbsts01}{herbsts02}
-  \ncline[nodesep=3pt]{->}{herbsts02}{herbsts04}
-  \ncline[nodesep=3pt]{->}{herbsts04}{herbsts05}
-  \ncline[nodesep=3pt]{->}{herbsts05}{herbsts06}
-  \ncline[nodesep=3pt]{->}{herbsts06}{herbsts07}
+  \SonDiag{{h/\fri, \t{E@}/\vok, p/\plo, s/\fri, t/\plo, s/\fri}}
   \caption{Sonorität am Beispiel von \textit{Herbsts}}
   \label{fig:sonhierherbsts}
 \end{figure}
 
 Weil solche Sequenzen nicht der Sonoritätsbedingung entsprechen (sowie aus unabhängigen anderen Gründen, die in Abschnitt~\ref{sec:systematikderraender} und Abschnitt~\ref{sec:einsilblerzweisilbler} erläutert werden), betrachten wir die betroffenen Segmente als \textit{extrasilbisch} (außerhalb der normalen Silbenstruktur stehend), vgl.\ Definition~\ref{def:extrasilbisch}.
-
-\Stretch[0.5]
 
 \Definition{Extrasilbizität}{\label{def:extrasilbisch}\index{Extrasilbizität}%
 Die Silbenstruktur kann durch vor dem Anfangsrand oder nach dem Endrand stehende \textit{extrasilbische} Segmente ergänzt werden, die nicht den Bedingungen der Sonoritätskontur unterliegen.}
@@ -1707,14 +1719,12 @@ Es gibt weitere morphologische und syntaktische Unterschiede zwischen den beiden
 In \textit{\Akz umfahren} handelt es sich bei \textit{um} um eine sogenannte \textit{Verbpartikel}, in \textit{um\Akz fahren} um ein \textit{Verbpräfix}.
 Zu diesen Besonderheiten wird Satz~\ref{satz:pholvprtprf} formuliert.
 
-\Stretch[0.5]
 
 \Satz{Präfix- und Partikelbetonung}{\label{satz:pholvprtprf}%
 Verbpartikeln ziehen den Akzent auf sich, Verbpräfixe nicht.
 \index{Akzent!Präfixe und Partikeln}
 }
 
-\Stretch[0.5]
 
 Die anderen, meist nachgestellten Ableitungselemente wie \textit{-heit}, \textit{-keit}, \textit{-in} usw.\ verändern die Betonung nicht.
 Lediglich \textit{-ei} und \textit{-erei} ziehen den Akzent auf die letzte Silbe, vgl.\ (\ref{ex:phol8735h}).

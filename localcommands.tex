@@ -280,12 +280,26 @@
 % Text used in several chapters %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\ThePhonStr}{  \Tree[1.5]{
-  && \K{Silbe}\B{ddll}\B{d} \\
-  && \K{Reim}\B{d}\B{drr} \\
-  \K{Anfangsrand}\B{d}\B{dr} && \K{Kern}\B{d} && \K{Endrand}\B{dl}\B{d} \\
-  \K{\textipa{f}} & \K{\textipa{K}} & \K{\textipa{E}} & \K{\textipa{m}} & \K{\textipa{t}} \\
-  }
+\newcommand{\ThePhonStr}{
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+	[f][K]
+      ]
+      [Reim, calign=first
+	[Kern,ake
+	  [E]
+	]
+	[Endrand, ake, calign=last
+	  [m][t]
+	]
+      ]
+    ]
+  \end{forest}
 }
 
 \newcommand{\ThePhrasenExOne}{dass [[dem Jungen] [die Mutter] [ein Eis] [geschenkt hat]]}
@@ -293,4 +307,29 @@
 \newcommand{\ThePhrasenExTwo}{dass [[ein Eis] [die Mutter] [dem Jungen] [geschenkt hat]]}
 
 
+%%%%%%%%%%%%
+%%% TikZ %%%
+%%%%%%%%%%%%
+
+\newcommand{\plo}{0}
+\newcommand{\fri}{0.5}
+\newcommand{\nas}{1}
+\newcommand{\liq}{1.5}
+\newcommand{\vok}{2}
+
+
+\newcommand{\SonDiag}[1]{%
+  \begin{tikzpicture}
+    \tikzset{tip/.style={execute at begin node=\tipaencoding}}
+    \node at (0,\plo) {P};
+    \node at (0,\fri) {F};
+    \node at (0,\nas) {N};
+    \node at (0,\liq) {L};
+    \node at (0,\vok) {V};
+    \foreach [count=\x from 1, remember=\x as \lastx] \p / \y in #1 {
+      \node (\x) [tip] at (\x,\y) {\p};
+      \ifthenelse{\x > 1}{\draw [->] (\lastx) to (\x);}{}
+    }
+  \end{tikzpicture}
+}
 
