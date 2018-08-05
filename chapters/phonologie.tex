@@ -684,7 +684,7 @@ Kern und Endrand bilden den \textit{Reim}.
 	[Kern,ake,calign=first
 	  [V]
 	]
-	[Endrand, ake, calign=first
+	[Endrand, ake, calign=last
 	  [C][C]
 	]
       ]
@@ -710,13 +710,12 @@ Kern und Endrand bilden den \textit{Reim}.
 	[Kern,ake
 	  [E]
 	]
-	[Endrand, ake, calign=first
+	[Endrand, ake, calign=last
 	  [m][t]
 	]
       ]
     ]
   \end{forest}
-
   \caption{Beispiel für Silbenstruktur (\textit{fremd})}
   \label{fig:phonstr}
 \end{figure}
@@ -1078,12 +1077,22 @@ In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, da
 
 \begin{figure}[!htbp]
   \centering
-  \Treek{1.7}{
-	 & & & \K{Silbe}\B{ddll}\B{d} & & & \\
-	 & & & \K{Reim}\B{d}\B{drr} & & & \\
-	 & \K{Anfangsrand}\Bdash{dl}\B{d}\B{dr} & & \K{Kern}\B{d} & & \K{Endrand}\B{dl}\B{d}\Bdash{dr}\Bdash{drr}\Bdash{drrr} & \\
-	\K{X} & \K{C} & \K{C} & \K{V} & \K{C} & \K{C} & \K{X} & \K{X} & \K{X} \\
-  }
+  \begin{forest}
+    ake/.style={tier=terminal}
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=child, calign child=2
+	[X,edge=dashed][C][C]
+      ]
+      [Reim, calign=first
+	[Kern, ake
+	  [V]
+	]
+	[Endrand, ake, calign=child, calign child=2
+	  [C][C][X,edge=dashed][X,edge=dashed][X,edge=dashed]
+	]
+      ]
+    ]
+  \end{forest}
   \caption{Schema für die Silbenstruktur mit extrasilbischen Segmenten}
   \label{fig:silbenstrukturextra}
 \end{figure}
@@ -1508,14 +1517,37 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[2]{
-                         & \K{Wort}\B{d}\B{drrr}                                                                        \\
-                         & \K{Silbe}\B{ddl}\B{d} &                   &                        & \K{Silbe}\B{ddl}\B{d}   \\
-                         & \K{Reim}\B{d}\B{dr}   &                   &                        & \K{Reim}\B{d}           \\
-    \K{Anfangsrand}\B{d} & \K{Kern}\B{d}         & \K{Endrand}\B{dr} & \K{Anfangsrand}\B{d}   & \K{Kern}\B{d}           \\
-    \K{\textipa{[m]}}    & \K{\textipa{[I]}}     &                   & \K{\textipa{[t]}}      & \K{\textipa{[@]}}       \\
-  }
-  \caption{Beispiel einer Analyse mit Silbengelenk}
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Wort
+      [Silbe, calign=last
+	[Anfangsrand, ake
+	  [m]
+	]
+	[Reim, calign=first
+	  [Kern, ake
+	    [I]
+	  ]
+	  [Endrand, ake, name=ERBaum]
+	]
+      ]
+      [Silbe, calign=last
+	[Anfangsrand, ake
+	  [t, name=AR]
+	  {\draw[-] (.north) -- (ERBaum.south);}
+	]
+	[Reim
+	  [Kern, ake
+	    [@]
+	  ]
+	]
+      ]
+    ]
+  \end{forest}
+  \caption{Beispiel einer Analyse mit Silbengelenk (Baum)}
   \label{fig:silbgel001}
 \end{figure}
 
@@ -1525,7 +1557,16 @@ Wörter wie \textipa{[mI.t@]} existieren, aber der Einsilbler \textipa{[mI]} ist
 Dank der Annahme von Silbengelenken müssen nun nicht mehr für Einsilbler und Mehrsilbler unterschiedliche Silbentypen angesetzt werden.
 In Fällen wie \textit{Mitte} steht das \textipa{[t]} sowohl im Anfangsrand der zweiten Silbe und im Endrand der ersten Silbe.
 Für das Silbengelenk schreiben wir den betreffenden Konsonanten mit Punkt darunter, \zB \textipa{[mI\Sgel{t}@]}.
-Abbildung~\ref{fig:silbgel001} zeigt die Analyse des Wortes \textit{Mitte} mit Silbengelenk.
+Abbildung~\ref{fig:silbgel001} zeigt die Analyse des Wortes \textit{Mitte} mit Silbengelenk als Baum.
+In der Darstellung der Sonoritätskontur setzen wir Silbengelenke in eine Raute wie in Abbildung~\ref{fig:silbgel002}.
+
+\begin{figure}[h]
+  \centering
+  \SonDiag[4]{{m/\nas/0, I/\vok/0, t/\plo/1, @/\vok/0}}
+  \caption{Beispiel einer Analyse mit Silbengelenk (Sonorität)}
+  \label{fig:silbgel002}
+\end{figure}
+
 Es kann nicht überbetont werden, dass am Silbengelenk phonetisch nicht zwei Konsonanten vorliegen (also eben nicht *\textipa{[mIt.t@]}, wie die überzogene Aussprache der Klatschmethode eventuell suggeriert, s.\ Abschnitt~\ref{sec:silben}), sondern \textit{ein einziger Konsonant}, der in zwei Positionen einer Struktur steht.
 In Satz~\ref{satz:silbenlaengemitgelenk} können damit weitreichende Generalisierungen über Gewichte von deutschen Silben formuliert werden.
 
@@ -1886,24 +1927,57 @@ Je nachdem, wie weit man diese Analyse treiben möchte, können auf ihrer Basis 
 
 Eine Analyse von \textit{verbrauchen} mit extrametrischer Silbe ist in Abbildung~\ref{fig:verbrauchen} dargestellt.
 Wie bei den extrasilbischen Segmenten werden extrametrische Silben im Diagramm mit einer gestrichelten Kante an einen Fuß angelehnt.
-Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit A, \textit{Endrand} mit E, \textit{Kern} mit K und \textit{Reim} mit R abgekürzt.
-Weiterhin steht PhW für \textit{phonologisches Wort}, F für \textit{Fuß} und S für \textit{Silbe}.
-Das F-Symbol wird direkt über der Silbe aufgebaut, die im Fuß den Akzent trägt.
+Der Fuß wird direkt über der Silbe aufgebaut, die im Fuß den Akzent trägt.
+Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \textit{Endrand} mit \textit{Er.} abgekürzt.
 
-{\begin{figure}[!htbp]
-	\centering
-	\Tree{
-	\K{} & \K{} & \K{} & \K{} & \K{PhW}\B{d} & \K{} & \K{} & \K{} \\ 
-	\K{} & \K{} & \K{} & \K{} & \K{F}\Bdash{dlll}\B{d}\B{drr} & \K{} & \K{} & \K{} \\ 
-	\K{} & \K{S}\B{d}\B{ddl} & \K{} & \K{} & \K{S}\B{d}\B{ddll} & \K{} & \K{S}\B{d}\B{ddl} & \K{} \\ 
-	\K{} & \K{R}\B{d} & \K{} & \K{} & \K{R}\B{d} & \K{} & \K{R}\B{d}\B{dr} & \K{} \\ 
-	\K{A}\B{d} & \K{K}\B{d} & \K{A}\B{d}\B{dr} & \K{} & \K{K}\B{d} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} \\ 
-	\K{\textipa{f}} & \K{\textipa{5}} & \K{\textipa{b}} & \K{\textipa{K}} & \K{\textipa{\t{aO}}} & \K{\textipa{X}} & \K{\textipa{@}} & \K{\textipa{n}} \\ 
-	}
-	\label{fig:verbrauchen}
-	\caption{Fußstruktur von \textit{verbrauchen} mit extrametrischer Silbe}
-\end{figure}}
-
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Phonologisches Wort
+      [Fuß, calign=child, calign child=2
+	[Silbe, calign=last, edge=dashed
+	  [Ar., ake
+	    [f]
+	  ]
+	  [Reim
+	    [Kern, ake
+	      [5]
+	    ]
+	  ]
+	]
+	[Silbe, calign=last
+	  [Ar., ake, calign=first
+	    [b][K]
+	  ]
+	  [Reim
+	    [Kern, ake
+	      [\t{aO}]
+	    ]
+	  ]
+	]
+	[Silbe, calign=last
+	  [Ar., ake
+	    [X]
+	  ]
+	  [Reim, calign=first
+	    [Kern, ake
+	      [@]
+	    ]
+	    [Er., ake
+	      [n]
+	    ]
+	  ]
+	]
+      ]
+    ]
+  \end{forest}
+  \label{fig:verbrauchen}
+  \caption{Fußstruktur von \textit{verbrauchen} mit extrametrischer Silbe}
+\end{figure}
 
 \index{Glottalverschluss}
 Für die Einfügung des Glottalverschlusses ergibt sich damit eine besondere Interpretation.
@@ -1961,21 +2035,76 @@ Es gibt viele Fälle, in denen das phonologische Wort gleich dem prosodischen Wo
 Wir schließen mit einer maximalen Analyse des recht langen Wortes \textit{Rettungsverein} in Abbildung~\ref{fig:rettungsverein}.
 Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt sich bei ihnen nicht um theoretische Konstrukte um der Konstrukte willen.
 
-{\begin{figure}[!htbp]
+\begin{figure}[!htbp]
  \centering
- \Tree{
-   & \K{PrW}\B{d}\B{drrrrrrrrr} & & & & & & & & & & \\
-   & \K{PhW}\B{d} & & & & & & & & & \K{PhW}\B{d} & \\
-   & \K{F}\B{d}\B{drrr} & & & & & & & & & \K{F}\Bdash{dll}\B{d} & \\
-   & \K{S}\B{ddl}\B{d} & & & \K{S}\B{ddl}\B{d} & & & & \K{S}\B{ddl}\B{d} & & \K{S}\B{ddl}\B{d} & \\
-   & \K{R}\B{d}\B{dr} & & & \K{R}\B{d}\B{dr} & & & & \K{R}\B{d} & & \K{R}\B{d}\B{dr} & \\
-  \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{dr} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d}\Bdash{dr} & & \K{A}\B{d} & \K{K}\B{d} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} \\
-  \K{\textipa{K}} & \K{\textipa{E}} & & \K{\textipa{t}} & \K{\textipa{U}} & \K{\textipa{N}} & \K{\textipa{s}} & \K{\textipa{f}} & \K{\textipa{5}} & \K{\textipa{P}} & \K{\textipa{\t{aE}}} & \K{\textipa{n}} \\
- }
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Prosodisches Wort, calign=first
+      [Phonologisches Wort
+	[Fuß, calign=first
+	  [Silbe, calign=last
+	    [Ar., ake
+	      [K]
+	    ]
+	    [Reim, calign=first
+	      [Kern, ake
+		[E]
+	      ]
+	      [Er., ake, name=ERRettungsverein]
+	    ]
+	  ]
+	  [Silbe, calign=last
+	    [Ar., ake
+	      [t]
+	      {\draw (.north) -- (ERRettungsverein.south);}
+	    ]
+	    [Reim, calign=first
+	      [Kern, ake
+		[U]
+	      ]
+	      [Er., ake, calign=first
+		[N]
+		[s, edge=dashed]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+      [Phonologisches Wort
+	[Fuß, calign=last
+	  [Silbe, calign=last, edge=dashed
+	    [Ar., ake
+	      [f]
+	    ]
+	    [Reim
+	      [Kern, ake
+		[5]
+	      ]
+	    ]
+	  ]
+	  [Silbe, calign=last
+	    [Ar., ake
+	      [P]
+	    ]
+	    [Reim, calign=first
+	      [Kern, ake
+		[\t{aE}]
+	      ]
+	      [Er., ake
+		[n]
+	      ]
+	    ]
+	  ]
+	]
+      ]
+    ]
+  \end{forest}
  \caption{Phonologische Analyse des Wortes \textit{Rettungsverein}}
  \label{fig:rettungsverein}
 \end{figure}
-}
 
 \Zusammenfassung{%
 In (fast) jedem Wort ist eine Silbe besonders prominent, indem sie den Wortakzent trägt.
@@ -2061,7 +2190,9 @@ Zusatzaufgabe: Versuchen Sie, den Umlaut /\textipa{\t{aO}}/ -- /\textipa{\t{O\oe
 \end{enumerate}
 
 \Uebung \label{u44} Transkribieren Sie diese Wörter, finden Sie die Silbengrenzen (Silbifizierung) und zeichnen Sie eine Sonoritätskurve wie in Abbildung~\ref{fig:sonhiersstrolchst} (S.~\pageref{fig:sonhiersstrolchst}).
-Markieren Sie dabei in mehrsilbigen Wörtern die Silbengrenzen und Silbengelenke eindeutig (\zB Absetzen des Strichs für normale Silbengrenzen, Einkreisen des Segments für Silbengelenke).
+Markieren Sie dabei in mehrsilbigen Wörtern die Silbengrenzen und Silbengelenke eindeutig durch Absetzen des Strichs für normale Silbengrenzen, Einkreisen des Segments für Extrasilbizität und Setzen des Segments in eine Raute für Silbengelenke.
+Einige Wörter sind eventuell nicht eindeutig zu silbifizieren.
+Geben Sie in diesem Fall beide möglichen Varianten an.
 
 \begin{enumerate}\Lf
   \item Strumpf
