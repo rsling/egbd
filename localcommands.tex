@@ -209,7 +209,7 @@
 
 \newcommand{\Satz}[2]{
   \refstepcounter{dgsatz}
-  \tblscolorbox[glass]{lsLightGray}{#1\hfill Definition~\thechapter.\arabic{dgdef}}{#2}
+  \tblscolorbox[glass]{lsLightGray}{#1\hfill Satz~\thechapter.\arabic{dgsatz}}{#2}
 }
 
 
@@ -220,7 +220,7 @@
 
 
 
-\newcommand{\WFiltTree}[7][5mm]{%
+\newcommand{\WFiltTree}[7][0mm]{%
   \refstepcounter{deskgram-wfilt}
   \tblscolorbox[filter]{lsLightGray}{#2\hfill Wortklassenfilter~\arabic{deskgram-wfilt}}{
     \label{#3}
@@ -233,12 +233,10 @@
     \path (Wort) edge [-{Latex[round]}] (Filter);
     \path (Filter.east) edge [-{Latex[round]}] node [above,sloped] {Ja} (Ja.west);
     \path (Filter.east) edge [-{Latex[round]}] node [below,sloped] {Nein} (Nein.west);
+    \aeundefinethesenodes{Wort, Filter, Ja, Nein}
   \end{tikzpicture}\vspace{#1}%
-  }{law}
+  }
 }
-
-
-
 
 \newcommand{\strschemspace}{\hspace{1em}}
 \newcommand{\Phrasenschema}[2]{
@@ -302,8 +300,12 @@
   \end{forest}
 }
 
-\newcommand{\ThePhrasenExOne}{dass [[dem Jungen] [die Mutter] [ein Eis] [geschenkt hat]]}
+\newcommand{\DefWort}{Das (\textit{lexikalische}) \textit{Wort} ist eine Repräsentation von paradigmatisch zusammengehörenden Wortformen.
+Umgangssprachlich kann man von der Zusammenfassung aller möglichen Formen eines Wortes sprechen.
+Für das lexikalische Wort sind die Werte nur für diejenigen Merkmale spezifiziert, die in allen Wortformen des Paradigmas dieselben Werte haben.
+Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vorkommenden Wortformen des Wortes gesetzt.}
 
+\newcommand{\ThePhrasenExOne}{dass [[dem Jungen] [die Mutter] [ein Eis] [geschenkt hat]]}
 \newcommand{\ThePhrasenExTwo}{dass [[ein Eis] [die Mutter] [dem Jungen] [geschenkt hat]]}
 
 
@@ -321,7 +323,7 @@
 \newcommand\aeundefinenode[1]{%
   \expandafter\ifx\csname pgf@sh@ns@#1\endcsname\relax
   \else
-    \typeout{===>Undefining node "#1"}%
+    \typeout{Undefining node "#1"}%
     \global\expandafter\let\csname pgf@sh@ns@#1\endcsname\relax
   \fi
 }
@@ -336,7 +338,7 @@
 }
 
 \newcommand\aeundefinenumericnodes{%
-  \foreach \myn in {1,2,...,20}
+  \foreach \myn in {1,2,...,50}
     {%
       \ifnodedefined{\myn}{%
       \expandafter\aeundefinenode\expandafter{\myn}%

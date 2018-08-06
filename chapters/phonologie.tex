@@ -183,7 +183,7 @@ Anders gesagt müssen die \textit{Verteilungen der Segmente} bekannt sein.
   \resizebox{\textwidth}{!}{
     \begin{tabular}{ccc}
       \lsptoprule
-      \multicolumn{2}{c}{\textbf{Grammatik}} & \textbf{Externe Systeme} \\ 
+      \multicolumn{2}{c}{\textbf{Grammatik}} & \textbf{Externe Systeme} \\
       \midrule
       \textbf{Lexikon} & \textbf{Phonologie} & \textbf{Phonetik} \\
       \midrule
@@ -215,7 +215,7 @@ Die Auslautverhärtung lässt sich als Strukturbedingung unter Bezug auf phoneti
 \Satz{Auslautverhärtung}{\label{satz:auslautverhaertung}Segmente mit [\textsc{Obstruent}:~$+$] sind am Silbenende [\textsc{Stimme}:~$-$].}
 
 Wenn wir zugrundeliegende Formen an diese Bedingung anpassen wollen, muss also die Silbenstruktur bekannt sein.
-Um diese geht es in Abschnitt~\ref{sec:silben} noch im Detail, hier werden die Silbengrenzen einfach vorgegeben und durch Punkte markiert. 
+Um diese geht es in Abschnitt~\ref{sec:silben} noch im Detail, hier werden die Silbengrenzen einfach vorgegeben und durch Punkte markiert.
 Nur zur Veranschaulichung steht \phopro\ für \textit{wird phonetisch  realisiert als}.%
 \footnote{In (\ref{ex:phol6726a}) ist \textit{Bad} standardkonform mit langem \textipa{[a:]} notiert.
 Die Variante mit kurzem \textipa{[a]} (also \textipa{[bat]}) ist regional.}
@@ -259,8 +259,8 @@ Beispiel (\ref{ex:phol0118999}) zeigt die resultierende zugrundeliegende Spezifi
   \ex{\label{ex:phol91919166}\textsc{Gespannt}: $+$, $-$}
   \ex\label{ex:phol0118999}
   \begin{xlist}
-  	\ex /i/ = [\textsc{Lage}: \textit{vorne}, \textsc{Höhe}: \textit{hoch}, \textsc{Gespannt}: $+$, \textsc{Rund}: $-$]
-  	\ex /\textipa{I}/ = [\textsc{Lage}: \textit{vorne}, \textsc{Höhe}: \textit{hoch}, \textsc{Gespannt}: $-$, \textsc{Rund}: $-$]
+    \ex /i/ = [\textsc{Lage}: \textit{vorne}, \textsc{Höhe}: \textit{hoch}, \textsc{Gespannt}: $+$, \textsc{Rund}: $-$]
+    \ex /\textipa{I}/ = [\textsc{Lage}: \textit{vorne}, \textsc{Höhe}: \textit{hoch}, \textsc{Gespannt}: $-$, \textsc{Rund}: $-$]
   \end{xlist}
 \end{exe}
 
@@ -280,61 +280,53 @@ Schwa und \textipa{[5]} fehlen hier, weil sie außerhalb des Systems der gespann
     vowelgespannt/.style={circle,fill=gray!30, anchor=mid, text depth=0ex, text height=1ex,minimum size=4ex},
     dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
     }
+
     \coordinate (hf) at (0,2); % high front
     \coordinate (hb) at (2,2); % high back
     \coordinate (lf) at (1,0); % low front
     \coordinate (lb) at (2,0); % low back
     \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
 
-    % Draw the chart key (vorne -- hinten)
-    \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
-    \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
+    % Chart key (vorne -- hinten).
+    \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5))  node [above left] {\footnotesize vorne};
+    \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node [above left] {\footnotesize hinten};
     \path (\V (-.25,1)) node[above] {\footnotesize zentral};
 
-    % hoch--tief
-    \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
-    \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
+    % Chart key (hoch--tief).
+    \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm)  node [above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
+    \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node [above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
     \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
-    % Draw the horizontal lines first.
+    % Grid.
     \draw [gray,thick] (\V(0,0)) -- (\V(0,2));
     \draw [gray,thick] (\V(3,0)) -- (\V(3,2));
-
-    % Draw the vertical lines.
     \draw [gray,thick] (\V(0,0)) -- (\V(3,0));
     \draw [gray,thick] (\V(0,2)) -- (\V(3,2));
 
     \path (\V(0,0))      node[vowelgespannt] (i)   {i};
     \path (\V(0.25,0))   node[vowelgespannt] (y)   {y};
-
     \path (\V(0.4,0.5))  node[vowel]         (ii)  {ɪ};
     \path (\V(0.65,0.5)) node[vowel]         (yy)  {ʏ};
-    
     \path (\V(1,0))      node[vowelgespannt] (e)   {e};
     \path (\V(1.25,0))   node[vowelgespannt] (oe)  {ø};
-
     \path (\V(2,0))      node[vowelgespannt] (ee)  {ɛ};
-   
     \path (\V(1.4,0.7))  node[vowel]         (eee) {ɛ̆};
     \path (\V(1.65,0.7)) node[vowel]         (oee) {œ};
-    
     \path (\V(3,1))      node[vowelgespannt] (a)   {a};
     \path (\V(2.5,1))    node[vowel]         (aa)  {ă};
-
     \path (\V (1,2))     node[vowelgespannt] (o)   {o};
     \path (\V (1.5,1.4)) node[vowel]         (oo)  {ɔ};
-
     \path (\V (0,2))     node[vowelgespannt] (u)   {u};
     \path (\V (0.5,1.5)) node[vowel]         (uu)  {ʊ};
 
-    \draw [thick] (i)  -- (ii);
-    \draw [thick] (y)  -- (yy);
-    \draw [thick] (e)  -- (eee);
-    \draw [thick] (oe) -- (oee);
-    \draw [thick] (ee) -- (eee);
-    \draw [thick] (a)  -- (aa);
-    \draw [thick] (o)  -- (oo);
-    \draw [thick] (u)  -- (uu);
+    \draw (i)  -- (ii);
+    \draw (y)  -- (yy);
+    \draw (e)  -- (eee);
+    \draw (oe) -- (oee);
+    \draw (ee) -- (eee);
+    \draw (a)  -- (aa);
+    \draw (o)  -- (oo);
+    \draw (u)  -- (uu);
   \end{tikzpicture}
   \caption[Phonologisches Vokaltrapez]{Phonologisches Vokaltrapez (Grau für [\textsc{Gespannt}: $+$])}
   \label{fig:vokalviereckmitgespannt}
@@ -348,21 +340,21 @@ Formen wie *\textipa{[KI:nd5]} sind ausgeschlossen.
 Tabelle~\ref{tab:gespungesp} gibt einen systematischen Überblick in Form von Beispielen.
 
 \begin{table}[!htbp]
-	\centering
-	\begin{tabular}{cllp{0.25cm}cll}
-		\lsptoprule
-		\textbf{gespannt} & \textbf{Beispiel} & \textbf{IPA} & & \textbf{ungespannt} & \textbf{Beispiel} & \textbf{IPA} \\
-		\midrule
-		\textipa{i}  & \textit{bieten} & \textipa{bi:t@n} && \textipa{I} & \textit{bitten}  & \textipa{bIt@n}   \\
-		\textipa{y}  & \textit{fühlt}  & \textipa{fy:lt}  && \textipa{Y} & \textit{füllt}   & \textipa{fYlt}    \\
-		\textipa{u}  & \textit{Mus}    & \textipa{mu:s}   && \textipa{U} & \textit{muss}    & \textipa{mUs}     \\
-		\textipa{e}  & \textit{Kehle}  & \textipa{ke:l@}  && \textipa{E} & \textit{Kelle}   & \textipa{kEl@}    \\
-		\textipa{E}  & \textit{stähle} & \textipa{StE:l@} && \textipa{E} & \textit{Ställe}  & \textipa{StEl@}   \\
-		\textipa{\o} & \textit{Höhle}  & \textipa{h\o:l@} && \textipa{\oe} & \textit{Hölle} & \textipa{h\oe l@} \\
-		\textipa{o}  & \textit{Ofen}   & \textipa{Po:f@n} && \textipa{O} & \textit{offen}   & \textipa{POf@n}   \\
-		\textipa{a}  & \textit{Wahn}   & \textipa{va:n}   && \textipa{a} & \textit{wann}    & \textipa{van}     \\
-		\lspbottomrule
-	\end{tabular}	
+  \centering
+  \begin{tabular}{cllp{0.25cm}cll}
+    \lsptoprule
+    \textbf{gespannt} & \textbf{Beispiel} & \textbf{IPA} & & \textbf{ungespannt} & \textbf{Beispiel} & \textbf{IPA} \\
+    \midrule
+    \textipa{i}  & \textit{bieten} & \textipa{bi:t@n} && \textipa{I} & \textit{bitten}  & \textipa{bIt@n}   \\
+    \textipa{y}  & \textit{fühlt}  & \textipa{fy:lt}  && \textipa{Y} & \textit{füllt}   & \textipa{fYlt}    \\
+    \textipa{u}  & \textit{Mus}    & \textipa{mu:s}   && \textipa{U} & \textit{muss}    & \textipa{mUs}     \\
+    \textipa{e}  & \textit{Kehle}  & \textipa{ke:l@}  && \textipa{E} & \textit{Kelle}   & \textipa{kEl@}    \\
+    \textipa{E}  & \textit{stähle} & \textipa{StE:l@} && \textipa{E} & \textit{Ställe}  & \textipa{StEl@}   \\
+    \textipa{\o} & \textit{Höhle}  & \textipa{h\o:l@} && \textipa{\oe} & \textit{Hölle} & \textipa{h\oe l@} \\
+    \textipa{o}  & \textit{Ofen}   & \textipa{Po:f@n} && \textipa{O} & \textit{offen}   & \textipa{POf@n}   \\
+    \textipa{a}  & \textit{Wahn}   & \textipa{va:n}   && \textipa{a} & \textit{wann}    & \textipa{van}     \\
+    \lspbottomrule
+  \end{tabular}
   \caption{Gespannte und ungespannte Vokale im Kernwortschatz}
   \label{tab:gespungesp}
 \end{table}
@@ -434,9 +426,9 @@ Länge muss nicht mehr zugrundeliegend spezifiziert werden, und man erhält Beis
 
 \begin{exe}
   \ex\label{ex:phol013} \begin{xlist}
-  	\ex /\textipa{veg}/ \phopro \textipa{[ve:k]}
-  	\ex /\textipa{h\o l@}/ \phopro \textipa{[h\o:l@]} 
-  	\ex /\textipa{of@n}/ \phopro \textipa{[Po:f@n]}
+    \ex /\textipa{veg}/ \phopro \textipa{[ve:k]}
+    \ex /\textipa{h\o l@}/ \phopro \textipa{[h\o:l@]}
+    \ex /\textipa{of@n}/ \phopro \textipa{[Po:f@n]}
   \end{xlist}
 \end{exe}
 
@@ -511,9 +503,9 @@ Beispiele folgen in (\ref{ex:phol696969}).
 \begin{exe}
   \ex \label{ex:phol696969}
   \begin{xlist}
-  	\ex /\textipa{kl\t{aE}n@K}/ \phopro \textipa{[kl\t{aE}.n5]}
-  	\ex /\textipa{tiK}/ \phopro \textipa{[t\t{i5}]}
-  	\ex /\textipa{bIKk@}/ \phopro \textipa{[b\t{I@}.k@]}
+    \ex /\textipa{kl\t{aE}n@K}/ \phopro \textipa{[kl\t{aE}.n5]}
+    \ex /\textipa{tiK}/ \phopro \textipa{[t\t{i5}]}
+    \ex /\textipa{bIKk@}/ \phopro \textipa{[b\t{I@}.k@]}
   \end{xlist}
 \end{exe}
 
@@ -584,7 +576,7 @@ In deutschen Wörter wie \textit{Ehe} \textipa{[Pe:@]} fallen in der zweiten Sil
 
 Im Normalfall bestehen Silben aus mehreren Segmenten, und Wörter bestehen häufig aus mehreren Silben.
 Beispiele für einsilbige Wörter aus zwei Segmenten im Deutschen sind \textit{Schuh} \textipa{[Su:]} oder \textit{Tee} \textipa{[te:]}, Beispiele für zweisilbige Wörter aus zweisegmentalen Silben sind \textit{Tüte} \textipa{[ty:t@]} oder \textit{rege} \textipa{[Ke:g@]}.
-Ein einsilbiges Wort mit deutlich mehr als zwei Segmenten ist \textit{Strauch} \textipa{[StK\t{aO}X]}. 
+Ein einsilbiges Wort mit deutlich mehr als zwei Segmenten ist \textit{Strauch} \textipa{[StK\t{aO}X]}.
 Eine wesentliche Frage der Silbenphonologie ist, wie hoch die Komplexität solcher Strukturen maximal ist.
 
 \index{Silbe!Klatschmethode}
@@ -655,15 +647,15 @@ Die Verallgemeinerung zu mehrsilbigen Wörtern erfolgt nach einer theoretischen 
     ake/.style={tier=terminal}
     [Silbe, calign=last
       [Anfangsrand, ake, calign=first
-	[C][C]
+        [C][C]
       ]
       [Reim
-	[Kern,ake,calign=first
-	  [V]
-	]
-	[Endrand, ake, calign=last
-	  [C][C]
-	]
+        [Kern,ake,calign=first
+          [V]
+        ]
+        [Endrand, ake, calign=last
+          [C][C]
+        ]
       ]
     ]
   \end{forest}
@@ -702,15 +694,15 @@ Kern und Endrand bilden den \textit{Reim}.
     }
     [Silbe, calign=last
       [Anfangsrand, ake, calign=first
-	[f][K]
+        [f][K]
       ]
       [Reim, calign=first
-	[Kern,ake
-	  [E]
-	]
-	[Endrand, ake, calign=last
-	  [m][t]
-	]
+        [Kern,ake
+          [E]
+        ]
+        [Endrand, ake, calign=last
+          [m][t]
+        ]
       ]
     ]
   \end{forest}
@@ -732,13 +724,13 @@ Maximal einfache Einsilbler sind also die in (\ref{ex:phol777200}), wobei Diphth
 \footnote{Weil die Silbifizierung nicht in den zugrundeliegenden Formen spezifiziert ist, werden silbifizierte Wörter konsequent in [~] gesetzt.}
 
 \begin{exe}
-	\ex\label{ex:phol777200}
-	\begin{xlist}
-		\ex Ei \textipa{[P\t{aE}]}
-		\ex eh \textipa{[Pe:]}
-		\ex ah \textipa{[Pa:]}	
-		\ex oh \textipa{[Po:]}	
-	\end{xlist}
+  \ex\label{ex:phol777200}
+  \begin{xlist}
+    \ex Ei \textipa{[P\t{aE}]}
+    \ex eh \textipa{[Pe:]}
+    \ex ah \textipa{[Pa:]}
+    \ex oh \textipa{[Po:]}
+  \end{xlist}
 \end{exe}
 
 Wir beginnen mit dem Anfangsrand und überlegen der Reihe nach, ob dort ein, zwei oder auch mehr Segmente stehen können, und falls es so ist, welche und in welcher Reihenfolge.
@@ -750,13 +742,13 @@ Es ist zu beachten, dass die entsprechenden Wörter nicht einfach nur durch Zufa
 Sie könnten vielmehr keine Wörter des Deutschen sein, weil das System die entsprechenden Silbenstrukturen nicht zulässt.}
 
 \begin{exe}
-	\ex\label{ex:phol777201}
-	\begin{xlist}
-		\ex{\label{ex:phol777201a} Kuh, geh}
-		\ex{\label{ex:phol777201b} Schuh, hau, Reh, Vieh, wo, *\textipa{[\c{c}i:]}}
-		\ex{\label{ex:phol777201c} nie, mäh, *\textipa{[Nu:]}}
-		\ex{\label{ex:phol777201d} lau}
-	\end{xlist}
+  \ex\label{ex:phol777201}
+  \begin{xlist}
+    \ex{\label{ex:phol777201a} Kuh, geh}
+    \ex{\label{ex:phol777201b} Schuh, hau, Reh, Vieh, wo, *\textipa{[\c{c}i:]}}
+    \ex{\label{ex:phol777201c} nie, mäh, *\textipa{[Nu:]}}
+    \ex{\label{ex:phol777201d} lau}
+  \end{xlist}
 \end{exe}
 
 Wenn im Anfangsrand \textit{zwei} Konsonanten stehen, sind die Kombinationsmöglichkeiten bereits erheblich eingeschränkt.
@@ -769,12 +761,12 @@ Sie sind also nicht nur Lehnwörter, sondern auch Fremdwörter.
 Wörter wie \textit{stygisch} sind im Übrigen nur dann betroffen, wenn \textipa{[st]} statt \textipa{[St]} gesprochen wird.
 
 \begin{exe}
-	\ex\label{ex:phol777202}
-	\begin{xlist}
-		\ex{\label{ex:phol777202a} *\textipa{[pte:]}, *\textipa{[fpe:]}, *\textipa{[Sgu:]}, *\textipa{[lta:]} usw.}
-		\ex{\label{ex:phol777202b} spei, steh}
-		\ex{\label{ex:phol777202c} Pte(ranodon), chtho(nisch), sty(gisch)}
-	\end{xlist}
+  \ex\label{ex:phol777202}
+  \begin{xlist}
+    \ex{\label{ex:phol777202a} *\textipa{[pte:]}, *\textipa{[fpe:]}, *\textipa{[Sgu:]}, *\textipa{[lta:]} usw.}
+    \ex{\label{ex:phol777202b} spei, steh}
+    \ex{\label{ex:phol777202c} Pte(ranodon), chtho(nisch), sty(gisch)}
+  \end{xlist}
 \end{exe}
 
 Da wir \textipa{[\t{pf}]} wie in \textit{Pfau} und \textipa{[\t{ts}]} wie in \textit{zieh} sowie das seltene \textipa{[\t{tS}]} wie in \textit{Chips} als Affrikaten (also jeweils nur einen Konsonanten) auffassen (Abschnitt~\ref{sec:affrikatenartikulationsorte}), treten die Frikative \textipa{[f]}, \textipa{[s]}, \textipa{[S]}, \textipa{[h]}, \textipa{[z]} und \textipa{[J]} niemals als zweites Segment im Anfangsrand auf, vgl.\ (\ref{ex:phol777203a}).%
@@ -783,12 +775,12 @@ Nur \textipa{[K]} kommt vor, aber nur nach den Plosiven und \textipa{[f]}, \text
 Außerdem findet man \textipa{[v]}, aber nur nach \textipa{[k]} und \textipa{[S]} wie in (\ref{ex:phol777203c}).
 
 \begin{exe}
-	\ex\label{ex:phol777203}
-	\begin{xlist}
-		\ex{\label{ex:phol777203a} *\textipa{[ksi:]}, *\textipa{[tfa:]}, *\textipa{[gz\t{aO}]} usw.}
-		\ex{\label{ex:phol777203b} Pracht, brüh, trau, dreh, kräh, grau, früh, Schrei, Wrack}
-		\ex{\label{ex:phol777203c} Qual, Schwur}
-	\end{xlist}
+  \ex\label{ex:phol777203}
+  \begin{xlist}
+    \ex{\label{ex:phol777203a} *\textipa{[ksi:]}, *\textipa{[tfa:]}, *\textipa{[gz\t{aO}]} usw.}
+    \ex{\label{ex:phol777203b} Pracht, brüh, trau, dreh, kräh, grau, früh, Schrei, Wrack}
+    \ex{\label{ex:phol777203c} Qual, Schwur}
+  \end{xlist}
 \end{exe}
 
 Nasale an zweiter Position im Anfangsrand sind selten, sowohl nach Plosiven (\ref{ex:phol777204a}) als auch nach Frikativen (\ref{ex:phol777204b}).
@@ -799,13 +791,13 @@ Alle anderen Wörter (\zB dialektal gefärbte wie \textit{Gnatz} und \textit{Gni
 Ob \textipa{[gn]} im Anfangsrand also zum Kern des Systems gehört, ist fraglich.}
 
 \begin{exe}
-	\ex\label{ex:phol777204}
-	\begin{xlist}
-		\ex{\label{ex:phol777204a} *\textipa{[pme:]}, *\textipa{[bn\t{aO}]}, *\textipa{[tne:]} usw.}
-		\ex{\label{ex:phol777204b} *\textipa{[fn\t{aO}]}, *\textipa{[smu:]}, *\textipa{[Kni:]} usw.}
-		\ex{\label{ex:phol777204c} Knie, Gnade}
-		\ex{\label{ex:phol777204d} Schnee, schmäh}
-	\end{xlist}
+  \ex\label{ex:phol777204}
+  \begin{xlist}
+    \ex{\label{ex:phol777204a} *\textipa{[pme:]}, *\textipa{[bn\t{aO}]}, *\textipa{[tne:]} usw.}
+    \ex{\label{ex:phol777204b} *\textipa{[fn\t{aO}]}, *\textipa{[smu:]}, *\textipa{[Kni:]} usw.}
+    \ex{\label{ex:phol777204c} Knie, Gnade}
+    \ex{\label{ex:phol777204d} Schnee, schmäh}
+  \end{xlist}
 \end{exe}
 
 Der einzige laterale Approximant des Deutschen \textipa{[l]} an zweiter Position steht nach allen Plosiven mit Ausnahme der alveolaren (\ref{ex:phol777205a}).
@@ -813,22 +805,22 @@ Außerdem findet man ihn nach den stimmlosen Frikativen \textipa{[f]} und \texti
 Diese Verbindungen sind die typischsten Anfangsränder aus zwei Segmenten.
 
 \begin{exe}
-	\ex\label{ex:phol777205}
-	\begin{xlist}
-		\ex{\label{ex:phol777205a} Plan, blüh, *\textipa{[tly:]}, *\textipa{[dly:]}, Klee, glüh}
-		\ex{\label{ex:phol777205b} flieh, Schlag}
-	\end{xlist}
+  \ex\label{ex:phol777205}
+  \begin{xlist}
+    \ex{\label{ex:phol777205a} Plan, blüh, *\textipa{[tly:]}, *\textipa{[dly:]}, Klee, glüh}
+    \ex{\label{ex:phol777205b} flieh, Schlag}
+  \end{xlist}
 \end{exe}
 
 Die strukturellen Möglichkeiten für dreisegmentale Anfangsränder sind auf \textipa{[SpK]} und \textipa{[StK]} beschränkt (\ref{ex:phol777206a}).
 Die wenigen (nicht einsilbigen) Wörter mit \textipa{[Spl]} im Anfangsrand (\ref{ex:phol777206b}) gehören wohl alle zur selben germanischen Grundform, sind dabei dialektal gefärbt bzw.\ aus dem Englischen entlehnt und können als peripher vernachlässigt werden.
 
 \begin{exe}
-	\ex\label{ex:phol777206}
-	\begin{xlist}
-		\ex{\label{ex:phol777206a} sprüh, Stroh}
-		\ex{\label{ex:phol777206b} Splitter, spleiß, Spliss}
-	\end{xlist}
+  \ex\label{ex:phol777206}
+  \begin{xlist}
+    \ex{\label{ex:phol777206a} sprüh, Stroh}
+    \ex{\label{ex:phol777206b} Splitter, spleiß, Spliss}
+  \end{xlist}
 \end{exe}
 
 Im komplexen Anfangsrand sind häufig (im Sinn einer Typenhäufigkeit, s.\ Abschnitt~\ref{sec:kernundperipherie}) vor allem Kombinationen aus Plosiv und \textipa{[K]} oder \textipa{[l]}.
@@ -851,7 +843,7 @@ Auf die Auflistung strukturell unmöglicher Pseudo-Beispiele wird aus Gründen d
 Zusätzlich fassen wir \textipa{[l]} und \textipa{[K]} wie am Ende von Abschnitt~\ref{sec:anfangsrandimeinsilbler} vorgeschlagen zur Gruppe der Liquide zusammen.%
 \footnote{Dabei ist zusätzlich zu bedenken, dass \textipa{[K]} im Endrand phonetisch als Vokal artikuliert wird.}
 Weiterhin kann man feststellen, dass im Endrand wegen der Auslautverhärtung (Abschnitte~\ref{sec:auslautverhaertungphonetik} und~\ref{sec:auslautverhaertungphonologie}) keine stimmhaften Obstruenten vorkommen können, und dass damit \textipa{[b d g v z J]} aus der Betrachtung ausgeschlossen werden können.
-Wenn die zugrundeliegend stimmhaften Obstruenten in den Endrand geraten, verhalten sie sich wie ihre stimmlosen Pendants. 
+Wenn die zugrundeliegend stimmhaften Obstruenten in den Endrand geraten, verhalten sie sich wie ihre stimmlosen Pendants.
 Ebenso tritt \textipa{[h]} nur im Anfangsrand auf.
 Schließlich sind \textipa{[\c{c}]} und \textipa{[X]} Manifestationen eines zugrundeliegenden Segments /\textipa{\c{c}}/ und müssen daher nicht getrennt behandelt werden.
 
@@ -862,10 +854,10 @@ Beispiele für einfache Endränder werden in (\ref{ex:phol4711}) gegeben.
 \begin{exe}
   \ex\label{ex:phol4711}
   \begin{xlist}
-  	\ex ab, Hut, Rock
-  	\ex auf, aus, Hasch, ich
-  	\ex Raum, Zaun, Fang
-  	\ex Ohr, voll
+    \ex ab, Hut, Rock
+    \ex auf, aus, Hasch, ich
+    \ex Raum, Zaun, Fang
+    \ex Ohr, voll
   \end{xlist}
 \end{exe}
 
@@ -877,8 +869,8 @@ Anders als im Anfangsrand sind zunächst Folgen aus zwei Plosiven zulässig, all
 \begin{exe}
   \ex\label{ex:phol4712}
   \begin{xlist}
-  	\ex Abt, schleppt, klappt
-  	\ex Takt, Sekt, nackt, rückt
+    \ex Abt, schleppt, klappt
+    \ex Takt, Sekt, nackt, rückt
   \end{xlist}
 \end{exe}
 
@@ -917,12 +909,12 @@ Sehr selten ist hingegen wieder die Sequenz \textipa{[nS]}, die in weniger als e
 \begin{exe}
   \ex\label{ex:phol4715}
   \begin{xlist}
-  	\ex{\label{ex:phol4715a} Mönch, manch}
-  	\ex{\label{ex:phol4715b} Hanf, Senf, fünf, uns, eins, Gans}
-  	\ex{\label{ex:phol4715c} Mensch, Wunsch, Punsch}
-  	\ex{\label{ex:phol4715d} Ems, Wams, Gams}
-  	\ex{\label{ex:phol4715e} Ramsch}
-  	\ex{\label{ex:phol4715f} längs, rings, Hangs usw.}
+    \ex{\label{ex:phol4715a} Mönch, manch}
+    \ex{\label{ex:phol4715b} Hanf, Senf, fünf, uns, eins, Gans}
+    \ex{\label{ex:phol4715c} Mensch, Wunsch, Punsch}
+    \ex{\label{ex:phol4715d} Ems, Wams, Gams}
+    \ex{\label{ex:phol4715e} Ramsch}
+    \ex{\label{ex:phol4715f} längs, rings, Hangs usw.}
   \end{xlist}
 \end{exe}
 
@@ -938,9 +930,9 @@ Von den drei Nasalen können nur [m] und [n] folgen, s.\ (\ref{ex:phol4716c}).
 \begin{exe}
   \ex\label{ex:phol4716}
   \begin{xlist}
-  	\ex{\label{ex:phol4716a} Alp, Halt, welk, Korb, Ort, Mark}
-  	\ex{\label{ex:phol4716b} elf, Welsch, Hals, Milch, darf, Dorsch, Kurs, Lurch}
-  	\ex{\label{ex:phol4716c} Qualm, Köln, warm, Garn}
+    \ex{\label{ex:phol4716a} Alp, Halt, welk, Korb, Ort, Mark}
+    \ex{\label{ex:phol4716b} elf, Welsch, Hals, Milch, darf, Dorsch, Kurs, Lurch}
+    \ex{\label{ex:phol4716c} Qualm, Köln, warm, Garn}
   \end{xlist}
 \end{exe}
 
@@ -1022,7 +1014,7 @@ Sie weisen also eine steigende--fallende \textit{Sonoritätskontur} auf.
 }
 
 \begin{exe}
-  \ex\label{ex:silbenbau} 
+  \ex\label{ex:silbenbau}
   \begin{xlist}
     \ex\label{ex:silbenbau1} \textit{Kuh}\leavevmode\newline
       \SonDiag[2]{{k/\plo/0, u:/\vok/0}}
@@ -1079,15 +1071,15 @@ In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, da
     ake/.style={tier=terminal}
     [Silbe, calign=last
       [Anfangsrand, ake, calign=child, calign child=2
-	[X,edge=dashed][C][C]
+        [X,edge=dashed][C][C]
       ]
       [Reim, calign=first
-	[Kern, ake
-	  [V]
-	]
-	[Endrand, ake, calign=child, calign child=2
-	  [C][C][X,edge=dashed][X,edge=dashed][X,edge=dashed]
-	]
+        [Kern, ake
+          [V]
+        ]
+        [Endrand, ake, calign=child, calign child=2
+          [C][C][X,edge=dashed][X,edge=dashed][X,edge=dashed]
+        ]
       ]
     ]
   \end{forest}
@@ -1139,14 +1131,14 @@ Es ist \textit{extrasilbisch}.
     \node at (8, 12) {\textbf{\small Kern}};
 
     \node [fill=gray, rounded corners] (Xvok) at (8, 5.5) {\textcolor{white}{Vokal}};
-    
+
     \node [segm] (Xplu) at (3,11) {p t};
     \node [extrasyl] (XSplu) at (0,11) {S};
     \draw [dashed] (XSplu) to (Xplu);
     \node [segm] (Xplv) at (3,9) {b d k g (P)};
     \draw (Xvok.west) -- node [pos=0.7, above, sloped] {\footnotesize Plosiv} (5, 10) -- (Xplu.east);
     \draw (Xvok.west) -- (5, 10) -- (Xplv.east);
-    
+
     \node [segm] (Xvov) at (3,7) {v};
     \node [extrasyl] (XSvov) at (0,7) {S};
     \draw [dashed] (XSvov) to (Xvov);
@@ -1208,7 +1200,7 @@ Extrasilbisch tritt ggf.\ \textipa{[S]} vor den Anfangsrand.\index{Silbe!Anfangs
     \node at (0, 18) {\textbf{\small Extrasilbisch}};
     \node at (5, 18) {\textbf{\small Anfangsrand}};
     \node at (10, 18) {\textbf{\small Kern}};
-   
+
     \node [fill=gray, rounded corners] (Yvok) at (10, 8.5) {\textcolor{white}{Vokal}};
 
     \node [segm] (Yk) at (3,17) {k};
@@ -1249,7 +1241,7 @@ Extrasilbisch tritt ggf.\ \textipa{[S]} vor den Anfangsrand.\index{Silbe!Anfangs
     \draw (Ybkg.east) -- (5,4);
     \draw (5,4) -- node [pos=0.2, above, sloped] {\footnotesize Plosiv} (Yl.west);
     \draw (Yff.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (Yl.west);
-    
+
     \draw (YR.east) -- (8,7);
     \draw (Yl.east) -- (8,7);
     \draw (8,7) -- node [pos=0.5, below, sloped] {\footnotesize Liquid} (Yvok.west);
@@ -1275,7 +1267,7 @@ Es ergibt sich Abbildung~\ref{fig:endranduplex}, die den duplexen Endrand ohne e
     \node at (4.5, 14) {\textbf{\small Endrand}};
 
     \node [fill=gray, rounded corners] (Zvok) at (0, 6.5) {\textcolor{white}{Vokal}};
-    
+
      \node [segm] (Zkg) at (6,13) {k (g)};
      \node [segm] (ZfS) at (6,11) {f S};
 
@@ -1302,7 +1294,7 @@ Es ergibt sich Abbildung~\ref{fig:endranduplex}, die den duplexen Endrand ohne e
      \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zpk.west);
      \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZfSc.west);
      \draw (ZRl.east) -- node [pos=0.5, above, sloped] {\footnotesize Nasal} (Zmn.west);
-     
+
      \draw (Zvok.east) -- node [pos=0.5, above, sloped] {\footnotesize Liquid} (ZRl.west);
 
   \end{tikzpicture}
@@ -1316,9 +1308,9 @@ Zunächst müssen Wörter wie in (\ref{ex:phol7528}) anders erklärt werden, wen
 \begin{exe}
   \ex \label{ex:phol7528}
   \begin{xlist}
-  	\ex{\label{ex:phol7528a} Schnaps, Huts, zwecks}
-  	\ex{\label{ex:phol7528b} Abt, nackt}
-  	\ex{\label{ex:phol7528d} Laufs, Reichs}
+    \ex{\label{ex:phol7528a} Schnaps, Huts, zwecks}
+    \ex{\label{ex:phol7528b} Abt, nackt}
+    \ex{\label{ex:phol7528d} Laufs, Reichs}
   \end{xlist}
 \end{exe}
 
@@ -1337,12 +1329,12 @@ Die Beziehung von zugrundeliegender Form und phonetischer Oberfläche wird in (\
 \begin{exe}
   \ex \label{ex:phol0800009003}
   \begin{xlist}
-  	\ex{\label{ex:phol0800009003a} /\textipa{huts}/ $\Rightarrow$ \textipa{[hu:t+s]} (\textit{Huts})}
-  	\ex{\label{ex:phol0800009003b} /\textipa{Sn\u{a}ps}/ $\Rightarrow$ \textipa{[S+nap+s]} (\textit{Schnaps})}
-  	\ex{\label{ex:phol0800009003c} /\textipa{\t{ts}v\u{E}ks}/ $\Rightarrow$ \textipa{[\t{ts}vEk+s]} (\textit{zwecks})}
-  	\ex{\label{ex:phol0800009003d} /\textipa{\u{a}pt}/ $\Rightarrow$ \textipa{[Pap+t]} (\textit{Abt})}
-  	\ex{\label{ex:phol0800009003e} /\textipa{n\u{a}kt}/ $\Rightarrow$ \textipa{[nak+t]} (\textit{nackt})}
-  	\ex{\label{ex:phol0800009003f} /\textipa{l\t{aO}fs}/ $\Rightarrow$ \textipa{[l\t{aO}f+s]} (\textit{Laufs})}
+    \ex{\label{ex:phol0800009003a} /\textipa{huts}/ $\Rightarrow$ \textipa{[hu:t+s]} (\textit{Huts})}
+    \ex{\label{ex:phol0800009003b} /\textipa{Sn\u{a}ps}/ $\Rightarrow$ \textipa{[S+nap+s]} (\textit{Schnaps})}
+    \ex{\label{ex:phol0800009003c} /\textipa{\t{ts}v\u{E}ks}/ $\Rightarrow$ \textipa{[\t{ts}vEk+s]} (\textit{zwecks})}
+    \ex{\label{ex:phol0800009003d} /\textipa{\u{a}pt}/ $\Rightarrow$ \textipa{[Pap+t]} (\textit{Abt})}
+    \ex{\label{ex:phol0800009003e} /\textipa{n\u{a}kt}/ $\Rightarrow$ \textipa{[nak+t]} (\textit{nackt})}
+    \ex{\label{ex:phol0800009003f} /\textipa{l\t{aO}fs}/ $\Rightarrow$ \textipa{[l\t{aO}f+s]} (\textit{Laufs})}
   \end{xlist}
 \end{exe}
 
@@ -1354,9 +1346,9 @@ Die sich ergebenden Formen zeigt (\ref{ex:phol08000090035}).
 \begin{exe}
   \ex \label{ex:phol08000090035}
   \begin{xlist}
-  	\ex{\label{ex:phol08000090035a} /\textipa{Kuft}/ $\Rightarrow$ \textipa{[Ku:f+t]} (\textit{ruft})}
-  	\ex{\label{ex:phol08000090035b} /\textipa{\u{a}\c{c}t}/ $\Rightarrow$ \textipa{[PaX+t]} (\textit{Acht})}
-  	\ex{\label{ex:phol08000090035c} /\textipa{l\u{E}st}/ $\Rightarrow$ \textipa{[lEs+t]} (\textit{lässt})}
+    \ex{\label{ex:phol08000090035a} /\textipa{Kuft}/ $\Rightarrow$ \textipa{[Ku:f+t]} (\textit{ruft})}
+    \ex{\label{ex:phol08000090035b} /\textipa{\u{a}\c{c}t}/ $\Rightarrow$ \textipa{[PaX+t]} (\textit{Acht})}
+    \ex{\label{ex:phol08000090035c} /\textipa{l\u{E}st}/ $\Rightarrow$ \textipa{[lEs+t]} (\textit{lässt})}
   \end{xlist}
 \end{exe}
 
@@ -1367,13 +1359,13 @@ Im Endrand sollte ja eigentlich wegen der Auslautverhärtung kein stimmhafter Pl
 Mögliche zweisegmentale Endränder mit velarem Nasal \textipa{[N]} an der phonetischen Oberfläche findet man in Wörtern mit nachfolgendem velaren Plosiv wie \textit{krank} \textipa{[kKaNk]}.
 Es fällt insgesamt auf, dass zwar [t] mit allen Nasalen kombiniert werden kann (\textit{klemmt}, \textit{rennt}, \textit{hängt}), [p] aber nur mit [m] (\textit{Lump}) und [k] nur mit \textipa{[N]} (\textit{krank}).
 Es liegt der Verdacht nahe, dass hier eigentlich nur homorgane (am selben Ort artikulierte) Sequenzen aus Nasal und Plosiv vorkommen können.
-Es kann eventuell sogar von /\textipa{kKank}/ \phopro \textipa{[kKaNk]} und /\textipa{lUnp}/ \phopro \textipa{[lUmp]} ausgegangen werden. 
+Es kann eventuell sogar von /\textipa{kKank}/ \phopro \textipa{[kKaNk]} und /\textipa{lUnp}/ \phopro \textipa{[lUmp]} ausgegangen werden.
 Ein [t] nach [m] oder \textipa{[N]} wie in \textit{klemmt} oder \textit{hängt} ist dann als extrasilbisch zu analysieren.
 
 Was ist aber mit dem einfachen \textipa{[N]} wie in \textit{Gang}?
 Hier folgt dem velaren Nasal kein velarer Plosiv, an den er seinen Artikulationsort anpassen könnte.
 Wir führen \textipa{[N]} daher auf eine zugrundeliegende Kombination /ng/ zurück.
-Der Nasal /n/ assimiliert an /g/ zu \textipa{[N]}, und das /g/ wird nicht artikuliert. 
+Der Nasal /n/ assimiliert an /g/ zu \textipa{[N]}, und das /g/ wird nicht artikuliert.
 Phonologisch und aus Sicht der Silbifizierung haben wir es \zB in /gang/ also mit einem duplexen Endrand zu tun, phonetisch mit einem simplexen.
 Weil es phonetisch (in der betreffenden Position) niemals auftritt, ist \textipa{[g]} in Abbildung~\ref{fig:endranduplex} eingeklammert.
 Die Analyse von \textipa{[N]} als /ng/ eliminiert \textipa{[N]} als zugrundeliegendes Segment, weswegen es konsequent in [~] statt in /~/ geschrieben werden sollte.
@@ -1384,12 +1376,12 @@ Die Beziehung zugrundeliegender Formen und ihrer phonetischen Realisierungen in 
 \begin{exe}
   \ex \label{ex:phol0800009004}
   \begin{xlist}
-  	\ex{\label{ex:phol0800009004a} /\textipa{g\u{a}ng}/ $\Rightarrow$ \textipa{[gaN]} (\textit{Gang})}
-  	\ex{\label{ex:phol0800009004b} /\textipa{l\u{E}ngs}/ $\Rightarrow$ \textipa{[lEN+s]} (\textit{längs})}
-  	\ex{\label{ex:phol0800009004c} /\textipa{h\u{E}ngt}/ $\Rightarrow$ \textipa{[hEN+t]} (\textit{hängt})}
-  	\ex{\label{ex:phol0800009004d} /\textipa{kr\u{a}nk}/ $\Rightarrow$ \textipa{[kraNk]} (\textit{krank})}
-  	\ex{\label{ex:phol0800009004e} /\textipa{kl\u{E}mt}/ $\Rightarrow$ \textipa{[klEm+t]} (\textit{klemmt})}
-  	\ex{\label{ex:phol0800009004f} /\textipa{bUnt}/ $\Rightarrow$ \textipa{[bUnt]} (\textit{bunt})}
+    \ex{\label{ex:phol0800009004a} /\textipa{g\u{a}ng}/ $\Rightarrow$ \textipa{[gaN]} (\textit{Gang})}
+    \ex{\label{ex:phol0800009004b} /\textipa{l\u{E}ngs}/ $\Rightarrow$ \textipa{[lEN+s]} (\textit{längs})}
+    \ex{\label{ex:phol0800009004c} /\textipa{h\u{E}ngt}/ $\Rightarrow$ \textipa{[hEN+t]} (\textit{hängt})}
+    \ex{\label{ex:phol0800009004d} /\textipa{kr\u{a}nk}/ $\Rightarrow$ \textipa{[kraNk]} (\textit{krank})}
+    \ex{\label{ex:phol0800009004e} /\textipa{kl\u{E}mt}/ $\Rightarrow$ \textipa{[klEm+t]} (\textit{klemmt})}
+    \ex{\label{ex:phol0800009004f} /\textipa{bUnt}/ $\Rightarrow$ \textipa{[bUnt]} (\textit{bunt})}
   \end{xlist}
 \end{exe}
 
@@ -1403,10 +1395,10 @@ In (\ref{ex:phol0800009005}) finden sich weitere Beispiele, wobei (\ref{ex:phol0
 \begin{exe}
   \ex \label{ex:phol0800009005}
   \begin{xlist}
-  	\ex{\label{ex:phol0800009005a} /\textipa{kOKb}/ $\Rightarrow$ \textipa{[k\t{O@}p]} (\textit{Korb})}
-  	\ex{\label{ex:phol0800009005b} /\textipa{vIKbst}/ $\Rightarrow$ \textipa{[v\t{I@}p+st]} (\textit{wirbst})}
-  	\ex{\label{ex:phol0800009005c} /\textipa{fUK\c{c}t}/ $\Rightarrow$ \textipa{[f\t{U@}\c{c}+t]} (\textit{Furcht})}
-  	\ex{\label{ex:phol0800009005d} /\textipa{f\u{E}lSst}/ $\Rightarrow$ \textipa{[fElS+st]} (\textit{fälschst})}
+    \ex{\label{ex:phol0800009005a} /\textipa{kOKb}/ $\Rightarrow$ \textipa{[k\t{O@}p]} (\textit{Korb})}
+    \ex{\label{ex:phol0800009005b} /\textipa{vIKbst}/ $\Rightarrow$ \textipa{[v\t{I@}p+st]} (\textit{wirbst})}
+    \ex{\label{ex:phol0800009005c} /\textipa{fUK\c{c}t}/ $\Rightarrow$ \textipa{[f\t{U@}\c{c}+t]} (\textit{Furcht})}
+    \ex{\label{ex:phol0800009005d} /\textipa{f\u{E}lSst}/ $\Rightarrow$ \textipa{[fElS+st]} (\textit{fälschst})}
   \end{xlist}
 \end{exe}
 
@@ -1414,13 +1406,13 @@ Vor einer weiteren Vertiefung der strukturellen Zusammenhänge, die in Abschnitt
 \footnote{Als echte Auslassung im Interesse einer eleganteren Darstellung wurde in Abbildung~\ref{fig:endranduplex} die Besetzung des Endrands aus zugrundeliegendem /\textipa{Kl}/ wie in \textit{Kerl} unterschlagen.
 Diese ist im Anfangsrand weder in dieser Reihenfolge noch spiegelbildlich zulässig.
 Es drängt sich der Gedanke auf, dass diese Besetzung deshalb möglich ist, weil hier /\textipa{K}/ als zweites Element in einem sekundären Diphthong artikuliert wird (s.\ Abschnitt~\ref{sec:orthographischesr}), also /\textipa{k\u{E}Kl}/ \phopro \textipa{[k\t{E@}l]}.
-Im Grunde stellen wir damit die Frage, ob das zweite Element von sekundären und ggf. auch primären Diphthongen eine Position im Kern oder im Endrand besetzt. 
+Im Grunde stellen wir damit die Frage, ob das zweite Element von sekundären und ggf. auch primären Diphthongen eine Position im Kern oder im Endrand besetzt.
 Eine zufriedenstellende Analyse solcher komplexer Bedingungen ist meiner Ansicht nur in formal ausgearbeiteten Theorien möglich.}
 
 \Satz{Endrand}{\label{satz:endrandbesetzung}\index{Silbe!Endrand!komplex}
 Der Endrand ist maximal duplex.
 Die präferierte Besetzung des duplexen Endrands ist die aus einem inneren Liquid und einem äußeren Obstruenten.
-Bereits weniger präferiert wird er mit einem Nasal und einem homorganen Plosiv besetzt. 
+Bereits weniger präferiert wird er mit einem Nasal und einem homorganen Plosiv besetzt.
 Extrasilbisch treten die alveolaren Obstruenten [s] und [t] hinter den Endrand.}
 
 
@@ -1452,17 +1444,17 @@ Im Sinn einer übersichtlichen Darstellung beschränken wir uns hier auf die Vok
 \begin{exe}
   \ex\label{ex:phol0815}
   \begin{xlist}
-  	\ex{\label{ex:phol0815a} Knie \textipa{[kni:]}}
-  	\ex{\label{ex:phol0815b} *\textipa{[knI]}}
-  	\ex{\label{ex:phol0815c} schief \textipa{[Si:f]}}
-  	\ex{\label{ex:phol0815d} Schiff \textipa{[SIf]}}
-  	\ex{\label{ex:phol0815e} wink \textipa{[vINk]}}
-  	\ex{\label{ex:phol0815f} *\textipa{[vi:Nk]}}
-  	\ex{\label{ex:phol0815g} Mie.te \textipa{[mi:.t@]}}
-  	\ex{\label{ex:phol0815h} Mi.tte \textipa{[mI.t@]}}
-  	\ex{\label{ex:phol0815i} liebte \textipa{[li:p.t@]}}
-  	\ex{\label{ex:phol0815j} winkte \textipa{[vINk.t@]}}
-  	\ex{\label{ex:phol0815k} *\textipa{[vi:Nk.t@]}}
+    \ex{\label{ex:phol0815a} Knie \textipa{[kni:]}}
+    \ex{\label{ex:phol0815b} *\textipa{[knI]}}
+    \ex{\label{ex:phol0815c} schief \textipa{[Si:f]}}
+    \ex{\label{ex:phol0815d} Schiff \textipa{[SIf]}}
+    \ex{\label{ex:phol0815e} wink \textipa{[vINk]}}
+    \ex{\label{ex:phol0815f} *\textipa{[vi:Nk]}}
+    \ex{\label{ex:phol0815g} Mie.te \textipa{[mi:.t@]}}
+    \ex{\label{ex:phol0815h} Mi.tte \textipa{[mI.t@]}}
+    \ex{\label{ex:phol0815i} liebte \textipa{[li:p.t@]}}
+    \ex{\label{ex:phol0815j} winkte \textipa{[vINk.t@]}}
+    \ex{\label{ex:phol0815k} *\textipa{[vi:Nk.t@]}}
   \end{xlist}
 \end{exe}
 
@@ -1514,6 +1506,7 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
 }
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={
@@ -1522,29 +1515,30 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
     }
     [Wort
       [Silbe, calign=last
-	[Anfangsrand, ake
-	  [m]
-	]
-	[Reim, calign=first
-	  [Kern, ake
-	    [I]
-	  ]
-	  [Endrand, ake, name=ERBaum]
-	]
+        [Anfangsrand, ake
+          [m]
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [I]
+          ]
+          [Endrand, ake, name=ERBaum]
+        ]
       ]
       [Silbe, calign=last
-	[Anfangsrand, ake
-	  [t]
-	  {\draw[-] (.north) -- (ERBaum.south);}
-	]
-	[Reim
-	  [Kern, ake
-	    [@]
-	  ]
-	]
+        [Anfangsrand, ake
+          [t]
+          {\draw[-] (.north) -- (ERBaum.south);}
+        ]
+        [Reim
+          [Kern, ake
+            [@]
+          ]
+        ]
       ]
     ]
   \end{forest}
+  \end{minipage}
   \caption{Beispiel einer Analyse mit Silbengelenk (Baum)}
   \label{fig:silbgel001}
 \end{figure}
@@ -1582,22 +1576,22 @@ Zweimorig sind Silben mit kurzem Vokal und simplexem Endrand und offene Silben m
 Dreimorig sind Silben mit kurzem Vokal und duplexem Endrand sowie Silben mit langem Vokal und simplexem Endrand.
 
 \begin{table}[!htbp]
-	\centering
-	\begin{tabular}{lll}
-		\lsptoprule
-		 & \textbf{Kern} & \textbf{Endrand} \\
-		\midrule
-		\textbf{einmorig} & \textipa{@} & \\
-		\midrule
-		\multirow{2}{*}{\textbf{zweimorig}} & V & C \\
-		& VV & \\
-		\midrule
-		\multirow{2}{*}{\textbf{dreimorig}} & V & CC \\
-		& VV & C \\
-		\lspbottomrule
-	\end{tabular}
-	\caption{Mögliche Silbentypen nach Silbengewicht}	
-	\label{tab:morentypen}
+  \centering
+  \begin{tabular}{lll}
+    \lsptoprule
+     & \textbf{Kern} & \textbf{Endrand} \\
+    \midrule
+    \textbf{einmorig} & \textipa{@} & \\
+    \midrule
+    \multirow{2}{*}{\textbf{zweimorig}} & V & C \\
+    & VV & \\
+    \midrule
+    \multirow{2}{*}{\textbf{dreimorig}} & V & CC \\
+    & VV & C \\
+    \lspbottomrule
+  \end{tabular}
+  \caption{Mögliche Silbentypen nach Silbengewicht}
+  \label{tab:morentypen}
 \end{table}
 
 Diese Generalisierung stützt das radikal reduktionistische Vorgehen bei der Beschreibung des Endrands in Abschnitt~\ref{sec:systematikderraender} in erheblichem Maß.
@@ -1618,10 +1612,10 @@ Als Ergebnis können wir jetzt also angeben, \textit{warum} (im Sinne einer Syst
 \begin{exe}
   \ex \label{ex:phol2003}
   \begin{xlist}
-  	\ex *\textipa{[mE:nS]}
-  	\ex *\textipa{[ra:mS]}
-  	\ex *\textipa{[mi:l\c{c}]}
-  	\ex *\textipa{[fa:lS]}
+    \ex *\textipa{[mE:nS]}
+    \ex *\textipa{[ra:mS]}
+    \ex *\textipa{[mi:l\c{c}]}
+    \ex *\textipa{[fa:lS]}
   \end{xlist}
 \end{exe}
 
@@ -1678,7 +1672,7 @@ Vor dem Anfangsrand kann \textipa{[S]} und nach dem Endrand können \textipa{[s]
 
 
 \begin{Vertiefung}{Diskrepanzen zwischen Phonetik und Phonologie}
-  
+
 \index{zugrundeliegende Form}
 
 \noindent Bei der Analyse von Silbenstrukturen ergeben sich aus Besonderheiten einiger Segmente und Segmentfolgen typische Probleme.
@@ -1827,7 +1821,7 @@ Der Hauptakzent sitzt aber auf dem ersten Bestandteil, s.\ Satz~\ref{satz:betonu
 
 \Satz{Betonung in Komposita}{\label{satz:betonungkomposita}%
 In Komposita behalten die Bestandteile ihren jeweiligen Akzent.
-Der erste Bestandteil erhält dabei aber den \textit{Hauptakzent}, die anderen Bestandteile erhalten \textit{Nebenakzente}. 
+Der erste Bestandteil erhält dabei aber den \textit{Hauptakzent}, die anderen Bestandteile erhalten \textit{Nebenakzente}.
 \index{Akzent!in Komposita}
 \index{Akzent!Haupt--}
 \index{Akzent!Neben--}
@@ -1917,7 +1911,7 @@ Die generellere Lösung erlaubt einerseits \textit{defekte Füße} als auch \tex
 Die betonte Silbe kann nicht fehlen.
 \textit{Extrametrische Silben} sind unbetonte Silben, die zu keinem Fuß gehören.}}
 
-Die extrametrische Silbe ist im Grunde das Äquivalent zu einem extrasilbischen Segment auf der nächsthöheren Ebene. 
+Die extrametrische Silbe ist im Grunde das Äquivalent zu einem extrasilbischen Segment auf der nächsthöheren Ebene.
 Bei \textit{wa\Akz rum} würde es sich demnach um eine Folge von einem defekten Trochäus \textit{\Akz rum} mit einer vorausgehenden extrametrischen Silbe handeln.
 In Wörtern wie \textit{be\Akz sorg}, \textit{ver\Akz brauch} oder \textit{Ver\Akz ein} liegt diese Analyse besonders nahe, weil hier der Stamm (\textit{sorg}, \textit{brauch} und \textit{ein}) einem nicht betonbaren Präfix folgt und \idR Formen dieser Wörter existieren, in denen der Stamm mit weiteren rechts stehenden Elementen einen Trochäus bildet, \zB \textit{be\Akz sorge}, \textit{ver\Akz brauchen} und \textit{Ver\Akz eine}.
 Je nachdem, wie weit man diese Analyse treiben möchte, können auf ihrer Basis im Kernwortschatz Jamben und Anapäste ganz eliminiert werden.
@@ -1929,8 +1923,8 @@ Der Fuß wird direkt über der Silbe aufgebaut, die im Fuß den Akzent trägt.
 Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \textit{Endrand} mit \textit{Er.} abgekürzt.
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \scalebox{1}{
   \begin{forest}
     ake/.style={
       tier=terminal,
@@ -1938,42 +1932,43 @@ Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \texti
     }
     [Phonologisches Wort
       [Fuß, calign=child, calign child=2
-	[Silbe, calign=last, edge=dashed
-	  [Ar., ake
-	    [f]
-	  ]
-	  [Reim
-	    [Kern, ake
-	      [5]
-	    ]
-	  ]
-	]
-	[Silbe, calign=last
-	  [Ar., ake, calign=first
-	    [b][K]
-	  ]
-	  [Reim
-	    [Kern, ake
-	      [\t{aO}]
-	    ]
-	  ]
-	]
-	[Silbe, calign=last
-	  [Ar., ake
-	    [X]
-	  ]
-	  [Reim, calign=first
-	    [Kern, ake
-	      [@]
-	    ]
-	    [Er., ake
-	      [n]
-	    ]
-	  ]
-	]
+        [Silbe, calign=last, edge=dashed
+          [Ar., ake
+            [f]
+          ]
+          [Reim
+            [Kern, ake
+              [5]
+            ]
+          ]
+        ]
+        [Silbe, calign=last
+          [Ar., ake, calign=first
+            [b][K]
+          ]
+          [Reim
+            [Kern, ake
+              [\t{aO}]
+            ]
+          ]
+        ]
+        [Silbe, calign=last
+          [Ar., ake
+            [X]
+          ]
+          [Reim, calign=first
+            [Kern, ake
+              [@]
+            ]
+            [Er., ake
+              [n]
+            ]
+          ]
+        ]
       ]
     ]
-  \end{forest}}
+  \end{forest}
+  \end{minipage}
   \label{fig:verbrauchen}
   \caption{Fußstruktur von \textit{verbrauchen} mit extrametrischer Silbe}
 \end{figure}
@@ -2035,8 +2030,8 @@ Wir schließen mit einer maximalen Analyse des recht langen Wortes \textit{Rettu
 Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt sich bei ihnen nicht um theoretische Konstrukte um der Konstrukte willen.
 
 \begin{figure}[!htbp]
- \centering
- \scalebox{1}{
+  \begin{minipage}{\textwidth}
+  \centering
   \begin{forest}
     ake/.style={
       tier=terminal,
@@ -2044,64 +2039,65 @@ Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt s
     }
     [Prosodisches Wort, calign=first
       [Phonologisches Wort
-	[Fuß, calign=first
-	  [Silbe, calign=last
-	    [Ar., ake
-	      [K]
-	    ]
-	    [Reim, calign=first
-	      [Kern, ake
-		[E]
-	      ]
-	      [Er., ake, name=ERRettungsverein]
-	    ]
-	  ]
-	  [Silbe, calign=last
-	    [Ar., ake
-	      [t]
-	      {\draw (.north) -- (ERRettungsverein.south);}
-	    ]
-	    [Reim, calign=first
-	      [Kern, ake
-		[U]
-	      ]
-	      [Er., ake, calign=first
-		[N]
-		[s, edge=dashed]
-	      ]
-	    ]
-	  ]
-	]
+        [Fuß, calign=first
+          [Silbe, calign=last
+            [Ar., ake
+              [K]
+            ]
+            [Reim, calign=first
+              [Kern, ake
+                [E]
+              ]
+              [Er., ake, name=ERRettungsverein]
+            ]
+          ]
+          [Silbe, calign=last
+            [Ar., ake
+              [t]
+              {\draw (.north) -- (ERRettungsverein.south);}
+            ]
+            [Reim, calign=first
+              [Kern, ake
+                [U]
+              ]
+              [Er., ake, calign=first
+                [N]
+                [s, edge=dashed]
+              ]
+            ]
+          ]
+        ]
       ]
       [Phonologisches Wort
-	[Fuß, calign=last
-	  [Silbe, calign=last, edge=dashed
-	    [Ar., ake
-	      [f]
-	    ]
-	    [Reim
-	      [Kern, ake
-		[5]
-	      ]
-	    ]
-	  ]
-	  [Silbe, calign=last
-	    [Ar., ake
-	      [P]
-	    ]
-	    [Reim, calign=first
-	      [Kern, ake
-		[\t{aE}]
-	      ]
-	      [Er., ake
-		[n]
-	      ]
-	    ]
-	  ]
-	]
+        [Fuß, calign=last
+          [Silbe, calign=last, edge=dashed
+            [Ar., ake
+              [f]
+            ]
+            [Reim
+              [Kern, ake
+                [5]
+              ]
+            ]
+          ]
+          [Silbe, calign=last
+            [Ar., ake
+              [P]
+            ]
+            [Reim, calign=first
+              [Kern, ake
+                [\t{aE}]
+              ]
+              [Er., ake
+                [n]
+              ]
+            ]
+          ]
+        ]
       ]
     ]
-  \end{forest}}
+  \end{forest}
+ \end{minipage}
  \caption{Phonologische Analyse des Wortes \textit{Rettungsverein}}
  \label{fig:rettungsverein}
 \end{figure}

@@ -61,9 +61,9 @@ Wenn diese Voraussetzung nicht gegeben ist, muss man sich am Lautsystem solcher 
 
 In diesem Abschnitt soll gezeigt werden, dass es keine simple und eindeutige Zuordnung zwischen der Aussprache (also Phonetik) des Deutschen und seiner Standardorthographie gibt.
 Man kann also gerade nicht behaupten, dass wir \textit{schreiben, wie wir sprechen}.
-Mit der Rede davon, dass man etwas schreibe, wie man es spreche, ist wahrscheinlich gemeint, dass es eine Eins-zu-Eins-Beziehung zwischen Lauten und Buchstaben gebe. 
+Mit der Rede davon, dass man etwas schreibe, wie man es spreche, ist wahrscheinlich gemeint, dass es eine Eins-zu-Eins-Beziehung zwischen Lauten und Buchstaben gebe.
 Das stimmt so nicht, obwohl natürlich nicht geleugnet werden darf, dass in vielen Fällen eine sehr enge und vor allem regelhafte Korrespondenz von Schreibung und Aussprache besteht.
-In erster Näherung entsprechen Buchstaben wie \textit{a} oder \textit{t} in einer Buchstabenschrift wie der deutschen durchaus einem Laut. 
+In erster Näherung entsprechen Buchstaben wie \textit{a} oder \textit{t} in einer Buchstabenschrift wie der deutschen durchaus einem Laut.
 Die Gesamtlage ist allerdings komplexer, und es muss vor allem geklärt werden, was dabei die Definition eines \textit{Lauts} ist.
 Hier folgt jetzt nur eine Illustration an Beispielen.
 Erst in Abschnitt~\ref{part:schrift} wird es möglich sein, die Beziehung der lautlichen Realisierung des Deutschen und seiner Verschriftung genau zu beschreiben.
@@ -556,7 +556,7 @@ Der \textit{Artikulationsort} eines Segments ist der Punkt der größten Annähe
 \index{IPA}
 \index{Alphabet!phonetisch}
 Das übliche phonetische Alphabet ist das der \textit{International Phonetic Association} (IPA).%
-\footnote{\url{https://www.internationalphoneticassociation.org/}}	
+\footnote{\url{https://www.internationalphoneticassociation.org/}}
 Es basiert auf der Lateinschrift und stellt für alle in menschlichen Sprachen vorkommenden Segmente eine mögliche Schreibung zur Verfügung.
 Dabei werden primäre Artikulationen in der Regel durch ein Buchstabensymbol dargestellt.
 Hinzu kommen sogenannten \textit{Diakritika}, also Zusatzzeichen, die vor, über, unter oder neben dem eigentlichen Zeichen geschrieben werden und genauere Informationen zur Artikulation kodieren.\index{Diakritikon}
@@ -747,55 +747,53 @@ Der Rest dieses Abschnitts erläutert diese Begrifflichkeiten und die Darstellun
   \begin{tikzpicture}[scale=2.5,baseline=default]
   \large
   \tikzset{
-  vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
-  dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
+    vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
+    dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
   }
+
   \coordinate (hf) at (0,2); % high front
   \coordinate (hb) at (2,2); % high back
   \coordinate (lf) at (1,0); % low front
   \coordinate (lb) at (2,0); % low back
   \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
 
-  % Draw the chart key (vorne -- hinten)
-  \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
-  \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
+  % Chart key (vorne -- hinten).
+  \draw [{Latex[round]}-] (\V (-.25,0))   -- (\V (-.25,.5)) node [above left] {\footnotesize vorne};
+  \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2))  node [above left] {\footnotesize hinten};
   \path (\V (-.25,1)) node[above] {\footnotesize zentral};
 
-  % hoch--tief
-  \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
-  \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
+  % Chart key (hoch--tief).
+  \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm)  node [above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
+  \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node [above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
   \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
-  % Draw the horizontal lines first.
+  % Grid. 
   \draw [gray, thick] (\V(0,0)) -- (\V(0,2));
   \draw [gray, thick] (\V(1,0)) -- (\V(1,2));
   \draw [gray, thick] (\V(2,0)) -- (\V(2,2));
   \draw [gray, thick] (\V(3,0)) -- (\V(3,2));
-
-  % Draw the vertical lines.
   \draw [gray, thick] (\V(0,0)) -- (\V(3,0));
   \draw [gray, thick] (\V(0,1)) -- (\V(3,1));
   \draw [gray, thick] (\V(0,2)) -- (\V(3,2));
 
-  % Place all the unrounded-rounded pairs next, on top of the horizontal lines.
-  \path (\V(0,0))     node[vowel, left] {i} node[vowel, right] (y) {y} node[dot] {};
-  \path (\V(0.5,0.5)) node[vowel, left] {ɪ} node[vowel, right] (Y) {ʏ} node[dot] {};
-  \path (\V(1,0))     node[vowel, left] {e} node[vowel, right] (e) {ø} node[dot] {};
+  % Unrounded-rounded pairs.
+  \path (\V(0,0))     node[vowel, left]     {i} node[vowel, right] (y) {y} node[dot] {};
+  \path (\V(0.5,0.5)) node[vowel, left]     {ɪ} node[vowel, right] (Y) {ʏ} node[dot] {};
+  \path (\V(1,0))     node[vowel, left]     {e} node[vowel, right] (e) {ø} node[dot] {};
   \path (\V(2,0))     node[vowel, left] (E) {ɛ} node[vowel, right] (ee) {œ} node[dot] {};
 
-  % Place the unpaired symbols last, on top of the vertical lines.
-  \path (\V(1.5,1))   node[vowel]   (schwa)   {ə};
-  \path (\V(2.5,1))   node[vowel]   (schwaa)  {ɐ};
-  \path (\V(3,1))	node[vowel]	(a)  	{a};
-  \path (\V (2,2))	node[vowel]	(oo)  	{ɔ};
-  \path (\V (1,2))	node[vowel]	 (o) 	{o};
-  \path (\V (0,2))	node[vowel]	 (u) 	{u};
-  \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
+  % Unpaired symbols.
+  \path (\V(1.5,1))    node [vowel] (schwa)  {ə};
+  \path (\V(2.5,1))    node [vowel] (schwaa) {ɐ};
+  \path (\V(3,1))      node [vowel] (a)      {a};
+  \path (\V (2,2))     node [vowel] (oo)     {ɔ};
+  \path (\V (1,2))     node [vowel] (o)      {o};
+  \path (\V (0,2))     node [vowel] (u)      {u};
+  \path (\V (0.5,1.5)) node [vowel] (uu)     {ʊ};
 
-  \path (a) edge [-{Latex[round]}, thick, bend right=15] (oo);
-  \path (a) edge [-{Latex[round]}, thick, bend left=15] (E);
-  \path (oo) edge [-{Latex[round]}, thick, bend right=15] (ee);
-
+  \path (a)  edge [-{Latex[round]}, bend right=15] (oo);
+  \path (a)  edge [-{Latex[round]}, bend left=15]  (E);
+  \path (oo) edge [-{Latex[round]}, bend right=15] (ee);
 \end{tikzpicture}
   \caption{IPA-Vokaltrapez für das Deutsche. Bei allen vorderen Vokalen gibt es eine ungerundete Variante (links) und eine gerundete (rechts). Die Diphthonge werden durch Pfeile dargestellt.}
   \label{fig:vokaltrapneu}
@@ -900,8 +898,8 @@ Als wichtige Oberklasse können die Obstruenten mittels eines eigenen Merkmals a
 Wir können hier bereits eine Einschränkung machen, da Obstruenten eine Untergruppe der Konsonanten sind, und damit das entsprechende Merkmal auch nur für Konsonanten spezifiziert werden muss.
 
 \begin{exe}
-	\ex{\label{ex:phot767676} \textbf{Für Konsonanten:}}\\
-		\textsc{Obstruent}: $+$, $-$
+  \ex{\label{ex:phot767676} \textbf{Für Konsonanten:}}\\
+    \textsc{Obstruent}: $+$, $-$
 \end{exe}
 
 Auch für alle weiteren Merkmale zeigt sich, dass die Oberklassen aus Abschnitt~\ref{sec:oberklassenfuerartikulationsarten} nicht nur eine Konvention sind, sondern deskriptive Vorteile mit sich bringen.
@@ -909,17 +907,17 @@ Einerseits haben Konsonanten und Vokale unterschiedliche Merkmale, andererseits 
 In Kapitel~\ref{sec:phonologie} wird an einigen Stellen argumentiert werden, dass weitere Oberklassen einen Erklärungsvorteil bringen, \zB die Klasse der \textit{Liquide} (\textipa{[K]} und \textipa{[l]}) in Abschnitt~\ref{sec:anfangsrandimeinsilbler}.
 
 \begin{exe}
-	\ex \textbf{Für Vokale:}
-		\begin{xlist}
-			\ex \textsc{Höhe}: \textit{hoch}, \textit{halbhoch}, \textit{mittel}, \textit{halbtief}, \textit{tief}
-			\ex \textsc{Lage}: \textit{vorn}, \textit{halbvorn}, \textit{zentral}, \textit{halbhinten}, \textit{hinten}
-			\ex \textsc{Rund}: $+$, $-$
-			\ex \textsc{Lang}: $+$, $-$
-		\end{xlist}
-	\ex \textbf{Für Konsonanten:}\\
-			\textsc{Ort}: \textit{laryngal}, \textit{uvular}, \textit{velar}, \textit{palatal}, \textit{palatoalveolar}, \textit{alveolar}
-	\ex \textbf{Für Obstruenten:}\\
-		\textsc{Stimme}: $+$, $-$
+  \ex \textbf{Für Vokale:}
+    \begin{xlist}
+      \ex \textsc{Höhe}: \textit{hoch}, \textit{halbhoch}, \textit{mittel}, \textit{halbtief}, \textit{tief}
+      \ex \textsc{Lage}: \textit{vorn}, \textit{halbvorn}, \textit{zentral}, \textit{halbhinten}, \textit{hinten}
+      \ex \textsc{Rund}: $+$, $-$
+      \ex \textsc{Lang}: $+$, $-$
+    \end{xlist}
+  \ex \textbf{Für Konsonanten:}\\
+      \textsc{Ort}: \textit{laryngal}, \textit{uvular}, \textit{velar}, \textit{palatal}, \textit{palatoalveolar}, \textit{alveolar}
+  \ex \textbf{Für Obstruenten:}\\
+    \textsc{Stimme}: $+$, $-$
 \end{exe}
 
 Auch in der Phonologie (Kapitel~\ref{sec:phonologie}) werden in diesem Buch (mit einigen Reduktionen und Erweiterungen) die hier vorgestellten phonetischen Merkmale benutzt.
@@ -1123,59 +1121,58 @@ Es werden jeweils die ungerundete und die gerundete Variante (wenn beide existie
   vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
   dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
   }
+
   \coordinate (hf) at (0,2); % high front
   \coordinate (hb) at (2,2); % high back
   \coordinate (lf) at (1,0); % low front
   \coordinate (lb) at (2,0); % low back
   \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
 
-  % Draw the chart key (vorne -- hinten)
-  \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
-  \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
+  % Chart key (vorne -- hinten).
+  \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5))  node [above left] {\footnotesize vorne};
+  \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node [above left] {\footnotesize hinten};
   \path (\V (-.25,1)) node[above] {\footnotesize zentral};
 
-  % hoch--tief
-  \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
-  \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
+  % Chart key (hoch--tief).
+  \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm)  node [above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
+  \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node [above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
   \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
-  % Draw the horizontal lines first.
+  % Grid.
   \draw [gray, thick] (\V(0,0)) -- (\V(0,2));
   \draw [gray, thick] (\V(1,0)) -- (\V(1,2));
   \draw [gray, thick] (\V(2,0)) -- (\V(2,2));
   \draw [gray, thick] (\V(3,0)) -- (\V(3,2));
-
-  % Draw the vertical lines.
   \draw [gray, thick] (\V(0,0)) -- (\V(3,0));
   \draw [gray, thick] (\V(0,1)) -- (\V(3,1));
   \draw [gray, thick] (\V(0,2)) -- (\V(3,2));
 
-  % Place all the unrounded-rounded pairs next, on top of the horizontal lines.
-  \path (\V(0,0))     node[vowel, left] {i} node[vowel, right] (y) {y} node[dot] {};
-  \path (\V(0.5,0.5)) node[vowel, left] {ɪ} node[vowel, right] (Y) {ʏ} node[dot] {};
-  \path (\V(1,0))     node[vowel, left] {e} node[vowel, right] (e) {ø} node[dot] {};
-  \path (\V(2,0))     node[vowel, left] {ɛ} node[vowel, right] (ee) {œ} node[dot] {};
+  % Unrounded-rounded pairs.
+  \path (\V(0,0))     node[vowel, left] {i} node [vowel, right] (y)  {y} node [dot] {};
+  \path (\V(0.5,0.5)) node[vowel, left] {ɪ} node [vowel, right] (Y)  {ʏ} node [dot] {};
+  \path (\V(1,0))     node[vowel, left] {e} node [vowel, right] (e)  {ø} node [dot] {};
+  \path (\V(2,0))     node[vowel, left] {ɛ} node [vowel, right] (ee) {œ} node [dot] {};
 
-  % Place the unpaired symbols last, on top of the vertical lines.
-  \path (\V(1.5,1))   node[vowel]   (schwa)   {ə};
-  \path (\V(2.5,1))   node[vowel]   (schwaa)  {ɐ};
-  \path (\V(3,1))	node[vowel]	(a)  	{a};
-  \path (\V (2,2))	node[vowel]	(oo)  	{ɔ};
-  \path (\V (1,2))	node[vowel]	 (o) 	{o};
-  \path (\V (0,2))	node[vowel]	 (u) 	{u};
-  \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
+  % Unpaired symbols.
+  \path (\V(1.5,1))    node [vowel] (schwa)  {ə};
+  \path (\V(2.5,1))    node [vowel] (schwaa) {ɐ};
+  \path (\V(3,1))      node [vowel] (a)      {a};
+  \path (\V (2,2))     node [vowel] (oo)     {ɔ};
+  \path (\V (1,2))     node [vowel] (o)      {o};
+  \path (\V (0,2))     node [vowel] (u)      {u};
+  \path (\V (0.5,1.5)) node [vowel] (uu)     {ʊ};
 
-  % Draw connections
-  \path (y) edge [-{Latex[round]}, thick, bend right=3] (schwaa);	
-  \draw [-{Latex[round]}, thick] (Y) -- (schwa);
-  \path (e) edge [-{Latex[round]}, thick,bend right=10] (schwaa);
-  \path (ee) edge [-{Latex[round]}, thick,bend left=20] (schwa);
-  \path (a) edge [-{Latex[round]}, thick,bend right=40] (schwa);
-  \path (oo) edge [-{Latex[round]}, thick,bend right=20] (schwa);
-  \path (o) edge [-{Latex[round]}, thick,bend left=15] (schwaa);	
-  \path (u) edge [-{Latex[round]}, thick,bend left=10] (schwaa);	
-  \draw [-{Latex[round]}, thick, bend right] (uu) -- (schwa);
-
+  % Connections.
+  \path (y) edge  [-{Latex[round]}, bend right=3]  (schwaa);
+  \path (e) edge  [-{Latex[round]}, bend right=10] (schwaa);
+  \path (ee) edge [-{Latex[round]}, bend left=20]  (schwa);
+  \path (a) edge  [-{Latex[round]}, bend right=40] (schwa);
+  \path (oo) edge [-{Latex[round]}, bend right=20] (schwa);
+  \path (o) edge  [-{Latex[round]}, bend left=15]  (schwaa);
+  \path (u) edge  [-{Latex[round]}, bend left=10]  (schwaa);
+  
+  \draw [-{Latex[round]}]             (Y)  -- (schwa);
+  \draw [-{Latex[round]}, bend right] (uu) -- (schwa);
   \end{tikzpicture}
   \caption{Vokaltrapez für die sekundären Diphthonge}
   \label{fig:sekundaerediphthonge}

@@ -1,7 +1,5 @@
 \chapter{Morphologie}
 
-%\newcommand{\DefWort}{Dummy für includeonly.}
-
 \label{sec:morphologie}
 
 In diesem Kapitel werden einige Grundlagen der Morphologie besprochen.
@@ -42,7 +40,7 @@ Nicht einmal Unterscheidungen wie Singular und Plural müssen gemacht werden.
 Sich vorzustellen, die eigene Sprache könnte ohne die gewohnten grammatischen Kategorien funktionieren, ist üblicherweise sehr schwer.
 Für viele Sprecher ist es \zB undenkbar, dass ein Sprachsystem wie das Deutsche ohne Flexion funktionieren würde.
 Unter einer sprachpflegerischen Perspektive würde man eventuell sogar von einem \textit{Verlust der Ausdrucksmöglichkeiten} oder einer \textit{Verflachung} sprechen, wenn Flexionsendungen verloren gehen oder zusammenfallen.
-Die Unterscheidung von Dativ und Genitiv hat für viele Sprecher in diesem Sinn einen hohen emotionalen Stellenwert. 
+Die Unterscheidung von Dativ und Genitiv hat für viele Sprecher in diesem Sinn einen hohen emotionalen Stellenwert.
 Hier soll die Frage nach dem Stellenwert bzw.\ der Notwendigkeit der Flexion im Deutschen möglichst neutral und nicht emotional betrachtet werden.
 Dazu ziehen wir das Englische hinzu.
 Das Englische ist zwar eine dem Deutschen verwandte Sprache, weist aber strukturell große Unterschiede zum Deutschen auf.
@@ -127,7 +125,7 @@ Betrachten wir die deutschen Beispiele in (\ref{ex:morph7964}) und (\ref{ex:morp
   \begin{xlist}
     \ex\gll I enjoy being out in the woods.\\
     Ich genieße seiend draußen in der Wald\\
-    \glt Ich bin gerne im Wald. 
+    \glt Ich bin gerne im Wald.
     \ex\gll Tomorrow, {we'll} go out into the woods.\\
     morgen {wir.werden} gehen raus in der Wald\\
     \glt Morgen gehen wir in den Wald.
@@ -343,62 +341,53 @@ Die Paare von nicht umgelautetem und umgelautetem Vokal sind die in (\ref{ex:mor
   \begin{tikzpicture}[scale=3.5,baseline=default]
   \large
   \tikzset{
-  vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
-  vowelgespannt/.style={circle,fill=gray!30, anchor=mid, text depth=0ex, text height=1ex,minimum size=4ex},
-  dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
+    vowel/.style={fill=white, anchor=mid, text depth=0ex, text height=1ex},
+    vowelgespannt/.style={circle,fill=gray!30, anchor=mid, text depth=0ex, text height=1ex,minimum size=4ex},
+    dot/.style={circle,fill=black,minimum size=0.4ex,inner sep=0pt,outer sep=-1pt},
   }
+
   \coordinate (hf) at (0,2); % high front
   \coordinate (hb) at (2,2); % high back
   \coordinate (lf) at (1,0); % low front
   \coordinate (lb) at (2,0); % low back
   \def\V(#1,#2){barycentric cs:hf={(3-#1)*(2-#2)},hb={(3-#1)*#2},lf={#1*(2-#2)},lb={#1*#2}}
 
-  % Draw the chart key (vorne -- hinten)
+  % Chart key (vorne -- hinten).
   \draw [{Latex[round]}-] (\V (-.25,0)) -- (\V (-.25,.5)) node[above left] {\footnotesize vorne};
   \draw [-{Latex[round]}] (\V (-.25,1.5)) -- (\V (-.25,2)) node[above left] {\footnotesize hinten};
   \path (\V (-.25,1)) node[above] {\footnotesize zentral};
 
-  % hoch--tief
+  % Chart key (hoch -- tief).
   \draw [{Latex[round]}-] (\V (0,-.25)) -- +(270:.5cm) node[above right,rotate=90] (vokaltrapez1) {\footnotesize hoch};
   \draw [{Latex[round]}-] (\V (3,-2.5)) -- +(270:-.5cm) node[above left,rotate=90] (vokaltrapez2) {\footnotesize tief};
   \path (\V (1.5,-1)) node[above,rotate=90] {\footnotesize mittel};
 
-  % Draw the horizontal lines first.
-  \draw [gray] (\V(0,0)) -- (\V(0,2));
-%  \draw [gray] (\V(1,0)) -- (\V(1,2));
-%  \draw [gray] (\V(2,0)) -- (\V(2,2));
-  \draw [gray] (\V(3,0)) -- (\V(3,2));
+  % Grid.
+  \draw [gray, thick] (\V(0,0)) -- (\V(0,2));
+  \draw [gray, thick] (\V(3,0)) -- (\V(3,2));
+  \draw [gray, thick] (\V(0,0)) -- (\V(3,0));
+  \draw [gray, thick] (\V(0,2)) -- (\V(3,2));
 
-  % Draw the vertical lines.
-  \draw [gray] (\V(0,0)) -- (\V(3,0));
-%  \draw [gray] (\V(0,1)) -- (\V(3,1));
-  \draw [gray] (\V(0,2)) -- (\V(3,2));
+  % Vowels.
+  \path (\V (0,2))     node[vowelgespannt] (u)   {u};
+  \path (\V(0,0))      node[vowelgespannt] (y)   {y};
+  \path (\V (0.5,1.5)) node[vowel]         (uu)  {ʊ};
+  \path (\V(0.5,0.5))  node[vowel]         (yy)  {ʏ};
+  \path (\V (1,2))     node[vowelgespannt] (o)   {o};
+  \path (\V(1.25,0))   node[vowelgespannt] (oe)  {ø};
+  \path (\V(3,1))      node[vowelgespannt] (a)   {a};
+  \path (\V(2,0))      node[vowelgespannt] (ee)  {ɛ};
+  \path (\V(2.5,1))    node[vowel]         (aa)  {ă};
+  \path (\V(1.65,0.5)) node[vowel]         (eee) {ɛ̆};
+  \path (\V (1.5,1.4)) node[vowel]         (oo)  {ɔ};
+  \path (\V(1.4,0.5))  node[vowel]         (oee) {œ};
 
-  \path (\V (0,2))	node[vowelgespannt]	 (u) 	{u};
-  \path (\V(0,0))   node[vowelgespannt]   (y)   {y};
-
-  \path (\V (0.5,1.5))	node[vowel]	 (uu) 	{ʊ};
-  \path (\V(0.5,0.5))   node[vowel]   (yy)   {ʏ};
-  
-  \path (\V (1,2))	node[vowelgespannt]	 (o) 	{o};
-  \path (\V(1.25,0))   node[vowelgespannt]   (oe)   {ø};
-
-  \path (\V(3,1))	node[vowelgespannt]	(a)  	{a};
-  \path (\V(2,0))   node[vowelgespannt]   (ee)   {ɛ};
- 
-  \path (\V(2.5,1))   node[vowel]   (aa)  {ă};
-  \path (\V(1.65,0.5))   node[vowel]   (eee)   {ɛ̆};
-
-  \path (\V (1.5,1.4))	node[vowel]	(oo)  	{ɔ};
-  \path (\V(1.4,0.5))   node[vowel]   (oee)   {œ};
-
-  \path (u) edge [-{Latex[round]},bend left=10] (y);
-  \path (uu) edge [-{Latex[round]},bend left=10] (yy);
-  \path (o) edge [-{Latex[round]},bend right=10] (oe);
-  \path (oo) edge [-{Latex[round]},bend right=5] (oee);
-  \path (aa) edge [-{Latex[round]},bend right=10] (eee);
-  \path (a) edge [-{Latex[round]},bend left=10] (ee);
-
+  \path (u)  edge [-{Latex[round]}, bend left=10]  (y);
+  \path (uu) edge [-{Latex[round]}, bend left=10]  (yy);
+  \path (o)  edge [-{Latex[round]}, bend right=10] (oe);
+  \path (oo) edge [-{Latex[round]}, bend right=5]  (oee);
+  \path (aa) edge [-{Latex[round]}, bend right=10] (eee);
+  \path (a)  edge [-{Latex[round]}, bend left=10]  (ee);
   \end{tikzpicture}
   \caption{Umlaut im phonologischen Vokaltrapez}
   \label{fig:umlaut}
@@ -411,7 +400,7 @@ Alle anderen Merkmale (einschließlich \textsc{Gespannt}) sind bei den nicht-umg
 Man spricht daher auch von \textit{Frontierung}.
 Der Umlaut lässt sich also als \textit{morphologisch bedingte phonologische Regularität} beschreiben.
 \textit{Regularität} bedeutet hier, dass zu jedem umlautfähigen Vokal immer eindeutig bestimmbar ist, was der zugehörige Umlautvokal ist.
-Prinzipiell nicht am Umlaut beteiligt sind /\textipa{i I e @ 5}/.  
+Prinzipiell nicht am Umlaut beteiligt sind /\textipa{i I e @ 5}/.
 Der Umlaut von /\textipa{\t{aO}}/ zu /\textipa{\t{O\oe}}/ ist etwas schwieriger zu beschreiben.
 Das zweite Glied im Diphthong wird aber auch hierbei frontiert, also /\textipa{O}/ zu /\textipa{\oe}/.
 Definition~\ref{def:umlaut} fasst zusammen.
@@ -531,12 +520,21 @@ Eine [Wortform] ist also eine Wortform, der noch Flexionsaffixe fehlen.%
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    && \K{Wortform}\B{dl}\B{dr} \\
-    & \K{[Wortform]}\B{dl}\B{dr} && \K{Flexionssuffix}\B{d} \\ 
-    \K{Stamm}\B{d} && \K{Flexionssuffix}\B{d} & \K{\textit{-n}} \\
-    \K{\textit{schick}} && \K{\textit{-te}} \\
-  }
+  \begin{forest}
+    [Wortform
+      [{[Wortform]}
+        [Stamm
+          [\textit{schik}]
+        ]
+        [Flexionssuffix
+          [\textit{te}]
+        ]
+      ]
+      [Flexionssuffix
+        [\textit{-n}]
+      ]
+    ]
+  \end{forest}
   \caption{Beispiel für eine morphologische Struktur}
   \label{fig:flextree}
 \end{figure}
@@ -547,12 +545,21 @@ Dabei haben wir es im Verlauf der Ableitung mit zwei verschiedenen Stämmen zu t
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    && \K{Wortform}\B{dl}\B{dr} \\
-    & \K{Stamm$_{\text{2}}$}\B{dl}\B{dr} && \K{Flexionssuffix}\B{d} \\
-    \K{Wortbildungspräfix}\B{d} && \K{Stamm$_{\text{1}}$}\B{d} & \K{\textit{-t}} \\
-    \K{\textit{ver-}} && \K{\textit{schenk}} \\
-  }
+  \begin{forest}
+    [Wortform
+      [Stamm\Sub{2}
+	[Wortbildungspräfix
+	  [\textit{ver-}]
+	]
+	[Stamm\Sub{1}
+	  [\textit{schenk}]
+	]
+      ]
+      [Flexionssuffix
+	[\textit{-t}]
+      ]
+    ]
+  \end{forest}
   \caption{Beispiel für eine Struktur mit Wortbildung und Flexion}
   \label{fig:flexwbtree}
 \end{figure}
@@ -855,7 +862,7 @@ Verschiedene Substantive erfordern die Wahl unterschiedlicher Allomorphe im Nomi
 Diese Terminologie ist weit verbreitet und wurde deshalb hier angesprochen.
 Es wird jetzt gezeigt, dass der Morphembegriff, wie er oben eingeführt wurde, zwar nicht falsch ist, aber für die Beschreibung des Deutschen nur eine eingeschränkte Nützlichkeit hat.
 
-Zunächst wird bezüglich der Form der Allomorphe argumentiert. 
+Zunächst wird bezüglich der Form der Allomorphe argumentiert.
 In (\ref{ex:morph7282}) und (\ref{ex:morph7283}) wurden Beispiele für das Genitiv-Morphem mit den Allomorphen \textit{-es}, \textit{-s}, \textit{-en} und \textit{-n} gegeben.
 Diese Allomorphe weichen in ihrer Form deutlich voneinander ab, insbesondere im Bezug auf den beteiligten Konsonanten (/\textipa{s}/ bzw.\ /\textipa{n}/).
 Die Definition von Morphem und Allomorph (Definition~\ref{def:allomorphem}, S.~\pageref{def:allomorphem}) zwingt uns dazu, diese als Allomorphe eines einzigen abstrakten Genitiv-Morphems zu betrachten.
@@ -882,18 +889,38 @@ Es gibt innerhalb der Terminologie der Morpheme und Allomorphe keine Möglichkei
 
 \begin{figure}[!htbp]
   \centering
-  \Treek[1]{4}{
-    & \K{\textbf{phonologische Konditionierung}}\B{dl}\B{dr} &&&& \K{\textbf{lexikalische Konditionierung}}\B{dl}\B{dr} \\
-    \K{Subst mit Schwa}\Bdash{d}\B{drr} && \K{Subst ohne Schwa}\B{drr}\B{drrrr}\Bdash{dll} && \K{starkes Subst}\B{d}\B{dllll} && \K{schwaches Subst}\B{d}\B{dllll} \\
-    \K{-s} && \K{-n} && \K{-es} && \K{-en}
-  }
+  \begin{tikzpicture}[every text node part/.style={align=center}]
+ 
+    \node (LexKond)     at (3,6) {{\textbf{Lexikalische Konditionierung}}};
+    \node (StrkSubst)   at (1.5,5) {Starkes\\Substantiv};
+    \node (SchwSubst)   at (4.5,5) {Schwaches\\Substantiv};
+
+    \node (SuffS)       at (0,3) {\textit{-s}};
+    \node (SuffN)       at (2,3) {\textit{-n}};
+    \node (SuffEs)      at (4,3) {\textit{-es}};
+    \node (SuffEn)      at (6,3) {\textit{-en}};
+
+    \node (SubstMSchwa) at (1.5,1) {Substantiv\\mit Schwa};
+    \node (SubstOSchwa) at (4.5,1) {Substantiv\\ohne Schwa};
+    \node (PhonKond)    at (3,0) {{\textbf{Phonologische Konditionierung}}};
+    
+    \draw (SuffS.south)  -- (SubstMSchwa.north);
+    \draw (SuffS.north)  -- (StrkSubst.south);
+    \draw (SuffEs.south) -- (SubstOSchwa.north);
+    \draw (SuffEs.north) -- (StrkSubst.south);
+
+    \draw (SuffN.south)  -- (SubstMSchwa.north);
+    \draw (SuffN.north)  -- (SchwSubst.south);
+    \draw (SuffEn.south) -- (SubstOSchwa.north);
+    \draw (SuffEn.north) -- (SchwSubst.south);
+  \end{tikzpicture}
   \caption{Konditionierungen beim hypothetischen Genitiv-Morphem}
   \label{fig:kondgensg}
 \end{figure}
 
 \begin{table}[!htbp]
   \begin{tabular}{llll}
-	\lsptoprule
+ \lsptoprule
     \textbf{Kasus} & \textbf{Löwe} & \textbf{Wort} & \textbf{Mutter} \\
     \midrule
      \textbf{Nominativ} & Löwe-n & Wört-er   & Mütter   \\
@@ -905,7 +932,6 @@ Es gibt innerhalb der Terminologie der Morpheme und Allomorphe keine Möglichkei
   \caption{Plural von \textit{Löwe}, \textit{Wort}, \textit{Mutter}}
   \label{tab:pluralbeispielmorpheme}
 \end{table}
-
 
 Ein weiteres Argument betrifft die funktionale Ebene.
 Bleiben wir bei dem Beispielwort \textit{Löwe}, nehmen \textit{Wort} und \textit{Mutter} hinzu und sehen uns den Plural in Tabelle~\ref{tab:pluralbeispielmorpheme} an.
