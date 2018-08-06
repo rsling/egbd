@@ -4,7 +4,7 @@
 
 Die Wortbildung beschäftigt sich, wie in Abschnitt~\ref{sec:defwb} beschrieben, mit der Bildung neuer Wörter aus existierenden Wörtern.
 In diesem Kapitel werden die verschiedenen Arten der Wortbildung der Reihe nach besprochen, zuerst die \textit{Komposition} (Abschnitt~\ref{sec:komp}), dann die \textit{Konversion} (Abschnitt~\ref{sec:konv}) und abschließend die \textit{Derivation} (Abschnitt~\ref{sec:deriv}).
- 
+
 \section{Komposition}
 
 \label{sec:komp}
@@ -93,7 +93,7 @@ Komposita sind also nicht nur Substantive, und der Fokus auf Substantivkomposita
     \ex{Lehr.veranstaltung}
     \ex{Rot.eiche}
     \ex{Lauf.schuhe}
-	\ex{Ess.besteck}
+    \ex{Ess.besteck}
     \ex{Fertig.gericht}
     \ex{feuer.rot}
   \end{xlist}
@@ -113,8 +113,8 @@ In diesem Abschnitt werden Komposita diskutiert, die ein klar definiertes semant
 \begin{exe}
   \ex\label{ex:detkomp}
   \begin{xlist}
-  	\ex Schul.heft
-  	\ex Staats.finanzen
+    \ex Schul.heft
+    \ex Staats.finanzen
   \end{xlist}
   \ex\label{ex:rekkomp}
   \begin{xlist}
@@ -183,7 +183,7 @@ Selbst wenn man ihre Bildung forciert, sind die Sätze prinzipiell falsch.
 \end{exe}
 
 Die Komposita, für die Testsätze wie in (\ref{ex:rekkompsucc}) funktionieren, nennt man \textit{Rektionskomposita}, weil ihrem Kopf-Substantiv ein Verb wie hier \textit{nennen}, \textit{schulen} oder \textit{waschen} zugrundeliegt (zur Ableitung vom Verb zum Substantiv vgl.\ Abschnitt~\ref{sec:deriv}), und in einem Satz mit diesem Verb das linke Glied (der Nicht-Kopf) das direkte Objekt (im Akkusativ) wäre -- so wie in den Sätzen in (\ref{ex:rekkompsucc}).
-In einem Satz mit einem dem Kopf entsprechenden Verb würde dieses Verb den Akkusativ regieren. 
+In einem Satz mit einem dem Kopf entsprechenden Verb würde dieses Verb den Akkusativ regieren.
 Daher der Name \textit{Rektionskompositum}.
 
 Die Gruppe aus (\ref{ex:detkomp}), also \textit{Schul.heft}, \textit{Staats.finanzen} usw. werden \textit{Determinativkomposita} genannt, weil der Nicht-Kopf den Kopf semantisch näher bestimmt (\textit{determiniert}), aber eben keine Rektionsbeziehung gegeben ist.
@@ -224,22 +224,42 @@ Zur Verdeutlichung werden hier die Wortklassen im Baum annotiert.
 \end{exe}
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \resizebox{0.45\textwidth}{!}{
-    \Tree[1.5]{
-      && \K{Subst-Stamm}\B{dl}\B{dr} \\ 
-      & \K{Subst-Stamm}\B{dl}\B{dr} && \K{Subst-Stamm}\B{d} \\
-      \K{Adj-Stamm}\B{d} && \K{Subst-Stamm}\B{d} & \K{\textit{lauf}} \\
-      \K{\textit{Lang}} && \K{\textit{strecken}} \\
-    }
-  }\hspace{0.09\textwidth}\resizebox{0.45\textwidth}{!}{
-     \Tree[1.5]{
-      & \K{Subst-Stamm}\B{dl}\B{dr} \\
-      \K{Adj-Stamm}\B{d} && \K{Subst-Stamm}\B{dl}\B{dr} \\
-      \K{\textit{Lang}} & \K{Subst-Stamm}\B{d} && \K{Subst-Stamm}\B{d} \\
-      & \K{\textit{strecken}} && \K{\textit{lauf}} \\
-    }
+  \resizebox{0.49\textwidth}{!}{%
+    \begin{forest}
+      [Substantiv-Stamm
+        [Substantiv-Stamm
+          [Adjektiv-Stamm, tier=preterminal
+            [\textit{Lang}]
+          ]
+          [Substantiv-Stamm, tier=preterminal
+            [\textit{strecke(n)}]
+          ]
+        ]
+        [Substantiv-Stamm, tier=preterminal
+          [\textit{lauf}]
+        ]
+      ]
+    \end{forest}
+  }\resizebox{0.49\textwidth}{!}{
+    \begin{forest}
+      [Substantiv-Stamm
+        [Adjektiv-Stamm, tier=preterminal
+          [\textit{Lang}]
+        ]
+        [Substantiv-Stamm
+          [Substantiv-Stamm, tier=preterminal
+            [\textit{strecke(n)}]
+          ]
+          [Substantiv-Stamm, tier=preterminal
+            [\textit{lauf}]
+          ]
+        ]
+      ]
+    \end{forest}
   }
+  \end{minipage}
   \caption{Zwei mögliche Analysen von \textit{Langstreckenlauf}}
   \label{fig:langstreckenlauf}
 \end{figure}
@@ -248,7 +268,6 @@ Je nachdem, welche Reihenfolge von Kompositionsprozessen man annimmt, ergeben si
 Es gibt in der Regel aber keine grammatischen Kriterien für oder gegen eine bestimmte Analyse.
 Die Grammatik (in diesem Fall die Regularitäten der Komposition) sagt uns lediglich, dass alle denkbaren Strukturanalysen aus geschachtelten Zweiergruppen von Gliedern möglich sind, nicht aber, welche plausibel oder am häufigsten sind.
 Die Entscheidung wird immer aufgrund von mehr oder weniger subjektiven semantischen Erwägungen im Einzelfall gefällt.
-
 
 \begin{Vertiefung}{Wahrscheinliche Analysen von Komposita}\index{Kompositum!Ambiguität}
 
@@ -329,13 +348,24 @@ Abbildung~\ref{fig:kompfugstruk} zeigt beispielhaft die Analyse eines Kompositum
 \end{table}
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Tree[1.75]{
-    && \K{Subst-Stamm}\B{dl}\B{dr} \\
-    & \K{[Subst-Stamm]}\B{dl}\B{dr} && \K{Subst-Stamm}\B{d} \\
-    \K{Subst-Stamm}\B{d} && \K{Fugenelement}\B{d} & \K{\textit{geld}} \\
-    \K{\textit{Schmerz}} && \K{\textit{-ens}} \\
-  }
+  \begin{forest}
+    [Substantiv-Stamm
+      [{[Substantiv-Stamm]}
+        [Substantiv-Stamm, tier=preterminal
+          [\textit{Schmerz}]
+        ]
+        [Fugenelement, tier=preterminal
+          [-\textit{ens}]
+        ]
+      ]
+      [Substantiv-Stamm, tier=preterminal
+        [\textit{geld}]
+      ]
+    ]
+  \end{forest}
+  \end{minipage}
   \caption{Kompositionsstrukturen mit Fugenelement}
   \label{fig:kompfugstruk}
 \end{figure}
@@ -502,26 +532,46 @@ An den Beispielen in Tabelle~\ref{tab:wfkonv} kann man erkennen, dass auch der P
 Eine Darstellung in Strukturbäumen findet sich in den Abbildungen~\ref{fig:konv1} und~\ref{fig:konv2}.
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Tree{
-    \K{Subst-Stamm}\B{d} \\
-    \K{V-Stamm}\B{d} \\
-    \K{\textit{lauf}} \\
-  }
+  \begin{forest}
+    [Substantiv-Stamm
+      [Verb-Stamm
+        [\textit{lauf}]
+      ]
+    ]
+  \end{forest}
+  \end{minipage}
   \caption{Einfache Stammkonversion}
   \label{fig:konv1}
 \end{figure}
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Tree[3]{
-    && \K{Subst-Wortform}\B{d} \\
-    && \K{Adj-Wortform}\B{dr}\B{dl} \\
-    & \K{Adj-Stamm}\B{d} && \K{Flexionssuffix}\B{d} \\
-    & \K{V-Wortform}\B{dr}\B{d}\B{dl} && \K{\textit{-e}} \\
-    \K{Flexionszirkumfix}\B{d} & \K{V-Stamm}\B{d} & \K{Flexionszirkumfix}\B{d} \\
-    \K{\textit{ge-}} & \K{\textit{strich}} & \K{\textit{-en}} \\
-  }
+  \begin{forest}
+    [Substantiv-Wortform
+      [Adjektiv-Wortform
+        [Adjektiv-Stamm
+          [Verb-Wortform
+            [Flexions\ldots, tier=preterminal
+              [\textit{ge-}]
+            ]
+            [Verb-Stamm, tier=preterminal
+              [\textit{strich}]
+            ]
+            [\ldots zirkumfix, tier=preterminal
+              [\textit{-en}]
+            ]
+          ]
+        ]
+        [Flexionssuffix, tier=preterminal
+          [-\textit{e}]
+        ]
+      ]
+    ]
+  \end{forest}
+  \end{minipage}
   \caption{Schrittweise Wortformenkonversionen}
   \label{fig:konv2}
 \end{figure}
@@ -542,7 +592,7 @@ Bei der Konversion werden neue Wörter ohne Formveränderung aus bestehenden Wö
 \index{Derivation}
 
 Bei der Konversion findet typischerweise ein Wortklassenwechsel statt, es gibt aber kein Affix, das eine spezifische semantische Veränderung formal markiert.
-Trotzdem sind die semantischen Folgen eines bestimmten Konversionstypus normalerweise konventionalisiert. 
+Trotzdem sind die semantischen Folgen eines bestimmten Konversionstypus normalerweise konventionalisiert.
 Das bedeutet, dass \zB im Fall der Wortformenkonversion vom verbalen Infinitiv zum Substantiv (\textit{lauf-en} zu \textit{Laufen}) und bei der Stammkonversion (\textit{lauf} zu \textit{Lauf}) per Konvention gut vorhersagbar ist, wie die Bedeutung der jeweiligen Ziel-Substantive aus der Bedeutung des Verbs erschlossen werden kann.
 In den genannten Fällen bezeichnen die Ziel-Substantive die entsprechende Handlung bzw.\ den Vorgang (bei dem \zB jemand läuft).
 Man erwartet daher als kompetenter Sprachbenutzer, dass ein durch Konversion vom Verb gebildetes Substantiv \zB nicht im Einzelfall die handelnde (hier also laufende) Person bezeichnet.
@@ -616,7 +666,7 @@ Wenn Transparenz als Kriterium für die Analyse ausreicht, kann hier der Doppelp
 
 \begin{exe}
   \ex\label{ex:unadj}
-    \begin{xlist} 
+    \begin{xlist}
       \ex[*]{un:rot}
       \ex[*]{un:schnell}
       \ex[]{\label{ex:unadjc} un:wirsch}
@@ -675,13 +725,13 @@ Valenzänderungen i.\,w.\,S.\ findet man bei Präfixverben, vgl.\ (\ref{ex:wb983
 \begin{exe}
   \ex \label{ex:wb983460}
   \begin{xlist}
-  	\ex{\label{ex:wb983460a} Nadezhda klagt über den schlechten Grip der Hantel.}
-  	\ex{\label{ex:wb983460b} Nadezhda beklagt den schlechten Grip der Hantel.}
+    \ex{\label{ex:wb983460a} Nadezhda klagt über den schlechten Grip der Hantel.}
+    \ex{\label{ex:wb983460b} Nadezhda beklagt den schlechten Grip der Hantel.}
   \end{xlist}
   \ex \label{ex:wb983461}
   \begin{xlist}
-  	\ex{\label{ex:wb983461a} Jean-Pierre bricht durch die Schallmauer.}
-  	\ex{\label{ex:wb983461b} Jean-Pierre durchbricht die Schallmauer.}
+    \ex{\label{ex:wb983461a} Jean-Pierre bricht durch die Schallmauer.}
+    \ex{\label{ex:wb983461b} Jean-Pierre durchbricht die Schallmauer.}
   \end{xlist}
 \end{exe}
 
@@ -692,7 +742,7 @@ Durch \textit{be:} entsteht hier also ein transitives Verb.
 Ganz ähnlich verhält es sich mit \textit{brechen} und \textit{durchbrechen} in (\ref{ex:wb983461}).
 Der wesentliche Unterschied ist, dass die von \textit{brechen} regierte Präposition formal dem Präfix entspricht.
 
-Typisch für Verbpartikeln ist hingegen das Tilgen einer Ergänzung wie in (\ref{ex:wb983462}). 
+Typisch für Verbpartikeln ist hingegen das Tilgen einer Ergänzung wie in (\ref{ex:wb983462}).
 Das Verb \textit{schreiben} kann mit einer präpositionalen Ergänzung mit \textit{auf} stehen -- in (\ref{ex:wb983462a}) \textit{auf ein Blatt Papier}.%
 \footnote{Ob es eine fakultative Ergänzung oder eine Angabe ist, ist für unsere Zwecke nicht ausschlaggebend.}
 Das Verb \textit{auf=schreiben} wird mit einer gleichlautenden Partikel \textit{auf=} gebildet und tilgt damit gleichsam die präpositionale Ergänzung.
@@ -702,9 +752,9 @@ Solche Sätze sind vielleicht stilistisch nicht als herausragend einzustufen, ab
 \begin{exe}
   \ex \label{ex:wb983462}
   \begin{xlist}
-  	\ex{\label{ex:wb983462a} Die Trainerin hat alle Ergebnisse [auf ein Blatt Papier] geschrieben.}
-  	\ex{\label{ex:wb983462b} Die Trainerin hat alle Ergebnisse aufgeschrieben.}
-  	\ex{\label{ex:wb983462c} Die Trainerin hat alle Ergebnisse [auf ein Blatt Papier] aufgeschrieben.}
+    \ex{\label{ex:wb983462a} Die Trainerin hat alle Ergebnisse [auf ein Blatt Papier] geschrieben.}
+    \ex{\label{ex:wb983462b} Die Trainerin hat alle Ergebnisse aufgeschrieben.}
+    \ex{\label{ex:wb983462c} Die Trainerin hat alle Ergebnisse [auf ein Blatt Papier] aufgeschrieben.}
   \end{xlist}
 \end{exe}
 
@@ -724,14 +774,14 @@ Alternativ könnte für die Fälle mit Wortklassenwechsel angenommen werden, das
 \begin{exe}
   \ex\label{ex:wb012346}
   \begin{xlist}
-  	\ex{\label{ex:wb012346a} bebeispielen, bestuhlen, bevölkern}
-  	\ex{\label{ex:wb012346b} entvölkern, entgräten, entwanzen}
-  	\ex{\label{ex:wb012346c} verholzen, vernageln, verwanzen, verzinnen}
+    \ex{\label{ex:wb012346a} bebeispielen, bestuhlen, bevölkern}
+    \ex{\label{ex:wb012346b} entvölkern, entgräten, entwanzen}
+    \ex{\label{ex:wb012346c} verholzen, vernageln, verwanzen, verzinnen}
   \end{xlist}
   \ex\label{ex:wb012347}
   \begin{xlist}
-  	\ex{\label{ex:wb012347a} ergrauen, ermüden, erneuern}
-  	\ex{\label{ex:wb012347b} befreien, beengen, begrünen}
+    \ex{\label{ex:wb012347a} ergrauen, ermüden, erneuern}
+    \ex{\label{ex:wb012347b} befreien, beengen, begrünen}
   \end{xlist}
 \end{exe}
 
@@ -847,7 +897,7 @@ Wortbildungssuffixe sind nur in bestimmten Abfolgen kombinierbar.
 \noindent Manchmal werden auch Bildungen wie die in (\ref{ex:wb35486620}) im Rahmen der Wortbildung diskutiert.
 
 \begin{exe}
-  \ex\label{ex:wb35486620} 
+  \ex\label{ex:wb35486620}
   \begin{xlist}
     \ex{\label{ex:wb35486620a} Notlandung \Folgt\ notlanden}
     \ex{\label{ex:wb35486620b} Zwangsräumung \Folgt\ zwangsräumen}
@@ -877,7 +927,7 @@ In (\ref{ex:wb35486621}) sind \textit{Univerbierungen} bebeispielt.
 Dieser hypothetische Wortbildungsprozess bildet aus zwei oft nebeneinander stehenden Wörtern ein neues.
 
 \begin{exe}
-  \ex\label{ex:wb35486621} 
+  \ex\label{ex:wb35486621}
   \begin{xlist}
     \ex{\label{ex:wb35486621a} kennen lernen \Folgt\ kennenlernen}
     \ex{\label{ex:wb35486621b} auf Grund \Folgt\ aufgrund}
@@ -919,7 +969,7 @@ Genauso wie die Rückbildungen gehören die Univerbierungen nicht in die Beschre
   \item Notlaufprogramm
 \end{enumerate}
 
-\Uebung \label{u72} Bestimmen Sie für die folgenden Derivations- und Konversionsprodukte (a) die morphologische Struktur (als Baum oder in der linearen Notation), (b) die Wortklassen der Ausgangs- und Zielwörter, (c) den Typus (Derivation, Stamm- oder Wortformenkonversion). (d) Liegt Umlaut vor? (e) Welche sind Ihrer Meinung nach produktiv gebildet und welche lexikalisiert? 
+\Uebung \label{u72} Bestimmen Sie für die folgenden Derivations- und Konversionsprodukte (a) die morphologische Struktur (als Baum oder in der linearen Notation), (b) die Wortklassen der Ausgangs- und Zielwörter, (c) den Typus (Derivation, Stamm- oder Wortformenkonversion). (d) Liegt Umlaut vor? (e) Welche sind Ihrer Meinung nach produktiv gebildet und welche lexikalisiert?
 
 \begin{enumerate}\Lf
   \item verkäuflich

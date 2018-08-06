@@ -134,7 +134,7 @@ Das Merkmal \textsc{Kasus}, um das es im nächsten Abschnitt geht, ist insofern 
 
 
 \begin{Vertiefung}{Numeruskongruenz und Koordination}
-  
+
 \index{Koordination}
 
 \noindent Im Fall einer sog.\ \textit{Koordinationsstruktur} mit Konjunktionen wie \textit{und} oder \textit{oder} (vgl.\ Abschnitt~\ref{sec:koor}) kongruieren die mit der Konjunktion verbundenen NPs in ihrem Numerus nicht miteinander.
@@ -214,7 +214,7 @@ In allen anderen Fällen muss die Nominalphrase durch ein solches Pronomen (\zB 
 
 
 \begin{exe}
-  \ex\label{ex:flex01563} 
+  \ex\label{ex:flex01563}
   \begin{xlist}
     \ex{\label{ex:flex01563a} Ich danke den Frauen.}
     \ex{\label{ex:flex01563b} Ich danke diesem. $\rightarrow$ Dativ}
@@ -298,26 +298,28 @@ Im Grunde passt der Genitiv also gar nicht richtig ins System der typischerweise
 
 \begin{figure}[!htbp]
   \centering
-  \begin{tabular}{cp{0mm}c}
-    \rnode{KasHierStr}{strukturell} && \textbf{Nominativ} \\
-     && \textbf{Akkusativ} \\
-     && \textbf{Dativ} \\
-    \rnode{KasHierObl}{oblik} && \textbf{Genitiv} \\
-  \end{tabular}
-  \ncline[nodesep=3pt]{->}{KasHierObl}{KasHierStr}
+  \begin{tikzpicture}
+    \node (obl)                             {oblique};
+    \node (gen) at ([shift={( 3,0)}]   obl) {\textbf{Genitiv}};
+    \node (dat) at ([shift={( 0,0.5)}] gen) {\textbf{Dativ}};
+    \node (akk) at ([shift={( 0,0.5)}] dat) {\textbf{Akkusativ}};
+    \node (nom) at ([shift={( 0,0.5)}] akk) {\textbf{Nominativ}};
+    \node (str) at ([shift={(-3,0)}]   nom) {strukturell};
+    \draw [->, thick] (obl) to (str);
+  \end{tikzpicture}
   \caption{Kasushierarchie}
   \label{fig:kashier}
 \end{figure}
 
 \index{Kasus!strukturell}
-\index{Kasus!oblik}
-Auf Basis dieser Überlegungen kommt man zu einer Hierarchie der Kasus bezüglich ihrer \textit{Strukturalität} bzw.\ \textit{Oblikheit}.
+\index{Kasus!oblique}
+Auf Basis dieser Überlegungen kommt man zu einer Hierarchie der Kasus bezüglich ihrer \textit{Strukturalität} bzw.\ \textit{Obliqueheit}.
 Je prototypischer verbgebunden ein Kasus ist und je weniger semantisch oder funktional spezifisch er ist, desto weiter oben steht er in der Hierarchie bzw.\ desto \textit{struktureller} ist er.
-Das Gegenteil von strukturell nennen wir \textit{oblik}.
+Das Gegenteil von strukturell nennen wir \textit{oblique}.
 Die Hierarchie wird in Abbildung~\ref{fig:kashier} dargestellt, Tabelle~\ref{tab:eigenschaftenderkasus} fasst wichtige Eigenschaften der Kasus zusammen.
 In Tabelle~\ref{tab:eigenschaftenderkasus} ist mit \textit{eigene Semantik} gemeint, ob die Kasus, wenn sie von Verben abhängen, trotzdem eine eigene Semantik haben.%
 \footnote{Neben den Beispielen weiter oben ist hierzu auch Abschnitt~\ref{sec:objekte} relevant.}
-Die Auflistung der Kasus erfolgt in diesem Buch immer in der Reihenfolge der Oblikheitshierarchie und nie in der schulgrammatischen Abfolge (Nominativ, Genitiv, Dativ, Akkusativ).
+Die Auflistung der Kasus erfolgt in diesem Buch immer in der Reihenfolge der Obliqueheitshierarchie und nie in der schulgrammatischen Abfolge (Nominativ, Genitiv, Dativ, Akkusativ).
 Bei der Darstellung der Pronomina und Adjektive wird sich diese Abfolge auch als sehr nützlich erweisen, weil dann die meisten synkretistischen Formen untereinanderstehen.
 
 \begin{table}[!htbp]
@@ -335,7 +337,7 @@ Bei der Darstellung der Pronomina und Adjektive wird sich diese Abfolge auch als
   \label{tab:eigenschaftenderkasus}
 \end{table}
 
-Das Merkmal \textsc{Kasus} kommt also exklusiv bei Nomina vor und ist nur bei den obliken Kasus und auch dort nur mit starken Einschränkungen semantisch motiviert.
+Das Merkmal \textsc{Kasus} kommt also exklusiv bei Nomina vor und ist nur bei den obliquen Kasus und auch dort nur mit starken Einschränkungen semantisch motiviert.
 Es liegt innerhalb von NPs immer Kongruenz bezüglich \textsc{Kasus} vor.
 Die Werte des Merkmals \textsc{Kasus} sind prototypischerweise -- wenn auch nicht ausschließlich -- durch Rektion gesetzt.
 
@@ -491,7 +493,7 @@ Der Rest dieses Kapitels ist jetzt der Frage gewidmet, durch welche formalen Mit
 
 \Zusammenfassung{%
   Die verschiedenen nominalen Kategorien (bzw.\ Merkmale) sind teilweise semantisch\slash pragmatisch motiviert, teilweise aber eher strukturell bzw.\ rein grammatisch.
-  Kasus lassen sich in einer Hierarchie anordnen, je nachdem wie stark sie einen eigenständigen semantischen Beitrag leisten (oblik) bzw.\ nur Rektionsanforderungen erfüllen (strukturell).
+  Kasus lassen sich in einer Hierarchie anordnen, je nachdem wie stark sie einen eigenständigen semantischen Beitrag leisten (oblique) bzw.\ nur Rektionsanforderungen erfüllen (strukturell).
 }
 
 
@@ -510,13 +512,43 @@ Die Merkmalsnotation wird benutzt, wenn die formale Notation für die Argumentat
 \label{Substantiv!Flexion}
 
 \begin{figure}[!htbp]
-  \resizebox{\textwidth}{!}{
-    \Treek[1]{3}{
-      && \K{\textbf{Mask}}\B{dll}\B{d}\B{drr}\B{drrrr} && \K{\textbf{Neut}}\B{dll}\B{d}\B{drr} &&&& \K{\textbf{Fem}}\B{d}\B{dll} \\
-      \K{\textbf{schwach} (S1)} && \K{\textbf{stark} (S2)}\Bdash{dl}\Bdash{d}\Bdash{dr} && \K{\textbf{gemischt} (S3)} && \K{\textbf{s-Flexion} (S5)} && \K{S4}\Bdash{dl}\Bdash{dr}\\
-      & \K{Plural}\Below{\textit{\char`~e} (S2a)} & \K{Plural}\Below{\textit{-e} (S2b)} & \K{Plural}\Below{\textit{\char`~er} (S2c)} &&&& \K{Plural}\Below{\textit{-en} (S4a)} && \K{Plural}\Below{\textit{\char`~e} (S4b)} \\
-    }
-  }
+    \begin{tikzpicture}[every text node part/.style={align=center}]
+      \node (MaskN)    at (2,4)   {\textbf{Maskulin}};
+      \node (NeutN)    at (4,4)   {\textbf{Neutral}};
+      \node (FemN)     at (8.5,4) {\textbf{Feminin}};
+
+      \node (schwachN) at (0,2)   {\textbf{schwach} (S1)};
+      \node (starkN)   at (2,2)   {\textbf{stark} (S2)};
+      \node (gemistN)  at (4,2)   {\textbf{gemischt} (S3)};
+      \node (sFlexN)   at (6.5,2) {\textbf{s-Flexion} (S5)};
+      \node (s4N)      at (8.5,2) {\textbf{S4}};
+
+      \node (EPlu)     at (0.5,0) {Plural\\\textit{\char`~e} (S2a)};
+      \node (ePlu)     at (2,0)   {Plural\\\textit{-e} (S2b)};
+      \node (erPlu)    at (3.5,0) {Plural\\\textit{\char`~er} (S2c)};
+
+      \node (enPlu)    at (7.5,0) {Plural\\\textit{-en} (S4a)};
+      \node (EnPlu)    at (9.5,0) {Plural\\\textit{\char`~en} (S4b)};
+
+      \draw (MaskN.south)  -- (schwachN.north);
+      \draw (MaskN.south)  -- (starkN.north);
+      \draw (MaskN.south)  -- (gemistN.north);
+      \draw (MaskN.south)  -- (sFlexN.north);
+
+      \draw (NeutN.south)  -- (starkN.north);
+      \draw (NeutN.south)  -- (gemistN.north);
+      \draw (NeutN.south)  -- (sFlexN.north);
+
+      \draw (FemN.south)   -- (s4N.north);
+      \draw (FemN.south)   -- (sFlexN.north);
+
+      \draw [dashed] (starkN.south) -- (EPlu.north);
+      \draw [dashed] (starkN.south) -- (ePlu.north);
+      \draw [dashed] (starkN.south) -- (erPlu.north);
+
+      \draw [dashed] (s4N.south)    -- (enPlu.north);
+      \draw [dashed] (s4N.south)    -- (EnPlu.north);
+    \end{tikzpicture}
   \caption{Traditionelle Flexionsklassen der Substantive}
   \label{fig:substflexklassen}
 \end{figure}
@@ -564,13 +596,31 @@ Da der Akkusativ Plural und der Genitiv Plural gleichlautend mit dem Nominativ P
 Zusammengefasst lässt sich aus Abbildung~\ref{fig:substklassentsch} als Faustregel für die Unterscheidung nach Stärke wie in (\ref{ex:wuppdich1}) und (\ref{ex:wuppdich2}) formulieren.
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Treek[2]{4}{
-    && \K{Genus?}\B{dl}_{\textnormal{Mask}}^{\textnormal{Neut}}\B{dr}^{\textnormal{Fem}}\\
-    & \K{Genitiv Singular?}\B{dl}_{\textnormal{\textit{-(e)n}}}\B{dr}^{\textnormal{\textit{-(e)s}}} && \K{\textbf{Fem}}\Below{(S4)} \\
-    \K{\textbf{schwach}}\Below{(S1)} && \K{Nominativ Plural?}\B{dl}_{\textnormal{\textit{-(e)n}}}\B{dr}_{\textnormal{\textit{\char`~e\slash-e}}}^{\textnormal{\textit{\char`~er}}} && \\
-    & \K{\textbf{gemischt}}\Below{(S3)} && \K{\textbf{stark}}\Below{(S2)} \\ 
-  }
+  \begin{forest}
+    for tree={l sep=2em},
+    decide/.style={draw, chamfered rectangle, inner sep=2pt},
+    finall/.style={rounded corners, fill=gray}
+      [Genus?, s sep=10em, decide
+        [Genitiv\\Singular?, s sep+=2em, decide,
+          edge label={node[pos=0.6, above, sloped, font=\scriptsize]{maskulin\slash neutrum}}
+          [\whyte{Schwache}\\\whyte{Maskulina (S1)}, finall,
+            edge label={node[pos=0.7, above, sloped, font=\scriptsize]{-(e)n}}
+          ]
+          [Nominativ\\Plural?, s sep+=0.5em, decide,
+            edge label={node[pos=0.7, above, sloped, font=\scriptsize]{-(e)s}}
+            [\whyte{Gemischte Maskulina}\\\whyte{und Neutra (S3)}, finall,
+              edge label={node[pos=0.7, above, sloped, font=\scriptsize]{-(e)n}}]
+            [\whyte{Starke Maskulina}\\\whyte{und Neutra (S2)}, finall,
+              edge label={node[pos=0.7, above, sloped, font=\scriptsize]{\char`~er\slash \char`~e\slash-e}}]
+          ]
+        ]
+        [\whyte{Feminina (S4)}, finall,
+          edge label={node[midway, above, sloped, font=\scriptsize]{feminin}}]
+      ]
+  \end{forest}
+  \end{minipage}
   \caption{Entscheidungsbaum für die Flexionsklassenzugehörigkeit}
   \label{fig:substklassentsch}
 \end{figure}
@@ -578,8 +628,6 @@ Zusammengefasst lässt sich aus Abbildung~\ref{fig:substklassentsch} als Faustre
 \begin{exe}
   \ex\label{ex:wuppdich1} Maskulinum\\
     Genitiv Singular \textit{-en}: schwach
-
-
   \ex\label{ex:wuppdich2} Maskulinum\slash Neutrum
   \begin{xlist}
     \ex\label{ex:wuppdich2a} Genitiv Singular \textit{-es}, Nominativ Plural \textit{\char`~e}/\textit{-e}/\textit{\char`~er}: stark
@@ -750,7 +798,7 @@ Satz~\ref{satz:kasusmarkierungsubst} fasst zusammen.
 
 \index{Schwa!Tilgung}
 \Satz{Kasusmarkierung beim Substantiv (außer schwach)}{\label{satz:kasusmarkierungsubst}%
-Nur die obliken Kasus Dativ und Genitiv werden überhaupt durch Affixe markiert.
+Nur die obliquen Kasus Dativ und Genitiv werden überhaupt durch Affixe markiert.
 Die strukturellen Kasus Nominativ und Akkusativ lauten typischerweise gleich und sind affixlos.
 Der Dativ Plural wird einheitlich mit \textit{-n} markiert, der Genitiv Singular bei allen Substantiven außer den Feminina mit \textit{-es}.
 }
@@ -823,7 +871,7 @@ Dann hätten wir einen Flexionstyp, bei dem (als einzigem) der Akkusativ Singula
 Der Genitiv Singular wäre dann (wieder einzigartig) mit einem Affix \textit{-en} markiert, obwohl er sonst, wenn er markiert ist, immer mit \textit{-es} markiert ist.
 
 Viel sinnvoller ist es daher, anzunehmen, dass die schwache Flexion ein auffälliger Typus ist, bei dem ein einziges Affix auftritt, das als Markierungsfunktion anzeigt, dass die Wortform nicht Nominativ Singular ist.
-Funktional betrachtet ist eine solche Flexion zwar nicht unvernünftig, da der am wenigsten oblike Kasus im unauffälligen Numerus (Singular) als einziges ohne Kennzeichnung bleibt, aber im Gesamtsystem macht dieses Verhalten die schwachen Substantive sogar auffälliger als die s-Flexion.
+Funktional betrachtet ist eine solche Flexion zwar nicht unvernünftig, da der am wenigsten oblique Kasus im unauffälligen Numerus (Singular) als einziges ohne Kennzeichnung bleibt, aber im Gesamtsystem macht dieses Verhalten die schwachen Substantive sogar auffälliger als die s-Flexion.
 Diese hat zwar ein ungewöhnliches Plural-Kennzeichen \textit{-s}, ist aber ansonsten konform zu den Regeln der Kasusmarkierung.
 
 Abschließend können wir aber unabhängig von der Morphologie fragen, was für Wörter überhaupt zu den schwachen Substantiven zählen.
@@ -851,7 +899,7 @@ Diese besondere Funktion könnte wiederum dafür gesorgt haben, dass das Flexion
 
 \begin{Vertiefung}{Schwankungen der schwachen Substantive}
   \label{absref:9w238r467}
-  
+
 \noindent Zu der Auffälligkeit der schwachen Substantive passt es, dass im Dativ und Akkusativ das Suffix oft weggelassen werden kann, also ein Muster wie in (\ref{ex:flex2200}) zu beobachten ist.
 In dieser Variante ist das \textit{-en} zwar immer noch nicht das ansonsten normale Kennzeichen \textit{-es} des Genitiv Singular, aber das Paradigma hat dann wenigstens die Markierungen an den sonst üblichen Positionen.
 
@@ -917,12 +965,20 @@ In dieser Pseudo-Klasse befinden sich aber einige Neutra wie \textit{Auge} oder 
 Die Benennung ist also durchaus irreführend.}
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Treek[3]{4}{
-    && \K{Substantive}\B{dll}\B{d}\\
-    \K{\textit{en}"=Maskulina}\Below{(besonderes Muster)} && \K{allgemeines Muster, subklassifiziert}\Below{nur nach Pluralbildung}\Bbel{dl}\Bbel{d}\Bbel{dr}\Bbel{drr} \\
-    & \K{\textit{\char`~er}}\Below{(nur M/N)} & \K{\textit{\char`~e}\slash\textit{-e}}\Below{(M/N-Prototyp)} & \K{\textit{-en}}\Below{(F-Prototyp)} & \K{\textit{-s}} \\
-  }
+  \begin{forest}
+    [Substantive, calign=last, l sep+=2em
+      [\textit{en}-Maskulina]
+      [normale Flexion{,}\\differenziert\\nur nach\\Pluralbildung, l sep+=2em
+        [\textit{\char`~er}\\nur Maskulina\\und Neutra\\(Kleinstklasse)]
+        [\textit{\char`~e}\slash\textit{-e}\\Protoyp\\der \textbf{Maskulina}\\und \textbf{Neutra}]
+        [\textit{-en}\\Prototyp\\der \textbf{Feminina}]
+        [\textit{-s}\\lexikalisch oder\\phonotaktisch\\motiviert]
+      ]
+    ]
+  \end{forest}
+  \end{minipage}
   \caption{Reduzierte Klassifikation der Substantive}
   \label{fig:neuenklassen}
 \end{figure}
@@ -1068,7 +1124,7 @@ Alle anderen Wörter mit Artikel- und Pronominalflexion sind ausschließlich in 
 \begin{Vertiefung}{Possessorkongruenz}
 \index{Pronomen!possessiv}
 \index{Kongruenz!Possessor--}
-  
+
 \noindent Bei den Possessiva kommt die Markierung einer Kategorie hinzu, die sauber von der normalen Genus- und Numerus-Markierung aller Pronomina getrennt werden kann und muss.
 Die verschiedenen Stämme selber zeigen zusätzlich eine Art Person, Numerus und Genus an.
 \textit{Mein} markiert \zB eine Art 1.~Person Singular, \textit{sein} markiert 3.~Person Singular Maskulinum, \textit{unser} markiert 1.~Person Plural usw.
@@ -1134,13 +1190,21 @@ Man kann die Wortklassenunterscheidung gemäß Filter \ref{wfilt:artpron} auf Ab
 }
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
-  \Treek[1.5]{3}{
-    &\K{systematisch flektierende Pronomina und Artikel}\B{dl}\B{dr} \\
-    \K{Indefinit-\slash Possessivartikel}\Below{(\textit{kein}, \textit{mein} usw.)} && \K{andere}\B{dl}\B{dr} &&  \\
-    &\K{normale Pronomina}\Below{(\textit{jener}, \textit{meiner} usw.)} && \K{Definita}\B{dl}\B{dr} \\
-    && \K{Definitartikel}\Below{(\textit{der}, \textit{des} usw.)} && \K{Definitpronomina}\Below{(\textit{der}, \textit{dessen} usw.)} \\
-  }
+  \begin{forest}
+    [systematisch flektierende\\Pronomina und Artikel
+      [Indefinit- und\\Possessivartikel\\(\textit{kein}{,} \textit{mein} usw.)]
+      [normale Pronomina\\und Definita
+        [normale Pronomina\\(\textit{jener}{,} \textit{meiner} usw.)]
+        [Definita
+          [Definitartikel\\(\textit{der}{,} \textit{des} usw.)]
+          [Definitpronomina\\(\textit{der}{,} \textit{dessen} usw.)]
+        ]
+      ]
+    ]
+  \end{forest}
+  \end{minipage}
   \caption[Klassifikation der Pronomina und Artikel]{Klassifikation der Pronomina und Artikel nach ihrem Flexionsverhalten mit charakteristischen Beispielformen}
   \label{fig:pronartklassen}
 \end{figure}
@@ -1190,8 +1254,8 @@ Dabei wird bei allen Artikeln und Pronomina im Singular zwischen den drei Genera
 
 Es ergibt sich für die normalen Pronomina das Muster in Tabelle~\ref{tab:pronflex}.
 In Abbildung~\ref{fig:pronflexsynk} sind die Synkretismen (also der Zusammenfall von Formen) des Paradigmas zusammengefasst.
-Man erkennt leicht die Ähnlichkeiten zwischen Maskulinum und Neutrum in den obliken Kasus, gleichzeitig aber den für das gesamte deutsche Nomen typischen Zusammenfall von Nominativ und Akkusativ im Neutrum, Femininum und Plural.
-Im Femininum und im Plural zeigt sich zusätzlich eine Tendenz zum Zusammenfall der beiden obliken Kasus Dativ und Genitiv, nur gestört durch den Dativ \textit{-en} und den Genitiv \textit{-er} des Plurals.
+Man erkennt leicht die Ähnlichkeiten zwischen Maskulinum und Neutrum in den obliquen Kasus, gleichzeitig aber den für das gesamte deutsche Nomen typischen Zusammenfall von Nominativ und Akkusativ im Neutrum, Femininum und Plural.
+Im Femininum und im Plural zeigt sich zusätzlich eine Tendenz zum Zusammenfall der beiden obliquen Kasus Dativ und Genitiv, nur gestört durch den Dativ \textit{-en} und den Genitiv \textit{-er} des Plurals.
 Femininum und Plural neigen zugleich untereinander zu einer weitgehenden Angleichung der Formen, ebenfalls nur gestört durch den Dativ Plural \textit{-en}.
 Ein Bewusstsein für diese Synkretismen ist deshalb so wichtig für das Verständnis der deutschen Nominalflexion, weil hier die im Deutschen maximal mögliche Kasus- und Numerusdifferenzierung in einem Paradigma illustriert wird.
 Alle anderen Paradigmen haben maximal eine so gute Differenzierung wie das Paradigma in Abbildung~\ref{fig:pronflexsynk}.
@@ -1240,7 +1304,7 @@ Es treten allerdings im Dativ Plural und gesamten Genitiv zusätzlich die Endung
 Hier nun Stämme wie \textit{den} zu postulieren (also Analysen wie \textit{den-en}, \textit{der-er} usw.) erscheint mit Blick auf das Gesamtparadigma und im Vergleich mit dem Definitartikel nicht sinnvoll.
 Analysen auf Basis eines Stamms \textit{d} und einer einfachen Endung (also \textit{d-enen}, \textit{d-erer} usw.) bringen zwar keine exotischen Stämme mit sich, aber dafür sonst völlig ungewöhnliche (zweisilbige!) Affixe \textit{-enen}, \textit{-erer} usw.
 
-Es ist also eine Analyse wie in Tabelle~\ref{tab:defpronflex} zielführend, bei der ein weiteres (in seiner Funktion nicht genau bestimmbares) Affix angenommen wird, das in besonders obliken Singularformen (Genitiv) und im obliken Plural (Dativ und Genitiv) des Pronomens an die normale Form des definiten Artikels antritt.
+Es ist also eine Analyse wie in Tabelle~\ref{tab:defpronflex} zielführend, bei der ein weiteres (in seiner Funktion nicht genau bestimmbares) Affix angenommen wird, das in besonders obliquen Singularformen (Genitiv) und im obliquen Plural (Dativ und Genitiv) des Pronomens an die normale Form des definiten Artikels antritt.
 Es ist zu beachten, dass die Doppelschreibung \textit{ss} in \textit{d-ess-en} rein graphematische Gründe hat (s.\ Abschnitt~\ref{sec:silbenschreib}).
 
 \begin{table}[!htbp]
@@ -1511,7 +1575,7 @@ Das Deutsche hat die Tendenz, dass Kasus und Numerus innerhalb der NP im Idealfa
 }
 
 \begin{Vertiefung}{Monoflexion bei mehreren Adjektiven}
-  
+
 \noindent Ein Phänomen in NPs mit mehreren Adjektiven, aber ohne Artikel stützt die These der Monoflexion.
 Wenn mehrere Adjektive vor dem Substantiv ohne Artikel stehen, gibt es zwei Möglichkeiten, wie die Adjektive flektieren, vgl.\ (\ref{ex:flex9197}).
 
@@ -1551,9 +1615,9 @@ Das Muster ist in Abbildung~\ref{fig:schwacheadj} nochmals etwas anders zusammen
 \end{figure}
 
 Bis auf das \textit{-en} im Akkusativ des Maskulinums ist die Markierungsfunktion der Affixe eindeutig:
-Sie stellen die obliken Kasus und den Plural (\textit{-en}) auf der einen Seite den strukturellen Kasus im Singular (\textit{-e}) auf der anderen Seite gegenüber.
+Sie stellen die obliquen Kasus und den Plural (\textit{-en}) auf der einen Seite den strukturellen Kasus im Singular (\textit{-e}) auf der anderen Seite gegenüber.
 Von einem Vier-Kasus-System kann hier eigentlich nicht mehr gesprochen werden.
-Da Kasus und Numerus der NP vollständig vom Artikelwort differenziert werden, kann hier das Kategoriensystem im Sinn der Tendenz zur Monoflexion zu einer Numerus- und Oblikheitsmarkierung reduziert werden, vgl.\ Abbildung~\ref{fig:schwacheadj-r}.
+Da Kasus und Numerus der NP vollständig vom Artikelwort differenziert werden, kann hier das Kategoriensystem im Sinn der Tendenz zur Monoflexion zu einer Numerus- und Obliqueheitsmarkierung reduziert werden, vgl.\ Abbildung~\ref{fig:schwacheadj-r}.
 Die Markierung erfolgt zudem mit phonologisch sehr leichten Suffixen \textit{-e} und \textit{-en}, die im deutschen Nominalparadigma zu den häufigsten zählen und damit auch die geringste Differenzierungskraft haben (vor allem \textit{-en}).
 
 \index{Adjektiv!Flexion}
@@ -1561,15 +1625,15 @@ Die Markierung erfolgt zudem mit phonologisch sehr leichten Suffixen \textit{-e}
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{|l|c|c|}
-	\cline{2-3}
-	\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\textbf{Singular}} & \multicolumn{1}{c|}{\textbf{Plural}} \\
-	\hline
-	\multicolumn{1}{|c|}{\textbf{strukturell}} & \multirow{2}{*}{-e} &  \\	
-	\multicolumn{1}{|c|}{\textbf{$-$ Akk Mask}} &  &  \\	
-	\cline{1-2}
-	\multicolumn{1}{|c|}{\textbf{oblik}} & \multicolumn{1}{c}{} & \multirow{2}{*}{-en} \\	
-	\multicolumn{1}{|c|}{\textbf{$+$ Akk Mask}} & \multicolumn{1}{c}{} & \\	
-	\hline
+    \cline{2-3}
+    \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\textbf{Singular}} & \multicolumn{1}{c|}{\textbf{Plural}} \\
+    \hline
+    \multicolumn{1}{|c|}{\textbf{strukturell}} & \multirow{2}{*}{-e} &  \\
+    \multicolumn{1}{|c|}{\textbf{$-$ Akk Mask}} &  &  \\
+    \cline{1-2}
+    \multicolumn{1}{|c|}{\textbf{oblique}} & \multicolumn{1}{c}{} & \multirow{2}{*}{-en} \\
+    \multicolumn{1}{|c|}{\textbf{$+$ Akk Mask}} & \multicolumn{1}{c}{} & \\
+    \hline
   \end{tabular}
   \caption{Synkretismen der adjektivalen Suffixe}
   \label{fig:schwacheadj-r}
@@ -1588,12 +1652,20 @@ Paradigmentafeln zeugen dementsprechend davon, dass das System nicht vollständi
 Hier steht nur die Systembetrachtung, nicht aber die Didaktik zur Diskussion.}
 
 \begin{figure}[!htbp]
-%   \centering
-%   \Treek[2]{5}{
-%     & \K{Geht ein Artikelwort}\Below{mit Flexionsendung voran?}\Bbel{dr}^{\text{nein}}\Bbel{dl}_{\text{ja}}\\
-%     \K{strukureller Sg: \textit{-e}}\Below{sonst: \textit{-en}}\POS[]-(0,9)\ar@{--}[dr]_{\mathrm{Ausnahme:\ Akk\ Mask}} && \K{pronominale}\Below{Affixe}\POS[]-(0,9)\ar@{--}[dl]^{\mathrm{Ausnahme:\ Gen\ Mask/Neut}} \\
-%     & \K{\textit{-en}} \\
-%   }
+  \centering
+  \begin{tikzpicture}[every text node part/.style={align=center}]
+    \node [draw, chamfered rectangle] (FlexAVoran) at (3,6) {Geht ein Artikelwort\\mit Flexionsendung voraus?};
+
+    \node [rounded corners, fill=gray] (SchwaFlexi) at (0,3) {\whyte{struktureller Singular: \textit{-e}}\\\whyte{Rest: \textit{-en}}};
+    \node [rounded corners, fill= gray] (pronomAffi) at (6,3) {\whyte{pronominale}\\\whyte{Affixe}};
+
+    \node [draw, rounded corners, inner sep=6pt] (AdFlexAusn) at (3,0) {\textit{-en}};
+
+    \draw (FlexAVoran) -- node [above, sloped] {\footnotesize Ja}       (SchwaFlexi);
+    \draw (FlexAVoran) -- node [above, sloped] {\footnotesize Nein}     (pronomAffi);
+    \draw [dashed] (SchwaFlexi) -- node [above, sloped] {\footnotesize Ausnahme:} node [below, sloped] {\footnotesize Akkusativ Maskulinum} (AdFlexAusn);
+    \draw [dashed] (pronomAffi) -- node [above, sloped] {\footnotesize Ausnahme: Genitiv} node [below, sloped] {\footnotesize Maskulinum\slash Neutrum} (AdFlexAusn);
+  \end{tikzpicture}
   \caption{Regularitäten der Adjektivflexion}
   \label{fig:adjregeln}
 \end{figure}

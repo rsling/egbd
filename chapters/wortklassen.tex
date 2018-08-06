@@ -789,52 +789,57 @@ Jede Klassifikation von Wörtern ist, wie eingangs schon erwähnt, ein Kompromis
 Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der traditionellen Wortarten auf Basis einer sauberen definitorischen Basis.
 
 \begin{figure}[!htbp]
+  \resizebox*{!}{0.95\textheight}{
+  \begin{minipage}{\textwidth}
   \centering
-  \resizebox{0.9\textwidth}{!}{
   \begin{forest}
-    decide/.style={draw, chamfered rectangle},
+    /tikz/every node/.append style={font=\footnotesize},
+    for tree={l sep=2em, s sep=2.5em},
+    decide/.style={draw, chamfered rectangle, inner sep=2pt},
     finall/.style={rounded corners, fill=gray,
       delay={content=\textcolor{white}{##1}}},
-      intrme/.style={draw, rounded corners}
+    intrme/.style={draw, rounded corners},
+    yes/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Ja}}},
+    no/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Nein}}}
     [\textit{Wort}, intrme
       [{Hat\\Numerus?}, decide
-        [\textit{flektierbar}, intrme
+        [\textit{flektierbar}, intrme, yes
           [{Ist finit\\flektierbar?}, decide
-            [\textbf{Verb}, finall]
-            [\textit{Nomen}, intrme
+            [\textbf{Verb}, finall, yes]
+            [\textit{Nomen}, intrme, no
               [{Hat festes\\Genus?}, decide
-                [\textbf{Substantiv}, finall]
-                [{\textit{anderes}\\\textit{Nomen}}, intrme
+                [\textbf{Substantiv}, finall, yes]
+                [{\textit{anderes}\\\textit{Nomen}}, intrme, no
                   [{Hat Stärke-\\flexion?}, decide
-                    [\textbf{Adjektiv}, finall]
-                    [{\textit{Artikel\slash}\\\textit{Pronomen}}, intrme]
+                    [\textbf{Adjektiv}, finall, yes]
+                    [{\textit{Artikel\slash}\\\textit{Pronomen}}, intrme, no]
                   ]
                 ]
               ]
             ]
           ]
         ]
-        [\textit{nicht flektierbar}, intrme
+        [\textit{nicht flektierbar}, intrme, no
         [{Hat Valenz-\slash\\Kasusrektion?}, decide
-            [\textbf{Präposition}, finall]
-            [\textit{andere}, intrme
+            [\textbf{Präposition}, finall, yes]
+            [\textit{andere}, intrme, no
               [{Leitet Neben-\\Sätze ein?}, decide
-                [\textbf{Komplementierer}, finall]
-                [{\textit{Partikel\slash}\\\textit{Adverb}}, intrme
+                [\textbf{Komplementierer}, finall, yes]
+                [{\textit{Partikel\slash}\\\textit{Adverb}}, intrme, no
                   [{Kann das Vor-\\feld besetzen?}, decide
-                    [{\textit{Adverb\slash}\\\textit{Adkopula}}, intrme
+                    [{\textit{Adverb\slash}\\\textit{Adkopula}}, intrme, yes
                       [{Wird typisch mit\\Kopula verwendet?}, decide
-                        [\textbf{Adkopula}, finall]
-                        [\textbf{Adverb}, finall]
+                        [\textbf{Adkopula}, finall, yes]
+                        [\textbf{Adverb}, finall, no]
                       ]
                     ]
-                    [\textit{Partikel}, intrme
+                    [\textit{Partikel}, intrme, no
                       [{Kann Sätze\\ersetzen?}, decide
-                        [\textbf{Satzäquivalent}, finall]
-                        [\textit{andere}, intrme
+                        [\textbf{Satzäquivalent}, finall, yes]
+                        [\textit{andere}, intrme, no
                           [{Kann Konsti-\\tuenten verbinden?}, decide
-                            [\textbf{Konjunktion}, finall]
-                            [\textit{Rest}, intrme]
+                            [\textbf{Konjunktion}, finall, yes]
+                            [\textit{Rest}, intrme, no]
                           ]
                         ]
                       ]
@@ -847,7 +852,9 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
         ]
       ]
     ]
-  \end{forest}}
+  \end{forest}
+  \end{minipage}
+  }
   \caption{Entscheidungsbaum für die Wortklassen}
   \label{fig:wa}
 \end{figure}

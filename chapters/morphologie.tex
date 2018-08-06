@@ -519,22 +519,24 @@ Eine [Wortform] ist also eine Wortform, der noch Flexionsaffixe fehlen.%
 \footnote{Warum hier \textit{-te} und \textit{-n} nacheinander angefügt werden, wird in Abschnitt~\ref{sec:vvflex} begründet.}
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Wortform
       [{[Wortform]}
-        [Stamm
+        [Stamm, tier=preterminal
           [\textit{schik}]
         ]
-        [Flexionssuffix
+        [Flexionssuffix, tier=preterminal
           [\textit{te}]
         ]
       ]
-      [Flexionssuffix
+      [Flexionssuffix, tier=preterminal
         [\textit{-n}]
       ]
     ]
   \end{forest}
+  \end{minipage}
   \caption{Beispiel für eine morphologische Struktur}
   \label{fig:flextree}
 \end{figure}
@@ -544,22 +546,24 @@ Ein solcher Fall ist in Abbildung~\ref{fig:flexwbtree} am Beispiel des Wortes \t
 Dabei haben wir es im Verlauf der Ableitung mit zwei verschiedenen Stämmen zu tun, dem Verbstamm \textit{schenk} (Stamm$_{\text{1}}$) und dem mit einem Präfix abgeleiteten Stamm \textit{ver-schenk} (Stamm$_{\text{2}}$).
 
 \begin{figure}[!htbp]
+  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Wortform
       [Stamm\Sub{2}
-	[Wortbildungspräfix
+	[Wortbildungspräfix, tier=preterminal
 	  [\textit{ver-}]
 	]
-	[Stamm\Sub{1}
+	[Stamm\Sub{1}, tier=preterminal
 	  [\textit{schenk}]
 	]
       ]
-      [Flexionssuffix
+      [Flexionssuffix, tier=preterminal
 	[\textit{-t}]
       ]
     ]
   \end{forest}
+  \end{minipage}
   \caption{Beispiel für eine Struktur mit Wortbildung und Flexion}
   \label{fig:flexwbtree}
 \end{figure}
@@ -890,7 +894,7 @@ Es gibt innerhalb der Terminologie der Morpheme und Allomorphe keine Möglichkei
 \begin{figure}[!htbp]
   \centering
   \begin{tikzpicture}[every text node part/.style={align=center}]
- 
+
     \node (LexKond)     at (3,6) {{\textbf{Lexikalische Konditionierung}}};
     \node (StrkSubst)   at (1.5,5) {Starkes\\Substantiv};
     \node (SchwSubst)   at (4.5,5) {Schwaches\\Substantiv};
@@ -903,7 +907,7 @@ Es gibt innerhalb der Terminologie der Morpheme und Allomorphe keine Möglichkei
     \node (SubstMSchwa) at (1.5,1) {Substantiv\\mit Schwa};
     \node (SubstOSchwa) at (4.5,1) {Substantiv\\ohne Schwa};
     \node (PhonKond)    at (3,0) {{\textbf{Phonologische Konditionierung}}};
-    
+
     \draw (SuffS.south)  -- (SubstMSchwa.north);
     \draw (SuffS.north)  -- (StrkSubst.south);
     \draw (SuffEs.south) -- (SubstOSchwa.north);
