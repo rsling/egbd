@@ -243,9 +243,8 @@
 \newcommand{\Phrasenschema}[2]{
   \refstepcounter{deskgram-strsch}
   \tblscolorbox[tree]{lsLightGray}{#1\hfill Phrasenschema~\arabic{deskgram-strsch}}{
-    \vspace{-0.4cm}%
     \centering
-    #2 \vspace{0.5cm}
+    #2
   }
 }
 
@@ -278,28 +277,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text used in several chapters %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\ThePhonStr}{
-  \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
-    [Silbe, calign=last
-      [Anfangsrand, ake, calign=first
-	[f][K]
-      ]
-      [Reim, calign=first
-	[Kern,ake
-	  [E]
-	]
-	[Endrand, ake, calign=last
-	  [m][t]
-	]
-      ]
-    ]
-  \end{forest}
-}
 
 \newcommand{\DefWort}{Das (\textit{lexikalische}) \textit{Wort} ist eine Repräsentation von paradigmatisch zusammengehörenden Wortformen.
 Umgangssprachlich kann man von der Zusammenfassung aller möglichen Formen eines Wortes sprechen.
@@ -346,8 +323,6 @@ Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vo
     }{}
     }%
 }
-
-
 \makeatother
 
 % Drawing sonority diagrams.
@@ -409,4 +384,25 @@ Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vo
   \end{tikzpicture}
 }
 
+\forestset{
+  Ephr/.style={draw, ellipse, thick, inner sep=2pt},
+  Eobl/.style={draw, rounded corners, inner sep=5pt},
+  Eopt/.style={draw, rounded corners, densely dashed, inner sep=5pt},
+  Erec/.style={draw, rounded corners, double, inner sep=5pt},
+  Eoptrec/.style={draw, rounded corners, densely dashed, double, inner sep=5pt},
+  Ehd/.style={rounded corners, fill=gray, inner sep=5pt,
+    delay={content=\whyte{##1}}
+  },
+  Emult/.style={for children={no edge}, for tree={l sep=0pt}},
+  phrasenschema/.style={for tree={l sep=2em, s sep=2em}},
+}
 
+
+
+%%%%%%%%%%
+% forest %
+%%%%%%%%%%
+
+\forestset{
+  narroof/.style={roof, inner xsep=-0.25em, rounded corners},
+}

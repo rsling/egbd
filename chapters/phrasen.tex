@@ -17,13 +17,33 @@ In Abschnitt~\ref{sec:syntaxana} wird zum Schluss dieses Kapitels noch eine klei
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1.5]{
-    \K{PP}\B{dd}\B{drr} &&&& \\
-    && \K{NP}\B{dl}\B{d} && \K{PP}\B{d}\B{dr} \\
-    \K{\textbf{P}}\B{d} & \K{Art}\B{d} & \K{\textbf{N}}\B{d} && \K{\textbf{P}}\B{d} & \K{NP}\TRi[-10]\\
-    \K{\textit{für}} & \K{\textit{einen}} & \K{\textit{Keks}} && \K{\textit{für}} & \K{\textit{einen Keks}} &\K{}\\
-  }
-  \caption[Vollständiger und abgekürzter Baum]{Beispiel für einen abgekürzten Baum (rechts) und das vollständige Äquivalent (links)}
+  \begin{forest}
+    [PP, calign=first
+      [\textbf{P}, tier=preterminal
+        [\it für]
+      ]
+      [NP, calign=last
+        [Art, tier=preterminal
+          [\it einen]
+        ]
+        [\textbf{N}, tier=preterminal
+          [\it Keks]
+        ]
+      ]
+    ]
+  \end{forest}\\
+  \vspace{\baselineskip}
+  \begin{forest}
+    [PP, calign=first
+      [\textbf{P}, tier=preterminal
+        [\it für]
+      ]
+      [NP, tier=preterminal
+        [\it einen Keks, narroof]
+      ]
+    ]
+  \end{forest}
+  \caption{Beispiel für einen vollständigen Baum (oben) und eine mögliche Abkürzung (unten)}
   \label{fig:treeabbr}
 \end{figure}
 
@@ -64,7 +84,16 @@ Es kann also irgendeine Konjunktion eingesetzt werden.
 
 
 \Phrasenschema{Koordination}{\label{str:koor}
-    $\kappa$\strschemspace:\strschemspace$\kappa$\strschemspace(Konj)\strschemspace$\kappa$ }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [$\kappa$, Ephr
+      [$\kappa$, Eobl]
+      [Konj, Eopt]
+      [$\kappa$, Eobl]
+    ]
+  \end{forest}
+}
 
 Das Schema bietet damit Analysen der Koordinationen in (\ref{ex:grp2357}) an, vgl.\ die Abbildungen~\ref{fig:koorsubst} bis~\ref{fig:koorpraep}.
 Die koordinierten Teilstrukturen werden an dieser Stelle dabei jeweils nicht weiter analysiert und mit einem Dreieck abgekürzt.%
@@ -81,33 +110,57 @@ Die koordinierten Teilstrukturen werden an dieser Stelle dabei jeweils nicht wei
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{\textbf{N}}\B{dl}\B{d}\B{dr} & \\
-    \K{\textbf{N}}\B{d} & \K{Konj}\B{d} & \K{\textbf{N}}\B{d} \\
-  \K{\textit{Kuchen}} & \K{\textit{und}} & \K{\textit{Sahne}}
-  }
+  \begin{forest}
+    [\textbf{P}, calign=child, calign child=2
+      [\textbf{P}, tier=preterminal
+        [\it Kuchen]
+      ]
+      [Konj, tier=preterminal
+        [\it und]
+      ]
+      [\textbf{P}, tier=preterminal
+        [\it Sahne]
+      ]
+    ]
+  \end{forest}
   \caption{Koordination von Substantiven}
   \label{fig:koorsubst}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{S}\B{dll}\B{d}\B{drr} \\
-    & \K{S}\TRi[-2] && \K{Konj}\B{d} && \K{S}\TRi[2.5] & \\
-    & \K{\textit{Es ist Sonntag}} && \K{\textit{und}} && \K{\textit{die Zeit wird knapp}} & \\
-  }
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [S, tier=preterminal
+        [\it Es ist Sonntag, narroof]
+      ]
+      [Konj, tier=preterminal
+        [\it und]
+      ]
+      [S, tier=preterminal
+        [\it die Zeit wird knapp, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{Koordination von Sätzen}
   \label{fig:koorsatz}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{\textbf{P}}\B{dl}\B{d}\B{dr} \\
-    \K{\textbf{P}}\B{d} & \K{Konj}\B{d} & \K{\textbf{P}}\B{d} \\
-  \K{\textit{auf}} & \K{\textit{oder}} & \K{\textit{neben}}
-  }
+  \begin{forest}
+    [\textbf{P}, calign=child, calign child=2
+      [\textbf{P}, tier=preterminal
+        [\it auf]
+      ]
+      [Konj, tier=preterminal
+        [\it oder]
+      ]
+      [\textbf{P}, tier=preterminal
+        [\it neben]
+      ]
+    ]
+  \end{forest}
   \caption{Koordination von Präpositionen}
   \label{fig:koorpraep}
 \end{figure}
@@ -151,9 +204,19 @@ Die NP wird durch Schema~\ref{str:ngr} beschrieben.
 \index{Nominalphrase}
 
 \Phrasenschema{Nominalphrase (NP)}{\label{str:ngr}
-    \small
-%    \TExt{\TXT{NP\strschemspace:\strschemspace(Art\ |\ NP\Sub{Genitiv})\strschemspace(AP)*\strschemspace\ } & \TXT{\textbf{N}}\COny[--]{rr} & \TXT{\strschemspace(} & \TXT{\textit{innere Rechtsattribute}} & \TXT{)*\strschemspace(RS)*}}
-  }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [NP, Ephr
+      [Art, Eopt, Emult, [NP\Sub{Genitiv}, Eopt]]
+      [AP, Eopt, Erec]
+      [N, Ehd, name=Nkopf]
+      [innere Rechtsattribute, Eopt, Erec]
+      {\draw [bend left=45, dashed,<-] (.south) to (Nkopf.south);}
+      [RS, Eopt, Erec]
+    ]
+  \end{forest}
+}
 
 Das Schema ist komplex, denn die NP hat nahezu dieselbe Komplexität wie ganze Sätze.
 Eine NP besteht -- in Worten ausformuliert -- aus:
@@ -196,22 +259,29 @@ Im Bereich der inneren Rechtsattribute und der Relativsätze gibt es auch Einsch
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{NP}\B{d} \\
-    \K{\textbf{N}} \B{d} \\
-    \K{\textit{dieser}} \\
-  }
+  \begin{forest}
+    [NP
+      [\textbf{N}, tier=preterminal
+        [\it dieser]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit pronominalem Kopf}
   \label{fig:pronngr1}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{NP}\B{d}\B{drr} \\
-    \K{\textbf{N}}\B{d} && \K{PP}\TRi[-4.5] \\ 
-    \K{\textit{einen}} && \K{\textit{mit Sahne}} & \\
-  }
+  \begin{forest}
+    [NP, calign=first
+      [\textbf{N}, tier=preterminal
+        [\it einen]
+      ]
+      [PP, tier=preterminal
+        [\it mit Sahne, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit pronominalem Kopf}
   \label{fig:pronngr2}
 \end{figure}
@@ -225,11 +295,13 @@ Die Relativsätze werden später in Abschnitt~\ref{sec:relativsaetze} besprochen
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{NP}\B{d} & \\
-    \K{\textbf{N}}\B{d} & \\
-    \K{\textit{Zahnbürsten}} & \\
-  }
+  \begin{forest}
+    [NP
+      [\textbf{N}, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+    ]
+  \end{forest}
   \caption{Minimale NP mit substantivischem Kopf}
   \label{fig:ngreinf}
 \end{figure}
@@ -253,22 +325,33 @@ Da wir PP-Strukturen noch nicht beschrieben haben (s.\ Abschnitt~\ref{sec:prpgr}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[0.5]{
-    \K{NP}\B{d}\B{drr} & \\
-    \K{\textbf{N}}\B{d} && \K{PP}\TRi[-6] \\
-    \K{\textit{Zahnbürsten}} && \K{\textit{vom König}} & \\
-  }
+  \begin{forest}
+    [NP, calign=first
+      [\textbf{N}, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+      [PP, tier=preterminal
+        [\it vom König, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit PP}
   \label{fig:ngrmitprpgr}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{NP}\B{d}\B{drr} & \\
-    \K{\textbf{N}}\B{d} && \K{NP}\TRi[-4] \\
-    \K{\textit{Zahnbürsten}} && \K{\textit{des Königs}} & \\
-  }
+  \begin{forest}
+    [NP, calign=first
+      [\textbf{N}, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+      [NP, tier=preterminal
+        [\it des Königs, narroof
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit Genitiv-NP}
   \label{fig:ngrmitngr}
 \end{figure}
@@ -291,11 +374,19 @@ Neben der PP mit \textit{von} können aber viele andere Arten von PPs (und auch 
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{NP}\B{d}\B{drr}\B{drrrr} \\
-    \K{\textbf{N}}\B{d} && \K{PP}\TRi[-2.5] && \K{PP}\TRi[-5] \\
-    \K{\textit{Zahnbürsten}} && \K{\textit{von Königen}} && \K{\textit{aus Silber}} & \\
-  }
+  \begin{forest}
+    [NP, calign=first
+      [\bf N, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+      [PP, tier=preterminal
+        [\it von Königen, narroof]
+      ]
+      [PP, tier=preterminal
+        [\it aus Silber, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit zwei inneren PP-Rechtsattributen}
   \label{fig:grp2497c}
 \end{figure}
@@ -383,11 +474,22 @@ Ausführliches zur Artikelposition folgt in Abschnitt~\ref{sec:adjektiveundartik
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{NP}\B{dll}\B{d}\B{drr}\B{drrrr} \\
-    & \K{NP}\TRi[-7] && \K{\textbf{N}}\B{d} && \K{NP}\TRi[-6] && \K{PP}\TRi[-5] \\
-    & \K{\textit{Sarahs}} && \K{\textit{Rettung}} && \K{\textit{des Ku-}}\Below{\textit{chens}} && \K{\textit{vor dem}}\Below{\textit{Anbrennen}} & \\
-  }
+  \begin{forest}
+    [NP, calign=child, calign child=2
+      [NP, tier=preterminal
+        [\it Sarahs, narroof]
+      ]
+      [\bf N, tier=preterminal
+        [\it Rettung]
+      ]
+      [NP, tier=preterminal
+        [\it des Kuchens, narroof]
+      ]
+      [PP, tier=preterminal
+        [\it vor dem Anbrennen, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit pränominalem Subjektsgenitiv}
   \label{fig:grp1940b}
 \end{figure}
@@ -425,19 +527,19 @@ Beispiel (\ref{ex:grp6211b}) wird der Systematik halber gezeigt, ist aber wegen 
 Tabelle~\ref{tab:verbnomenvalenz} fasst die typischen Korrespondenzen zusammen, die zwischen den Valenzen eines Verbs und seiner Nominalisierung bestehen.
 
 \begin{exe}
-  \ex\label{ex:grp6200} 
+  \ex\label{ex:grp6200}
   \begin{xlist}
     \ex[ ]{\label{ex:grp6200a}[Mein Hund] bellt.}
     \ex[ ]{\label{ex:grp6200b}[das Bellen [meines Hundes]]}
     \ex[ ]{\label{ex:grp6200c}[das Bellen [von meinem Hund]]}
   \end{xlist}
-  \ex\label{ex:grp6201} 
+  \ex\label{ex:grp6201}
   \begin{xlist}
     \ex[ ]{\label{ex:grp6201a}Pavel verziert [den Kuchen].}
     \ex[ ]{\label{ex:grp6201b}[die Verzierung [des Kuchens]]}
     \ex[ ]{\label{ex:grp6201c}[die Verzierung [von dem Kuchen]]}
   \end{xlist}
-  \ex\label{ex:grp6211} 
+  \ex\label{ex:grp6211}
   \begin{xlist}
     \ex[ ]{\label{ex:grp6211a}Pavel rettet Sarah.}
     \ex[*]{\label{ex:grp6211b}[Pavels Rettung [Sarahs]]}
@@ -504,22 +606,38 @@ Beide sind völlig unabhängig voneinander.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{NP}\B{dll}\B{d}\B{drr} \\
-    & \K{AP}\TRi[-8.5] && \K{\textbf{N}}\B{d} && \K{NP}\TRi[-4] \\
-    & \K{\textit{rote}} && \K{\textit{Zahnbürsten}} && \K{\textit{des Königs}} & \\
-  }
+  \begin{forest}
+    [NP, calign=child, calign child=2
+      [AP, tier=preterminal
+        [\it rote, narroof]
+      ]
+      [\bf N, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+      [NP, tier=preterminal
+        [\it des Königs, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit AP und Rechtsattribut}
   \label{fig:grp0718a}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&& \K{NP}\B{dllll}\B{dll}\B{d} \\
-    & \K{AP}\TRi[-4] && \K{AP}\TRi[-5] && \K{\textbf{N}}\B{d} \\
-    & \K{\textit{freundliche}} && \K{\textit{ehemalige}} && \K{\textit{Präsidenten}} \\
-  }
+  \begin{forest}
+    [NP, calign=last
+      [AP, tier=preterminal
+        [\it freundliche, narroof]
+      ]
+      [AP, tier=preterminal
+        [\it ehemalige, narroof]
+      ]
+      [\bf N, tier=preterminal
+        [\it Präsidenten]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit mehreren Adjektivphrasen}
   \label{fig:grp0718b}
 \end{figure}
@@ -531,12 +649,24 @@ Das Adjektiv \textit{ehemalig} wurde bewusst gegen \textit{nett} ausgetauscht.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&&&&& \K{NP}\B{dllll}\B{dd} \\
-    &&&& \K{AP}\B{dll}\B{d}\B{drr} \\
-    && \K{AP}\TRi[-4] && \K{Konj}\B{d} && \K{AP}\TRi[-8] && \K{\textbf{N}}\B{d} \\
-    && \K{\textit{freundliche}} && \K{\textit{,}} && \K{\textit{nette}} && \K{\textit{Präsidenten}}\\
-  }
+  \begin{forest}
+    [NP, calign=last
+      [AP, calign=child, calign child=2
+        [AP, tier=preterminal
+          [\it freundliche, narroof]
+        ]
+        [Konj, tier=preterminal
+          [{,}]
+        ]
+        [AP, tier=preterminal
+          [\it nette, narroof]
+        ]
+      ]
+      [\bf N, tier=preterminal
+        [\it Präsidenten]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit koordinierten Adjektivphrasen}
   \label{fig:ngradjkonj}
 \end{figure}
@@ -568,11 +698,25 @@ Schließlich können optional noch Artikelwörter oder NPs im Genitiv ganz links
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&& \K{NP}\B{dllll}\B{dll}\B{d}\B{drr}\B{drrrr} \\
-    \K{Art}\B{d} && \K{AP}\TRi[-8] && \K{\textbf{N}}\B{d} && \K{NP}\TRi[-5] && \K{RS}\TRi[-3] \\
-    \K{\textit{die}} && \K{\textit{roten}} && \K{\textit{Zahnbürsten}} && \K{\textit{des}}\Below{\textit{Königs}} && \K{\textit{die benutzt}}\Below{\textit{waren}} & \\
-  }
+  \begin{forest}
+    [NP, calign=child, calign child=3
+      [Art, tier=preterminal
+        [\it die]
+      ]
+      [AP, tier=preterminal
+        [\it roten, narroof]
+      ]
+      [\bf N, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+      [NP, tier=preterminal
+        [\it des Königs, narroof]
+      ]
+      [RS, tier=preterminal
+        [\it die benutzt waren, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit Artikelwort und Relativsatz}
   \label{fig:grp7000}
 \end{figure}
@@ -585,11 +729,16 @@ Dank der Weglassbarkeit aller Teile der Phrase zwischen Artikel und Substantiv w
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    && \K{NP}\B{dll}\B{d} \\
-    \K{Art}\B{d} && \K{\textbf{N}}\B{d} \\
-    \K{\textit{einige}} && \K{\textit{Zahnbürsten}}
-  }
+  \begin{forest}
+    [NP, calign=last
+      [Art, tier=preterminal
+        [\it einige]
+      ]
+      [\bf N, tier=preterminal
+        [\it Zahnbürsten]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit N und Art}
   \label{fig:artsubst}
 \end{figure}
@@ -602,7 +751,7 @@ Im Plural steht in indefiniten NPs auch kein Artikelwort (\ref{ex:grp0018b}), we
 Dem Artikel \textit{ein} im Singular entspricht im Plural also typischerweise die Artikellosigkeit.
 
 \begin{exe}
-  \ex\label{ex:grp0018} 
+  \ex\label{ex:grp0018}
   \begin{xlist}
     \ex{\label{ex:grp0018a} Wir trinken [Tee].}
     \ex{\label{ex:grp0018b} Wir lesen [Bücher].}
@@ -648,7 +797,16 @@ Welche Ergänzungen vorkommen, wird (im Sinn der Definition von Valenz und Rekti
 \index{Adjektivphrase}
 
 \Phrasenschema{Adjektivphrase (AP), nur attributiv}{\label{str:agr}
-%\TExt{\TXT{AP\strschemspace:\strschemspace(\textit{Modifizierer}~|~\ } & \TXT{\textit{Ergänzungen}} & \TXT{)*\strschemspace(\textit{Gradierungselement})\strschemspace\ } & \TXT{\textbf{A}}\COny[-]{ll} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [AP, Ephr, calign=child, calign child=2
+      [Modifizierer, Eopt, Erec, Emult [Ergänzungen, Eopt, Erec, name=Apergaenzi]]
+      [Gradierungselement, Eopt]
+      [A, Ehd]
+      {\draw [->, bend left=45] (.south) to (Apergaenzi.south);}
+    ]
+  \end{forest}
 }
 
 Unter dem semantischen Begriff \textit{Gradierung} wird hier eine Verstärkung (wie bei \textit{sehr} oder \textit{überaus}) oder eine Abschwächung (wie bei \textit{weniger} oder \textit{nicht}) verstanden.
@@ -692,11 +850,19 @@ Eine Modellierung, in der dieser Unterschied eine erkennbare Rolle spielt, würd
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&& \K{AP}\B{dll}\B{dllll}\B{d} \\
-    & \K{PP}\TRi[-4] && \K{Ptkl}\B{d} && \K{\textbf{A}}\B{d} \\
-    & \K{\textit{seit gestern}} && \K{\textit{sehr}} && \K{\textit{angenehme}} \\
-  }
+  \begin{forest}
+    [AP, calign=last
+      [PP, tier=preterminal
+        [\it seit gestern, narroof]
+      ]
+      [Ptkl, tier=preterminal
+        [\it sehr]
+      ]
+      [\bf A, tier=preterminal
+        [\it angenehme]
+      ]
+    ]
+  \end{forest}
   \caption{AP mit Modifizierer und Gradierungselement}
   \label{fig:adgrnormalana}
 \end{figure}
@@ -723,22 +889,40 @@ In prädikativen APs sind die Stellungsmöglichkeiten etwas anders (Abschnitt~\r
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{AP}\B{dll}\B{d} \\
-    & \K{PP}\TRi[-6] && \K{\textbf{A}}\B{d} \\
-    & \K{\textit{auf ihre}}\Below{\textit{Tochter}} && \K{\textit{stolze}} \\
-  }
+  \begin{forest}
+    [AP, calign=last
+      [PP, tier=preterminal
+        [\it auf ihre Tochter, narroof, name=AufIhreTochter]
+      ]
+      [\bf A, tier=preterminal
+        [\it stolze]
+        {\draw [->, bend left=30] (.south) to (AufIhreTochter);}
+      ]
+    ]
+  \end{forest}
   \caption{AP mit Ergänzung}
   \label{fig:erginadjgr}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&&&& \K{AP}\B{dllllll}\B{dllll}\B{dll}\B{d} \\
-    & \K{PP}\TRi[-6] && \K{PP}\TRi[-6] && \K{Ptkl}\B{d} && \K{\textbf{A}}\B{d} \\
-    & \K{\textit{seit}}\Below{\textit{gestern}} && \K{\textit{auf ihre}}\Below{\textit{Tochter}} && \K{\textit{sehr}} && \K{\textit{stolze}} \\
-  }
+  \begin{forest}
+    [AP, calign=last
+      [PP, tier=preterminal
+        [\it seit gestern, narroof]
+      ]
+      [PP, tier=preterminal
+        [\it auf ihre Tochter, narroof, name=AufIhreTochter]
+      ]
+      [Ptkl, tier=preterminal
+        [\it sehr]
+      ]
+      [\bf A, tier=preterminal
+        [\it stolze]
+        {\draw [->, bend left=30] (.south) to (AufIhreTochter);}
+      ]
+    ]
+  \end{forest}
   \caption{AP, in der alle Positionen gefüllt sind}
   \label{fig:adjgrziemlichvoll}
 \end{figure}
@@ -758,8 +942,19 @@ Optionale Gradierungselemente stehen nach ihnen und damit immer direkt vor dem a
 
 \index{Präpositionalphrase}
 
+\vspace{2\baselineskip} % Avoid Phrasenschema bleeding into heading.
+
 \Phrasenschema{Präpositionalphrase (PP)}{\label{str:prpgr}
-%\TExt{\TXT{PP\strschemspace:\strschemspace(\textit{Modifizierer})\strschemspace\ } & \TXT{\textbf{P}}\COny[-]{rr} & \TXT{\strschemspace\ } & \TXT{NP} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [PP, Ephr, calign=child, calign child=2
+      [Modifizierer, Eopt]
+      [P, Ehd, name=Ppkopf]
+      [NP, Eobl]
+      {\draw [->, bend left=45] (.south) to (Ppkopf.south);}
+    ]
+  \end{forest}
 }
 
 Alle Präpositionen haben eine strikt einstellige Valenz.
@@ -779,22 +974,38 @@ Einen Modifizierer in Form eines Adjektivs (\textit{weit}) zeigt (\ref{ex:prpgri
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{PP}\B{dll}\B{d}\B{drr} \\
-    & \K{NP}\TRi[-8] && \K{\textbf{P}}\B{d} && \K{NP}\TRi[-6] \\
-    & \K{\textit{einen}}\Below{\textit{Meter}} && \K{\textit{unter}} && \K{\textit{der Erde}} & \\
-  }
-  \caption{PP mit Maßangabe (NP)}
+  \begin{forest}
+    [PP, calign=child, calign child=2
+      [NP, tier=preterminal
+        [\it einen Meter, narroof]
+      ]
+      [\bf P, tier=preterminal
+        [\it unter]
+      ]
+      [NP, tier=preterminal
+        [\it der Erde, narroof]
+      ]
+    ]
+  \end{forest}
+  \caption{PP mit NP-Maßangabe}
   \label{fig:prpgrmitakkmod}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{PP}\B{dl}\B{d}\B{drr} \\
-    \K{Ptkl}\B{d} & \K{\textbf{P}}\B{d} && \K{NP}\TRi[-3] \\
-    \K{\textit{weit}} & \K{\textit{über}} && \K{\textit{ihrem früh-}}\Below{\textit{eren Niveau}} &\\
-  }
+  \begin{forest}
+    [PP, calign=child, calign child=2
+      [Ptkl, tier=preterminal
+        [\it weit]
+      ]
+      [\bf P, tier=preterminal
+        [\it über]
+      ]
+      [NP, tier=preterminal
+        [\it ihrem früheren Niveau, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{PP mit Modifizierer}
   \label{fig:prpgrmitadvmod}
 \end{figure}
@@ -812,11 +1023,16 @@ Für die postpositionale Variante s.\ auch Abbildung~\ref{fig:postpos}.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{PP}\B{dll}\B{d} \\
-    & \K{NP}\TRi && \K{\textbf{Psp}}\B{d} \\
-    & \K{\textit{der Sprechstunde}} && \K{\textit{wegen}}
-  }
+  \begin{forest}
+    [PP, calign=last
+      [NP, tier=preterminal
+        [\it der Sprechstunde, narroof]
+      ]
+      [\bf Psp, tier=preterminal
+        [\it wegen]
+      ]
+    ]
+  \end{forest}
   \caption{Postpositionsstruktur}
   \label{fig:postpos}
 \end{figure}
@@ -833,12 +1049,21 @@ Das sähe dann aus wie in Abbildung~\ref{fig:flektprpreanalyse}.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{PP}\B{dd}\B{drr} \\
-    && \K{NP}\B{dl}\B{d} \\
-    \K{\textbf{P}}\B{d} & \K{Art}\B{d} & \K{\textbf{N}}\B{d} \\
-    \K{\textit{zu}} & \K{\textit{'m}} & \K{\textit{Training}} \\
-  }
+  \begin{forest}
+    [PP, calign=first
+      [\bf P, tier=preterminal
+        [\it zu]
+      ]
+      [NP, calign=last
+        [Art, tier=preterminal
+          [\it 'm]
+        ]
+        [\bf N, tier=preterminal
+          [\it Training]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Flektierbare Präpositionen als zwei Wortformen}
   \label{fig:flektprpreanalyse}
 \end{figure}
@@ -851,12 +1076,18 @@ Wir entscheiden uns hier für die Variante, die nicht willkürlich Wörter in me
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{PP}\B{dd}\B{dr} \\
-    & \K{NP}\B{d} \\
-    \K{\textbf{P}}\B{d} & \K{\textbf{N}}\B{d} \\
-    \K{\textit{zum}} & \K{\textit{Training}} \\
-  }
+  \begin{forest}
+    [PP, calign=first
+      [\bf P, tier=preterminal
+        [\it zum]
+      ]
+      [NP
+      [\bf N, tier=preterminal
+        [\it Training]
+      ]
+    ]
+    ]
+  \end{forest}
   \caption{Flektierbare Präpositionen als eine Wortform (präferiert)}
   \label{fig:flektprpalswortform}
 \end{figure}
@@ -874,16 +1105,31 @@ Optional stehen Modifizierer vor der Präposition.
 
 \index{Adverbphrase}
 
+\vspace{2\baselineskip} % Avoid Phrasenschema bleeding into heading.
+
 \Phrasenschema{Adverbphrase (AdvP)}{\label{str:advgr}
-    AdvP\strschemspace:\strschemspace(\textit{Modifizierer})\strschemspace\textbf{Adv} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [AdvP, Ephr, calign=last
+      [Modifizierer, Eopt]
+      [Adv, Ehd]
+    ]
+  \end{forest}
+}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{AdvP}\B{dll}\B{d} \\
-    & \K{Ptkl}\B{d} && \K{\textbf{Adv}}\B{d} \\
-    & \K{\textit{sehr}} && \K{\textit{oft}}
-  }
+  \begin{forest}
+    [AdvP, calign=last
+      [Ptkl, tier=preterminal
+        [\it sehr]
+      ]
+      [\bf Adv, tier=preterminal
+        [\it oft]
+      ]
+    ]
+  \end{forest}
   \caption{AdvP mit Modifizierer}
   \label{fig:advgrintensiv}
 \end{figure}
@@ -895,7 +1141,7 @@ Allerdings ist die Modifizierbarkeit semantisch stark eingeschränkt.
 Adverben wie \textit{einst}, \textit{gestern}, \textit{dort}, \textit{ansonsten}, \textit{wo}, \textit{weshalb} usw.\ sind kaum oder gar nicht modifizierbar.
 
 \begin{exe}
-  \ex\label{ex:advgrintensiv} 
+  \ex\label{ex:advgrintensiv}
   \begin{xlist}
     \ex{\label{ex:advgrintensiva} Ischariot malt [sehr oft].}
     \ex{\label{ex:advgrintensivb} Ischariot schwimmt [weit draußen].}
@@ -915,8 +1161,18 @@ AdvPs sind ähnlich wie PPs strukturiert, nur dass Präpositionen immer eine obl
 \index{Komplementierer}
 \index{Komplementiererphrase}
 
+\vspace{2\baselineskip} % Avoid Phrasenschema bleeding into heading.
+
 \Phrasenschema{Komplementiererphrase (KP)}{\label{str:subjgr}
-%\TExt{\TXT{KP\strschemspace:\strschemspace\ } & \TXT{\textbf{K}}\COny[-]{rr} & \TXT{\strschemspace\ } & \TXT{VP} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [KP, Ephr, calign=first
+      [K, Ehd, name=Kpkopf]
+      [VP, Eobl]
+      {\draw [bend left=45, <-] (.south) to (Kpkopf.south);}
+    ]
+  \end{forest}
 }
 
 Die \textit{Komplementiererphrase} (KP) entspricht im Wesentlichen dem sogenannten \textit{Nebensatz} (s.\ auch Abschnitte~\ref{sec:komplementiererwortklassen} und~\ref{sec:nebensaetze}), und sie ist denkbar einfach strukturiert.
@@ -935,12 +1191,17 @@ Vgl.\ auch Abbildung~\ref{fig:substval}.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{KP}\B{d}\B{drr} \\
-    \K{\textbf{K}}\B{d} && \K{VP}\TRi[-4] \\
-    \K{\textit{dass}} && \K{\textit{der Kassen-}}\Below{\textit{patient geht}} & \\
-  }
-  \caption{KP}
+  \begin{forest}
+    [KP, calign=first
+      [\bf K, tier=preterminal
+        [\it dass, name=Kpkopf]
+      ]
+      [VP, tier=preterminal
+        [\it der Kassenpatient geht, narroof]
+      ]
+    ]
+  \end{forest}
+  \caption{Komplementiererphrase}
   \label{fig:substval}
 \end{figure}
 
@@ -1008,7 +1269,15 @@ Das ist sehr selten der Fall, zumindest aber in Imperativsätzen eine Möglichke
 \index{Verbphrase}
 
 \Phrasenschema{Verbphrase (VP)}{\label{str:vgr}
-%\TExt{\TXT{VP\strschemspace:\strschemspace(} & \TXT{\textit{Ergänzungen}} & \TXT{~|~\textit{Angaben})*\strschemspace\ } & \TXT{\textbf{V}}\COny[-]{ll} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [VP, Ephr, calign=last
+      [Angaben, Emult, Eopt, Erec [Ergänzungen, Eopt, Emult, Erec, name=Vpergaenzi]]
+      [V, Ehd]
+      {\draw [->, bend left=90] (.south) to (Vpergaenzi.south);}
+    ]
+  \end{forest}
 }
 
 \begin{exe}
@@ -1017,51 +1286,96 @@ Das ist sehr selten der Fall, zumindest aber in Imperativsätzen eine Möglichke
   \ex{dass [Ischariot [das Bild] malt]}
   \ex{dass [Ischariot [dem Arzt] [das Bild] verkauft]}
   \ex{dass [Ischariot wahrscheinlich [dem Arzt] heimlich [das Bild] \\schnell verkauft]}
-\end{xlist} 
+\end{xlist}
 \end{exe}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{VP}\B{dll}\B{d} \\
-    & \K{NP}\TRi[-5] && \K{\textbf{V}}\B{d} \\
-    & \K{\textit{Ischariot}} && \K{\textit{malt}} & \\
-  }
+  \begin{forest}
+    [VP, calign=last
+      [NP, tier=preterminal
+        [\it Ischariot, narroof]
+      ]
+      [\bf V, tier=preterminal
+        [\it malt]
+      ]
+    ]
+  \end{forest}
   \caption{VP mit einstelliger Valenz}
   \label{fig:vgreinstellig}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&& \K{VP}\B{dllll}\B{dll}\B{d} \\
-    & \K{NP}\TRi[-5] && \K{NP}\TRi[-6] && \K{\textbf{V}}\B{d} \\
-    & \K{\textit{Ischariot}} && \K{\textit{das Bild}} && \K{\textit{malt}} & \\
-  }
+  \begin{forest}
+    l sep+=1em
+    [VP, calign=last
+      [NP, tier=preterminal
+        [\it Ischariot, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it das Bild, narroof]
+      ]
+      [\bf V, tier=preterminal
+        [\it malt]
+      ]
+    ]
+  \end{forest}
   \caption{VP mit zweistelliger Valenz}
   \label{fig:vgrzweistellig}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&&&& \K{VP}\B{dllllll}\B{dllll}\B{dll}\B{d} \\
-    & \K{NP}\TRi[-5] && \K{NP}\TRi[-5.5] && \K{NP}\TRi[-6] && \K{\textbf{V}}\B{d} \\
-    & \K{\textit{Ischariot}} && \K{\textit{dem Arzt}} && \K{\textit{das Bild}} && \K{\textit{verkauft}} & \\
-  }
+  \begin{forest}
+    l sep+=2em
+    [VP, calign=last
+      [NP, tier=preterminal
+        [\it Ischariot, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it dem Arzt, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it das Bild, narroof]
+      ]
+      [\bf V, tier=preterminal
+        [\it verkauft]
+      ]
+    ]
+  \end{forest}
   \caption{VP mit dreistelliger Valenz}
   \label{fig:vgrdreistellig}
 \end{figure}
 
 \begin{figure}[!htbp]
-  \resizebox{\textwidth}{!}{
-    \Tree[0.1]{
-      &&&&&&&&&&&&& \K{VP}\B{ddllllllllllll}\B{ddllllllllll}\B{ddllllllll}\B{ddllllll}\B{ddllll}\B{ddll}\B{dd} \\
-      \\
-      & \K{NP}\TRi[-5] && \K{AdvP}\TRi[-2.5] && \K{NP}\TRi[-5.5] && \K{AdvP}\TRi[-5.5] && \K{NP}\TRi[-6] && \K{AdvP}\TRi[-7] && \K{\textbf{V}}\B{d} \\
-      & \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{dem Arzt}} && \K{\textit{heimlich}} && \K{\textit{das Bild}} && \K{\textit{schnell}} && \K{\textit{verkauft}} & \\
-    }
-  }
+  \centering
+  \begin{forest}
+    l sep+=3em
+    [VP, calign=last
+      [NP, tier=preterminal
+        [\it Ischariot, narroof]
+      ]
+      [AdvP, tier=preterminal
+        [\it wahrscheinlich, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it dem Arzt, narroof]
+      ]
+      [AdvP, tier=preterminal
+        [\it heimlich, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it das Bild, narroof]
+      ]
+      [AdvP, tier=preterminal
+        [\it schnell, narroof]
+      ]
+      [\bf V, tier=preterminal
+        [\it verkauft]
+      ]
+    ]
+  \end{forest}
   \caption{VP mit dreistelliger Valenz und Adverbialen}
   \label{fig:vgrdreistelligmitadv}
 \end{figure}
@@ -1105,7 +1419,7 @@ Beispiele dafür werden in (\ref{ex:auxinf}) gegeben.
   \begin{xlist}
     \ex{\label{ex:auxinfa} dass der Junge ein Eis [essen wird]}
     \ex{\label{ex:auxinfb} dass das Eis [gegessen wird]}
-    \ex{\label{ex:auxinfc} dass die Mutter das Eis [kaufen wollen wird]}
+    \ex{\label{ex:auxinfc} dass die Freundin das Eis [kaufen wollen wird]}
   \end{xlist}
 \end{exe}
 
@@ -1124,7 +1438,15 @@ Die Indizes stellen sicher, dass die verschiedenen V auseinandergehalten werden 
 \index{Verbkomplex}
 
 \Phrasenschema{Verbkomplex (V)}{\label{str:vk}
-% \TExt{\TXT{\textbf{V\Sub{j+i}}\strschemspace:\strschemspace(} & \TXT{\textbf{V\Sub{j}}} & \TXT{)\strschemspace\ } & \TXT{\textbf{V\Sub{i}}}\COny[-]{ll} }
+  \centering
+  \begin{forest}
+    phrasenschema
+    [V\Sub{j+i}, Ephr, , calign=last
+      [V\Sub{j}, Eopt, name=Vkkopf]
+      [V\Sub{i}, Ehd]
+      {\draw [->, bend left=30] (.south) to (Vkkopf.south);}
+    ]
+  \end{forest}
 }
 
 Schema~\ref{str:vk} ist \textit{rekursiv} (s.\ Abschnitt~\ref{sec:rekursion}), weil es aus mehreren V wieder ein V erzeugt.\index{Rekursion}
@@ -1140,39 +1462,62 @@ Außerdem zeigen Pfeile die Rektionsbeziehungen an.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{\textbf{V}}\B{d} \\
-    \K{\textit{isst}} \\
-  }
+  \begin{forest}
+    [\bf V, tier=preterminal
+      [\it isst]
+    ]
+  \end{forest}
   \caption{Maximal einfacher Verbkomplex}
   \label{fig:vkomplex0}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{\textbf{V\Sub{2+1}}}\B{dll}\B{d} \\
-    & \K{\textbf{V\Sub{2}}}\B{d} && \K{\textbf{V\Sub{1}}}\B{d} \\ 
-    & \K{\textit{essen}}\Below{2} && \K{\textit{wird}}\Below{1} \POS[]-(0,9)\ar@/^/[ll]-(0,9) \\
-  }~\Tree{
-    &&& \K{\textbf{V\Sub{2+1}}}\B{dll}\B{d} \\
-    & \K{\textbf{V\Sub{2}}}\B{d} && \K{\textbf{V\Sub{1}}}\B{d} \\ 
-    & \K{\textit{gegessen}}\Below{2} && \K{\textit{wird}}\Below{1}\POS[]-(0,9)\ar@/^/[ll]-(0,9)
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [\bf V\Sub{2+1}, calign=last
+      [\bf V\Sub{2}, tier=preterminal
+        [\it essen]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it wird]
+        {\draw [->, bend left=30] (.south) to (!uu11.south);}
+      ]
+    ]
+  \end{forest}\hspace{0.1\textwidth}\begin{forest}
+    [\bf V\Sub{2+1}, calign=last
+      [\bf V\Sub{2}, tier=preterminal
+        [\it gegessen]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it wird]
+        {\draw [->, bend left=30] (.south) to (!uu11.south);}
+      ]
+    ]
+  \end{forest}
+
   \caption{Verbkomplexe für Futur (links) und Passiv (rechts)}
   \label{fig:vkomplex2}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&&&& \K{\textbf{V\Sub{3+2+1}}}\B{dll}\B{dd} \\
-    &&& \K{\textbf{V\Sub{3+2}}}\B{dll}\B{d} \\
-    & \K{\textbf{V\Sub{3}}}\B{d} && \K{\textbf{V\Sub{2}}}\B{d} && \K{\textbf{V\Sub{1}}}\B{d} \\
-    & \K{\textit{kaufen}}\Below{3} && \K{\textit{wollen}}\Below{2}\POS[]-(0,9)\ar@/^/[ll]-(0,9) && \K{\textit{wird}}\Below{1}\POS[]-(0,9)\ar@/^/[ll]-(0,9) & \\
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [\bf V\Sub{3+2+1}, calign=last
+      [\bf V\Sub{3+2}, calign=last
+        [\bf V\Sub{3}, tier=preterminal
+          [\it kaufen]
+        ]
+        [\bf V\Sub{2}, tier=preterminal
+          [\it wollen]
+          {\draw [->, bend left=30] (.south) to (!uu11.south);}
+        ]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it wird]
+        {\draw [->, bend left=30] (.south) to (!uu121.south);}
+      ]
+    ]
+  \end{forest}
   \caption{Futur-Modalverb-Verbkomplex}
   \label{fig:vkomplex3}
 \end{figure}
@@ -1190,7 +1535,7 @@ Das Verb \textit{kaufen} ist maßgeblich für die An- und Abwesenheit von Ergän
 Im Vergleichssatz in (\ref{ex:vkrekexta}) besteht der Verbkomplex nur aus einem finiten \textit{kaufen}, aber der Rest der VP ist genauso gebaut wie in (\ref{ex:auxinfc}).
 
 \begin{exe}
-  \ex{\label{ex:vkrekexta} dass die Mutter das Eis kauft}
+  \ex{\label{ex:vkrekexta} dass die Freundin das Eis kauft}
 \end{exe}
 
 Nach außen wird die Valenz des Verbkomplexes also immer vom lexikalischen Verb bestimmt.
@@ -1201,15 +1546,35 @@ Eine Analyse von (\ref{ex:auxinfc}), die die Rektionsbeziehungen des lexikalisch
 
 \begin{figure}[!htbp]
   \centering
-  \Treek{1.8}{
-    &&&&&&&&& \K{VP}\B{ddddllllllll}\B{ddddllllll}\B{dd} \\
-    \\
-    &&&&&&&&& \K{\textbf{V\Sub{3+2+1}}}\B{dll}\B{dd} \\
-    &&&&&&& \K{\textbf{V\Sub{3+2}}}\B{dll}\B{d} \\
-    & \K{NP}\TRi[-4] && \K{NP}\TRi[-4] && \K{\textbf{V\Sub{3}}}\B{d} && \K{\textbf{V\Sub{2}}}\B{d} && \K{\textbf{V\Sub{1}}}\B{d} \\
-    & \K{\textit{die Mutter}} && \K{\textit{das Eis}} && \K{\textit{kaufen}}\POS[]-(0,4)\ar@/^/[ll]-(0,4)\POS[]-(0,4)\ar@/^{1.5pc}/[llll]-(0,4) && \K{\textit{wollen}}\POS[]-(0,4)\ar@/^/[ll]-(0,4) && \K{\textit{wird}}\POS[]-(0,4)\ar@/^/[ll]-(0,4) & \\
-    \vspace{1cm}
-  }
+  \begin{forest}
+    l sep+=2em
+    [VP, calign=last
+      [NP, tier=preterminal
+        [\it die Freundin, narroof]
+      ]
+      [NP, tier=preterminal
+        [\it das Eis, narroof]
+      ]
+      [\bf\Sub{3+2+1}, calign=last
+        [\bf V\Sub{3+2}, calign=last
+          [\bf V\Sub{3}, tier=preterminal
+            [\it kaufen]
+            {\draw [->, bend left=30] (.south) to (!uuuu11.south);}
+            {\draw [->, bend left=30] (.south) to (!uuuu21.south);}
+          ]
+          [\bf V\Sub{2}, tier=preterminal
+            [\it wollen]
+            {\draw [->, bend left=30] (.south) to (!uu11.south);}
+          ]
+        ]
+        [\bf V\Sub{1}, tier=preterminal
+          [\it wird]
+          {\draw [->, bend left=30] (.south) to (!uu121.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+
   \caption{VP mit komplexem Verbkomplex und Rektionsbeziehungen}
   \label{fig:vkrekext}
 \end{figure}
@@ -1254,12 +1619,19 @@ Der Ablauf einer solchen Analyse wird jetzt anhand der KP in (\ref{ex:phrasen237
 Zunächst wird gemäß Punkt~\ref{it:sya01} aus Satz~\ref{satz:syntaxana} für jedes Wort die Wortklasse bestimmt, s.\ Abbildung~\ref{fig:sya01}.
 
 \begin{figure}[!htbp]
-%  \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      \K{K}\B{d} & \K{N}\B{d} & \K{Art}\B{d} & \K{A}\B{d} & \K{N}\B{d} & \K{Adv}\B{d} & \K{V}\B{d} & \K{V}\B{d} \\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [, phantom, s sep=1em
+      [\bf K, tier=preterminal [\it dass]]
+      [\bf N, tier=preterminal [\it Frida]]
+      [Art, tier=preterminal [\it den]]
+      [\bf A, tier=preterminal [\it heißen]]
+      [\bf N, tier=preterminal [\it Kaffee]]
+      [\bf Adv, tier=preterminal [\it gerne]]
+      [\bf V, tier=preterminal [\it trinken]]
+      [\bf V, tier=preterminal [\it möchte]]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 1}
   \label{fig:sya01}
 \end{figure}
@@ -1273,13 +1645,25 @@ Da vor dem Adjektiv ein Artikel steht, können wir sicher sein, dass die AP hier
 Eine ähnliche Schlussfolgerung kann für das Adverb \textit{gerne} getroffen werden, und wir erhalten Abbildung~\ref{fig:sya02}.
 
 \begin{figure}[!htbp]
-%  \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      & \K{NP}\B{d} && \K{AP}\B{d} && \K{AdvP}\B{d} \\
-      \K{K}\B{d} & \K{\textbf{N}}\B{d} & \K{Art}\B{d} & \K{\textbf{A}}\B{d} & \K{N}\B{d} & \K{\textbf{Adv}}\B{d} & \K{V}\B{d} & \K{V}\B{d} \\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [, phantom, s sep=1em
+      [\bf K, tier=preterminal [\it dass]]
+      [NP
+        [\bf N, tier=preterminal [\it Frida]]
+      ]
+      [Art, tier=preterminal [\it den]]
+      [AP
+        [\bf A, tier=preterminal [\it heißen]]
+      ]
+      [\bf N, tier=preterminal [\it Kaffee]]
+      [AdvP
+        [\bf Adv, tier=preterminal [\it gerne]]
+      ]
+      [\bf V, tier=preterminal [\it trinken]]
+      [\bf V, tier=preterminal [\it möchte]]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 2}
   \label{fig:sya02}
 \end{figure}
@@ -1292,18 +1676,31 @@ Würde man probieren, den Satz mit einem Pronomen \textit{den} zu analysieren, w
 In der Praxis muss man das selten tun, weil die Intuition und die Kenntnis der Bedeutung des Satzes hilft, die richtigen Phrasengrenzen zu finden.}
 Außerdem stehen \textit{den}, \textit{heißen} und \textit{Kaffee} alle im Akkusativ, so dass die NP-interne Kongruenzanforderung damit  auch erfüllt ist.
 Man erhält also im nächsten Schritt Abbildung~\ref{fig:sya03}.%
-\footnote{Einige Symbole, \zB Art, werden hier aus rein graphischen Gründen angehoben.
+\footnote{Das Symbol Art wird hier aus rein graphischen Gründen höher gesetzt.
 Die Struktur des Baumes verändert sich dadurch nicht.}
 
 \begin{figure}[!htbp]
-%  \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      &&&& \K{NP}\B{dll}\B{dl}\B{dd} \\
-      & \K{NP}\B{d} & \K{Art}\B{dd} & \K{AP}\B{d} && \K{AdvP}\B{d} \\
-      \K{K}\B{d} & \K{\textbf{N}}\B{d} && \K{\textbf{A}}\B{d} & \K{\textbf{N}}\B{d} & \K{\textbf{Adv}}\B{d} & \K{V}\B{d} & \K{V}\B{d} \\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [, phantom, s sep=0.5em
+      [\bf K, tier=preterminal [\it dass]]
+      [NP
+        [\bf N, tier=preterminal [\it Frida]]
+      ]
+      [NP, calign=last
+        [Art [\it den, tier=terminal]]
+        [AP
+          [\bf A, tier=preterminal [\it heißen]]
+        ]
+        [\bf N, tier=preterminal [\it Kaffee]]
+      ]
+      [AdvP
+        [\bf Adv, tier=preterminal [\it gerne]]
+      ]
+      [\bf V, tier=preterminal [\it trinken]]
+      [\bf V, tier=preterminal [\it möchte, tier=terminal]]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 3}
   \label{fig:sya03}
 \end{figure}
@@ -1312,14 +1709,29 @@ Bei der Suche nach valenzgebundenen Phrasen und ihren Köpfen gemäß Punkt \ref
 Da sonst keine ersten Status im Satz vorkommen, saturiert \textit{trinken} offensichtlich die Valenzanforderung des Modalverbs, und der Verbkomplex aus beiden kann gebildet werden, vgl.\ Abbildung~\ref{fig:sya04}.
 
 \begin{figure}[!htbp]
-%  \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      &&&& \K{NP}\B{dll}\B{dl}\B{dd} \\
-      & \K{NP}\B{d} & \K{Art}\B{dd} & \K{AP}\B{d} && \K{AdvP}\B{d} && \K{\textbf{V}}\B{dl}\B{d} \\
-      \K{K}\B{d} & \K{\textbf{N}}\B{d} && \K{\textbf{A}}\B{d} & \K{\textbf{N}}\B{d} & \K{\textbf{Adv}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d}\\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [, phantom, s sep=0.5em
+      [\bf K, tier=preterminal [\it dass]]
+      [NP
+        [\bf N, tier=preterminal [\it Frida]]
+      ]
+      [NP, calign=last
+        [Art [\it den, tier=terminal]]
+        [AP
+          [\bf A, tier=preterminal [\it heißen]]
+        ]
+        [\bf N, tier=preterminal [\it Kaffee]]
+      ]
+      [AdvP
+        [\bf Adv, tier=preterminal [\it gerne]]
+      ]
+      [\bf V, calign=last
+        [\bf V, tier=preterminal [\it trinken]]
+        [\bf V, tier=preterminal [\it möchte, tier=terminal]]
+      ]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 4}
   \label{fig:sya04}
 \end{figure}
@@ -1329,15 +1741,31 @@ Solche NPs liegen in Form von \textit{Frida} (Nominativ) und \textit{den heißen
 Wir können daher die VP in Abbildung~\ref{fig:sya05} annehmen.
 
 \begin{figure}[!htbp]
-%  \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      &&&&&&& \K{VP}\B{dllllll}\B{dlll}\B{dd} \\
-      & \K{NP}\B{dd} &&& \K{NP}\B{dll}\B{dl}\B{dd} \\
-      && \K{Art}\B{dd} & \K{AP}\B{d} && \K{AdvP}\B{d} && \K{\textbf{V}}\B{dl}\B{d} \\
-      \K{K}\B{d} & \K{\textbf{N}}\B{d} && \K{\textbf{A}}\B{d} & \K{\textbf{N}}\B{d} & \K{\textbf{Adv}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d}\\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [, phantom, s sep=0.5em
+      [\bf K, tier=preterminal [\it dass]]
+      [VP, calign=last, l sep=4em
+        [NP
+          [\bf N, tier=preterminal [\it Frida]]
+        ]
+        [NP, calign=last
+          [Art [\it den, tier=terminal]]
+          [AP
+            [\bf A, tier=preterminal [\it heißen]]
+          ]
+          [\bf N, tier=preterminal [\it Kaffee]]
+        ]
+        [AdvP
+          [\bf Adv, tier=preterminal [\it gerne]]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal [\it trinken]]
+          [\bf V, tier=preterminal [\it möchte, tier=terminal]]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 5}
   \label{fig:sya05}
 \end{figure}
@@ -1350,16 +1778,31 @@ Dass er fertig ist, erkennt man daran, dass es einen einzigen Wurzelknoten gibt,
 Für jeden Knoten gibt es außerdem ein Schema, das ihn beschreibt.
 
 \begin{figure}[!htbp]
- % \resizebox{\textwidth}{!}{
-    \Tree[1.25]{
-      \K{KP}\B{dddd}\B{drrrrrrr} \\
-      &&&&&&& \K{VP}\B{dllllll}\B{dlll}\B{ddll}\B{dd} \\
-      & \K{NP}\B{dd} &&& \K{NP}\B{dll}\B{dl}\B{dd} \\
-      && \K{Art}\B{dd} & \K{AP}\B{d} && \K{AdvP}\B{d} && \K{\textbf{V}}\B{dl}\B{d} \\
-      \K{\textbf{K}}\B{d} & \K{\textbf{N}}\B{d} && \K{\textbf{A}}\B{d} & \K{\textbf{N}}\B{d} & \K{\textbf{Adv}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d}\\
-      \K{\textit{dass}} & \K{\textit{Frida}} & \K{\textit{den}} & \K{\textit{heißen}} & \K{\textit{Kaffee}} & \K{\textit{gerne}} & \K{\textit{trinken}} & \K{\textit{möchte}} \\
-    }
-%  }
+  \centering
+  \begin{forest}
+    [KP, calign=first
+      [\bf K, tier=preterminal [\it dass]]
+      [VP, calign=last, l sep=4em
+        [NP
+          [\bf N, tier=preterminal [\it Frida]]
+        ]
+        [NP, calign=last
+          [Art [\it den, tier=terminal]]
+          [AP
+            [\bf A, tier=preterminal [\it heißen]]
+          ]
+          [\bf N, tier=preterminal [\it Kaffee]]
+        ]
+        [AdvP
+          [\bf Adv, tier=preterminal [\it gerne]]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal [\it trinken]]
+          [\bf V, tier=preterminal [\it möchte, tier=terminal]]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Konstruktion einer syntaktischen Analyse, Schritt 6}
   \label{fig:sya06}
 \end{figure}

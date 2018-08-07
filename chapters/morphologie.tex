@@ -519,7 +519,6 @@ Eine [Wortform] ist also eine Wortform, der noch Flexionsaffixe fehlen.%
 \footnote{Warum hier \textit{-te} und \textit{-n} nacheinander angefügt werden, wird in Abschnitt~\ref{sec:vvflex} begründet.}
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Wortform
@@ -536,7 +535,6 @@ Eine [Wortform] ist also eine Wortform, der noch Flexionsaffixe fehlen.%
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Beispiel für eine morphologische Struktur}
   \label{fig:flextree}
 \end{figure}
@@ -546,24 +544,22 @@ Ein solcher Fall ist in Abbildung~\ref{fig:flexwbtree} am Beispiel des Wortes \t
 Dabei haben wir es im Verlauf der Ableitung mit zwei verschiedenen Stämmen zu tun, dem Verbstamm \textit{schenk} (Stamm$_{\text{1}}$) und dem mit einem Präfix abgeleiteten Stamm \textit{ver-schenk} (Stamm$_{\text{2}}$).
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Wortform
       [Stamm\Sub{2}
-	[Wortbildungspräfix, tier=preterminal
-	  [\textit{ver-}]
-	]
-	[Stamm\Sub{1}, tier=preterminal
-	  [\textit{schenk}]
-	]
+        [Wortbildungspräfix, tier=preterminal
+          [\textit{ver-}]
+        ]
+        [Stamm\Sub{1}, tier=preterminal
+          [\textit{schenk}]
+        ]
       ]
       [Flexionssuffix, tier=preterminal
-	[\textit{-t}]
+        [\textit{-t}]
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Beispiel für eine Struktur mit Wortbildung und Flexion}
   \label{fig:flexwbtree}
 \end{figure}

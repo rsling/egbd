@@ -224,42 +224,37 @@ Zur Verdeutlichung werden hier die Wortklassen im Baum annotiert.
 \end{exe}
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
-  \resizebox{0.49\textwidth}{!}{%
-    \begin{forest}
+  \begin{forest}
+    [Substantiv-Stamm
       [Substantiv-Stamm
-        [Substantiv-Stamm
-          [Adjektiv-Stamm, tier=preterminal
-            [\textit{Lang}]
-          ]
-          [Substantiv-Stamm, tier=preterminal
-            [\textit{strecke(n)}]
-          ]
+        [Adjektiv-Stamm, tier=preterminal
+          [\textit{Lang}]
+        ]
+        [Substantiv-Stamm, tier=preterminal
+          [\textit{strecke(n)}]
+        ]
+      ]
+      [Substantiv-Stamm, tier=preterminal
+        [\textit{lauf}]
+      ]
+    ]
+  \end{forest}\\[\baselineskip]
+  \begin{forest}
+    [Substantiv-Stamm
+      [Adjektiv-Stamm, tier=preterminal
+        [\textit{Lang}]
+      ]
+      [Substantiv-Stamm
+        [Substantiv-Stamm, tier=preterminal
+          [\textit{strecke(n)}]
         ]
         [Substantiv-Stamm, tier=preterminal
           [\textit{lauf}]
         ]
       ]
-    \end{forest}
-  }\resizebox{0.49\textwidth}{!}{
-    \begin{forest}
-      [Substantiv-Stamm
-        [Adjektiv-Stamm, tier=preterminal
-          [\textit{Lang}]
-        ]
-        [Substantiv-Stamm
-          [Substantiv-Stamm, tier=preterminal
-            [\textit{strecke(n)}]
-          ]
-          [Substantiv-Stamm, tier=preterminal
-            [\textit{lauf}]
-          ]
-        ]
-      ]
-    \end{forest}
-  }
-  \end{minipage}
+    ]
+  \end{forest}
   \caption{Zwei mögliche Analysen von \textit{Langstreckenlauf}}
   \label{fig:langstreckenlauf}
 \end{figure}
@@ -348,7 +343,6 @@ Abbildung~\ref{fig:kompfugstruk} zeigt beispielhaft die Analyse eines Kompositum
 \end{table}
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Substantiv-Stamm
@@ -365,7 +359,6 @@ Abbildung~\ref{fig:kompfugstruk} zeigt beispielhaft die Analyse eines Kompositum
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Kompositionsstrukturen mit Fugenelement}
   \label{fig:kompfugstruk}
 \end{figure}
@@ -532,7 +525,6 @@ An den Beispielen in Tabelle~\ref{tab:wfkonv} kann man erkennen, dass auch der P
 Eine Darstellung in Strukturbäumen findet sich in den Abbildungen~\ref{fig:konv1} und~\ref{fig:konv2}.
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Substantiv-Stamm
@@ -541,13 +533,11 @@ Eine Darstellung in Strukturbäumen findet sich in den Abbildungen~\ref{fig:konv
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Einfache Stammkonversion}
   \label{fig:konv1}
 \end{figure}
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     [Substantiv-Wortform
@@ -571,7 +561,6 @@ Eine Darstellung in Strukturbäumen findet sich in den Abbildungen~\ref{fig:konv
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Schrittweise Wortformenkonversionen}
   \label{fig:konv2}
 \end{figure}

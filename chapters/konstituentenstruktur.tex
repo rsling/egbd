@@ -1,12 +1,5 @@
 \chapter{Konstituentenstruktur}
 
-
-% Things break if I move this to localcommands.sty.
-% No idea why, no time to investigate.
-\newcommand{\COny}[2][-]{%
-\POS[]+(0,-3);\POS[]+(0,-6)**\dir{#1} \POS[]+(0,-6);\POS[#2]+(0,-6)**\dir{#1}
-\POS[#2]+(0,-6) \ar@{#1>}[#2]+(0,-3)}
-
 \label{sec:konstituentenstruktur}
 
 \section{Syntaktische Struktur}
@@ -28,7 +21,25 @@ Silben selber fügen sich zu den nächstgrößeren Einheiten -- den phonologisch
 
 \begin{figure}[!htbp]
   \centering
-  \ThePhonStr
+  \begin{forest}
+    ake/.style={
+      tier=terminal,
+      delay={for children={content=\textipa{##1}}}
+    }
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+        [f][K]
+      ]
+      [Reim, calign=first
+        [Kern,ake
+          [E]
+        ]
+        [Endrand, ake, calign=last
+          [m][t]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Beispiel für Konstituentenstruktur in der Phonologie}
   \label{fig:phonstr-rev}
 \end{figure}
@@ -37,14 +48,26 @@ Auch in der Morphologie haben wir \zB bei der Bildung von Komposita angenommen, 
 Generell haben wir die gesamte Morphologie (also auch die Derivation und die Flexion) so dargestellt, dass die Konstituentenstruktur innerhalb einer Wortform eindeutig bestimmt werden kann, vgl.\ Abbildung~\ref{fig:morphstr-rev} für die Wortform \textit{ver:säg-e-st} (Konjunktiv Präsens 2.~Person Singular).
 
 \begin{figure}[!htbp]
-  \centering
-  \Tree[1]{
-    &&& \K{V-Wortform}\B{dl}\B{dr} \\
-    && \K{[V-Wortform]}\B{dl}\B{dr} && \K{Flexionssuffix}\B{d} \\
-    & \K{V-Stamm}\B{dl}\B{dr} && \K{Flexionssuffix}\B{d} & \K{\textit{-st}} \\
-    \K{Wortbildungspräfix}\B{d} && \K{V-Stamm}\B{d} & \K{\textit{-e}} \\
-    \K{\textit{ver-}} && \K{\textit{säg}} \\
-  }
+  \begin{forest}
+    [Verb-Wortform
+      [{[Verb-Wortform]}
+        [Verb-Stamm
+          [Wortbildungspräfix, tier=preterm
+            [\textit{ver-}]
+          ]
+          [Verb-Stamm, tier=preterm
+            [\textit{säg-}]
+          ]
+        ]
+        [Flexionssuffix, tier=preterm
+          [\textit{-e}]
+        ]
+      ]
+      [Flexionssuffix, tier=preterm
+        [\textit{-st}]
+      ]
+    ]
+  \end{forest}
   \caption{Beispiel für Konstituentenstruktur in der Morphologie}
   \label{fig:morphstr-rev}
 \end{figure}
@@ -59,11 +82,22 @@ Es handelt sich um das Baumdiagramm zum Satzteil (\ref{ex:syn1579}).
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[0.25]{
-    &&& \K{NP}\B{dll}\B{d}\B{drr}\B{drrrr} \\
-    & \K{AP}\TRi[-9] && \K{N}\B{d} && \K{NP}\TRi[-5] && \K{RS}\TRi \\
-    & \K{\textit{rote}} && \K{\textit{Zahnbürsten}} && \K{\textit{des Königs}} && \K{\textit{die benutzt waren}} & \\
-  }
+  \begin{forest}
+    [NP, calign=child, calign child=2
+      [AP, tier=preterminal
+        [\textit{rote}]
+      ]
+      [N, tier=preterminal
+        [\textit{Zahnbürsten}]
+      ]
+      [NP, tier=preterminal
+        [\textit{des Königs}]
+      ]
+      [RS, tier=preterminal
+        [\textit{die benutzt waren}, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{Vorschau auf Konstituentenstruktur in der Syntax}
   \label{fig:synstr-pre}
 \end{figure}
@@ -109,10 +143,17 @@ Dadurch stellt sich die Frage, ob die gesamte Wortkette einen Satz ergibt, noch 
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    &&& \K{Satz}\B{dlll}\B{dll}\B{dl}\B{d}\B{dr}\B{drr}\B{drrr} \\
-    \K{\textit{ein}} & \K{\textit{Snookerball}} & \K{\textit{ist}} & \K{\textit{eine}} & \K{\textit{Kugel}} & \K{\textit{aus}} & \K{\textit{Kunststoff}} \\
-  }
+  \begin{forest}
+    [Satz
+      [\it Ein]
+      [\it Snookerball]
+      [\it ist]
+      [\it eine]
+      [\it Kugel]
+      [\it aus]
+      [\it Kunststoff]
+    ]
+  \end{forest}
   \caption{Naives Satzschema}
   \label{fig:satzschema1}
 \end{figure}
@@ -131,10 +172,17 @@ Selbst, wenn wir den Bauplan aus Abbildung~\ref{fig:satzschema1} etwas abstrakte
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    &&& \K{Satz}\B{dlll}\B{dll}\B{dl}\B{d}\B{dr}\B{drr}\B{drrr} \\
-    \K{Art} & \K{Subst} & \K{V(Kopula)} & \K{Art} & \K{Subst} & \K{Prp} & \K{Subst} \\
-  }
+  \begin{forest}
+    [Satz
+      [Art]
+      [Subst]
+      [Kopula-Verb]
+      [Art]
+      [Subst]
+      [Prp]
+      [Subst]
+    ]
+  \end{forest}
   \caption{Abstrakteres naives Satzschema}
   \label{fig:satzschema2}
 \end{figure}
@@ -199,21 +247,32 @@ Jetzt müsste nur noch ein genauer allgemeiner Bauplan für die NP angegeben wer
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1]{
-    & \K{Satz}\B{dl}\B{d}\B{dr} \\
-    \K{NP} & \K{V(Kopula)} & \K{NP}
-  }
+  \begin{forest}
+    [Satz
+      [NP]
+      [Kopula-Verb]
+      [NP]
+    ]
+  \end{forest}
   \caption{Hypothetisches Schema für Sätze mit Kopula}
   \label{fig:satzbauhyp}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-      &&& \K{Satz}\B{dll}\B{d}\B{drr} \\
-      & \K{NP}\TRi && \K{Kopula}\B{d} && \K{NP}\TRi[+3] \\
-      & \K{\textit{Dieses Endspiel}} && \K{\textit{ist}} && \K{\textit{eine spannende Partie}} & \\
-  }
+  \begin{forest}
+    [Satz
+      [NP
+        [\it Dieses Endspiel, narroof]
+      ]
+      [Kopula-Verb
+        [\it ist]
+      ]
+      [NP
+        [\it eine spannende Partie, narroof]
+      ]
+    ]
+  \end{forest}
   \caption{Denkbare hierarchische Struktur eines Kopulasatzes}
   \label{fig:bspsatzpre}
 \end{figure}
@@ -376,9 +435,9 @@ Dass diese Tests im Deutschen funktionieren, illustriert im Übrigen die enorm f
 \begin{exe}
   \ex\label{ex:syn0815}
   \begin{xlist}
-  	\ex{\label{ex:syn0815a} Gestern hat [Elena] [im Turmspringen] [die Goldmedaille] \\gewonnen.}
-  	\ex{\label{ex:syn0815b} Gestern hat [im Turmspringen] [Elena] [die Goldmedaille] \\gewonnen.}
-  	\ex{\label{ex:syn0815c} Gestern hat [im Turmspringen] [die Goldmedaille] [Elena] \\gewonnen.}
+    \ex{\label{ex:syn0815a} Gestern hat [Elena] [im Turmspringen] [die Goldmedaille] \\gewonnen.}
+    \ex{\label{ex:syn0815b} Gestern hat [im Turmspringen] [Elena] [die Goldmedaille] \\gewonnen.}
+    \ex{\label{ex:syn0815c} Gestern hat [im Turmspringen] [die Goldmedaille] [Elena] \\gewonnen.}
   \end{xlist}
 \end{exe}
 
@@ -484,21 +543,30 @@ Vereinfacht sähen die Strukturen also so aus wie in den Abbildungen~\ref{fig:un
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[2]{
-    && \K{Satz}\B{dll}\B{dl}\B{d}\B{drr}\\
-    \K{\textit{Sarah}} & \K{\textit{riecht}} & \K{\textit{den Kuchen}} && \K{\textit{mit ihrer Nase}} \\
-  }
+  \begin{forest}
+    [Satz
+      [\it Sarah]
+      [\it riecht]
+      [\it den Kuchen]
+      [\it mit ihrer Nase]
+    ]
+  \end{forest}
   \caption{Ein Satzglied als unmittelbare Satzkonstituente}
   \label{fig:unmittelbarekonstituente}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[2]{
-    & \K{Satz}\B{ddl}\B{dd}\B{drr} \\
-    &&& \K{Konstituente}\B{dl}\B{dr} \\
-    \K{\textit{Sarah}} & \K{\textit{riecht}} & \K{\textit{den Kuchen}} && \K{\textit{mit der Sahne}}
-  }
+  \begin{forest}
+    [Satz
+      [\it Sarah, tier=term]
+      [\it riecht, tier=term]
+      [Konstituente
+        [\it den Kuchen, tier=term]
+        [\it mit der Sahne, tier=term]
+      ]
+    ]
+  \end{forest}
   \caption{Ein Nicht-Satzglied als mittelbare Satzkonstituente}
   \label{fig:mittelbarekonstituente}
 \end{figure}
@@ -607,10 +675,11 @@ Die Kanten verbinden C und A sowie C und B.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{C}\B{dl}\B{dr} \\
-    \K{A} && \K{B}
-  }
+  \begin{forest}
+    [C
+      [A][B]
+    ]
+  \end{forest}
   \caption{Einfacher Baum}
   \label{fig:baumschema}
 \end{figure}
@@ -627,32 +696,44 @@ In Abbildung~\ref{fig:ctree} bis~\ref{fig:notree2} finden sich noch ein paar Bei
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{C}\B{dl}\B{dr} \\
-    \K{A} && \K{B}\B{dl}\B{d}\B{dr} \\
-    & \K{D} & \K{E} & \K{F} \\
-  }
+  \begin{forest}
+    [C
+      [A]
+      [B
+        [D][E][F]
+      ]
+    ]
+  \end{forest}
   \caption{Komplexerer Baum}
   \label{fig:ctree}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{C}\B{dr} && \K{B}\B{dl} \\
-    & \K{A} \\
-  }
+  \begin{forest}
+    grow=north
+    [A
+      [C][B]
+    ]
+  \end{forest}
   \caption[Beispiel für Nicht-Baum]{Beispiel für Nicht-Baum (mehrere Wurzeln, A hat mehrere Mutterknoten)}
   \label{fig:notree1}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{G}\B{dll}\B{drr}\B{ddr} \\
-    & \K{E}\B{dl}\B{dr} &&&& \K{F}\B{dl}\B{dr} \\
-    \K{A} && \K{B} && \K{C} && \K{D} \\
-  }
+  \begin{forest}
+    [G, name=NotreeG
+      [E
+        [A][B]
+      ]
+      [F
+        [C]
+        {\draw[-] (.north) -- (NotreeG.south);}
+        [D]
+      ]
+    ]
+  \end{forest}
   \caption[Anderes Beispiel für Nicht-Baum]{Anderes Beispiel für Nicht-Baum (C hat mehrere Mutterknoten)}
   \label{fig:notree2}
 \end{figure}
@@ -675,55 +756,73 @@ Wir müssen nun überlegen, wie wir die Baupläne für Konstituentenstrukturen a
 Bisher haben wir sowohl für Baupläne als auch für Analysen Baumdiagramme verwendet, \zB in Abbildung~\ref{fig:satzbauhyp} (S.~\pageref{fig:satzbauhyp}) und Abbildung~\ref{fig:bspsatzpre} (S.~\pageref{fig:bspsatzpre}).
 In einem Baum ist es nun immer der Fall, dass die Töchter unter jedem Knoten eine festgelegte Reihenfolge (von links nach rechts) haben, weil sich Kanten nicht überkreuzen dürfen.
 Wenn die Tochterknoten wiederum Tochterknoten haben, gilt für diese dasselbe, und es ergibt sich insgesamt eine hierarchische Struktur mit einer linearen Ordnung.
-Wir geben hier als \textit{Phrasenschemata} jeweils Baupläne für einzelne Knoten an.
-Ein solches Schema spezifiziert von links nach rechts, welche Teilkonstituenten in welcher Reihenfolge unter einem Knoten von einem bestimmten Typ (\zB NP) vorkommen müssen und können.
-Wenn ein Tochterknoten mehrfach auftreten kann, wird dies durch~* angezeigt, \zB \textit{A*} für ein Adjektiv oder mehrere Adjektive.
-Wenn ein Tochterknoten nicht stehen muss, sondern nur kann, wird das Symbol eingeklammert, \zB \textit{(A)} für ein oder kein Adjektiv.
-Die Kombination \textit{(A)*} steht konsequenterweise für \textit{kein} Adjektiv, \textit{ein} Adjektiv oder \textit{mehrere} Adjektive.
-Wenn es mehrere (einander ausschließende) Möglichkeiten gibt, eine Position zu besetzen, wird | für \textit{oder} verwendet, so dass \textit{(Artikelwort~|~NP)} als \textit{nichts, ein Artikelwort oder eine NP} zu lesen ist (\textit{nichts} wegen der Einklammerung).
-Das Symbol für den Kopf der Phrase wird fettgedruckt (zum Kopf vgl.\ Abschnitt~\ref{sec:koepfevalenzmaximalitaet}).
+Wir geben hier als \textit{Phrasenschemata} jeweils Baupläne für einzelne Knoten an, aus denen Bäume in der Analyse zusammengebaut werden dürfen.
+Phrasenschemata werden als abstrakte Bäume dargestellt, und die Knoten werden in Boxen gesetzt, damit sie von solchen Bäumen unterschieden werden können, die eine Analyse von tatsächlichen Phrasen und Sätzen darstellen.
 Ein Beispiel ist in Abbildung~\ref{fig:strschembsp} dargestellt.
 
 \begin{figure}[!htbp]
   \centering
-  \colorbox{lightgray}{\strschemspace NP\strschemspace:\strschemspace(\textit{Artikelwort})\strschemspace(A)*\strschemspace\textbf{N}\strschemspace}
-  \caption{Vorläufiges Phrasenschema für die Nominalphrase (NP)}
+  \begin{forest}
+    phrasenschema
+    [NP, Ephr, calign=last
+      [Artikel, Eopt, Emult
+        [Pronomen, Eopt]
+      ]
+      [A, Eoptrec]
+      [N, Ehd]
+    ]
+  \end{forest}
+  \caption{Vorläufiges Phrasenschema für Nominalphrasen}
   \label{fig:strschembsp}
 \end{figure}
 
-Mit dem Schema in Abbildung~\ref{fig:strschembsp} definieren wir, dass eine NP aus einem optionalen Artikelwort, beliebig vielen optionalen Adjektiven \textit{(A)*} und einem obligatorischen N-Kopf besteht.%
-\footnote{Ellipsen wie \zB \textit{ein rotes Auto und ein grünes}, in denen ein Substantiv ausgelassen wurde, statt es zu wiederholen, betrachten wir nicht.}
+Das Phrasensymbol (hier NP) wird in einen Kreis gesetzt.
+Die Kopftochter steht in einer grauen Box, alle anderen Töchter in nicht gefüllten Boxen (hier Artikel, Pronomen, A und N).
+Wenn der Rahmen der Box gestrichelt (hier Artikel, Pronomen und A) ist, ist die Tochter fakultativ, kann also weggelassen werden.
+Eine doppelt eingerahmte Box (hier A) signalisiert, dass die Tochter wiederholbar ist.
+Eine doppelt gestrichelt eingerahmte Box (hier A) steht also für eine Tochter, die gar nicht stehen muss, aber einmal oder mehrmals stehen kann.
+Wenn es mehrere (einander ausschließende) Möglichkeiten gibt, eine Position zu besetzen, stehen die zwei oder mehr Möglichkeiten in Boxen direkt untereinander (hier Artikel und Pronomen).
+In konkreten Analysen werden die Rahmen weggelassen, lediglich das Symbol für den Kopf der Phrase wird fettgedruckt (zum Kopf vgl.\ Abschnitt~\ref{sec:koepfevalenzmaximalitaet}).
+
+Mit dem Schema in Abbildung~\ref{fig:strschembsp} definieren wir, dass eine NP aus einem optionalen Artikel oder Pronomen, beliebig vielen optionalen Adjektiven und einem obligatorischen N-Kopf besteht.
 Damit kann der Baum in Abbildung~\ref{fig:vnflach} als Analyse für \textit{ein leckerer geräucherter Tofu} gebaut werden.
 
 \begin{figure}[!htbp]
   \centering
-  \Treek[2]{2}{
-    &&& \K{NP}\B{dlll}\B{dll}\B{dl}\B{d} \\
-    \K{Artikel}\B{d} & \K{A}\B{d} & \K{A}\B{d} & \K{\textbf{N}}\B{d} \\
-    \K{\textit{ein}} & \K{\textit{leckerer}} & \K{\textit{geräucherter}} & \K{\textit{Tofu}} \\
-  }
+  \begin{forest}
+    [NP, calign=last
+      [Artikel
+        [\it ein]
+      ]
+      [A
+        [\it leckerer]
+      ]
+      [A
+        [\it geräucherter]
+      ]
+      [\textbf{N}
+        [\it Tofu]
+      ]
+    ]
+  \end{forest}
   \caption{Nominalphrase (NP), vorläufige Analyse}
   \label{fig:vnflach}
 \end{figure}
 
-Schließlich werden in Phrasenschemata Rektionsbeziehungen durch Pfeile angezeigt, und zwar durch einen durchgehenden Pfeil wie in (\ref{ex:konst1999a}) für obligatorische Rektion von Y durch X und eine gestrichelten Pfeil wie in (\ref{ex:konst1999b}) für optionale Rektion von Y durch X.
+Schließlich werden in Phrasenschemata Rektionsbeziehungen durch Pfeile angezeigt, und zwar durch einen durchgehenden Pfeil für obligatorische Rektion und eine gestrichelten Pfeil für optionale Rektion.
 Im vorläufigen Phrasenschema für die Präpositionalphrase in Abbildung~\ref{fig:strschembsprek} zeigt der Pfeil also \zB an, dass der P-Kopf die NP obligatorisch regiert.
-Das vollständige Schema wird in Abschnitt~\ref{sec:prpgr} eingeführt.
-
-\begin{exe}
-  \ex\label{ex:konst1999} 
-  \begin{xlist}
-    \ex{\label{ex:konst1999a} \TExt{\TXT{X} \COny{rrr} & \TXT{~~~~} & \TXT{~~~~} & \TXT{Y}}}
-    \ex{\label{ex:konst1999b} \TExt{\TXT{X} \COny[--]{rrr} & \TXT{~~~~} & \TXT{~~~~} & \TXT{Y}}}
-  \end{xlist}
-\end{exe}
 
 \begin{figure}[!htbp]
   \centering
-  \colorbox{lightgray}{
-  \TExt{\TXT{PP\strschemspace:\strschemspace\ } & \TXT{\textbf{P}}\COny[-]{rr} & \TXT{\strschemspace\ } & \TXT{NP} } 
-  }
-  \caption{Vorläufiges Phrasenschema für die Präpositionalphrase (PP)}
+  \begin{forest}
+    phrasenschema
+    [PP, calign=first, Ephr
+      [P, Ehd, name=Pkopfprelim]
+      [NP, Eobl]
+      {\draw [bend left=45, <-] (.south) to (Pkopfprelim.south);}
+    ]
+  \end{forest}
+  \caption{Vorläufiges Phrasenschema für Präpositionalphrasen}
   \label{fig:strschembsprek}
 \end{figure}
 
@@ -807,7 +906,7 @@ Die grammatischen Eigenschaften der gesamten Phrase werden hingegen vom Kopf, al
 
 Aus genau diesem Grund benennen wir eine Phrase auch immer nach der Klasse des Kopfes:
 Phrasen mit einem Adjektiv (A) als Kopf heißen \textit{Adjektivphrasen} (AP), Phrasen mit einem Verb (V) als Kopf heißen \textit{Verbphrasen} (VP) usw., vgl.\ Tabelle~\ref{tab:phrasennamen}.
-Phrasen mit einem Substantiv oder Pronomen als Kopf heißen \textit{Nominalphrasen} (NP), weil sie sich gleich verhalten und es daher günstiger ist, nicht getrennt von \textit{Substantivphrasen} und \textit{Pronominalphrasen} zu sprechen. 
+Phrasen mit einem Substantiv oder Pronomen als Kopf heißen \textit{Nominalphrasen} (NP), weil sie sich gleich verhalten und es daher günstiger ist, nicht getrennt von \textit{Substantivphrasen} und \textit{Pronominalphrasen} zu sprechen.
 Der Kopf einer Phrase ist innerhalb dieser Phrase typischerweise nicht weglassbar.\label{abs:kopfnichtweglassbar}
 
 \begin{table}[!htbp]
@@ -840,10 +939,12 @@ Wir bleiben aus Bequemlichkeit bei der Bezeichnung \textit{Wortklasse}.
 
 \begin{figure}[!htbp]
   \centering
-  \Treek[4]{4}{
-    && \K{AP}\Below{[\textsc{Klasse}: \textit{\textbf{adj}}, \textsc{Segmente}: \textit{sehr schön}]}\BBel{dll}\BBel{d} \\
-    \K{Ptkl}\Below{[\textsc{Klasse}: \textit{\textbf{ptkl}}, \textsc{Segmente}: \textit{sehr}]} && \K{A}\Below{[\textsc{Klasse}: \textit{\textbf{adj}}, \textsc{Segmente}: \textit{schön}]} \\
-  }
+  \begin{forest}
+    [AP\\{[\textsc{Klasse}: \textbf{adj}, \textsc{Segmente}: \textit{sehr schön}]}, calign=last
+      [Ptkl\\{[\textsc{Klasse}: \textbf{ptkl}, \textsc{Segmente}: \textit{sehr}]}]
+      [\textbf{A}\\{[\textsc{Klasse}: \textbf{adj}, \textsc{Segmente}: \textit{schön}]}]
+    ]
+  \end{forest}
   \caption{Merkmalsübereinstimmung zwischen Kopf und Phrase}
   \label{fig:hfp}
 \end{figure}

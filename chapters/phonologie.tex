@@ -642,7 +642,6 @@ Die Verallgemeinerung zu mehrsilbigen Wörtern erfolgt nach einer theoretischen 
 \subsection{Silbenstruktur}
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={tier=terminal}
@@ -660,7 +659,6 @@ Die Verallgemeinerung zu mehrsilbigen Wörtern erfolgt nach einer theoretischen 
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Allgemeines Schema für die Silbenstruktur}
   \label{fig:silbenstruktur}
 \end{figure}
@@ -688,7 +686,6 @@ Kern und Endrand bilden den \textit{Reim}.
 }
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={
@@ -709,7 +706,6 @@ Kern und Endrand bilden den \textit{Reim}.
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Beispiel für Silbenstruktur (\textit{fremd})}
   \label{fig:phonstr}
 \end{figure}
@@ -1070,7 +1066,6 @@ Es ergibt sich eine erweiterte Silbenstruktur in Abbildung~\ref{fig:silbenstrukt
 In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, dass maximal zwei Konsonanten (C) im Anfangs- und Endrand stehen können, und dass vor dem Anfangsrand ein extrasilbisches Segment (X) und nach dem Endrand maximal drei extrasilbische Segmente stehen können.
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={tier=terminal}
@@ -1088,7 +1083,6 @@ In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, da
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Schema für die Silbenstruktur mit extrasilbischen Segmenten}
   \label{fig:silbenstrukturextra}
 \end{figure}
@@ -1512,7 +1506,6 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
 }
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={
@@ -1544,7 +1537,6 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
       ]
     ]
   \end{forest}
-  \end{minipage}
   \caption{Beispiel einer Analyse mit Silbengelenk (Baum)}
   \label{fig:silbgel001}
 \end{figure}
@@ -1929,7 +1921,6 @@ Der Fuß wird direkt über der Silbe aufgebaut, die im Fuß den Akzent trägt.
 Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \textit{Endrand} mit \textit{Er.} abgekürzt.
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
     ake/.style={
@@ -1974,7 +1965,6 @@ Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \texti
       ]
     ]
   \end{forest}
-  \end{minipage}
   \label{fig:verbrauchen}
   \caption{Fußstruktur von \textit{verbrauchen} mit extrametrischer Silbe}
 \end{figure}
@@ -2036,28 +2026,27 @@ Wir schließen mit einer maximalen Analyse des recht langen Wortes \textit{Rettu
 Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt sich bei ihnen nicht um theoretische Konstrukte um der Konstrukte willen.
 
 \begin{figure}[!htbp]
-  \begin{minipage}{\textwidth}
-  \centering
-  \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
-    [Prosodisches Wort, calign=first
-      [Phonologisches Wort
-        [Fuß, calign=first
-          [Silbe, calign=last
-            [Ar., ake
-              [K]
-            ]
-            [Reim, calign=first
-              [Kern, ake
-                [E]
-              ]
-              [Er., ake, name=ERRettungsverein]
-            ]
-          ]
-          [Silbe, calign=last
+    \centering
+    \begin{forest}
+      ake/.style={
+	tier=terminal,
+	delay={for children={content=\textipa{##1}}}
+      }
+      [Prosodisches Wort, calign=first
+	[Phonologisches Wort
+	  [Fuß, calign=first
+	    [Silbe, calign=last
+	      [Ar., ake
+		[K]
+	      ]
+	      [Reim, calign=first
+		[Kern, ake
+		  [E]
+		]
+		[Er., ake, name=ERRettungsverein]
+	      ]
+	    ]
+	    [Silbe, calign=last
             [Ar., ake
               [t]
               {\draw (.north) -- (ERRettungsverein.south);}
@@ -2103,7 +2092,6 @@ Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt s
       ]
     ]
   \end{forest}
- \end{minipage}
  \caption{Phonologische Analyse des Wortes \textit{Rettungsverein}}
  \label{fig:rettungsverein}
 \end{figure}
