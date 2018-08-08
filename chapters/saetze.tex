@@ -164,7 +164,47 @@ Im unabhängigen Satz kommen nun die Schwierigkeiten hinzu, dass das finite Verb
 Trotz der Flexibilität der Konstituentenstellung (\textit{Scrambling}, s.\ Abschnitt~\ref{sec:verbphrase}) ist die Struktur des eingeleiteten Nebensatzes (VP innerhalb einer KP) also einfacher systematisch zu beschreiben als die Struktur des Hauptsatzes.
 Deswegen beschreiben wir die Konstituentenstellung des Hauptsatzes als Abweichung von der des Nebensatzes, und zwar der Anschaulichkeit halber als Umstellungen bzw.\ \textit{Bewegungen}.
 
-Nehmen wir also an, wir hätten eine VP wie in Abbildung~\ref{fig:vgreinstelligwh} und sollten angeben, was sich im Vergleich zu dieser im unabhängigen Aussagesatz ändert.
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [\textcolor{gray}{KP}, calign=first
+      [\textcolor{gray}{\bf K}, tier=preterminal, edge={gray}
+        [\textcolor{gray}{\it dass}, edge={gray}]
+      ]
+      l sep+=2em
+      [VP, calign=last, edge={gray}
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\bf V, tier=preterminal
+            [\it hat]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{VP mit dreistelliger Valenz und Adverbialen}
+  \label{fig:vgreinstelligwh}
+\end{figure}
+
+Nehmen wir also an, wir hätten eine VP wie in Abbildung~\ref{fig:vgreinstelligwh} und sollten angeben, was sich im Vergleich zu dieser im unabhängigen Aussagesatz ändert.%
+\footnote{Die einbettende KP wird hier nur zur Illustration eines typischen Kontexts für solche VPs gezeigt und ist daher in Grau gesetzt.}
 Wir sprechen wie soeben erwähnt davon, dass Konstituenten \textit{bewegt} werden.
 Einige Theorien wie \zB die \textit{Government and Binding Theory} (GB) oder das \textit{Minimalist Program} (MP) nehmen tatsächlich Bewegung im Sinne eines mehrstufigen Umbaus von Strukturen an.
 Andere Theorien wie die \textit{Head-Driven Phrase Structure Grammar} (HPSG) modellieren dieselben Phänomene ohne solche Umbau-Operationen, erzielen aber denselben Effekt.%
@@ -172,43 +212,212 @@ Andere Theorien wie die \textit{Head-Driven Phrase Structure Grammar} (HPSG) mod
 Aus unserer deskriptiven Sicht ist der Begriff der \textit{Bewegung} in jedem Fall als Hilfsvorstellung zu betrachten, und wir benutzen ihn, ohne theoretisch Partei nehmen zu wollen.
 Es geht uns im Prinzip nur darum, die Strukturen im Haupt- und Nebensatz zueinander in Beziehung zu setzen.
 
-\begin{figure}[!htbp]
-  \resizebox{\textwidth}{!}{
-    \Tree{
-      &&&&&&&&&&&&& \K{VP}\B{ddllllllllllll}\B{ddllllllllll}\B{ddllllllll}\B{ddllllll}\B{ddllll}\B{ddll}\B{dd} \\
-      \\
-      & \K{NP}\TRi[-3] && \K{AdvP}\TRi[-2] && \K{NP}\TRi[-3] && \K{AdvP}\TRi[-4] && \K{NP}\TRi[-4] && \K{AdvP}\TRi[-4] && \K{\textbf{V}}\B{d} \\
-      & \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{dem Arzt}} && \K{\textit{heimlich}} && \K{\textit{das Bild}} && \K{\textit{schnell}} && \K{\textit{verkauft}} & \\
-    }
-  }
-  \caption{VP mit dreistelliger Valenz und Adverbialen}
-  \label{fig:vgreinstelligwh}
-\end{figure}
-
 Wir wissen, dass das finite Verb im Ergebnis an der zweiten Position im Satz stehen soll.
 Statt in einem fertigen Satz oder einer fertigen VP die zweite Position zu suchen, gibt es eine einfachere Art, automatisch sicherzustellen, dass das finite Verb am Ende aller Umstellungen an zweiter Position steht und irgendeine andere Konstituente davor positioniert wird.
 Man führt in dieser Reihenfolge die folgenden beiden Bewegungsoperationen an einer normalen VP durch:
-
 
 \begin{enumerate}\Lf
   \item Bewege das finite Verb vor die VP.
   \item Bewege dann eine andere Konstituente vor das finite Verb.
 \end{enumerate}
 
-Die gegenüber Abbildung~\ref{fig:vgreinstelligwh} etwas vereinfachte VP \textit{Ischariot wahrscheinlich das Bild verkauft hat}, aus der gemäß diesen Anweisungen Konstituenten herausbewegt wurden, sieht aus wie in Abbildung~\ref{fig:movev2}.
-Es ergibt sich ein unabhängiger Aussagesatz allein dadurch, dass erst das finite Verb \textit{hat} und dann die Konstituente \textit{das Bild} nach links gestellt wurde.
+Aus Abbildung~\ref{fig:vgreinstelligwh} ergeben sich gemäß diesen Anweisungen die Möglichkeiten in den Abbildungen~\ref{fig:movev2a}--\ref{fig:movev2d}.
+Ein unabhängiger Aussagesatz wird allein dadurch hergestellt, dass erst das finite Verb \textit{hat} und dann eine andere Konstituente \textit{Ischariot}, \textit{wahrscheinlich}, \textit{dem Arzt}, \textit{das Bild}, \textit{heimlich} nach links gestellt wurde.%
+\footnote{Es besteht zusätzlich die Möglichkeit, den Rest des Verbalkomplexes \textit{verkauft} herauszustellen.}
 
 \begin{figure}[!htbp]
-%     \Tree{
-%       &&&&&&&&&& \K{VP}\B{ddlllll}\B{ddlll}\B{ddll}\B{d} \\
-%       &&&&&&&&&& \K{\textbf{V}}\B{dl}\B{d} \\
-%       & \K{NP\ORii}\TRi[-7] && \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-6] && \K{AdvP}\TRi[-2] & \K{\Tii}
-%       \POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) & \K{\textbf{V}}\B{d} & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) \\
-%       & \K{\textit{das Bild}} && \K{\textit{hat}} && \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{verkauft}} & \\
-%     }
-%   \vspace{0.3cm}
+  \centering
+  \begin{forest}
+    [, phantom, l sep+=2em
+      [NP, tier=preterminal
+        [\it Ischariot, narroof, name=BeweK]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweV]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5.5em) -| (BeweK.south);}
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\Ti]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweV.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{VP mit hinausbewegten Konstituenten}
-  \label{fig:movev2}
+  \label{fig:movev2a}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [, phantom, l sep+=2em
+      [AdvP, tier=preterminal
+        [\it wahrscheinlich, narroof, name=BeweK]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweV]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5.5em) -| (BeweK.south);}
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\Ti]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweV.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{VP mit hinausbewegten Konstituenten}
+  \label{fig:movev2b}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [, phantom, l sep+=2em
+      [NP, tier=preterminal
+        [\it dem Arzt, narroof, name=BeweK]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweV]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5.5em) -| (BeweK.south);}
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\Ti]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweV.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{VP mit hinausbewegten Konstituenten}
+  \label{fig:movev2c}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [, phantom, l sep+=2em
+      [NP, tier=preterminal
+        [\it das Bild, narroof, name=BeweK]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweV]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5.5em) -| (BeweK.south);}
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\Ti]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweV.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{VP mit hinausbewegten Konstituenten}
+  \label{fig:movev2c}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [, phantom, l sep+=2em
+      [AdvP, tier=preterminal
+        [\it heimlich, narroof, name=BeweK]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweV]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5.5em) -| (BeweK.south);}
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [\Ti]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweV.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{VP mit hinausbewegten Konstituenten}
+  \label{fig:movev2d}
 \end{figure}
 
 \index{Spur}
@@ -650,34 +859,77 @@ Sobald wir sagen, \textit{die VP entspreche dem Mittelfeld}, machen wir den Verb
 Eine hierarchische Phrasenstruktur und das Feldermodell passen nicht wirklich zueinander, und wir versuchen daher jetzt ein rein phrasenstrukturelles Modell des unabhängigen Aussagesatzes zu erarbeiten, das die Grammatik aus Kapitel~\ref{sec:konstituentenstruktur} und Kapitel~\ref{sec:phrasen} vervollständigt.
 
 \begin{figure}[!htbp]
-%   \resizebox{\textwidth}{!}{
-%     \Tree{
-%       &&&&&&&&&&& \K{VP}\B{ddllllll}\B{ddllll}\B{ddlll}\B{d} \\
-%       &&&&&&&&&&& \K{\textbf{V}}\B{dll}\B{d} \\
-%       & \K{NP\ORii}\TRi[-7] && \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-6] && \K{AdvP}\TRi[-2] & \K{\Tii} & \K{\textbf{V}}\B{d} && \K{\Ti} \\
-%       & \K{\textit{das Bild}} && \K{\textit{hat}} && \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{verkauft}} && \\
-%       & \K{Vf} && \K{LSK} &&& \K{Mf} &&&& \K{RSK} & \\
-%       \QS{5,2}{5,2}
-%       \QS{5,4}{5,4}
-%       \QS{5,6}{5,9}
-%       \QS{5,10}{5,12}
-%     }
-%   }
+  \centering
+  \begin{forest}
+    for tree={edge=gray}
+    [, phantom, l sep+=2em
+      [AdvP\Sub{2}, tier=preterminal, name=Vfnode
+        [\it wahrscheinlich, narroof, name=Vfterm]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=Lskterm]
+      ]
+      [VP, calign=last, s sep+=0.5em
+        [NP, tier=preterminal
+          [\it Ischariot, narroof, name=Mffirstterm]
+        ]
+        [\Tii, tier=preterminal]
+        [NP, tier=preterminal
+          [\it dem Arzt, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it heimlich, narroof, name=Mflastterm]
+        ]
+        [\bf V, calign=last, name=Rsknode
+          [\bf V, tier=preterminal
+            [\it verkauft, name=Rskfirstterm]
+          ]
+          [\Ti, tier=preterminal, name=Rsklastterm]
+        ]
+      ]
+      {\draw ($(Vfterm.west |- Vfnode.north) + (-0.2,0.3)$) -- ($(Vfterm.east |- Vfnode.north) + (0.2,0.3)$) -- ($(Vfterm.south east) + (0.2,0)$) -- node [midway, below] {Vf} ($(Vfterm.south west) + (-0.2,0)$) -- cycle;}
+      {\draw ($(Lskterm.west |- Vfnode.north) + (0,0.3)$) -- ($(Lskterm.east |- Vfnode.north) + (0,0.3)$) -- ($(Lskterm.east |- Vfterm.south) + (0,0)$) -- node [midway, below] {LSK} ($(Lskterm.west |- Vfterm.south) + (0,0)$) -- cycle;}
+      {\draw ($(Mffirstterm.west |- Vfnode.north) + (-0.2,0.3)$) -- ($(Mflastterm.east |- Vfnode.north) + (0.2,0.3)$) -- ($(Mflastterm.east |- Vfterm.south) + (0.2,0)$) -- node [midway, below] {Mf} ($(Mffirstterm.west |- Vfterm.south) + (-0.2,0)$) -- cycle;}
+      {\draw ($(Rskfirstterm.west |- Rsknode.north) + (0,0.3)$) -- ($(Rsklastterm.east |- Rsknode.north) + (0,0.3)$) -- ($(Rsklastterm.east |- Vfterm.south) + (0,0)$) -- node [midway, below] {RSK} ($(Rskfirstterm.west |- Vfterm.south) + (0,0)$) -- cycle;}
+    ]
+  \end{forest}
   \caption{Zuordnung der Felder zu Konstituenten (V2)}
   \label{fig:movev2konstituenten}
 \end{figure}
 
 \begin{figure}[!htbp]
-%   \resizebox{\textwidth}{!}{
-%     \Tree{
-%       &&& \K{S}\B{dddll}\B{ddd}\B{drrrrrrr} \\
-%       &&&&&&&&&& \K{VP}\B{ddlllll}\B{ddlll}\B{ddll}\B{d} \\
-%       &&&&&&&&&& \K{\textbf{V}}\B{dl}\B{d} \\
-%       & \K{NP\ORii}\TRi[-7] && \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-6] && \K{AdvP}\TRi[-2] & \K{\Tii}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) & \K{\textbf{V}}\B{d} & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) \\
-%       & \K{\textit{das Bild}} && \K{\textit{hat}} && \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{verkauft}} & \\
-%     }
-%   }
-%   \vspace{0.3cm}
+  \centering
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [NP\Sub{2}, tier=preterminal
+        [\it das Bild, narroof, name=BeweBild]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweHat]
+      ]
+      [VP, calign=last
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [t\Sub{2}, tier=preterminal
+        ]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5em) -| (BeweBild.south);}
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [t\Sub{1}]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4em) -| (BeweHat.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{V2-Satz}
   \label{fig:v2satz}
 \end{figure}
@@ -695,8 +947,16 @@ Die Bewegung einer beliebigen Phrase (wobei für \textit{beliebige Phrase} übli
 Das Schema, das diese Konstituentenstruktur erzeugt, muss die Anforderungen kodieren, dass eine VP mit zwei Spuren (der Spur des finiten Verbs und der des Vorfeldbesetzers) sich mit den Konstituenten verbindet, die in einer Nebensatz-VP an der Stelle der Spuren stünden.
 
 
-\Phrasenschema{V2-Satz (unabhängiger Aussagesatz)}{\label{str:v2}
-S\strschemspace:\strschemspace XP\ORii\strschemspace V\Up{finit}\Sub{1}\strschemspace VP[~\ldots~\Tii~\ldots~\Ti~] }
+\Phrasenschema{V2-Satz (Aussage- und w"=Fragesätze)}{\label{str:v2}
+  \centering
+  \begin{forest}
+    [S, calign=child, calign child=2, Ephr
+      [XP\Sub{2}, Eobl]
+      [V\UpSub{finit}{1}, Eobl]
+      [VP\\{[\ldots\Tii\ldots\Ti]}, Eobl]
+    ]
+  \end{forest}
+}
 
 Im Schema~\ref{str:v2} wird die Notation VP[~\ldots~\Tii~\ldots~\Ti~] verwendet, um anzuzeigen, dass eine VP mit zwei Spuren eingesetzt werden muss, egal was die VP sonst noch enthält.%
 \footnote{Die Abkürzung \ldots\ zeigt an, dass an ihrer Stelle beliebiges Material stehen kann, aber nicht muss.}
@@ -712,16 +972,31 @@ Wir gehen hier in den besprochenen Sätzen immer von Bewegung aus, nicht ohne da
 
 \begin{figure}[!htbp]
   \centering
-  \resizebox{\textwidth}{!}{
-    \Tree{
-      &&& \K{S}\B{dddll}\B{ddd}\B{drrrrrrrr} \\
-      &&&&&&&&&&& \K{VP}\B{ddllllll}\B{ddllll}\B{d} \\
-      &&&&&&&&&&& \K{\textbf{V}}\B{dll}\B{d} \\
-      & \K{AdvP}\TRi[2] && \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-4] && \K{NP}\TRi[-4] && \K{\textbf{V}}\B{d} && \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[llllllll]-(0,4) \\
-      & \K{\textit{Erfreulicherweise}} && \K{\textit{hat}} && \K{\textit{Ischariot}} && \K{\textit{das Bild}} && \K{\textit{verkauft}} && \K{} \\
-    }
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [AdvP, tier=preterminal
+        [\it erfreulicherweise, narroof]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweHat]
+      ]
+      [VP, calign=last
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [t\Sub{1}]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4em) -| (BeweHat.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Konstituentenanalyse bei direkter Vorfeldbesetzung}
   \label{fig:vorfelddirektbesetzung}
 \end{figure}
@@ -733,14 +1008,34 @@ Eine Analyse zeigt Abbildung~\ref{fig:v2fragesatz}.
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{S}\B{dddll}\B{ddd}\B{drrrrrrr} \\
-    &&&&&&&&&& \K{VP}\B{ddlllll}\B{ddlll}\B{ddll}\B{d} \\
-    &&&&&&&&&& \K{\textbf{V}}\B{dl}\B{d} \\
-    & \K{NP\ORii}\TRi[-7] && \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-6] && \K{AdvP}\TRi[-2] & \K{\Tii}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) & \K{\textbf{V}}\B{d} & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) \\
-    & \K{\textit{Was}} && \K{\textit{hat}} && \K{\textit{Ischariot}} && \K{\textit{wahrscheinlich}} && \K{\textit{verkauft}} & \\
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [NP\Sub{2}, tier=preterminal
+        [\it was, narroof, name=BeweBild]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweHat]
+      ]
+      [VP, calign=last
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [t\Sub{2}, tier=preterminal
+        ]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5em) -| (BeweBild.south);}
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [t\Sub{1}]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4em) -| (BeweHat.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{V2-\textit{w}"=Fragesatz}
   \label{fig:v2fragesatz}
 \end{figure}
@@ -759,7 +1054,14 @@ Sätze wie (\ref{ex:saetze6661}) werden durch Schema~\ref{str:v1} abgebildet, s.
 \end{sloppypar}
 
 \Phrasenschema{V1-Satz (Fragesatz)}{\label{str:v1}
-FS\strschemspace:\strschemspace V\Up{finit}\Sub{1}\strschemspace VP[~\ldots~\Ti~] }
+  \centering
+  \begin{forest}
+    [FS, calign=first, Ephr
+      [V\UpSub{finit}{1}, Eobl]
+      [VP\\{[\ldots\Ti]}, Eobl]
+    ]
+  \end{forest}
+}
 
 \begin{exe}
   \ex{\label{ex:saetze6661} Hat Ischariot tatsächlich das Bild verkauft?}
@@ -767,14 +1069,31 @@ FS\strschemspace:\strschemspace V\Up{finit}\Sub{1}\strschemspace VP[~\ldots~\Ti~
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    \K{FS}\B{ddd}\B{drrrrrrrrr} \\
-    &&&&&&&&& \K{VP}\B{ddlllllll}\B{ddlllll}\B{ddlll}\B{d} \\
-    &&&&&&&&& \K{\textbf{V}}\B{dl}\B{d} \\
-    \K{\textbf{V\ORi}}\B{d} && \K{NP}\TRi[-4] && \K{AdvP}\TRi[-3] && \K{NP}\TRi[-6] && \K{\textbf{\textbf{V}}}\B{d} & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllllll]-(0,4) \\
-    \K{\textit{Hat}} && \K{\textit{Ischariot}} && \K{\textit{tatsächlich}} && \K{\textit{das Bild}} && \K{\textit{verkauft}} & \\
-  } 
-  \vspace{0.3cm}
+  \begin{forest}
+    [FS, calign=first
+      [\bf V\Sub{1}, tier=preterminal
+        [\it hat, name=BeweHat]
+      ]
+      [VP, calign=last
+        [NP, tier=preterminal
+          [\it Ischariot, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it wahrscheinlich, narroof]
+        ]
+        [NP, tier=preterminal
+          [\it das Bild, narroof]
+        ]
+        [\bf V, calign=last
+          [\bf V, tier=preterminal
+            [\it verkauft]
+          ]
+          [t\Sub{1}]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4em) -| (BeweHat.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Entscheidungsfragesatz}
   \label{fig:v1satz}
 \end{figure}
@@ -827,14 +1146,33 @@ Außerdem würden sich evtl.\ Änderungen an den Wortklassen bzw.\ den Aussagen 
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    &&& \K{S}\B{dddll}\B{ddd}\B{drrrrrrr} \\
-    &&&&&&&&&& \K{VP}\B{ddllllll}\B{ddlllll}\B{ddlll}\B{d} \\
-    &&&&&&&&&& \K{\textbf{V}}\B{dl}\B{d} \\
-    & \K{NP\ORii}\TRi[-8] && \K{\textbf{V\ORi}}\B{d} & \K{\Tii}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lll]-(0,4) & \K{NP}\TRi[-4] && \K{AdvP}\TRi[-6] && \K{Ptkl}\B{d} & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lllllll]-(0,4) \\
-    & \K{\textit{Sarah}} && \K{\textit{isst}} && \K{\textit{den Kuchen}} && \K{\textit{alleine}} && \K{\textit{auf=}} \\
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [NP\Sub{2}, tier=preterminal
+        [\it Sarah, narroof, name=BeweSarah]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it isst, name=BeweIsst]
+      ]
+      [VP, calign=last
+        [\Tii, tier=preterminal]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-5em) -| (BeweSarah.south);}
+        [NP, tier=preterminal
+          [\it den Kuchen, narroof]
+        ]
+        [AdvP, tier=preterminal
+          [\it alleine, narroof]
+        ]
+        [\bf V, calign=last
+          [Ptkl, tier=preterminal
+            [\it auf{=}]
+          ]
+          [\Ti, tier=preterminal]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4em) -| (BeweIsst.south);}
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{V2-Satz mit Partikelverb}
   \label{fig:v2mitpartikel}
 \end{figure}
@@ -873,14 +1211,32 @@ Dabei regiert die Kopula eine AP, die zwar eine andere Abfolge ihrer Konstituent
 Die Kopula regiert außerdem eine NP im Nominativ.
 
 \begin{figure}[!htbp]
-  \Tree{
-    &&& \K{S}\B{ddddll}\B{dddd}\B{drrrrr} \\
-    &&&&&&&& \K{VP}\B{ddllll}\B{ddd}\B{ddlll} \\
-    \\
-    &&&& \K{\Tii} & \K{AP}\B{d}\B{drr} \\
-    & \K{NP\ORii}\TRi[-8] && \K{\textbf{V\ORi}}\B{d} && \K{\textbf{A}}\B{d} && \K{PP}\TRi[-8] & \K{\Ti}\\
-    & \K{\textit{Die Frau}} && \K{\textit{ist}} && \K{\textit{stolz}} && \K{\textit{auf ihre}}\Below{\textit{Tochter}} & \\
-  }
+  \centering
+  \begin{forest}
+    s sep=3em
+    [S, calign=child, calign child=2
+      [NP\Sub{2}, tier=preterminal
+        [\it die Frau, narroof, name=BeweDiefrau]
+      ]
+      [\bf V\Sub{1}, tier=preterminal
+        [\it ist]
+      ]
+      [VP, calign=last, s sep=2em
+        [\Tii]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-9em) -| (BeweDiefrau.south);}
+        [AP, calign=first
+          [\bf A, tier=preterminal
+            [\it stolz]
+          ]
+          [PP, tier=preterminal
+            [\it auf ihre Tochter, narroof]
+          ]
+        ]
+        [\Ti, fit=band]
+        {\draw[dotted, thick, ->] (.south) |- ++(0,-8em) -| (BeweIsst.south);}
+      ]
+    ]
+  \end{forest}
   \caption{Analyse eines Kopulasatzes mit AP}
   \label{fig:kopulav22}
 \end{figure}
@@ -948,19 +1304,51 @@ Für ein Relativpronomen können wir annehmen, dass es im Lexikon bereits durch 
 \index{Relativsatz}
 
 \Phrasenschema{Relativsatz}{\label{str:rs}
-RS\strschemspace:\strschemspace XP\Up{relativ}\Sub{1}\strschemspace VP[~\ldots~\Ti~\ldots~] }
+  \centering
+  \begin{forest}
+    [RS, Ephr
+      [XP\UpSub{relativ}{1}, Eobl]
+      [VP\\{[\ldots\Ti\ldots]}, Eobl]
+    ]
+  \end{forest}
+
+}
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[-0.3]{
-    && \K{NP}\B{ddddll}\B{dddd}\B{drr} \\
-    &&&& \K{RS} \B{ddd}\B{drrrrrrrr} \\
-    &&&&&&&&&&&& \K{VP}\B{ddllllll}\B{ddlllll}\B{ddllll}\B{d} \\
-    &&&&&&&&&&&& \K{\textbf{V}}\B{dll}\B{d} \\
-    \K{Art}\B{d} && \K{\textbf{N}}\B{d} && \K{NP\ORi}\TRi[-8] && \K{NP}\TRi[-8] & \K{\Ti}\POS[]-(0,4)\ar@{-->}@/^{4pc}/[lll]-(0,4) & \K{Ptkl}\B{d} && \K{\textbf{V}}\B{d} && \K{\textbf{V}}\B{d} \\
-    \K{\textit{einen}} && \K{\textit{Tofu}} && \K{\textit{der}} && \K{\textit{mir}} && \K{\textit{nicht}} && \K{\textit{geschmeckt}} && \K{\textit{hat}} \\
-  }
-  \vspace{0.3cm}
+  \begin{forest}
+    [NP, calign=child, calign child=2
+      [Art, tier=preterminal
+        [\it einen]
+      ]
+      [\bf N, tier=preterminal
+        [\it Tofu]
+      ]
+      [RS, calign=first
+        [NP\Sub{1}, tier=preterminal
+          [\it der, narroof, name=BeweDer]
+        ]
+        [VP, calign=last
+          [NP, tier=preterminal
+            [\it mir, narroof]
+          ]
+          [\Ti, tier=preterminal]
+          {\draw[dotted, thick, ->] (.south) |- ++(0,-4.5em) -| (BeweDer.south);}
+          [Ptkl, tier=preterminal
+            [nicht]
+          ]
+          [\bf V, calign=last
+            [\bf V, tier=preterminal
+              [\it geschmeckt]
+            ]
+            [\bf V, tier=preterminal
+              [\it hat]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{NP mit Relativsatz}
   \label{fig:saetze9228}
 \end{figure}
@@ -1026,14 +1414,39 @@ Das Relativpronomen \textit{dessen} kongruiert mit \textit{Tofu} in Genus und Nu
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[-0.3]{
-    && \K{NP}\B{dddll}\B{ddd}\B{drrrr} \\
-    &&&&&& \K{RS}\B{d}\B{drrrr} \\
-    &&&&&& \K{NP\ORi}\B{dll}\B{d} &&&& \K{VP}\B{dll}\B{dl}\B{d} \\
-    \K{Art}\B{d} && \K{\textbf{N}}\B{d} && \K{NP}\TRi[-4] && \K{\textbf{N}}\B{d} && \K{NP}\TRi[-7] & \K{\Ti} & \K{\textbf{V}}\B{d} \\
-    \K{\textit{der}} && \K{\textit{Tofu}}
-    \POS[]-(0,4)\ar@{->}@/_{1pc}/[rr]-(0,4)_{\textsc{Gen,Num}} && \K{\textit{dessen}} && \K{\textit{Geschmack}}\POS[]-(1,4)\ar@{->}@/^{1pc}/[l]-(8,4)^{\textsc{Kas}} && \K{\textit{ich}} && \K{\textit{mag}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[llll]-(0,4)^{\textsc{Kas}} & \\
-  }
+  \begin{forest}
+    [NP, calign=child, calign child=2
+      [Art, tier=preterminal
+        [\it der]
+      ]
+      [\bf N, tier=preterminal
+        [\it Tofu]
+        {\draw [->, bend right=30] (.south) to node [below, near start] {\footnotesize\textsc{Genus,Numerus}} (RekDessen.south);}
+      ]
+      [RS, calign=first
+        [NP\Sub{1}, calign=first
+          [NP, tier=preterminal
+            [\it dessen, narroof, name=RekDessen]
+          ]
+          [\bf N, tier=preterminal
+            [\it Geschmack, name=RekGeschmack]
+            {\draw [->, bend left=25] (.south) to node [below, near start] {\footnotesize\textsc{Kasus}} (RekDessen.south);}
+          ]
+        ]
+        [VP, calign=last
+          [NP, tier=preterminal
+            [\it ich, narroof]
+          ]
+          [\Ti]
+          [\bf V, tier=preterminal
+            [\it mag]
+            {\draw [->, bend left=15] (.south) to node [below, near start] {\footnotesize\textsc{Kasus}} (RekGeschmack.south);}
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+
   \caption{NP mit Relativsatz mit genitivischer Relativphrase}
   \label{fig:saetze5553}
 \end{figure}
@@ -1069,20 +1482,41 @@ Im Normalfall muss die Relativphrase den Kasus haben, den auch eine NP an der Po
 Dies hat zur Folge, dass der Kasus der Relativphrase im Relativsatz gleich dem externen Kasus sein muss.
 Abbildung~\ref{fig:saetze1991b} zeigt die Kasusanforderungen.%
 \footnote{Es ist eine theoretisch gesehen problematische Annahme, dass eine NP (hier \textit{wen}) von zwei verschiedenen Verben regiert wird.
-Insofern sind die Pfeile als Veranschaulichung zu verstehen, nicht als theoretische Position.}
+Insofern sind die Pfeile als Veranschaulichung zu verstehen, nicht als theoretische Modellierung im engen Sinn.}
 Die Ungrammatikalität von (\ref{ex:saetze1992a}) rührt aus einer Verletzung dieser speziellen Kasusanforderung her.
 
 \begin{figure}[!htbp]
   \centering
-  \resizebox{\textwidth}{!}{
-    \Tree{
-      &&&&&&& \K{S}\B{dllllll}\B{ddd}\B{ddrrrr} \\
-      & \K{RS\ORiii}\B{dd}\B{drrrr} \\
-      &&&&& \K{VP}\B{dll}\B{dl}\B{d} &&&&&& \K{VP}\B{dll}\B{dl}\B{d} \\
-      & \K{NP\ORi}\TRi[-7] && \K{NP}\TRi[-7] & \K{\Ti} & \K{\textbf{V}}\B{d} && \K{\textbf{V\ORii}}\B{d} && \K{NP}\TRi[-7] & \K{\Tiii} & \K{\Tii} \\
-      & \K{\textit{wen}} && \K{\textit{man}} && \K{\textit{mag}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[llll]-(0,4)^{\textsc{Kas}} && \K{\textit{beschenkt}}\POS[]-(0,4)\ar@{-}@/^{3pc}/[llllll]-(0,4)^{\textsc{Kas}} && \K{\textit{man}} && \\
-    }
-  }
+  \begin{forest}
+    [S, calign=child, calign child=2
+      [RS\Sub{3}, calign=first
+        [NP\Sub{1}, tier=preterminal
+          [\it wen, narroof, name=RekWen]
+        ]
+        [VP, calign=last
+          [NP, tier=preterminal
+            [\it man, narroof]
+          ]
+          [\Ti, tier=preterminal]
+          [\bf V, tier=preterminal
+            [\it mag]
+            {\draw [->, bend left=30] (.south) to node [below, near start] {\footnotesize\textsc{Kasus}} (RekWen.south);}
+          ]
+        ]
+      ]
+      [\bf V\Sub{2}, tier=preterminal
+        [\it beschenkt]
+        {\draw [->, bend left=45] (.south) to node [below, near start] {\footnotesize\textsc{Kasus}} (RekWen.south);}
+      ]
+      [VP, calign=last
+        [NP, tier=preterminal
+          [\it man, narroof]
+        ]
+        [\Tiii, tier=preterminal]
+        [\Tii, tier=preterminal]
+      ]
+    ]
+  \end{forest}
   \caption{Satz mit freiem Relativsatz}
   \label{fig:saetze1991b}
 \end{figure}
