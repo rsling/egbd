@@ -644,16 +644,15 @@ Die Verallgemeinerung zu mehrsilbigen Wörtern erfolgt nach einer theoretischen 
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={tier=terminal}
     [Silbe, calign=last
-      [Anfangsrand, ake, calign=first
+      [Anfangsrand, sake, calign=first
         [C][C]
       ]
       [Reim
-        [Kern,ake,calign=first
+        [Kern, sake,calign=first
           [V]
         ]
-        [Endrand, ake, calign=last
+        [Endrand, sake, calign=last
           [C][C]
         ]
       ]
@@ -688,10 +687,6 @@ Kern und Endrand bilden den \textit{Reim}.
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
     [Silbe, calign=last
       [Anfangsrand, ake, calign=first
         [f][K]
@@ -1068,16 +1063,15 @@ In einem Vorgriff auf Abschnitt~\ref{sec:systematikderraender} nehmen wir an, da
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={tier=terminal}
     [Silbe, calign=last
-      [Anfangsrand, ake, calign=child, calign child=2
-        [X,edge=dashed][C][C]
+      [Anfangsrand, sake, calign=child, calign child=2
+        [X, edge=dashed][C][C]
       ]
       [Reim, calign=first
-        [Kern, ake
+        [Kern, sake
           [V]
         ]
-        [Endrand, ake, calign=child, calign child=2
+        [Endrand, sake, calign=child, calign child=2
           [C][C][X,edge=dashed][X,edge=dashed][X,edge=dashed]
         ]
       ]
@@ -1508,10 +1502,6 @@ Segmente, die Strukturpositionen in zwei aneinander angrenzenden Silben besetzen
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
     [Wort
       [Silbe, calign=last
         [Anfangsrand, ake
@@ -1923,10 +1913,6 @@ Der Übersichtlichkeit halber wird \textit{Anfangsrand} mit \textit{Ar.}, \texti
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
     [Phonologisches Wort
       [Fuß, calign=child, calign child=2
         [Silbe, calign=last, edge=dashed
@@ -2028,10 +2014,6 @@ Für alle Ebenen dieser Analyse wurde unabhängig argumentiert, und es handelt s
 \begin{figure}[!htbp]
     \centering
     \begin{forest}
-      ake/.style={
-	tier=terminal,
-	delay={for children={content=\textipa{##1}}}
-      }
       [Prosodisches Wort, calign=first
 	[Phonologisches Wort
 	  [Fuß, calign=first

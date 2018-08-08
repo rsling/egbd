@@ -650,12 +650,20 @@ Man nennt Pronomina wie diese auch \textit{Expletivpronomina}.\index{Pronomen!ex
 Wie auf Seite~\pageref{abs:expletbeton} in Abschnitt~\ref{sec:wortakzentimdeutschen} bereits erläutert, sind Expletivpronomina nicht betonbar.
 
 \begin{figure}[!htbp]
-%     \Treek[2]{3}{
-%       & \K{Ersetzbar durch \textit{dieses}?}\B{dl}_{\mathrm{Ja}}\B{dr}^{\mathrm{Nein}} \\
-%       \K{\textbf{normales}}\Below{\textbf{Pronomen}} && \K{Mit Komplementsatz?}\B{dl}_{\mathrm{Ja}}\B{dr}^{\mathrm{Nein}} \\
-%       & \K{\textbf{Korrelat}} && \K{Obligatorisch im Vf?}\B{dl}_{\mathrm{Ja}}\B{dr}^{\mathrm{Nein}} \\
-%       && \K{\textbf{fak.\ positionales \textit{es}}}\Below{(Vorfeld-\textit{es})} && \K{\textbf{obl.\slash fak.\ Ergänzung}}\Below{(Wetter\slash Experiencer"=Verben)} \\
-%     }
+  \centering
+  \begin{forest}
+    for tree={l sep=2em, s sep=2.5em},
+    [Ersetzbar durch \textit{dieses}?, decide
+      [\textbf{normales Pronomen}, finall, yes]
+      [Mit Komplementsatz?, no, decide
+        [\textbf{Korrelat}, finall, yes]
+        [Obligatorisch\\im Vorfeld?, decide, no
+          [\textbf{fakultatives/positionales \textit{es}}\\{(Vorfeld-\textit{es})}, finall, yes]
+          [\textbf{obligatorische oder}\\\textbf{fakultative Ergänzung}\\{(Wetter\slash Experiencer-Verben)}, finall, no]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Entscheidungsbaum zur Klassifikation von Nominativ \textit{es}}
   \label{fig:escat}
   \index{Verb!Wetter--}
@@ -1378,14 +1386,31 @@ In (\ref{ex:prd3293b}) bettet dasselbe Modalverb ein Perfekt (\textit{haben}) vo
 Bevor kurz die Bedeutung dieser Konstruktionen diskutiert wird, soll betont werden, dass beim Doppelperfekt ganz einfach das Perfekt gemäß Tabelle~\ref{tab:anatemp} rekursiv eingebettet wird, wie die Analyse in Abbildung~\ref{fig:perfektvk} zeigt.
 
 \begin{figure}[!htbp]
-%   \Tree[1.3]{
-%     &&& \K{\textbf{V}}\B{dl}\B{ddd} \\
-%     && \K{\textbf{V}}\B{dl}\B{dd} \\
-%     & \K{\textbf{V}}\B{dl}\B{d} \\
-%     \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d} \\
-%     \K{\textit{behuft}} & \K{\textit{gehabt}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[l]-(0,4)^{\mathrm{3}} & \K{\textit{haben}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[l]-(0,4)^{\mathrm{3}} & \K{\textit{will}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[l]-(0,4)^{\mathrm{1}} \\
-%     \vspace{0.25cm}
-%   }
+  \centering
+  \begin{forest}
+    [\textbf{V}, calign=last
+      [\textbf{V}, calign=last
+        [\textbf{V}, calign=last
+          [\textbf{V}, tier=preterminal
+            [\textit{behuft}]
+          ]
+          [\textbf{V}, tier=preterminal
+            [\textit{gehabt}]
+            {\draw [->, bend left=45] (.south) to node [below, midway] {\footnotesize\textsc{Status} (3)} (!uu11.south);}
+          ]
+        ]
+        [\textbf{V}, tier=preterminal
+          [\textit{haben}]
+          {\draw [->, bend left=45] (.south) to node [below, midway] {\footnotesize\textsc{Status} (3)} (!uu121.south);}
+        ]
+      ]
+      [\textbf{V}, tier=preterminal
+        [\textit{will}]
+        {\draw [->, bend left=45] (.south) to node [below, midway] {\footnotesize\textsc{Status} (1)} (!uu121.south);}
+      ]
+    ]
+  \end{forest}
+
   \caption{Verbkomplex mit Modalverb und Doppelperfekt}
   \label{fig:perfektvk}
 \end{figure}
@@ -1478,12 +1503,24 @@ Eine wichtige Ausnahme zu dieser Regularität zeigen Beispiel (\ref{ex:ofuei}) u
 
 \begin{figure}[!htbp]
   \centering
-  \Tree[1.5]{
-    \K{\textbf{V}}\B{dd}\B{drr} \\
-    && \K{\textbf{V}}\B{dl}\B{d} \\
-    \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d} & \K{\textbf{V}}\B{d} \\
-    \K{\textit{hat}}\Below{1} & \K{\textit{schwimmen}}\Below{3} & \K{\textit{wollen}}\Below{2} \\
-  }
+  \begin{forest}
+    [\textbf{V}, calign=first
+      [\textbf{V}, tier=preterminal
+        [\textit{hat}\\1]
+      ]
+      [\textbf{V}, calign=last
+        [\textbf{V}, tier=preterminal
+          [\textit{schwimmen}\\3]
+        ]
+        [\textbf{V}, tier=preterminal
+          [\textit{wollen}\\2]
+          {\draw [->, bend left=20] (.south) to node [below, near end] {\footnotesize\textsc{Status} (1)} (!uu11.south);}
+          {\draw [<-, bend left=60] (.south) to node [below, midway] {\footnotesize\textsc{Status} (1)} (!uuu11.south);}
+        ]
+      ]
+    ]
+  \end{forest}
+
   \caption{Verbkomplex mit Oberfeldumstellung}
   \label{fig:oberfeldum}
 \end{figure}
@@ -1520,42 +1557,75 @@ Dabei stehen die möglichen Analysen wie in der schematischen Abbildung~\ref{fig
 Zur Verdeutlichung der Verhältnisse wird die Indexnotation aus Abschnitt~\ref{sec:verbkomplexe} verwendet.
 
 \begin{figure}[!htbp]
-  \Tree[0]{
-    &&& \K{VP\Sub{1}}\B{ddd}\B{ddll} \\
-    \\
-    & \K{VP\Sub{2}}\B{d}\B{dl} \\
-    \K{\ldots} & \K{\textbf{V\Sub{2}}} && \K{\textbf{V\Sub{1}}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[ll]-(0,4)\\
-  }\hspace{1cm}\Tree[2.5]{
-    && \K{VP\Sub{2+1}}\B{dd}\B{ddll}\\
-    \\
-    \K{\ldots} && \K{\textbf{V\Sub{2+1}}}\B{d}\B{dl}\\
-    & \K{\textbf{V\Sub{2}}} & \K{\textbf{V\Sub{1}}}\POS[]-(0,4)\ar@{->}@/^{1pc}/[l]-(0,4)\\
-  }
-  \vspace{0.5cm}
-  \caption[Inkohärente und kohärente Konstruktion]{Inkohärente (links) und kohärente (rechts) Konstruktion}
+  \centering
+  \begin{forest}
+    [VP\Sub{1+2}, calign=last
+      [\ldots, fit=band]
+      [\textbf{V\Sub{2+1}}, calign=last
+        [\textbf{V\Sub{2}}]
+        [\textbf{V\Sub{1}}]
+        {\draw [->, bend left=45] (.south) to (!u1.south);}
+      ]
+    ]
+  \end{forest}\hspace{4em}\begin{forest}
+    [VP\Sub{1}, calign=last
+      [\ldots, fit=band]
+      [VP\Sub{2}, calign=last
+        [\ldots]
+        [\textbf{V\Sub{2}}, tier=terminal]
+      ]
+      [\textbf{V\Sub{1}}, tier=terminal]
+      {\draw [->, bend left=45] (.south) to (!u22.south);}
+    ]
+  \end{forest}
+  \caption[Inkohärente und kohärente Konstruktion]{Kohärente (links) und inkohärente (rechts) Konstruktion}
   \label{fig:hypkohinkoh}
 \end{figure}
 
 \begin{figure}[!htbp]
-  \Tree[1.3]{
-     &&&& \K{VP\Sub{2+1}}\B{dddlll}\B{dddll}\B{dd} \\
-     \\
-     &&&& \K{\textbf{V\Sub{2+1}}}\B{dl}\B{d} \\
-     & \K{NP}\TRi[-12] & \K{NP}\TRi[-12] & \K{V\Sub{2}}\B{d} & \K{\textbf{V\Sub{1}}}\TRi[-12] \\
-     & \K{\textit{Vanessa}} & \K{\textit{die}}\Below{\textit{Pferde}} & \K{\textit{behufen}} & \K{\textit{will}} & \\
-  }
+  \centering
+  \begin{forest}
+    [VP\Sub{1+2}, calign=last
+      [NP, tier=preterminal
+        [\textit{Vanessa}, narroof]
+      ]
+      [NP, tier=preterminal
+        [\textit{die Pferde}, narroof]
+      ]
+      [\textbf{V\Sub{2+1}}, calign=last
+        [\textbf{V\Sub{2}}, tier=preterminal
+          [\textit{behufen}]
+        ]
+        [\textbf{V\Sub{1}}, tier=preterminal
+          [\textit{will}]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Kohärente Konstruktion mit \textit{wollen}}
   \label{fig:hypkoh}
 \end{figure}
 
 \begin{figure}[!htbp]
-  \Tree[1.3]{
-    &&&& \K{VP\Sub{1}}\B{dddlll}\B{ddl}\B{ddd} &\\
-    \\
-    &&& \K{VP\Sub{2}}\B{dl}\B{d} \\
-    & \K{NP}\TRi[-12] & \K{NP}\TRi[-12] & \K{\textbf{V\Sub{2}}}\B{d} & \K{\textbf{V\Sub{1}}}\TRi[-12] \\
-    & \K{\textit{Vanessa}} & \K{\textit{die}}\Below{\textit{Pferde}} & \K{\textit{zu}}\Below{\textit{behufen}} & \K{\textit{wünscht}} &\\
-  }
+  \begin{forest}
+    l sep+=3em, s sep+=2em
+    [VP\Sub{1}, calign=last
+      [NP, tier=preterminal
+        [\textit{Vanessa}, narroof]
+      ]
+      [VP\Sub{2}, calign=last
+        [NP, tier=preterminal
+          [\textit{die Pferde}, narroof]
+        ]
+        [\textbf{V\Sub{2}}, tier=preterminal
+          [\textit{zu behufen}]
+        ]
+      ]
+      [\textbf{V\Sub{1}}, tier=preterminal
+        [\textit{wünscht}]
+      ]
+    ]
+  \end{forest}
   \caption{Inkohärente Konstruktion mit \textit{wünschen}}
   \label{fig:hypinkoh}
 \end{figure}

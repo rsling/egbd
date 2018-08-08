@@ -22,10 +22,6 @@ Silben selber fügen sich zu den nächstgrößeren Einheiten -- den phonologisch
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    ake/.style={
-      tier=terminal,
-      delay={for children={content=\textipa{##1}}}
-    }
     [Silbe, calign=last
       [Anfangsrand, ake, calign=first
         [f][K]

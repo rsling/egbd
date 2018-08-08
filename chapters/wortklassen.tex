@@ -795,12 +795,6 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
   \begin{forest}
     /tikz/every node/.append style={font=\footnotesize},
     for tree={l sep=2em, s sep=2.5em},
-    decide/.style={draw, chamfered rectangle, inner sep=2pt},
-    finall/.style={rounded corners, fill=gray,
-      delay={content=\textcolor{white}{##1}}},
-    intrme/.style={draw, rounded corners},
-    yes/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Ja}}},
-    no/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Nein}}}
     [\textit{Wort}, intrme
       [{Hat\\Numerus?}, decide
         [\textit{flektierbar}, intrme, yes

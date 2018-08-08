@@ -396,6 +396,16 @@ Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vo
   },
   Emult/.style={for children={no edge}, for tree={l sep=0pt}},
   phrasenschema/.style={for tree={l sep=2em, s sep=2em}},
+  decide/.style={draw, chamfered rectangle, inner sep=2pt},
+  finall/.style={rounded corners, fill=gray, text=white},
+  intrme/.style={draw, rounded corners},
+  yes/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Ja}}},
+  no/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Nein}}},
+  sake/.style={tier=preterminal},
+  ake/.style={
+    tier=preterminal,
+    for children={execute at begin node=\tipaencoding}
+    },
 }
 
 

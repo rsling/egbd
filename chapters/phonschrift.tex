@@ -517,29 +517,97 @@ Es bieten sich die Wörter in (\ref{ex:phonschrift4000}) in Zusammenhang mit den
 
 \begin{figure}[!htbp]
   \centering
-  \Tree{
-    & \K{PhW}\B{d}\B{drr} \\
-    & \K{Silbe}\B{ddl}\B{d} && \K{Silbe}\B{ddl}\B{d} \\
-	& \K{R}\B{d} && \K{R}\B{d}\B{dr} \\
-    \K{A}\B{d} & \K{K}\B{d} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} \\
-    \K{\textipa{b}} & \K{\textipa{u:}} & \K{\textipa{z}} & \K{\textipa{@}} & \K{\textipa{n}} \\
-  }\\
-  \vspace{0.5cm}
-  \Tree{
-    & \K{PhW}\B{d}\B{drrr} \\
-    & \K{Silbe}\B{ddl}\B{d} &&& \K{Silbe}\B{ddl}\B{d} \\
-	& \K{R}\B{d}\B{dr} & && \K{R}\B{d}\B{dr} \\
-    \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{dr} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} \\
-    \K{\textipa{b}} & \K{\textipa{U}} && \K{\textipa{s}} & \K{\textipa{@}} & \K{\textipa{n}} \\
-  }\\
-  \vspace{0.5cm}
-  \Tree{
-    & \K{PhW}\B{d}\B{drrr} \\
-    & \K{Silbe}\B{ddl}\B{d} &&& \K{Silbe}\B{ddl}\B{d} \\
-	& \K{R}\B{d}\B{dr} & && \K{R}\B{d}\B{dr} \\
-    \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} & \K{A}\B{d} & \K{K}\B{d} & \K{E}\B{d} \\
-    \K{\textipa{b}} & \K{\textipa{u:}} & \K{\textipa{s}} & \K{\textipa{s}} & \K{\textipa{@}} & \K{\textipa{n}} \\
-  }
+  \begin{forest}
+    for tree={s sep+=1em}
+    [Phonologisches Wort, calign=first
+      [Silbe, calign=last
+        [Ar., ake
+          [b]
+        ]
+        [Reim
+          [Kern, ake
+            [u:]
+          ]
+        ]
+      ]
+      [Silbe, calign=last
+        [Ar., ake
+          [z]
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [@]
+          ]
+          [Er., ake
+            [n]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}\\
+  \vspace{\baselineskip}
+  \begin{forest}
+    for tree={s sep+=1em}
+    [Phonologisches Wort, calign=first
+      [Silbe, calign=last
+        [Ar., ake
+          [b]
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [u:]
+          ]
+          [Er., ake, name=BusenEr]
+        ]
+      ]
+      [Silbe, calign=last
+        [Ar., ake
+          [s]
+          {\draw[-] (.north) -- (BusenEr.south);}
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [@]
+          ]
+          [Er., ake
+            [n]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}\\
+  \vspace{\baselineskip}
+  \begin{forest}
+    for tree={s sep+=1em}
+    [Phonologisches Wort, calign=first
+      [Silbe, calign=last
+        [Ar., ake
+          [b]
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [u:]
+          ]
+          [Er., ake
+            [s]
+          ]
+        ]
+      ]
+      [Silbe, calign=last
+        [Ar., ake
+          [s]
+        ]
+        [Reim, calign=first
+          [Kern, ake
+            [@]
+          ]
+          [Er., ake
+            [n]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
   \caption{Analysen der Silbenstruktur Wörter \textit{Busen}, \textit{Bussen} und \textit{Bußen}}
   \label{fig:busen}
 \end{figure}
