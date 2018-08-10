@@ -8,7 +8,10 @@ all: pod cover
 
 complete: index main.pdf
 
-index:  main.snd
+fix:
+	for i in `seq 1 10`; do xelatex main; done;
+
+index:  main.ind
  
 main.pdf: main.aux
 	xelatex main 
@@ -22,17 +25,8 @@ main.bbl:  $(SOURCE) localbibliography.bib
 	biber   main 
 
 
-main.snd: main.bbl
-	touch main.adx main.sdx main.ldx
-	sed -i s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
-	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.ldx
-# 	python3 fixindex.py
-# 	mv mainmod.adx main.adx
-	makeindex -o main.and main.adx
-	makeindex -o main.lnd main.ldx
-	makeindex -o main.snd main.sdx 
+main.ind:
+	makeindex main.idx
 	xelatex main 
  
 

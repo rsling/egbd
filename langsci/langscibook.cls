@@ -122,7 +122,6 @@
 \newif\iflsDraft \lsDraftfalse
 \newif\iflsOpenReview \lsOpenReviewfalse
 \newif\iflsUndecapitalize \lsUndecapitalizefalse
-\newif\iflsShowIndex \lsShowIndexfalse
 \newif\iflsBiblatex \lsBiblatextrue
 \newif\iflsCollection \lsCollectionfalse
 \newif\iflsCollectionChapter \lsCollectionChapterfalse
@@ -184,8 +183,6 @@
     \lsModfontstrue}
 \DeclareVoidOption{multiauthors}{  			
     \lsMultiauthorstrue}
-\DeclareVoidOption{showindex}{  			
-	\lsShowIndextrue}
 \DeclareVoidOption{biblatex}{  			
 	\lsBiblatextrue}
 \DeclareVoidOption{bibtex}{
@@ -1282,7 +1279,7 @@ is, or will remain, accurate or appropriate.
 	url=false,
 	eprint=false,
 	backend=\lsBiblatexBackend,
-	indexing=cite,
+	indexing=false,
 	\iflsCollection\else
 		toc=bib 		% make bibliography appear in toc
 	\fi
@@ -1390,130 +1387,6 @@ width=.8\textwidth
 		}%
 	}
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%    Indexes:
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{index}
-%% Wie im Stylefile, aber ohne \MakeUppercase
-\renewenvironment{theindex}{%
-  \edef\indexname{\the\@nameuse{idxtitle@\@indextype}}%
-  \if@twocolumn
-	  \@restonecolfalse
-  \else
-	  \@restonecoltrue
-  \fi
-  \columnseprule \z@
-  \columnsep 35\p@
-  \twocolumn[%
-	  \@makeschapterhead{\indexname}%
-	  \ifx\index@prologue\@empty\else
-		  \index@prologue
-		  \bigskip
-	  \fi
-  ]%
-%        \@mkboth{\MakeUppercase\indexname}%
-%                {\MakeUppercase\indexname}%
-  \@mkboth{\indexname}%
-		  {\indexname}%
-  \thispagestyle{plain}%
-  \parindent\z@
-  \parskip\z@ \@plus .3\p@\relax
-  \let\item\@idxitem
-  \providecommand*\seealso[2]{\emph{see also} ##1}
-}{%
-  \if@restonecol
-	  \onecolumn
-  \else
-	  \clearpage
-  \fi
-}
-
-\newcommand{\lsLanguageIndexTitle}{Language index}	% This can be changed according to the language.
-\newcommand{\lsSubjectIndexTitle}{Subject index}
-\newcommand{\lsNameIndexTitle}{Name index}
-
-\AtBeginDocument{
-	\makeindex
-	\newindex{lan}{ldx}{lnd}{\lsLanguageIndexTitle} 
-	\newindex{sbj}{sdx}{snd}{\lsSubjectIndexTitle}
-	\renewindex{default}{adx}{and}{\lsNameIndexTitle} %biblatex can only deal with the default index
-% 	\newindex{wrd}{wdx}{wnd}{Expression index}
-% 	\newindex{rwrd}{rdx}{rnd}{Reverse expression index}
-}
-
-\indexproofstyle{\setlength{\overfullrule}{0pt}\raggedright\footnotesize}
-
-%% \index inside footnote
-\def\infn#1#2{%
-% 	\hyperpage{#2}n#1%  99n2
-% 	\hyperpage{#2}*%   99*
-	\hyperpage{#2}\textsuperscript{#1}%  99²
-}%
-\newcommand{\footnoteindex}[2]{\index{#2|infn{#1}}}
-\newcommand{\footnoteindex@sbj}[2]{\index[sbj]{#2|infn{#1}}}
-\newcommand{\footnoteindex@lan}[2]{\index[lan]{#2|infn{#1}}}
-\newcommand{\footnoteindex@wrd}[2]{\index[wrd]{#2|infn{#1}}}
-
-
-% Author index
-\newcommand{\ia}[1]{%
-  \if@noftnote%
-    \index{#1}%
-    \else%
-    \edef\tempnumber{\thefootnote}%
-    \expandafter\footnoteindex\expandafter{\tempnumber}{#1}%
-    % \index{#1|fn{\thefootnote}}%
-  \fi%
-}
-
-% Subject index
-\newcommand{\is}[1]{%
-  \if@noftnote%
-    \index[sbj]{#1}%
-    \else%
-    \edef\tempnumber{\thefootnote}%
-    \expandafter\footnoteindex@sbj\expandafter{\tempnumber}{#1}%
-    %\indexftn{#1}{\value{footnotemark}}%
-  \fi%
-}
-
-% Language index
-\newcommand{\il}[1]{%
-  \if@noftnote
-    \index[lan]{#1}%
-    \else%
-    \edef\tempnumber{\thefootnote}%
-    \expandafter\footnoteindex@lan\expandafter{\tempnumber}{#1}%
-  \fi%
-}
-
-% \iflsDraft
-%   \usepackage{showidx} 	% Doesn't work with multiple indexes?
-% \fi
-
-%% this is required by authorindex
-\newif\ifshowindex \showindexfalse
-\usepackage{authorindex}
-
-\iflsShowIndex	% shows index commands in text
-    \RequirePackage{soul}
-%     \RequirePackage[noadjust]{marginnote}
-    \renewcommand{\marginpar}{\marginnote}
-    \let\isold\is 
-    \let\ilold\il 
-    \let\iaold\ia 
-    \renewcommand{\isi}[1]{\sethlcolor{green}\hl{#1}\isold{#1}}
-    \renewcommand{\is}[1]{{\tikzstyle{notestyleraw} += [text width=1.5cm]\todo[color=green,size=\scriptsize]{\tiny#1}\isold{#1}}}
-    \renewcommand{\ili}[1]{\sethlcolor{yellow}\hl{#1}\ilold{#1}}
-    \renewcommand{\il}[1]{{\tikzstyle{notestyleraw} += [text width=1.5cm]\todo[color=yellow,size=\scriptsize]{\tiny#1}\ilold{#1}}}
-    \renewcommand{\iai}[1]{\sethlcolor{pink}\hl{#1}\iaold{#1}}
-    \renewcommand{\ia}[1]{{\tikzstyle{notestyleraw} += [text width=1.5cm]\todo[color=pink,size=\scriptsize]{\tiny#1}\iaold{#1}}}
-\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

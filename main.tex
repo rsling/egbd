@@ -3,20 +3,23 @@
   nonflat,
   modfonts,
   colorlinks,
-  showindex,
   smallfont
-]{langsci/langscibook}    
+]{langsci/langscibook}
+
+\usepackage{makeidx}
+\input{localseealso.tex}
+\makeindex
 
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localhyphenation.tex}
-\bibliography{localbibliography} 
+\bibliography{localbibliography}
 
-\begin{document}       
+\begin{document}
 
-\input{localcommands.tex} 
+\input{localcommands.tex}
 
-\maketitle                
+\maketitle
 \frontmatter
 
 \currentpdfbookmark{Inhalt}{name}
@@ -24,9 +27,9 @@
 
 \include{chapters/einleitung}
 
-\mainmatter         
+\mainmatter
 
-\part{Grundlagen}
+\part{Grundlagen}\label{part:grundlagen}
 
 \include{chapters/grammatik}
 \include{chapters/fachdidaktik}
@@ -34,14 +37,14 @@
 
 \include{chapters/literaturpart1}
 
-\part{Phonetik und Phonologie}\label{part:laut}
+\part{Phonetik und Phonologie}\label{part:phono}
 
 \include{chapters/phonetik}
 \include{chapters/phonologie}
 
 \include{chapters/literaturpart2}
 
-\part{Morphologie}\label{part:wort}
+\part{Morphologie}\label{part:morphologie}
 
 \include{chapters/wortklassen}
 \include{chapters/morphologie}
@@ -60,9 +63,9 @@
 
 \include{chapters/literaturpart4}
 
-\part{Graphematik}\label{part:schrift}
-\include{chapters/phonschrift}
-\include{chapters/andereschrift}
+\part{Graphematik}\label{part:graphematik}
+\include{chapters/graphematikphonologie}
+\include{chapters/graphematikmorphosyntax}
 
 \include{chapters/literaturpart5}
 
@@ -71,6 +74,4 @@
 
 \input{backmatter.tex}
 
-\end{document} 
-
-\end{document} 
+\end{document}
