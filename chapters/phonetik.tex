@@ -449,31 +449,31 @@ Typischerweise, aber nicht immer sind Sonoranten stimmhaft.
   \centering
   \resizebox{\textwidth}{!}{
   \begin{tikzpicture}[every text node part/.style={align=center}]
-    \node (UeVok) at (0,2)  {\textbf{Vokale}\\(protoyp.\\silbisch)};
+    \node (UeVok) at (0,0)  {\textbf{Vokale}\\(protoyp.\\silbisch)};
     \node (UeApr) at (2.5,2)  {Approximanten};
     \node (UeNas) at (5,2)  {Nasale};
-    \node (UePlo) at (7.5,2)  {Plosive};
-    \node (UeFri) at (10,2)  {Frikative};
-    \node (UeAfr) at (12.5,2) {Affrikaten};
+    \node (UeFri) at (7.5,2)  {Frikative};
+    \node (UeAfr) at (10,2) {Affrikaten};
+    \node (UePlo) at (12.5,2)  {Plosive};
 
-    \node (UeSon) at (2.5,4) {\textbf{Sonoranten}\\(Klanglaute)};
-    \node (UeObs) at (10,4) {\textbf{Obstruenten}\\(Geräuschlaute)};
+    \node (UeSon) at (0,4) {\textbf{Sonoranten}\\(Klanglaute)};
+    \node (UeObs) at (12.5,4) {\textbf{Obstruenten}\\(Geräuschlaute)};
 
-    \node (UeKon) at (7.5,0) {\textbf{Konsonanten}\\(prototyp.\\nicht silbisch)};
+    \node (UeKon) at (12.5,0) {\textbf{Konsonanten}\\(prototyp.\\nicht silbisch)};
 
-    \draw (UeSon) -- (UeVok);
-    \draw (UeSon) -- (UeApr);
-    \draw (UeSon) -- (UeNas);
+    \draw (UeSon) to (UeVok);
+    \draw [bend left] (UeSon) to (UeApr);
+    \draw [bend left] (UeSon) to (UeNas);
 
-    \draw (UeObs) -- (UePlo);
-    \draw (UeObs) -- (UeFri);
-    \draw (UeObs) -- (UeAfr);
+    \draw (UeObs) to (UePlo);
+    \draw [bend right] (UeObs) to (UeFri);
+    \draw [bend right] (UeObs) to (UeAfr);
 
-    \draw (UeApr) -- (UeKon);
-    \draw (UeNas) -- (UeKon);
-    \draw (UePlo) -- (UeKon);
-    \draw (UeFri) -- (UeKon);
-    \draw (UeAfr) -- (UeKon);
+    \draw [bend right] (UeApr) to (UeKon);
+    \draw [bend right] (UeNas) to (UeKon);
+    \draw (UePlo) to (UeKon);
+    \draw [bend right] (UeFri) to (UeKon);
+    \draw [bend right] (UeAfr) to (UeKon);
   \end{tikzpicture}}
   \caption{Grobe Klassifikation der Segmente in der Phonetik}
   \label{fig:oberklassenfuerartikulationsarten004}
