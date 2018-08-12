@@ -260,7 +260,12 @@
 % Excercises.
 \newcounter{Exer}[chapter]
 
-\newcommand{\Uebung}[1][\twostar]{\par\medskip\refstepcounter{Exer}\noindent\textbf{Übung~\arabic{Exer}}~#1\ }
+\newcommand{\Uebung}[2][\twostar]{%
+  \par\medskip\refstepcounter{Exer}\noindent\textbf{Übung~\arabic{Exer}}~#1\ %
+  \ifthenelse{\equal{#2}{}}
+  {}
+  {(Lösung auf Seite \pageref{sol:#2})\ }
+}
 
 \newcommand{\Uebungen}{
   \clearpage
@@ -270,14 +275,14 @@
 }
 
 \newcommand{\Loesungen}[2][\clearpage]{#1\section*{Zu Kapitel \ref{#2}}}
-\newcommand{\Loesung}[1]{\subsection*{Übung \ref{#1}}}
+\newcommand{\Loesung}[1]{\subsection*{Übung \ref{exc:#1} (Seite \pageref{exc:#1})}}
 
 \renewcommand{\Phantom}{}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Text used in several chapters %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text used in more than one chapter %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\DefWort}{Das (\textit{lexikalische}) \textit{Wort} ist eine Repräsentation von paradigmatisch zusammengehörenden Wortformen.
 Umgangssprachlich kann man von der Zusammenfassung aller möglichen Formen eines Wortes sprechen.
