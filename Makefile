@@ -22,7 +22,7 @@ main.aux: $(SOURCE)
 #create only the book
 main.bbl:  $(SOURCE) localbibliography.bib  
 	xelatex -no-pdf main 
-	biber   main 
+	biber main 
 
 
 main.ind:

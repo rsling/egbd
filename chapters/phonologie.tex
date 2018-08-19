@@ -1234,30 +1234,40 @@ Es ergibt sich Abbildung~\ref{fig:diesystematikderraender105}, die den duplexen 
       segm/.style={fill=white, draw, rounded corners, execute at begin node=\tipaencoding},
       extrasyl/.style={segm, dashed}
       }
-    \node at (0, 14) {\textbf{\small Kern}};
-    \node at (4.5, 14) {\textbf{\small Endrand}};
+     \node at (-1, 18) {\textbf{\small Kern}};
+     \node at (4.5, 18) {\textbf{\small Endrand}};
 
-    \node [fill=gray, rounded corners] (Zvok) at (0, 6.5) {\textcolor{white}{Vokal}};
+     \node [fill=gray, rounded corners] (Zvok) at (-1, 9.5) {\textcolor{white}{Vokal}};
+     
+     \node [segm] (Ot) at (6, 17) {t};
+     \node [segm] (pk) at (3, 17) {p k};
+     \draw (pk.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Ot.west);
+     \draw (Zvok.east) --  node [pos=0.5, above, sloped] {\footnotesize Plosiv} (pk.west);
+
+     \node [segm] (t) at (6, 15) {t};
+     \node [segm] (fs) at (3, 15) {f s \c{c}};
+     \draw (fs.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (t.west);
+     \draw (Zvok.east) --  node [pos=0.5, below, sloped] {\footnotesize Frikativ} (fs.west);
 
      \node [segm] (Zkg) at (6,13) {k (g)};
-     \node [segm] (ZfS) at (6,11) {f S};
+     \node [segm] (ZfSs) at (6,11) {f S s};
 
      \node [segm] (Zn) at (3,12) {n};
      \draw (Zn.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zkg.west);
-     \draw (Zn.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZfS.west);
+     \draw (Zn.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZfSs.west);
 
      \node [segm] (Zp) at (6,9) {p};
-     \node [segm] (ZS) at (6,7) {S};
+     \node [segm] (ZSs) at (6,7) {S s};
 
      \node [segm] (Zm) at (3,8) {m};
      \draw (Zm.east) -- node [pos=0.5, above, sloped] {\footnotesize Plosiv} (Zp.west);
-     \draw (Zm.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZS.west);
+     \draw (Zm.east) -- node [pos=0.5, above, sloped] {\footnotesize Frikativ} (ZSs.west);
 
-     \draw (Zvok.east) --  node [pos=0.5, above, sloped] {\footnotesize Nasal} (1.5,10);
+     \draw (Zvok.east) --  node [pos=0.5, below, sloped] {\footnotesize Nasal} (1.5,10);
      \draw (1.5,10) -- (Zn.west);
      \draw (1.5,10) -- (Zm.west);
 
-     \node [segm] (Zpk) at (6,5) {p k};
+     \node [segm] (Zpk) at (6,5) {p t k};
      \node [segm] (ZfSc) at (6,3) {f S ç};
      \node [segm] (Zmn) at (6,1) {m n};
 
@@ -1274,58 +1284,62 @@ Es ergibt sich Abbildung~\ref{fig:diesystematikderraender105}, die den duplexen 
 \end{figure}
 
 Das Diagramm in Abbildung~\ref{fig:diesystematikderraender105} beschreibt nicht alle Endränder, die rein oberflächlich gesehen duplex sind.
-Zunächst müssen Wörter wie in (\ref{ex:diesystematikderraender106}) anders erklärt werden, wenn Abbildung~\ref{fig:diesystematikderraender105} allgemein gelten soll.
+Wir betrachten diese Fälle -- also (\ref{ex:diesystematikderraender107}) -- hier zusammen mit Sonoritätsplateaus im Endrand, also insgesamt (\ref{ex:diesystematikderraender106}).
 
 \begin{exe}
   \ex \label{ex:diesystematikderraender106}
   \begin{xlist}
-    \ex{\label{ex:diesystematikderraender107} Schnaps, Huts, zwecks}
-    \ex{\label{ex:diesystematikderraender108} Abt, nackt}
-    \ex{\label{ex:diesystematikderraender109} Laufs, Reichs}
+    \ex{\label{ex:diesystematikderraender107} Huts, Schnaps}
+    \ex{\label{ex:diesystematikderraender108} legt, nackt}
+    \ex{\label{ex:diesystematikderraender109} Laufs, Krachs}
   \end{xlist}
 \end{exe}
 
 Die Wörter in (\ref{ex:diesystematikderraender107}) enthalten ein [s], das die Sonoritätskontur verletzt.
-Wie schon im Anfangsrand behandeln wir es als extrasilbisch.
-Das [t] in (\ref{ex:diesystematikderraender108}) bildet mit den vorangehenden Plosiven ein Sonoritätsplateau.
-In Fällen wie \textit{trittst} muss nun [t] außerdem ohnehin extrasilbisch sein, wenn das vorangehende [s] bereits extrasilbisch ist.
-Zudem sind sowohl [t] als auch [s] alveolare Obstruenten, und bilden damit eine (wenn auch kleine) Klasse.
-Wir nehmen daher an, dass Segmente aus genau dieser Klasse der alveolaren Obstruenten extrasilbisch an den Endrand treten können.
-Das ein Plateau bildende [s] in (\ref{ex:diesystematikderraender109}) kann nun ebenfalls extrasilbisch interpretiert werden.
-Damit müssen (wie im Anfangsrand) auch im Endrand keine Frikativ-Plateaus angenommen werden.
-Wie noch demonstriert werden wird, eliminieren wir durch die Annahme von extrasilbischem [t] und [s] Endränder mit mehr als zwei Segmenten vollständig aus dem System.
+Wie schon im Anfangsrand behandeln wir alle Segmente prinzipiell als extrasilbisch, wenn sie die Sonoritätskontur verletzen.
+In Fällen mit scheinbar drei Segmenten im Endrand wie \textit{trittst} muss [t] dann auch extrasilbisch sein, das das vorangehende [s] bereits extrasilbisch ist.
+Es ist zu beachten, dass sowohl [t] als auch [s] und \textipa{[S]} alveolare Obstruenten sind, und damit eine (wenn auch kleine) homogene Klasse bilden.
+Wir nehmen daher an, dass nur alveolare Obstruenten extrasilbisch auftreten.
+
+Einfache Wörter mit Sonoritätsplateaus aus zwei Plosiven im Endrand wie \textit{nackt} aus (\ref{ex:diesystematikderraender108}) sind höchst selten und nur mit \textipa{[t]} an zweiter Position möglich.
+Wir behandeln die entsprechenden \textipa{[t]}-Segmente nur dann als extrasilbisch, \textit{wenn der Vokal im Kern lang ist}.
+Die Zusatzbedingung der Vokallänge findet ihre Begründung in der Analyse des sogenannten \textit{Silbengewichts} und wird in Abschnitt~\ref{sec:einsilblerundzweisilbler} genauer motiviert.
+Es wird dort gezeigt werden, dass deutsche Silben systematisch entweder aus einem kurzen Kern und einem duplexen Endrand oder einem langen Kern und einem simplexen Endrand bestehen.
+Das ein Plateau bildende [s] in (\ref{ex:diesystematikderraender109}) wird parallel dazu nur dann als extrasilbisch analysiert, wenn der Vokal im Kern lang (hier der Diphthong in \textit{Laufs}) ist.
+
+Insgesamt eliminieren wir durch die Annahme von extrasilbischen [t]- und [s]-Segmenten alle Endränder mit mehr als zwei Segmenten vollständig aus dem System.
 Das System wird so simpel, wie es in Abbildung~\ref{fig:diesystematikderraender105} aussieht.
-Die Beziehung von zugrundeliegender Form und phonetischer Oberfläche wird in (\ref{ex:diesystematikderraender110}) gezeigt, wo extrasilbische Segmente mit + abgetrennt sind.
+Die Beziehung von zugrundeliegender Form und phonetischer Oberfläche wird in den Analysen in (\ref{ex:diesystematikderraender110}) verdeutlicht, wo extrasilbische Segmente mit + abgetrennt wurden.
 
 \begin{exe}
   \ex \label{ex:diesystematikderraender110}
   \begin{xlist}
     \ex{\label{ex:diesystematikderraender111} /\textipa{huts}/ $\Rightarrow$ \textipa{[hu:t+s]} (\textit{Huts})}
     \ex{\label{ex:diesystematikderraender112} /\textipa{Sn\u{a}ps}/ $\Rightarrow$ \textipa{[S+nap+s]} (\textit{Schnaps})}
-    \ex{\label{ex:diesystematikderraender113} /\textipa{\t{ts}v\u{E}ks}/ $\Rightarrow$ \textipa{[\t{ts}vEk+s]} (\textit{zwecks})}
-    \ex{\label{ex:diesystematikderraender114} /\textipa{\u{a}pt}/ $\Rightarrow$ \textipa{[Pap+t]} (\textit{Abt})}
-    \ex{\label{ex:diesystematikderraender115} /\textipa{n\u{a}kt}/ $\Rightarrow$ \textipa{[nak+t]} (\textit{nackt})}
-    \ex{\label{ex:diesystematikderraender116} /\textipa{l\t{aO}fs}/ $\Rightarrow$ \textipa{[l\t{aO}f+s]} (\textit{Laufs})}
+    \ex{\label{ex:diesystematikderraender113} /\textipa{legt}/ $\Rightarrow$ \textipa{[le:k+t]} (\textit{legt})}
+    \ex{\label{ex:diesystematikderraender114} /\textipa{n\u{a}kt}/ $\Rightarrow$ \textipa{[nakt]} (\textit{nackt})}
+    \ex{\label{ex:diesystematikderraender115} /\textipa{l\t{aO}fs}/ $\Rightarrow$ \textipa{[l\t{aO}f+s]} (\textit{Laufs})}
+    \ex{\label{ex:diesystematikderraender116} /\textipa{kK\u{a}Xs}/ $\Rightarrow$ \textipa{[kKaXs]} (\textit{Krachs})}
   \end{xlist}
 \end{exe}
 
-Die Kombinationen aus Frikativ und [t] können auch generell als simplexe Endränder mit extrasilbischem [t] aufgefasst werden.
-Deswegen gibt es in Abbildung~\ref{fig:diesystematikderraender105} gar keinen Ast für Frikative nach dem Vokal.
-Dafür, dass es sich dabei nicht etwa um einen phonologischen Taschenspielertrick handelt, wird in Abschnitt~\ref{sec:einsilblerundzweisilbler} weiter argumentiert.
+Die Kombinationen aus Frikativ und [t] können theoretisch auch als simplexe Endränder mit extrasilbischem [t] aufgefasst werden.
+Wir tun dies parallel zur Behandlung der Plateaus aber wieder nur dann, wenn der Vokal im Kern lang ist.
 Die sich ergebenden Formen zeigt (\ref{ex:diesystematikderraender117}).
 
 \begin{exe}
   \ex \label{ex:diesystematikderraender117}
   \begin{xlist}
     \ex{\label{ex:diesystematikderraender118} /\textipa{Kuft}/ $\Rightarrow$ \textipa{[Ku:f+t]} (\textit{ruft})}
-    \ex{\label{ex:diesystematikderraender119} /\textipa{\u{a}\c{c}t}/ $\Rightarrow$ \textipa{[PaX+t]} (\textit{Acht})}
-    \ex{\label{ex:diesystematikderraender120} /\textipa{l\u{E}st}/ $\Rightarrow$ \textipa{[lEs+t]} (\textit{lässt})}
+    \ex{\label{ex:diesystematikderraender119} /\textipa{\u{a}\c{c}t}/ $\Rightarrow$ \textipa{[PaXt]} (\textit{Acht})}
+    \ex{\label{ex:diesystematikderraender120} /\textipa{lest}/ $\Rightarrow$ \textipa{[le:s+t]} (\textit{lest})}
+    \ex{\label{ex:diesystematikderraender120} /\textipa{l\u{E}st}/ $\Rightarrow$ \textipa{[lEst]} (\textit{lässt})}
   \end{xlist}
 \end{exe}
 
-Bei den Endrändern mit Nasal als erstes Segment sind vor allem zwei Merkwürdigkeiten in Abbildung~\ref{fig:diesystematikderraender105} zu begründen.
+Abschließend bleiben noch zwei Merkwürdigkeiten in Abbildung~\ref{fig:diesystematikderraender105} zu erklären, die in Endrändern mit Nasal als erstes Segment auftreten.
 Einerseits fehlt \textipa{[N]} vollständig, andererseits kommt nach [n] angeblich ein [g] vor, wobei dieses in Abbildung~\ref{fig:diesystematikderraender105} eingeklammert ist.
-Im Endrand sollte ja eigentlich wegen der Endranddesonorisierung kein stimmhafter Plosiv vorkommen können.
+Im Endrand sollte schließlich aufgrund der Endranddesonorisierung kein stimmhafter Plosiv vorkommen können.
 
 Mögliche zweisegmentale Endränder mit velarem Nasal \textipa{[N]} an der phonetischen Oberfläche findet man in Wörtern mit nachfolgendem velaren Plosiv wie \textit{krank} \textipa{[kKaNk]}.
 Es fällt insgesamt auf, dass zwar [t] mit allen Nasalen kombiniert werden kann (\textit{klemmt}, \textit{rennt}, \textit{hängt}), [p] aber nur mit [m] (\textit{Lump}) und [k] nur mit \textipa{[N]} (\textit{krank}).
@@ -1335,12 +1349,13 @@ Ein [t] nach [m] oder \textipa{[N]} wie in \textit{klemmt} oder \textit{hängt} 
 
 Was ist aber mit dem einfachen \textipa{[N]} wie in \textit{Gang}?
 Hier folgt dem velaren Nasal kein velarer Plosiv, an den er seinen Artikulationsort anpassen könnte.
-Wir führen \textipa{[N]} daher auf eine zugrundeliegende Kombination /ng/ zurück.
+Wir führen \textipa{[N]} auf eine zugrundeliegende Kombination /ng/ zurück.
 Der Nasal /n/ assimiliert an /g/ zu \textipa{[N]}, und das /g/ wird nicht artikuliert.
 Phonologisch und aus Sicht der Silbifizierung haben wir es \zB in /gang/ also mit einem duplexen Endrand zu tun, phonetisch mit einem simplexen.
 Weil es phonetisch (in der betreffenden Position) niemals auftritt, ist \textipa{[g]} in Abbildung~\ref{fig:diesystematikderraender105} eingeklammert.
 Die Analyse von \textipa{[N]} als /ng/ eliminiert \textipa{[N]} als zugrundeliegendes Segment, weswegen es konsequent in [~] statt in /~/ geschrieben werden sollte.
-Für diese Reduktion des Systems wird in Abschnitt~\ref{sec:einsilblerundzweisilbler} weiter argumentiert, da sich \textipa{[N]} als phonetisches Korrelat zu /ng/ im Endrand auch in anderer Hinsicht wie zwei Segmente verhält.
+Für diese Reduktion des Systems wird in Abschnitt~\ref{sec:einsilblerundzweisilbler} weiter argumentiert, da sich \textipa{[N]} als phonetisches Korrelat zu /ng/ im Endrand auch bezüglich des Silbengewichts wie zwei Segmente verhält:
+In Silben, die auf /ng/ enden, kann der Vokal niemals lang (bzw.\ ein Diphthong) sein.
 
 Die Beziehung zugrundeliegender Formen und ihrer phonetischen Realisierungen in einigen kritischen Formen illustriert (\ref{ex:diesystematikderraender121}).
 
@@ -1384,7 +1399,7 @@ Eine zufriedenstellende Analyse solcher komplexer Bedingungen ist meiner Ansicht
 Der Endrand ist maximal duplex.
 Die präferierte Besetzung des duplexen Endrands ist die aus einem inneren Liquid und einem äußeren Obstruenten.
 Bereits weniger präferiert wird er mit einem Nasal und einem homorganen Plosiv besetzt.
-Extrasilbisch treten die alveolaren Obstruenten [s] und [t] hinter den Endrand.}
+Extrasilbisch treten die alveolaren Obstruenten [s] und [t] an den Endrand.}
 
 \subsection{Einsilbler und Zweisilbler}
 \label{sec:einsilblerundzweisilbler}
@@ -1406,7 +1421,16 @@ Ein \textit{phonologisches Wort} ist die kleinste phonologische Struktur, die Si
 Definition~\ref{def:phonwort} kommt sehr formal daher.
 Denken wir aber an den Grammatikbegriff aus Definition~\ref{def:grammatik} (S.~\pageref{def:grammatik}), dann ist die Einschränkung \textit{bezüglich derer eigene Regularitäten feststellbar sind} aber ausgesprochen instruktiv.
 Wenn es nämlich phonologische Regularitäten gibt, die sich nicht effektiv und angemessen mit Bezug auf Segmente und Silben beschreiben lassen, müssen wir eine andere, größere Einheit annehmen, bezüglich derer wir sie beschreiben können.
-Eine solche Regularität wird in (\ref{ex:einsilblerundzweisilbler133}) illustriert und im Rest dieses Abschnitts analysiert.
+Eine solche Regularität wird im Rest dieses Abschnitts ausführlich analysiert.
+Zunächst wird dazu der Sprachgebrauch von der \textit{offenen} und der \textit{geschlossenen Silbe} in Definition~\ref{def:offengeschlossen} eingeführt, der die weitere Argumentation vereinfacht.
+
+\Definition{Offene und geschlossene Silben}{\label{def:offengeschlossen}%
+Silben mit gefülltem Endrand sind \textit{geschlossene Silben}, Silben mit leerem Endrand sind \textit{offene Silben}.
+\index{Silbe!offen}
+\index{Silbe!geschlossen}
+}
+
+Wir beginnen mit einer Liste von instruktiven Beispielen in (\ref{ex:einsilblerundzweisilbler133}). 
 Im Sinn einer übersichtlichen Darstellung beschränken wir uns hier auf die Vokale \textipa{[I]} und \textipa{[i]}, aber die Regularitäten gelten für alle Paare von ungespannten und gespannten Vokalen.
 
 \begin{exe}
@@ -1416,36 +1440,34 @@ Im Sinn einer übersichtlichen Darstellung beschränken wir uns hier auf die Vok
     \ex{\label{ex:einsilblerundzweisilbler135} *\textipa{[knI]}}
     \ex{\label{ex:einsilblerundzweisilbler136} schief \textipa{[Si:f]}}
     \ex{\label{ex:einsilblerundzweisilbler137} Schiff \textipa{[SIf]}}
-    \ex{\label{ex:einsilblerundzweisilbler138} wink \textipa{[vINk]}}
+    \ex{\label{ex:einsilblerundzweisilbler138} Wink \textipa{[vINk]}}
     \ex{\label{ex:einsilblerundzweisilbler139} *\textipa{[vi:Nk]}}
-    \ex{\label{ex:einsilblerundzweisilbler140} Mie.te \textipa{[mi:.t@]}}
-    \ex{\label{ex:einsilblerundzweisilbler141} Mi.tte \textipa{[mI.t@]}}
-    \ex{\label{ex:einsilblerundzweisilbler142} liebte \textipa{[li:p.t@]}}
-    \ex{\label{ex:einsilblerundzweisilbler143} winkte \textipa{[vINk.t@]}}
-    \ex{\label{ex:einsilblerundzweisilbler144} *\textipa{[vi:Nk.t@]}}
+    \ex{\label{ex:einsilblerundzweisilbler140} *\textipa{[a:lt]}}
+    \ex{\label{ex:einsilblerundzweisilbler141} Mie.te \textipa{[mi:.t@]}}
+    \ex{\label{ex:einsilblerundzweisilbler142} Mi.tte \textipa{[mI.t@]}}
+    \ex{\label{ex:einsilblerundzweisilbler143} liebte \textipa{[li:p.t@]}}
   \end{xlist}
 \end{exe}
 
-Die Wörter in (\ref{ex:einsilblerundzweisilbler133}) sind entweder Einsilbler, oder sie sind Zweisilbler, die aus einer Silbe mit einem betonten gespannten (langen) oder einem betonten ungespannten (kurzen) Vokal sowie einer Schwa-Silbe bestehen.
-Dieses Muster der Silbenfolge ist charakteristisch für das Deutsche (s.\ auch Abschnitt~\ref{sec:wortakzentimdeutschen}).
-Uns interessiert jetzt hier vor allem die Silbenstruktur in der jeweils ersten Silbe.
+Die Wörter in (\ref{ex:einsilblerundzweisilbler133}) sind allesamt endungslos (also nicht nach Kasus, Person usw.\ flektiert) und damit sogenannte \textit{Simplizia}.\index{Simplex}
+Zum Teil sind sie Einsilbler, zum Teil sind sie Zweisilbler, die aus einer Silbe mit einem betonten gespannten (langen) oder einem betonten ungespannten (kurzen) Vokal sowie einer Schwa-Silbe bestehen.
+Diese beiden Muster der Silbenfolge sind charakteristisch für das Deutsche und grenzen den Kernwortschatz ein (s.\ auch Abschnitt~\ref{sec:wortakzentimdeutschen}).\index{Kern!Wortschatz}
+Die folgende Argumentation betrachtet sie dementsprechend als Kern des phonologischen Systems:
+Das einsilbige Simplex ist damit das Muster der Silbe an sich, und das Verhalten von Silben im zweisilbigen Simplex ist das Muster für Silben in Mehrsilblern.
+Alle anderen Fälle und Erweiterungen werden durch entsprechend erweiterte Regularitäten beschrieben.
+Uns interessiert jetzt hier vor allem die Silbenstruktur in der jeweils ersten Silbe bzw.\ der einzigen Silbe in diesen Wörtern.
 Als zweite Silbe kommen hier nur Schwa-Silben vor, die von den zu beschreibenden Regularitäten als einzige nicht betroffen sind, weil sie prinzipiell nicht betonbar sind.
-Es geht jetzt also um prinzipiell \textit{betonbare Silbentypen}.
-Zunächst wird der Sprachgebrauch von der \textit{offenen} und der \textit{geschlossenen Silbe} in Definition~\ref{def:offengeschlossen} eingeführt, der die weitere Argumentation vereinfacht.
+Es geht also ganz präzise gesagt um \textit{betonbare Silbentypen in ein- und zweisilbigen Simplizia des Kernwortschatzes}.
 
-\Definition{Offene und geschlossene Silben}{\label{def:offengeschlossen}%
-Silben mit gefülltem Endrand sind \textit{geschlossene Silben}, Silben mit leerem Endrand sind \textit{offene Silben}.
-\index{Silbe!offen}
-\index{Silbe!geschlossen}
-}
-
-Zunächst müssen also Einsilbler mit ungespanntem Vokal geschlossen sein, \zB \textit{Schiff} im Vergleich mit unmöglichen Wörtern wie *\textipa{[knI]} oder auch *\textipa{[tO]} usw.
-Das gilt auch für die letzte Silbe in Mehrsilblern, also *\textipa{[kUn.dI]} oder *\textipa{[tu:.bO]} usw.
+Einsilbige Simplizia mit ungespanntem Vokal müssen geschlossen sein, \zB \textit{Schiff} im Vergleich mit unmöglichen Wörtern wie *\textipa{[knI]} oder auch *\textipa{[tO]} usw.
+Das gilt auch für die letzte Silbe in Mehrsilblern, weswegen *\textipa{[kUn.dI]} oder *\textipa{[tu:.bO]} keine möglichen Wörter des Deutschen sind.
 Die einzige Ausnahme bilden Schwa-Silben, die offen als Endsilbe im Mehrsilbler vorkommen können, vgl.\ \textit{Mitte} \textipa{[mi.t@]}.
 Wenn der Vokal gespannt ist, kann die Silbe offen sein wie in \textit{Knie}, muss sie aber nicht, vgl.\ \textit{schief}.
-Wenn der Endrand des Einsilblers duplex ist wie in \textit{wink}, sind gespannte Vokale nicht möglich, wie das strukturell unmögliche Wort *\textipa{[vi:Nk]} zeigt.
+Wenn der Endrand des simplexen Einsilblers duplex ist wie in \textit{Wink} oder \textit{alt}, sind gespannte Vokale nicht möglich.
+Die strukturell unmöglichen Simplizia *\textipa{[vi:Nk]} und *\textipa{[a:lt]} zeigen.%
+\footnote{Der Einsilbler \textit{aalt} \textipa{[a:l+t]} ist möglich, aber eben nicht als Simplex.
+Das \textipa{[t]} wird, wie hier angedeutet, als extrasilbisch aufgefasst.}
 Die Bedingung, dass Silben mit ungespanntem Vokal einen gefüllten Endrand haben müssen, gilt im Zweisilbler nicht, wie \textit{Mi.tte} demonstriert.
-Ansonsten gilt aber trotzdem, dass Silben nicht einen gespannten Vokal im Kern und gleichzeitig einen komplex besetzten Endrand haben können, s.\ *\textipa{[vi:Nk.t@]} verglichen mit \textit{winkte} \textipa{[vINk.t@]}.
 Diese Verhältnisse lassen sich mit Bezug auf eine Einheit für das \textit{Gewicht} von Silben gut beschreiben, die \textit{More} (Definition~\ref{def:more}).
 
 \Definition{Silbengewicht und More}{\label{def:more}%
