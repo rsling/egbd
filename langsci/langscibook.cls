@@ -132,6 +132,7 @@
 \newif\iflsModfonts \lsModfontsfalse
 \newif\iflsNoBabel \lsNoBabelfalse
 \newif\iflsMultiauthors \lsMultiauthorsfalse
+\newif\iflsWiddowandorphancontrol \lsWiddowandorphancontrolfalse
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,6 +199,7 @@
 \DeclareVoidOption{collectiontoclong}{  			
 	\lsCollectiontrue%
 	\lsCollectionTOCLongtrue} 
+\DeclareVoidOption{widdowandorphancontrol}{\lsWiddowandorphancontroltrue}
 \ProcessKeyvalOptions{langscibook}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1100,7 +1102,7 @@ Unter den Linden 6\\
 
 Storage and cataloguing done by FU Berlin \\[3ex]   
 
-\IfFileExists{\logopath logo.pdf}{\includegraphics[width=5cm]{\logopath langscibook-logo.pdf}}{\logotext} \\[3ex]
+\IfFileExists{\logopath FULogo_sw_Greyscale.pdf}{\includegraphics[width=5cm]{\logopath FULogo_sw_Greyscale.pdf}}{\logotext} \\[3ex]
 
 
 \vfill
@@ -1686,6 +1688,16 @@ width=.8\textwidth
 \iflsNoBabel
   \else
   \usepackage[ngerman]{babel}
+\fi
+
+
+\iflsWiddowandorphancontrol
+\def\sloppybottom{%
+  \def\@textbottom{\vskip \z@ \@plus.0001fil \@minus .95\topskip}%
+  \topskip=1\topskip \@plus 0.625\topskip \@minus .95\topskip%
+  \def\@texttop{\vskip \z@ \@plus -0.625\topskip \@minus -0.95\topskip}%
+}
+\sloppybottom
 \fi
 
 \endinput

@@ -10,6 +10,14 @@
 \makeatother
 
 
+% Mark for proof-reading/revision.
+\newcommand{\DirtS}{%
+  \marginpar[left text]{\hl{DIRTY!}}%
+  \begin{mdframed}[hidealllines=true,backgroundcolor=yellow!20]%
+  }
+\newcommand{\DirtE}{\end{mdframed}}
+
+
 % Fix line spacing in list environmens.
 \setlist{noitemsep}
 
