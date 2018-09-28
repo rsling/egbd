@@ -11,18 +11,14 @@
 
 
 % Mark for proof-reading/revision.
-\newcommand{\DirtS}{%
-  \marginpar[left text]{\hl{DIRTY!}}%
-  \begin{mdframed}[hidealllines=true,backgroundcolor=yellow!20]%
-  }
-\newcommand{\DirtE}{\end{mdframed}}
+\newcommand{\Dirty}{\marginpar{\hl{DIRTY!}}}
 
 
 % Fix line spacing in list environmens.
 \setlist{noitemsep}
 
 
-% Correct hyperref colors which otherwise give you eye cancer.
+% Correct hyperref colors. The original ones would give you eye cancer.
 \hypersetup{
   linkbordercolor  = {white}
   , linkcolor        = {lsMidDarkBlue}
