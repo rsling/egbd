@@ -121,7 +121,7 @@ In diesem Abschnitt werden Komposita diskutiert, die ein klar definiertes semant
   \end{xlist}
 \end{exe}
 
-In den Gruppen in (\ref{ex:kompositionstypen002}) und (\ref{ex:kompositionstypen003}) bildet der Kopf (das rechte Glied) das semantische Zentrum auf eine charakteristische Weise.
+In den Gruppen in (\ref{ex:kompositionstypen002}) und (\ref{ex:kompositionstypen003}) bildet der Kopf das semantische Zentrum auf eine charakteristische Weise.
 Wir können nämlich für jedes dieser Komposita einen Satz wie in (\ref{ex:kompositionstypen004}) formulieren, der in jedem Fall wahr ist.
 Bei \textit{Geldwäsche} klingt das Ergebnis evtl.\ leicht dubios.
 Dies dürfte daran liegen, dass \textit{Geldwäsche} von den gegebenen Beispielen am wenigsten produktiv gebildet ist und eine stark spezialisierte Gesamtbedeutung aufweist.
@@ -271,7 +271,7 @@ In der Realität ist die statistische Auswertung etwas komplexer, und es muss na
 
 Unabhängig von Problemen bei der konkreten Analyse im Einzelfall ist aus grammatischer Sicht aber auf jeden Fall interessant, dass die Komposition ein Prozess ist, bei dem das Ergebnis des Prozesses wieder als Ausgangsbasis des gleichen Prozesses verwendet werden kann.
 Wurden also einmal \textit{lang} und \textit{Strecke} zu \textit{Lang.strecke} komponiert, kann das dabei entstehende Kompositum wie jedes andere Substantiv erneut in einem Kompositionsprozess verwendet werden.
-Diese Eigenschaft mancher produktiver Prozesse nennt man \textit{Rekursion}, s.\ Definition~\ref{def:rekursion}, wobei umstritten ist, ob natürliche Sprache unbegrenzt Rekursiv ist.
+Diese Eigenschaft mancher produktiver Prozesse nennt man \textit{Rekursion}, s.\ Definition~\ref{def:rekursion}, wobei umstritten ist, ob natürliche Sprache unbegrenzt rekursiv ist.
 Immerhin ist die Länge (bzw.\ Komplexität) tatsächlich benutzbarer Komposita stark begrenzt (dazu auch S.~\pageref{abs:syntaktischestruktur021}).
 
 \Definition{Rekursion}{\label{def:rekursion}%
@@ -297,12 +297,10 @@ In eingeschränkterem Maß sind Konversion (Abschnitt~\ref{sec:konversion}) und 
 
 \index{Kompositum!Fugenelement}
 
-\Dirty%
-In Komposita aus zwei Substantiven gibt es in vielen, aber nicht allen Fällen eine morphologische Markierung, die an der so genannten \textit{Fuge} (der Grenze zwischen den beiden Gliedern des Kompositums) auftritt.
-Betrachtet man Wörter wie \textit{Bäll-e.sammlung}, so sieht man, dass das Suffix \textit{-e} an das Vorderglied \textit{Ball} angefügt wird.
-In diesem Fall löst es zusätzlich Umlaut aus.
-Hier ist das so genannte \textit{Fugenelement} \textit{\char`~e} also formal identisch mit der Pluralmarkierung des Wortes \textit{Ball}.
-Abbildung~\ref{fig:kompositionsfugen011} zeigt beispielhaft die Analyse eines Kompositums mit Fugenelement.
+In Komposita aus zwei Substantiven gibt es in vielen Fällen eine morphologische Markierung an der Grenze zwischen den beiden Gliedern des Kompositums, der sogenannten \textit{Fuge}.
+Im Kompositum \textit{Brett-er.sammlung} wird das Suffix \textit{-er} an das Vorderglied \textit{Brett} angefügt.
+Hier ist das sogenannte \textit{Fugenelement} \textit{-er} formal identisch mit der Pluralmarkierung des Wortes \textit{Brett}.
+Abbildung~\ref{fig:kompositionsfugen011} zeigt die Analyse dieses Kompositums mit Fugenelement.
 
 \begin{figure}[!htbp]
   \centering
@@ -310,10 +308,10 @@ Abbildung~\ref{fig:kompositionsfugen011} zeigt beispielhaft die Analyse eines Ko
     [Substantiv-Stamm
       [{[Substantiv-Stamm]}
         [Substantiv-Stamm, tier=preterminal
-          [\textit{Bäll}]
+          [\textit{Brett}]
         ]
         [Fugenelement, tier=preterminal
-          [-\textit{e}]
+          [-\textit{er}]
         ]
       ]
       [Substantiv-Stamm, tier=preterminal
@@ -321,11 +319,10 @@ Abbildung~\ref{fig:kompositionsfugen011} zeigt beispielhaft die Analyse eines Ko
       ]
     ]
   \end{forest}
-  \caption{Kompositionsstrukturen mit Fugenelement am Beispiel von \textit{Bällesammlung}}
+  \caption{Kompositionsstruktur mit Fugenelement}
   \label{fig:kompositionsfugen011}
 \end{figure}
 
-\Dirty%
 In Tabelle~\ref{tab:kompositionsfugen010} wird eine Übersicht über alle Fugenelemente, die zwischen zwei Substantiven auftreten können, gegeben.
 Die Tabelle enthält die prozentuale Typenhäufigkeiten (siehe Seite~\pageref{abs:typetoken} zum Konzept der Typenhäufigkeit) sowohl für die Komposita als auch für die Erstglieder mit dem jeweiligen Fugenelement.
 Die Zahlen basieren auf \citet{SchaeferPankratz2018}.
@@ -355,55 +352,52 @@ In diesem Artikel wird unter anderem eine Bestandsaufnahme der Verfugungen auf B
   \label{tab:kompositionsfugen010}
 \end{table}
 
-\Dirty%
-Der häufigste Fall ist die einfache Aneinanderfügung der beiden Substantive (die sogenannte \textit{Nullfuge}), aber es gibt elf weitere (teilweise sehr seltene) Verfugungen.
-Das Erstglied hat einen erheblichen Einfluss darauf, welche Fugen möglich oder präferiert sind, und wir diskutieren nur Erstglieder.
+Der häufigste Fall ist die einfache Aneinanderreihung der beiden Substantive, die sogenannte \textit{Nullfuge}.
+Daneben gibt es elf weitere (teilweise seltene) Arten der Verfugung.
+Das Erstglied hat einen erheblichen Einfluss darauf, welche Fugen möglich oder präferiert sind, und wir diskutieren daher nur Erstglieder.
 Die sogenannten starken und gemischten Maskulina und Neutra (siehe Abschnitt~\ref{sec:flexiondersubstantive}) verfugen häufig, aber keinesfalls immer mit \textit{-}(\textit{e})\textit{s}, also mit einer Form, die ihrem Genitiv Singular entspricht.
-Substantive jedoch, die den Plural auf \textit{-s} bilden (\textit{Fotos}, \textit{Tees}, \textit{Teams} usw.) verfugen niemals mit \textit{-s}.
+Substantive, die den Plural auf \textit{-s} bilden (\textit{Fotos}, \textit{Tees}, \textit{Teams} usw.) verfugen hingegen niemals mit \textit{-s}.
 Außerdem haben (überwiegend feminine) abgeleitete Substantive, die auf \textit{:heit}, \textit{:ung}, \textit{:tum} usw.\ enden, eine starke Tendenz zur Verfugung mit \textit{-s} (\zB \textit{Schönheit-s.wahn}, \textit{Heizung-s.rechnung}, \textit{Eigentum-s.verwaltung}).
-Diese Feminina haben in ihrem Flexionsparadigma jeweils überhaupt keine Form mit \textit{-s}.
-Ähnliche nicht abgeleitete Fälle mit \textit{-}(\textit{e})\textit{s}, die keiner Kasus-Numerus-Form des Erstglieds entsprechen, finden wir zum Beispiel in \textit{Schmerz-ens.geld} oder \textit{Heirat-s.antrag}.
-Manche produktiven oder historischen Wortbildungssuffixe werden an der Kompositionsfuge gelöscht.
-Beispielsweise entfällt in den typischen femininen Substantiven wie \textit{Wolle} oder \textit{Kirsche}, die auf Schwa enden, oft das Schwa (\textit{Woll.decke}, \textit{Kirsch.kuchen}).
-\textbf{(Ulrike: War fem. -e jemals innergermanisch produktiv?)}
+Die abgeleiteten Feminina haben in ihrem Flexionsparadigma jeweils überhaupt keine Form mit \textit{-s}.
+In diesen Fällen entspricht die Form mit Fuge also keiner selbständigen Flexionsform des Erstglieds.
+Ähnliche nicht abgeleitete Fälle mit \textit{-}(\textit{e})\textit{s} oder \textit{-ens}, die keiner Kasus-Numerus-Form des Erstglieds entsprechen, finden wir zum Beispiel in \textit{Heirat-s.antrag} oder \textit{Schmerz-ens.geld}.
+Auslautendes Schwa des Erstglieds entfällt oft, zum Beispiel in \textit{Wolle} (\textit{Woll.decke}) oder \textit{Kirsche} (\textit{Kirsch.kuchen}).
 
-\Dirty%
-Es herrscht Einigkeit darüber, dass Fugenelemente niemals Kasus markieren, auch wenn sie formal identisch zum Genetiv sind wie im Fall der starken und gemischten Maskulina und Neutra.
+Es herrscht Einigkeit darüber, dass Fugenelemente niemals Kasus markieren, auch wenn sie (wie im Fall der starken und gemischten Maskulina und Neutra) formal identisch zum Genitiv sind.
 Die Gründe sind teilweise theoretischer Natur.
 Kasus markiert eine Relation zwischen syntaktischen Wörtern, und innerhalb von Wörtern (hier innerhalb eines Kompositums) erwartet man daher keine Kasusmarkierung.
-Diese Argumentation ist für sich genommen insofern nicht unbedingt überzeugend, als man entgegnen könnte, dass die hypothetischen genetivischen Fugenelemente gerade ein Gegenbeispiel gegen solche Theorien sind.
+Diese Argumentation ist für sich genommen nicht unbedingt überzeugend.
+Man könnte schließlich entgegnen, dass die hypothetischen genitivischen Fugenelemente gerade ein Gegenbeispiel gegen solche Theorien sind.
 Es gibt aber eine Reihe von funktionalen Argumenten.
-Erstens ist das Fugen-\textit{}(\textit{e})\textit{s} auf viele Fälle (bei den abgeleiteten Substantiven sogar sehr systematisch) ausgedehnt worden, in denen es rein formal kein Genitiv sein kann.
+Erstens ist das Fugen-\textit{}(\textit{e})\textit{s} auf viele Fälle (bei den abgeleiteten Substantiven sogar sehr systematisch) ausgedehnt worden, in denen es rein formal keinen Genitiv des Erstglieds markieren kann.
 Zweitens steht es in vielen Fällen, in denen es formal als Genitiv stehen könnte (\textit{Garten.tür}, \textit{Hut.ablage} usw.), nicht.
 Drittens ist fraglich, welche Funktion der Genitiv im Kompositum überhaupt haben sollte.
 Es gibt zahlreiche semantische Relationen, die zwischen den Gliedern eines Kompositums bestehen können.
 Wir analysieren einige hier informell durch Paraphrasierung:
-eine \textit{Gartentür} ist eine Tür \textit{zu} einem Garten, eine \textit{Anfangszeit} ist eine Zeit, \textit{während} derer etwas angefangen hat, ein \textit{Kirschkuchen} ist ein Kuchen \textit{aus} Kirschen bzw.\ aus Kirsch(material), eine \textit{Katzenpfote} ist ein Pfote \textit{als Körperteil} einer Katze, ein \textit{Kinderbuch} ist ein Buch \textit{für} Kinder usw.
-Die meisten von diesen Relationen lassen sich auch durch einen Genitiv ausdrücken, weil der Genitiv zwischen zwei Substantiven selber semantisch sehr unspezifisch ist.
-Oft, aber nicht immer können wir diese Komposita durch einen Genitiv paraphrasieren:
+eine \textit{Gartentür} ist eine Tür \textit{zu} einem Garten, eine \textit{Anfangszeit} ist eine Zeit, \textit{während} derer etwas anfängt, ein \textit{Kirschkuchen} ist ein Kuchen \textit{aus} Kirschen bzw.\ aus Kirsch(material), eine \textit{Katzenpfote} ist eine Pfote \textit{als Körperteil} einer Katze, ein \textit{Kinderbuch} ist ein Buch \textit{für} Kinder usw.
+Die meisten von diesen Relationen lassen sich auch durch einen Genitiv ausdrücken, weil der Genitiv selber semantisch sehr unspezifisch ist.
+Oft, aber nicht immer können wir diese Komposita also durch einen Genitiv paraphrasieren:
 \textit{Tür des Gartens}, \textit{Zeit des Anfangs}, *\textit{Kuchen der Kirschen}, \textit{Pfote der Katze}, ?\textit{Buch der Kinder}.
 Die putative Genitivfuge mit \textit{-}(\textit{e})\textit{s} verteilt sich allerdings überhaupt nicht entsprechend irgendwelcher erkennbarer semantischer Relationen.
-Sie korreliert auch nicht mit der Paraphrasierbarkeit des Kompositums mit einem selbständigen Genitiv.
+Sie korreliert auch nicht mit der Paraphrasierbarkeit des Kompositums durch einen selbständigen Genitiv.
 Es gibt also keinen Grund, anzunehmen, dass bei den genitivähnlichen Fugen auch eine Genitivfunktion vorliegt.
 
-\Dirty%
-Eine größere Gruppe von Fugen, die in Tabelle~\ref{tab:kompositionsfugen010} besonders markiert wurden, ist schließlich mit den Pluralen des Erstglieds identisch.
-Diese Formen der Erstglieder haben nicht zuverlässig Pluralbedeutung.
+Abschließend diskutieren wir jetzt die größere Gruppe von Fugen, die in Tabelle~\ref{tab:kompositionsfugen010} besonders markiert wurden, weil sie mit den Pluralmarkierungen des Erstglieds identisch sind.
+Diese Formen haben im Kompositum keine generelle Pluralbedeutung.
 Im Fall von \textit{Hemdenkauf} handelt es sich zum Beispiel nicht notwendigerweise um den Kauf mehrerer Hemden.
 In \citet{SchaeferPankratz2018} wurde aber mittels einer großen Korpusstudie und eines psycholinguistischen Experiment gezeigt, dass sie unter bestimmten Bedingungen mit Pluralbedeutungen assoziiert sind.%
 \footnote{Die Studie hat vor allem Erstglieder betrachtet, bei denen beide Varianten möglich und produktiv sind:
 eine zum Plural identische Verfugung und eine nicht-pluralische Verfugung (meistens Nullfuge oder \textit{-}(\textit{e})\textit{s}-Fuge).
 Die Produktivität wurde in einer Vorstudie basierend auf Korpusdaten gemessen.}
-Wenn das Zweitglied semantisch etwas bezeichnet, das eine pluralische oder kollektive Bedeutung erzwingt, dann steht das Erstglied präferiert mit Pluralfuge.
-Zweitglieder, die eine solche Bedutung haben, sind zum Beispiel Kollektivbezeichnungen wie \textit{Haufen} oder \textit{Gruppe}, Bezeichnungen für wechselseitige Relationen wie \textit{Distanz} oder \textit{Austausch} und eingeschränkt (nur unter semantischen und kontextuellen Zusatzbedingungen) Behälter-\slash Sammelbezeichnungen wie \textit{Kiste} oder \textit{Katalog}.
+Wenn das Zweitglied semantisch etwas bezeichnet, das eine pluralische oder kollektive Bedeutung für das Erstglied erzwingt, dann steht das Erstglied präferiert mit Pluralfuge.
+Zweitglieder, die eine solche Bedeutung haben, sind zum Beispiel Kollektivbezeichnungen wie \textit{Haufen} oder \textit{Gruppe} (\zB \textit{Birne.n-haufen}, \textit{Frau-en.gruppe}), Bezeichnungen für wechselseitige Relationen wie \textit{Distanz} oder \textit{Austausch} (\zB \textit{Bett-en.distanz}, \textit{Gedanke-n.austausch}) und eingeschränkt (nur unter semantischen und kontextuellen Zusatzbedingungen) Behälter-\slash Sammelbezeichnungen wie \textit{Kiste} oder \textit{Katalog} (\zB \textit{Schraube-n.kiste}, \textit{Frage-n.katalog}).
 Im Experiment bevorzugten die Teilnehmenden deutlich \textit{Bäderkooperation} gegenüber \textit{Badkooperation} (erzwungene Pluralbedeutung), aber \textit{Badeingang} gegenüber \textit{Bädereingang} (keine erzwungene Pluralbedeutung).
 Ähnlich verhielt es sich bei \textit{Schwertabdruck} gegenüber \textit{Schwertersammlung} usw.
 
-\Dirty%
-Das Phänomen der Pluralfugen ist aus Sicht der systemtischen Grammatik insofern schwierig, als es keine klar benennbare formale Regularität gibt, wann die Pluralfuge stehen muss und wann sie auf jeden Fall Pluralbedeutung hat.
+Das Phänomen der Pluralfugen ist aus Sicht der systematischen Grammatik insofern schwierig, als es keine klar benennbare formale Regularität gibt, wann die Pluralfuge stehen muss und wann sie auf jeden Fall Pluralbedeutung hat.
 Wenn die Pluralbedeutung sowieso durch das Zweitglied erzwungen wird, dann präferieren wir die Pluralfuge gegenüber anderen Fugen, sofern nicht andere morphosyntaktische Gründe gegen die Pluralfuge sprechen.
-Die andere Fuge wird dadurch aber nicht ungrammatisch, sondern nur ungewöhnlich.
-Dass die Generalisierung \textit{weich}\label{abs:weich} (also nicht kategorisch im Sinne eines Entweder-Oder) ist, erkennt man auch daran, dass sich in \citet{SchaeferPankratz2018} gezeigt hat, dass der Effekt umso stärker ist, je eindeutiger die entsprechende Fuge als Pluralkennzeichen erkennbar ist.
+Die andere Fuge wird dadurch aber nicht ungrammatisch, sondern höchstens ungewöhnlich.
+Dass die Generalisierung \textit{weich}\label{abs:weich} (also nicht kategorisch im Sinne eines Entweder-Oder) ist, erkennt man auch daran, dass der Effekt umso stärker ist, je eindeutiger die entsprechende Fuge als Pluralkennzeichen erkennbar ist \citep{SchaeferPankratz2018}.
 Dies betrifft vor allem die besonders stark gekennzeichneten Plurale mit Umlaut und mit \textit{-er}.
 Solche weichen Generalisierungen innerhalb der Grammatik werden in den letzten Jahren bis Jahrzehnten stärker erforscht (siehe \citealt{Schaefer2018a}), und sie stellen eine besondere Herausforderung für die traditionelle Grammatik dar.
 
@@ -677,11 +671,11 @@ Das Präfix \textit{un:} hat Negationscharakter, vgl. (\ref{ex:derivationohnewor
 
 Dieses Präfix ist allerdings nicht voll produktiv, und in vielen Fällen ist das Ergebnis der Derivation lexikalisiert.
 Vor allem bei Substantiven ist die Produktivität eingeschränkt.
-Bei Adjektiven gilt, dass es nur bei solchen Adjektiven voll produktiv ist, die selbst einem erkennbaren Muster der Adjektivbildung folgen, vgl.\ (\ref{ex:derivationohnewortklassenwechsel021}) und (\ref{ex:derivationohnewortklassenwechsel0212}).
+Bei Adjektiven gilt, dass es nur bei solchen Adjektiven voll produktiv ist, die selbst einem erkennbaren Muster der Adjektivbildung folgen, vgl.\ (\ref{ex:derivationohnewortklassenwechsel021}) und (\ref{ex:derivationohnewortklassenwechsel023}).
 Trotzdem gibt es Fälle, in denen auch ohne solch ein erkennbares Muster Präfigierung mit \textit{un:} möglich ist wie in (\ref{ex:derivationohnewortklassenwechsel022}).
 Andere Bildungen mit \textit{un:} müssen als lexikalisiert gelten, weil die Stämme der Ausgangswörter selber nicht mehr existieren, wie in (\ref{ex:derivationohnewortklassenwechsel024}).%
 \footnote{Es ist in den eindeutig lexikalisierten Fällen natürlich fraglich, ob der Doppelpunkt überhaupt immer gesetzt werden sollte.
-Angesichts der nicht produktiven Bildung dieser Wörter wäre ebenso legitim, \textit{unwirsch}, \textit{ungestüm}, \textit{unbedarft} (statt \textit{un:wirsch} usw.) zu schreiben.
+Angesichts der nicht produktiven Bildung dieser Wörter wäre es ebenso legitim, \textit{unwirsch}, \textit{ungestüm}, \textit{unbedarft} (statt \textit{un:wirsch} usw.) zu schreiben.
 Wenn Transparenz als Kriterium für die Analyse ausreicht, kann hier der Doppelpunkt gesetzt werden.}
 
 \begin{exe}
