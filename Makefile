@@ -9,7 +9,7 @@ all: pod cover
 complete: index main.pdf
 
 fix:
-	for i in `seq 1 5`; do xelatex main; done;
+	for i in `seq 1 7`; do xelatex main; done;
 
 index:  main.ind
  
