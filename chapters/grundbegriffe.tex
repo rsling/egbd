@@ -53,6 +53,8 @@ Daher müssen wir prinzipiell angeben:
   \item Was sind die Werte dieser Merkmale bei jeder konkreten Einheit (beim Vokal \textit{a}, beim Konsonant \textit{t}, beim Verb \textit{laufen}, beim Substantiv \textit{Sahne})?
 \end{enumerate}
 
+Definition~\ref{def:merkmal} präzisiert die Begriffe \textit{Merkmal} und \textit{Wert}.
+
 \Definition{Merkmal und Wert}{\label{def:merkmal}%
 Ein \textit{Merkmal} ist die Kodierung einer Eigenschaft einer grammatischen Einheit.
 Zu jedem Merkmal gibt es eine Menge von \textit{Werten}, die es annehmen kann.
@@ -60,20 +62,23 @@ Grammatische Eigenschaften von Einheiten können vollständig durch Mengen von M
 \index{Merkmal}
 }
 
-Formal schreiben wir Merkmale und Werte folgendermaßen auf:
+Formal schreiben wir Merkmale und Werte wie in (\ref{ex:merkmaleundwerte001}) auf.
 
 \begin{exe}
-  \ex{\textbf{Merkmalsdefinition}\\
-  \textsc{Merkmal}: \textit{wert}, \textit{wert},\ldots}
-  \ex{\textbf{Merkmal-Wert-Kodierung}\\
-  Einheit = [\textsc{Merkmal}: \textit{wert}, \textsc{Merkmal}: \textit{wert}, \ldots ]}
+  \ex\label{ex:merkmaleundwerte001}
+  \begin{xlist}
+    \ex{\textbf{Merkmalsdefinition}\\
+    \textsc{Merkmal}: \textit{wert}, \textit{wert},\ldots}
+    \ex{\textbf{Merkmal-Wert-Kodierung}\\
+    Einheit = [\textsc{Merkmal}: \textit{wert}, \textsc{Merkmal}: \textit{wert}, \ldots ]}
+  \end{xlist}
 \end{exe}
 
-Beispiele hierfür wären:
+Beispiele werden in (\ref{ex:merkmaleundwerte002}) und (\ref{ex:merkmaleundwerte003}) gegeben.
 
 \begin{exe}
-  \ex{\textsc{Genus}: \textit{feminin}, \textit{maskulin}, \textit{neutral}}
-  \ex
+  \ex{\label{ex:merkmaleundwerte002}\textsc{Genus}: \textit{feminin}, \textit{maskulin}, \textit{neutral}}
+  \ex\label{ex:merkmaleundwerte003}
   \begin{xlist}
     \ex{Sahne = [\textsc{Genus}: \textit{feminin}, \ldots]}
     \ex{Kuchen = [\textsc{Genus}: \textit{maskulin}, \ldots]}
@@ -103,7 +108,7 @@ Alle diese Begriffe haben mit \textit{Relationen} (Beziehungen) zwischen sprachl
 
 Schon im Zusammenhang mit Merkmalen haben wir von \textit{Kategorien} gesprochen.
 Am Beispiel der \textit{lexikalischen Kategorien} wird jetzt genauer definiert, was Kategorien sind.
-Es wird erst der Begriff des \textit{Lexikons} definiert, wobei wir auf den Merkmalsbegriff zurückgreifen.
+In Definition~\ref{def:lexikon1} wird der Begriff des \textit{Lexikons} definiert, wobei wir auf den Merkmalsbegriff zurückgreifen.
 
 \Definition{Lexikon}{\label{def:lexikon1}%
 Das \textit{Lexikon} ist die Menge aller Wörter einer Sprache, definiert durch die vollständige Angabe ihrer Merkmale und deren Werte.
@@ -201,14 +206,14 @@ Die Unterscheidung in Wörter mit und ohne \textsc{Numerus} entspricht der tradi
 Wenn man das Lexikon genauer auf diese Weise untersucht, ergibt sich eine vollständige Hierarchie, die die traditionell als \textit{Wortarten} oder \textit{Wortklassen} bezeichneten Kategorien abbildet.
 Allerdings wird die Unterscheidung wesentlich feiner als die traditionellen Wortarten, denn jeder Unterschied in der Merkmalsausstattung erzeugt neue Unterkategorien.
 Im Kapitel zu den Wortklassen (Kapitel~\ref{sec:wortklassen}) legen wir daher einen absichtlich groben Maßstab an, um die traditionellen Wortarten als ungefähre Orientierungshilfe in der Struktur des Lexikons zu rekonstruieren.
-Die Definition der Kategorie ist jetzt relativ leicht zu geben.
+Die Definition der Kategorie ist jetzt relativ leicht zu geben, siehe Definition~\ref{def:kategorie}.
 
 \Definition{Kategorie}{\label{def:kategorie}%
 Eine \textit{Kategorie} ist eine Menge sprachlicher Einheiten, die alle ein bestimmtes Merkmal haben oder bei denen der Wert eines bestimmten Merkmals gleich gesetzt ist.
 \index{Kategorie}
 }
 
-Kategorisierungen anhand von Merkmalsausstattungen werden unter anderem gleich im nächsten Kapitel (Phonetik) eingeführt, zum Beispiel wenn Vokale und Konsonanten unterschieden werden.
+Kategorisierungen anhand von Merkmalsausstattungen werden bereits in Kapitel~\ref{sec:phonetik} eingeführt, zum Beispiel wenn Vokale und Konsonanten unterschieden werden.
 Aber auch syntaktische Einheiten wie die sogenannten \textit{Satzglieder} (\zB Objekte oder adverbiale Bestimmungen) können so definiert werden, dass sich die wesentlichen Unterschiede im grammatischen Verhalten (und damit die Wortart) aus ihren Merkmalsausstattungen ergeben.
 Kategorien sind Einordnungen von Einheiten in bestimmte Gruppen.
 Die Relationen, die durch die lexikalischen Kategorien definiert werden, bestehen zwischen Wörtern im Lexikon.
@@ -437,7 +442,7 @@ Auf jeder linguistischen Ebene werden durch spezifische Regeln charakteristische
 \index{Struktur}
 }
 
-Oft stellt man Strukturbildung mit Hilfe sogenannter \textit{Baumdiagramme} dar, wobei die oben gegebenen Kategorienbäume (\zB Abbildung~\ref{fig:kategorien003} auf S.~\pageref{fig:kategorien003}) natürlich grundsätzlich davon verschieden sind.\index{Baumdiagramm}
+Oft stellt man Strukturbildung mit Hilfe sogenannter \textit{Baumdiagramme} dar, wobei die oben gegebenen Kategorienbäume (\zB Abbildung~\ref{fig:kategorien003} auf S.~\pageref{fig:kategorien003}) grundsätzlich davon verschieden sind.\index{Baumdiagramm}
 Die Kategorienbäume bilden die Einordnung von Einheiten in bestimmte Klassen (Kategorien) ab.
 Strukturbäume zeigen, wie Einheiten zu konkreten hierarchischen Strukturen zusammengefügt sind.
 Einige Ausschnitte von Bäumen zu Beispiel (\ref{ex:strukturbildung021}) finden sich in den Abbildungen~\ref{fig:strukturbildung022} und~\ref{fig:strukturbildung023}.
@@ -507,7 +512,7 @@ Es besagt nur, dass Einheiten zu größeren Einheiten zusammengesetzt werden, un
 Viele erfolgreiche Erklärungsansätze in der Grammatik leben aber davon, dass man die Konstituenten von Strukturen als in Beziehungen stehend analysiert.
 Diese Relationen werden \textit{syntaktische Relationen} genannt.\index{Relation!syntaktisch}
 Man kann diese Relationen auch \textit{syntagmatische Relationen} nennen, weil sie auf allen Ebenen der Strukturbildung (nicht nur in der Syntax) angenommen werden.
-Da sie aber in der Syntax die wichtigste Rolle spielen, sprechen wir hier nur von syntaktischen Relationen im engeren Sinn.
+Da sie aber in der Syntax die wichtigste Rolle spielen, sprechen wir hier nur von syntaktischen Relationen im engeren Sinn, siehe Definition~\ref{def:relation}.
 
 \Definition{Syntaktische Relation}{\label{def:relation}%
 Eine \textit{syntaktische Relation} besteht zwischen zwei Einheiten in einer Struktur.
@@ -725,6 +730,7 @@ Es muss sich also um Fälle von Rektion durch das Verb handeln.
 Man kann nun diese Sätze so betrachten, dass jeweils in (\ref{ex:valenz055}) kein Genitiv, in (\ref{ex:valenz056}) kein Dativ und in (\ref{ex:valenz057}) keine Präposition \textit{bei} stehen dürfen.
 Wir sagen also, dass bestimmte Verben es überhaupt erst zulassen, dass ein bestimmter Kasus oder eine bestimmte Präposition bei einem Verb stehen darf.
 Man kann auch davon sprechen, dass ein Verb (oder ganz allgemein eine Einheit) eine andere Einheit lizenziert bzw.\ eben nicht lizenziert.
+Definition~\ref{def:lizenzierung} präzisiert den Begriff.
 
 \Definition{Lizenzierung}{\label{def:lizenzierung}%
 Eine Einheit A \textit{lizenziert} eine andere Einheit B genau dann, wenn Einheit B mit einer bestimmten Merkmal-Wert-Konfiguration ohne Einheit A nicht uneingeschränkt in einer größeren Struktur auftreten kann.
@@ -880,7 +886,7 @@ In (\ref{ex:valenz081}) wird das für zwei Fälle demonstriert.
   \end{xlist}
 \end{exe}
 
-Auch wenn diese Geschichten stark forciert klingen, wird eine vergleichbare Rettung von Sätzen mit einem Genitiv bei \textit{anschieben} wie in (\ref{ex:valenz055}) usw.\ nicht gelingen.
+Auch wenn diese Geschichten forciert klingen, wird eine vergleichbare Rettung von Sätzen mit einem Genitiv bei \textit{anschieben} wie in (\ref{ex:valenz055}) usw.\ nicht gelingen.
 Insbesondere ist interessant, dass es sich bei (\ref{ex:valenz077}) und dann (\ref{ex:valenz082}) gar nicht um eine Inkompatibilität mit dem Verb handelt, sondern um eine, die erst in Verbindung mit dem speziellen Subjekt entsteht.
 Sobald \textit{der Ballon} wie in (\ref{ex:valenz082}) als \textit{die Besatzung des Ballons} gelesen wird, kann die Angabe stehen, was ein eindeutiger Hinweis auf eine semantische Bedingung ist.
 Wenn also Angaben nicht völlig frei kombinierbar sind, so hat dies immer rein semantische Gründe.
@@ -894,11 +900,11 @@ Das Verb \textit{wohnen} ist ein typisches Beispiel, s.\ (\ref{ex:valenz084}).
 \begin{exe}
   \ex\label{ex:valenz084}
   \begin{xlist}
-    \ex[]{\label{ex:valenz085}Wir wohnen in Bochum.}
-    \ex[]{\label{ex:valenz086}Wir wohnen neben dem Bahnhof.}
-    \ex[]{\label{ex:valenz087}Wir wohnen ziemlich ruhig.}
-    \ex[*]{\label{ex:valenz088}Wir wohnen.}
-    \ex[*]{\label{ex:valenz089}Wir wohnen seit gestern.}
+    \ex[ ]{\label{ex:valenz085} Wir wohnen in Bochum.}
+    \ex[ ]{\label{ex:valenz086} Wir wohnen neben dem Bahnhof.}
+    \ex[ ]{\label{ex:valenz087} Wir wohnen ziemlich ruhig.}
+    \ex[*]{\label{ex:valenz088} Wir wohnen.}
+    \ex[*]{\label{ex:valenz089} Wir wohnen seit gestern.}
   \end{xlist}
 \end{exe}
 
