@@ -3,7 +3,25 @@
 
 import argparse
 import sys
+import os
 import re
+
+
+def get_tipa_end(line, start):
+  stack = 0
+  for i in range(start + 7, len(line)):
+    if line[i] == u'{': stack = stack + 1
+    elif line[i] == u'}': stack = stack - 1
+    if stack == 0: break
+  return i + 1
+
+
+def find_tipa_positions(line):
+  positions = list()
+  for m in re.finditer(u'textipa', line, re.UNICODE):
+    positions.append(m.start())
+  positions = [(i-1, get_tipa_end(line, i)) for i in positions]
+  return positions
 
 
 def main():
@@ -12,6 +30,7 @@ def main():
   parser.add_argument('outfile', help='output file name (gzip)')
   parser.add_argument('logfile', help='log file name (gzip)')
   parser.add_argument("--interactive", action='store_true', help="interactive mode")
+  parser.add_argument("--erase", action='store_true', help="erwase existing output files")
   args = parser.parse_args()
 
 
@@ -38,8 +57,12 @@ def main():
   lfh = open(args.logfile, 'wb')
 
   for line in open(args.infile, 'r'):
-    line = ifh.readline().decode('utf-8').strip()
+    line = line.decode('utf-8').strip('\n') # Do not strip whitespace b/o indentation.
     
+    pos = find_tipa_positions(line)
+    matches = [line[start:end] for (start,end) in pos]
+    
+    print matches
     
     ofh.write(line.encode('utf-8') + '\n')
 
