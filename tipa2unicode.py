@@ -25,11 +25,13 @@ def find_tipa_positions(line):
 
 
 # I don't care if the implementation is inefficient. We're talking abt a few seconds per file.
-def handle_replacements(line, pos, repl):
+def handle_replacements(line, pos, repl, log):
+
   # Start with prefix before first match.
   out = line[0:pos[0][0]]
   for i in range(0, len(pos)):
-    match = line [pos[i][0]+9 : pos[i][1]-1]
+    log.write(line[pos[i][0] : pos[i][1]].encode('utf-8') + '\t')
+    match = line[pos[i][0]+9 : pos[i][1]-1]
 
     # Handle Silbengelenk.
     match = re.sub(r'\\Sgel\{(.)\}', u'\\1\u0323', match, re.UNICODE)
@@ -46,12 +48,14 @@ def handle_replacements(line, pos, repl):
     # Clean up spaces.
     match = match.replace(' ', '')
 
+    log.write(match.encode('utf-8') + '\n')
+
     if i == len(pos)-1:
       suffix = line[pos[i][1]:len(line)]
     else:
       suffix = line[pos[i][1]:pos[i+1][0]]
     out = out + match + suffix
-  print out.encode('utf-8')
+  #print out.encode('utf-8')
   return out 
 
 
@@ -104,10 +108,9 @@ def main():
     if len(pos) == 0:
       ofh.write(line.encode('utf-8') + '\n')
     else:
-      newline = handle_replacements(line, pos, replacements)
-      # ofh.write(newline.encode('utf-8') + '\n')
-      #print str(linenumber)
-      #print pos
+      lfh.write(str(linenumber) + '\n')
+      newline = handle_replacements(line, pos, replacements, lfh)
+      ofh.write(newline.encode('utf-8') + '\n')
 
     linenumber = linenumber + 1
 
