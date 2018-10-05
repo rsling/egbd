@@ -104,15 +104,13 @@
 \newcommand{\Tii}{\Spur{2}}
 \newcommand{\Tiii}{\Spur{3}}
 \newcommand{\Tiv}{\Spur{4}}
-%\newcommand{\Akz}{\ensuremath{^\prime}}
-\newcommand{\Akz}{\textipa{\textprimstress }}
-\newcommand{\Nakz}{\textipa{\textsecstress }}
+\newcommand{\Akz}{ˈ}
+\newcommand{\Nakz}{ˌ}
 \newcommand{\Sgel}[1]{\textipa{\textsubdot{#1}}}
 \newcommand{\PhPr}[1]{\ensuremath{\stackrel{\textnormal{#1\ }}{\Longrightarrow}}}
 \newcommand{\phopro}{\ensuremath{\Rightarrow}}
 
 \newcommand{\KTArr}[1]{\ding{226}~\textit{#1}~\ding{226}}
-%\newcommand{\KTArr}[1]{\ensuremath{\underrightarrow{\mathrm{\scriptstyle~#1~~}}}}
 
 \newcommand{\VfTest}{\KTArr{VfTest}~}
 \newcommand{\PronTest}{\KTArr{PronTest}~}
@@ -133,18 +131,6 @@
 \newcommand{\Folgt}{\ding{217}}
 
 \newcommand*\circlearound[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-% xyling
-\newcommand{\QQw}[1][-]{\POS[]+(-4,-1)-(4,4);\POS[]+(0,-1)+(8,4)**\frm{#1}}
-\newcommand{\QQww}[1][-]{\POS[]+(-6,-1)-(6,4);\POS[]+(0,-1)+(12,4)**\frm{#1}}
-\newcommand{\QQwww}[1][-]{\POS[]+(-8,-1)-(8,4);\POS[]+(0,-1)+(16,4)**\frm{#1}}
-\newcommand{\QQwwww}[1][-]{\POS[]+(-10,-1)-(10,4);\POS[]+(0,-1)+(20,4)**\frm{#1}}
-\newcommand{\BSd}[1]{\Bkk{-0.3,0}{-0.3,0}{#1}\Bkk{0.3,0}{0.3,0}{#1}}
-\newcommand{\BLd}[1]{\B{#1}\Bkk{-3,0}{-3,0}{#1}}
-\newcommand{\BRd}[1]{\B{#1}\Bkk{3,0}{3,0}{#1}}
-\newcommand{\Bbeldash}[2][0]{\POS[]-(0,9)\POS+(0,#1)\ar@{--}[#2]+(0,2)}
-\newcommand{\Bbel}[1]{\Bk{-4}{0}{#1}}
-
 
 
 % boxes and stuff for definitions, axioms etc.
@@ -351,10 +337,9 @@ Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vo
   \begin{tikzpicture}
     \textsave{.}
     \tikzset{
-      tip/.style={execute at begin node=\tipaencoding},
-      normalseg/.style={tip, fill=white},
-      extrasyll/.style={tip, circle, draw, fill=white},
-      sylljoint/.style={tip, diamond, draw, fill=white}
+      normalseg/.style={fill=white},
+      extrasyll/.style={circle, draw, fill=white},
+      sylljoint/.style={diamond, draw, fill=white}
     }
     \node at (0,\plo) {P};
     \node at (0,\fri) {F};
@@ -412,8 +397,7 @@ Die restlichen Werte werden gemäß der Position im Paradigma bei den konkret vo
   no/.style={edge label={node[near end, above, sloped, font=\scriptsize]{Nein}}},
   sake/.style={tier=preterminal},
   ake/.style={
-    tier=preterminal,
-    for children={execute at begin node=\tipaencoding}
+    tier=preterminal
     },
 }
 
