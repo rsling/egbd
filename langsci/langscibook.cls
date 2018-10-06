@@ -1303,7 +1303,7 @@ is, or will remain, accurate or appropriate.
   \clearfield{note}%
 }
 %% DOIs are handled after hyperref.
-\defbibheading{references}{\chapter{References}} % FIXME: adjust with language
+\defbibheading{references}{\chapter{Literatur}} % FIXME: adjust with language
  
 \let\cite=\citet 	% in order to prevent inconsistencies between \cite and \citet
 
