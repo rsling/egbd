@@ -658,7 +658,7 @@ Einige Lehnwörter des Deutschen sind in (\ref{ex:abgrenzungvonflexionundwortbil
     \ex{\textit{Lärm}, im Fnd.\ aus frz.\ \textit{alarme}}
     \ex{\textit{Meter}, im 18.\ Jh.\ aus franz.\ \textit{m\`etre}; dies aus gr.\ \textit{m\'etron}}
     \ex{\textit{Start}, im 19.\ Jh.\ aus engl.\ \textit{start}}
-    \ex{\textit{Sushi}, im 20.\ Jh.\ aus jap.\ \textit{sushi}}
+    \ex{\textit{Sushi}, im 20.\ Jh.\ aus jap.\ 寿司  bzw.\ \textit{sushi}}
   \end{xlist}
 \end{exe}
 
@@ -803,7 +803,8 @@ Diese beiden Morphe markieren den Genitiv der Wortformen.
 Es gibt also jeweils eine einheitliche Markierungsfunktion.
 Wenn in ihrer Form unterscheidbare Morphe sich so zueinander verhalten, spricht man von \textit{Allomorphen} eines \textit{Morphems}, s.\ Definition~\ref{def:allomorphem}.%
 \footnote{Die traditionelle Definition des Morphems als \textit{kleinste bedeutungs- oder funktionstragende Einheit} läuft auf dasselbe hinaus.
-Sie funktioniert allerdings nur mit dem oft unterschlagenen Zusatz \textit{auf der Ebene der Langue}, der uns zwingen würde, tiefer in die zugehörige Theorie einzusteigen und zu definieren, was die \textit{Langue} genau sein soll.}
+Sie funktioniert allerdings nur mit dem oft unterschlagenen Zusatz \textit{auf der Ebene der Langue} (frz.\ für \textit{Sprache}), der uns zwingen würde, tiefer in die zugehörige Theorie des Strukturalismus einzusteigen und zu definieren, was die \textit{Langue} genau sein soll.
+Die Urquelle dazu ist \citet{Saussure2013}.}
 
 \Definition{Morphem und Allomorph}{\label{def:allomorphem}%
 Haben mehrere Morphe eine unterschiedliche Form aber die gleiche Markierungsfunktion, nennt man sie \textit{Allomorphe}.
@@ -878,9 +879,9 @@ Dies ist eindeutig eine lexikalische Konditionierung.
 Ob aber nun jeweils die Form mit oder ohne Schwa gewählt wird, ist phonologisch konditioniert.
 Die Schwa-Allomorphe (\textit{-es} oder \textit{-en}) kommen zum Einsatz, wenn das Morphem davor in der letzten Silbe kein Schwa enthält.
 In /ʃtʏk/ oder /mɛnʃ/ kommt offensichtlich kein Schwa vor, und es werden /əs/ und /ən/ verwendet.
-Sobald in der letzten Silbe des lexikalischen Morphems ein Schwa vorkommt wie in /mʏndəl/ \textit{Mündel} oder /løːvə/ \textit{Löwe} wird /s/ oder /n/ gewählt.
-Es kommt hinzu, dass das Allomorph mit Schwa auch in den Fällen, wo es stehen kann, nicht stehen muss.
-Optional kommt also statt \textit{-es} auch \textit{-s} vor, vgl.\ \textit{Stück-s} und \textit{Stück-es}.
+Sobald in der letzten Silbe des lexikalischen Morphems ein Schwa vorkommt wie in /mʏndəl/ \textit{Mündel} oder /løːvə/ \textit{Löwe}, wird /s/ oder /n/ gewählt.
+Allerdings muss das Allomorph mit Schwa keinesfalls immer verwendet werden, wenn es verwendet werden kann.
+Man findet zum Beispiel neben dem Genitiv mit Schwa in \textit{Stück-es} genausogut den ohne Schwa in \textit{Stück-s}.
 Dies ist eine zusätzliche \textit{freie Allomorphie}.
 
 Zusammengefasst lassen sich die tatsächlichen Konditionierungen für diesen Ausschnitt aus der Allomorphie des Genitiv-Morphems wie in Abbildung~\ref{fig:lexikonregeln049} darstellen, wobei gestrichelte Linien freie Allomorphie anzeigen.
@@ -892,22 +893,24 @@ Es gibt innerhalb der Terminologie der Morpheme und Allomorphe keine Möglichkei
   \centering
   \begin{tikzpicture}[every text node part/.style={align=center}]
 
-    \node (LexKond)     at (3,6) {{\textbf{Lexikalische Konditionierung}}};
-    \node (StrkSubst)   at (1.5,5) {Starkes\\Substantiv};
-    \node (SchwSubst)   at (4.5,5) {Schwaches\\Substantiv};
+    \node (LexKond)     at (  3,6) {{\textbf{Lexikalische Konditionierung}}};
+    \node (StrkSubst)   at (1.5,5) {Starkes Substantiv\\(\textit{Mündel}, \textit{Stück})};
+    \node (SchwSubst)   at (  6,5) {Schwaches Substantiv\\(\textit{Löwe}, \textit{Mensch})};
 
-    \node (SuffS)       at (0,3) {\textit{-s}};
-    \node (SuffN)       at (2,3) {\textit{-n}};
-    \node (SuffEs)      at (4,3) {\textit{-es}};
-    \node (SuffEn)      at (6,3) {\textit{-en}};
+    \node (SuffS)       at (  0,3) {\textit{-s}};
+    \node (SuffN)       at (  2,3) {\textit{-n}};
 
-    \node (SubstMSchwa) at (1.5,1) {Substantiv\\mit Schwa};
-    \node (SubstOSchwa) at (4.5,1) {Substantiv\\ohne Schwa};
-    \node (PhonKond)    at (3,0) {{\textbf{Phonologische Konditionierung}}};
+    \node (SuffEs)      at (5.5,3) {\textit{-es}};
+    \node (SuffEn)      at (7.5,3) {\textit{-en}};
+
+    \node (SubstMSchwa) at (1.5,1) {Substantiv mit Schwa\\(\textit{Mündel}, \textit{Löwe})};
+    \node (SubstOSchwa) at (  6,1) {Substantiv ohne Schwa\\(\textit{Stück}, \textit{Mensch})};
+    \node (PhonKond)    at (  3,0) {{\textbf{Phonologische Konditionierung}}};
 
     \draw (SuffS.south)  -- (SubstMSchwa.north);
+    \draw [dashed] (SuffS.south)  -- (SubstOSchwa.north);
     \draw (SuffS.north)  -- (StrkSubst.south);
-    \draw (SuffEs.south) -- (SubstOSchwa.north);
+    \draw [dashed] (SuffEs.south) -- (SubstOSchwa.north);
     \draw (SuffEs.north) -- (StrkSubst.south);
 
     \draw (SuffN.south)  -- (SubstMSchwa.north);
