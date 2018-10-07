@@ -1,6 +1,12 @@
 # specify thh main file and all the files that you are including
 SOURCE=  main.tex $(wildcard local*.tex) $(wildcard chapters/*.tex) 
 
+# After manual creation of fine-tuned index and TOC.
+final:
+	cp main.toc.tex main.toc
+	cp main.ind.tex main.ind
+	xelatex main
+
 # specify your main target here:
 pdf: main.bbl main.pdf  #by the time main.pdf, bib assures there is a newer aux file
 
