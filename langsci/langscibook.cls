@@ -1408,6 +1408,7 @@ width=.8\textwidth
 	pdfusetitle=true,  % puts author and title in automatically, maybe only in final mode?
 	pdfkeywords={},
 	pdfpagelayout=TwoPageRight,   % first page is separate
+        colorlinks=false
 	%ps2pdf=true
 	]{hyperref}
 
@@ -1418,7 +1419,7 @@ width=.8\textwidth
 
 %% add hyperlinks for DOIs in bibliography; must appear after hyperref
 \usepackage{doi}
-\renewcommand{\doitext}{DOI:}
+\renewcommand{\doitext}{DOI: }
 \iflsBiblatex
 \renewbibmacro*{finentry}{\finentry
 	\iffieldundef{url}{}{ \url{\thefield{url}}\iffieldundef{urlday}{}{, accessed \thefield{urlyear}-\thefield{urlmonth}-\thefield{urlday}}.}
