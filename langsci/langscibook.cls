@@ -1052,7 +1052,7 @@ ISBN: &
 \\
 %       & \lsISBNhardcover~(Hardcover)\\
 %       & \lsISBNsoftcover~(Softcover)\\
-%       & \lsISBNsoftcoverus~(Softcover US)\\
+       & \lsISBNsoftcoverus~(Softcover US)\\
 \end{tabular}
 
 \IfStrEq{\lsISSN}{??}   % \IfStrEq from xstring
