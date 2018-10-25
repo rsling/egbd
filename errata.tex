@@ -23,6 +23,8 @@
 \usetikzlibrary{positioning,arrows.meta,cd}
 \tikzset{>=latex}
 
+\usepackage{longtable}
+
 \newcounter{chapter}
 
 \usepackage{libertine}
@@ -70,9 +72,10 @@ und erweiterte Auflage}}\\
 \normalsize
 
 \renewcommand{\arraystretch}{1.5}
-\noindent\begin{tabular}{p{0.3\textwidth}p{0.65\textwidth}}
+\noindent\begin{longtable}{p{0.3\textwidth}p{0.65\textwidth}}
   S.~51, Z.~11      & \textit{werden} → \textit{wird} \\
   S.~64, Z.~18      & \textit{indefinites oder} → \textit{definites oder} \\
+  S.~80, Z.~18:     & \textit{sprechen daher} → \textit{sprechen und daher} \\
   S.~138, Abb.~5.8  &   \parbox{0.6\textwidth}{
                            \vspace{0.5\baselineskip}
                            \scalebox{0.75}{%
@@ -96,9 +99,30 @@ und erweiterte Auflage}}\\
                          ]
                        ]
                      \end{forest}}} \\
+  S.~520, Übung~4.2 & \parbox{0.6\textwidth}{
+                           \vspace{0.5\baselineskip}
+                           \scalebox{0.75}{%
+                             \SonDiag[6]{{ʃ/\fri/2, t/\plo/0, ʁ/\liq/0, ʊ/\vok/0, m/\nas/0, p͡f/\plo/0}}
+                           }
+                           \vspace{0.5\baselineskip}
+                         }\\
+  S.~520, Übung~4.4 & \parbox{0.6\textwidth}{
+                           \vspace{0.5\baselineskip}
+                           \scalebox{0.6}{%
+                             \SonDiag[11]{{k/\plo/0, v/\fri/0, a͡ə/\vok/0, k/\plo/0, 0/-1/0, ʃ/\fri/2, p/\plo/0, a͡ɛ/\vok/0, 0/-1/0, z/\fri/0, ə/\vok/0}}
+                           }
+                           \vspace{0.5\baselineskip}
+                         }\\
+  S.~522, Übung~4.10  & \parbox{0.6\textwidth}{
+                           \vspace{0.5\baselineskip}
+                           \scalebox{0.75}{%
+                             \SonDiag[7]{{f/\fri/0, ɛ/\vok/0, n/\nas/0, 0/-1/0, s/\fri/2, t/\plo/0, ɐ/\vok/0}}
+                           }
+                           \vspace{0.5\baselineskip}
+                         }\\
   S.~561, Berko (1974) & \textbf{+} \textit{Wolfgang Eichler \& Adolf Hofer (Hrsg.)} \\
   S.~562, Clark (1978) & \textit{Awareeness} → \textit{Awareness} \\
   S.~561–568           & Bei den englischsprachigen Referenzen ist die Groß- und Kleinschreibung nicht ganz einheitlich. Die Einzelheiten werden hier nicht aufgelistet. \\
-\end{tabular}
+\end{longtable}
 
 \end{document}
