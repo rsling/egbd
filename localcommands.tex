@@ -50,9 +50,6 @@
 \newenvironment{listLiileveliii}{\begin{itemize}}{\end{itemize}}
 \newenvironment{listLiileveliv}{\begin{itemize}}{\end{itemize}} 
 
-% define own variables for hacks
-\newlength{\myBuffer}
-
 % formatting
 \newcommand{\Lf}{
   \setlength{\itemsep}{1pt}
@@ -61,7 +58,7 @@
 }
 
 % Feinsatz 
-
+% Remove with :g/^\\\(Enl\|Stretch\|Unstretch\|Hardstretch\)/d
 \newcommand{\Stretch}[1][1]{\vspace{#1\baselineskip}}
 \newcommand{\Unstretch}[1][0.5]{\vspace{-#1\baselineskip}}
 \newcommand{\Hardstretch}[1][1]{\vspace*{#1\baselineskip}}
