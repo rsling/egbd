@@ -82,8 +82,6 @@ Wir benutzen die Variable $\kappa$ hier stellvertretend für Kategoriensymbole w
 Für die Konjunktion werden keine konkreten Wortformen wie \textit{und} explizit im Schema genannt, sondern das Wortklassensymbol Konj.
 Es kann also irgendeine Konjunktion eingesetzt werden.
 
-\Np
-
 \Phrasenschema{Koordination}{\label{str:koor}
   \centering
   \begin{forest}
@@ -166,8 +164,6 @@ Die koordinierten Teilstrukturen werden an dieser Stelle dabei jeweils nicht wei
   \label{fig:koordination009}
 \end{figure}
 
-\Np
-
 Die Optionalität der Konjunktion -- sie ist im Schema eingeklammert -- trägt Fällen wie in (\ref{ex:koordination011}) Rechnung, in denen die Konjunktion weggelassen werden kann.\label{abs:koordination010}
 
 \begin{exe}
@@ -182,6 +178,39 @@ Zu Koordinationen ohne Konjunktion (bzw.\ mit Komma) s.\ aber auch Abschnitt~\re
 \Zusammenfassung{%
 Koordinationsstrukturen haben in unserer Analyse keinen Kopf, sondern sie verbinden lediglich zwei Einheiten der gleichen Kategorie, wobei sich das Ergebnis wieder wie eine Einheit dieser Kategorie verhält.
 }
+
+\begin{Vertiefung}{Flexibilität der Koordination}
+\label{vert:flexibilitaetderkoordination}
+
+\noindent Koordinationen sind eigentlich flexibler und schwieriger zu beschreiben, als dies in der einfachen Darstellung hier suggeriert wird.
+In (\ref{ex:flexibilitaetderkoordination001}) werden einige völlig akzeptable Koordinationsstrukturen gezeigt, in denen die koordinierten Konstituenten (eingeklammert) nicht dieselbe Kategorie (denselben Phrasentyp) haben.
+
+\begin{exe}
+  \ex\label{ex:flexibilitaetderkoordination001} 
+  \begin{xlist}
+    \ex{\label{ex:flexibilitaetderkoordination002} <++>}
+    \ex{\label{ex:flexibilitaetderkoordination003} Die Kampfrichterin bewertet [[die Ästhetik des Sprungs] und [ob er korrekt ausgeführt wurde]].}
+    \ex{\label{ex:flexibilitaetderkoordination004} [Tania führte ihre Rückwärtssprünge [elegant] und [mit hoher Präzision]] aus.}
+    \ex{\label{ex:flexibilitaetderkoordination005} <++>}
+  \end{xlist}
+\end{exe}
+
+Diese Flexibilität von Koordinationsstrukturen ist im übrigen auch dafür verantwortlich, dass der Koordinationstest so unzuverlässig ist (siehe Abschnitt~\ref{sec:konstituententests}, insbesondere S.~\pageref{abs:koordinationstest}).
+Im Vergleich mit den nicht akzeptablen Beispielen in (\ref{ex:flexibilitaetderkoordination006}) wird deutlich, warum die Beispiele in (\ref{ex:flexibilitaetderkoordination001}) funktionieren, und wie Koordinationsstrukturen genauer beschrieben werden könnten.
+
+\begin{exe}
+  \ex\label{ex:flexibilitaetderkoordination006} 
+  \begin{xlist}
+    \ex{\label{ex:flexibilitaetderkoordination007} }
+    \ex{\label{ex:flexibilitaetderkoordination008} }
+    \ex{\label{ex:flexibilitaetderkoordination009} }
+    \ex{\label{ex:flexibilitaetderkoordination010} }
+  \end{xlist}
+\end{exe}
+
+Eigentlich wäre es also genauer, die 
+
+\end{Vertiefung}
 
 \section{Nominalphrase}
 \label{sec:nominalphrase}
@@ -201,9 +230,9 @@ Zunächst folgt die Definition des \textit{Attributbegriffs} (Definition~\ref{de
 Artikelwörter, links stehende Genetivs, Adjektive und Relativsätze zählen also zu den Attributen.
 In unserer Auf"|fassung ist der Attributbegriff also ein struktureller und kein funktionaler, und Attribute in der NP können sowohl (regierte) Ergänzungen als auch Angaben sein.
 Die NP wird durch Schema~\ref{str:ngr} beschrieben.
+Zu eventuell nicht bekannten Bezeichnungen wie \textit{Kard} wird weiter unten mehr gesagt.
 
 \index{Nominalphrase}
-
 
 \Phrasenschema{Nominalphrase (NP)}{\label{str:ngr}
   \centering
@@ -211,11 +240,12 @@ Die NP wird durch Schema~\ref{str:ngr} beschrieben.
     phrasenschema
     [NP, Ephr
       [Art, Eopt, Emult, [NP\Sub{Genitiv}, Eopt]]
+      [Kard, Eopt]
       [AP, Eopt, Erec]
       [N, Ehd, name=Nkopf]
       [innere Rechtsattribute, Eopt, Erec]
       {\draw [bend left=45, dashed,<-] (.south) to (Nkopf.south);}
-      [RS, Eopt, Erec]
+      [RS, Eopt]
     ]
   \end{forest}
 }
@@ -227,19 +257,19 @@ Eine NP besteht -- in Worten ausformuliert -- aus:
 \index{Adjektivphrase}
 \index{Relativsatz}
 \index{Genitiv!pränominal}
-
+\index{Kardinalzahlwort}
 
 \begin{enumerate}
   \item einem \textit{Nomen} (Substantiv oder Pronomen) als Kopf,
   \item keiner, einer oder mehreren links stehenden \textit{Adjektivphrasen} (AP, vgl.\ Abschnitt~\ref{sec:adjektivphrase}),
-  \item einem optionalen links (von allen Adjektiven) stehenden \textit{Artikelwort} oder einer \textit{Nominalphrase im Genitiv} (dem sogenannten \textit{pränominalen Genitiv}), hier als NP\Sub{Genitiv} abgekürzt.
-\Np
+  \item keinem oder genau einem links von der Adjektivposition stehenden Kardinalzahlwort (\textit{Kard}),
+  \item einem optionalen links (von allen Adjektiven und Kardinalia) stehenden \textit{Artikelwort} oder einer \textit{Nominalphrase im Genitiv} (dem sogenannten \textit{pränominalen Genitiv}), hier als NP\Sub{Genitiv} abgekürzt.
   \item keinem, einem oder mehreren rechts stehenden \textit{inneren Attributen} (Ergänzungen oder Angaben von heterogener Form, vgl.\ Abschnitt~\ref{sec:innererechtsattribute}),%
     \footnote{\textit{Innere Rechtsattribute} ist hier ein Sammelbegriff, da die Auf"|listung aller möglichen Typen von Konstituenten, die an der entsprechenden Position stehen können, im Schema unübersichtlich wäre.
 Außerdem würde eine Auf"|listung nicht der Tatsache gerecht, dass bestimmte Attribute nur dann stehen können, wenn der Kopf sie auch regiert (s.\,u.).
 Solche Sammelbegriffe tauchen auch in weiteren Schemata wieder auf (\zB \textit{Modifizierer}), werden dann im Schema kursiv gesetzt und im Text näher erläutert.
 }
-  \item keinem, einem oder mehreren rechts von den rechten Attributen stehenden \textit{Relativsätzen} (RS, vgl.\ Abschnitt~\ref{sec:relativsaetze}),
+  \item keinem oder einem rechts von den rechten Attributen stehenden \textit{Relativsatz} (RS, vgl.\ Abschnitt~\ref{sec:relativsaetze}),
 \end{enumerate}
 
 \index{Nomen!vs.\ Substantiv}
@@ -309,6 +339,35 @@ Die Relativsätze werden später in Abschnitt~\ref{sec:relativsaetze} besprochen
   \caption{Minimale NP mit substantivischem Kopf}
   \label{fig:diestrukturdernp017}
 \end{figure}
+
+Keine besondere Beachtung schenken wir im weiteren Verlauf den Kardinalzahlwörtern.
+Wie in Vertiefung~\ref{vert:zahlwörter} auf Seite~\pageref{vert:zahlwörter} gezeigt wurde, verhalten sich Kardinalia wie \textit{zwei} und \textit{drei} speziell und bilden strenggenommen eine eigene Klasse nicht flektierbarer Wörter.
+Für Beispiele wie die eingeklammerte NP in (\ref{ex:diestrukturdernp018}) erhalten wir gemäß dem Strukturschema der NP eine Analyse wie in Abbildung~\ref{fig:diestrukturdernp019}.
+Siehe auch Übung~\ref{exc:phrasen50}.
+
+\begin{exe}
+  \ex{\label{ex:diestrukturdernp018} [Der zweite Versuch] erhielt eine hohe Wertung.}
+\end{exe}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [NP, calign=last
+      [Art
+        [\it der]
+      ]
+      [Kard
+        [\it zweite]
+      ]
+      [\textbf{N}, tier=preterminal
+        [\it Versuch]
+      ]
+    ]
+  \end{forest}
+  \caption{NP mit Kardinalzahlwort}
+  \label{fig:diestrukturdernp019}
+\end{figure}
+
 
 \subsection{Innere Rechtsattribute}
 \label{sec:innererechtsattribute}
@@ -929,14 +988,10 @@ In prädikativen APs sind die Stellungsmöglichkeiten etwas anders (Abschnitt~\r
   \label{fig:adjektivphrase095}
 \end{figure}
 
-\Np
-
 \Zusammenfassung{%
 Modifizierer und Ergänzungen in der attributiven AP stehen immer links vom Kopf.
 Optionale Gradierungselemente stehen nach ihnen und damit immer direkt vor dem adjektivischen Kopf.
 }
-
-\Np
 
 \section{Präpositionalphrase}
 \label{sec:praepositionalphrase}
@@ -1238,8 +1293,6 @@ Auch die im Ja\slash Nein-Fragesatz obligatorische Verb-Erst-Stellung ist innerh
 Die KP wurde hier vor der VP eingeführt, weil die Einbettung der VP in die KP eine besondere Ordnung innerhalb der VP (Verb-Letzt-Stellung) sicherstellt, die es in anderen Satzarten nicht gibt.
 Im nächsten Abschnitt wird also zunächst nur die Variante der VP, die im eingeleiteten Nebensatz (der KP) vorkommt, besprochen, ohne auf andere mögliche Konstituentenstellungen einzugehen.
 Um diese geht es in Kapitel~\ref{sec:saetze}.
-
-\Np
 
 \Zusammenfassung{%
 Komplementierer bilden mit einer VP eine KP, wobei in der VP das finite Verb ganz rechts steht.
@@ -1596,8 +1649,6 @@ Die Abfolge der Ergänzungen und Angaben innerhalb der VP ist nicht nur durch re
 Finite und infinite Verben, die in einer Rektionskette stehen (Statusrektion), bilden einen Verbkomplex, der sich in gewisser Hinsicht wie ein einziges Verb verhält.
 }
 
-\Np
-
 \section{Konstruktion von Konstituentenanalysen}
 \label{sec:konstruktionvonkonstituentenanalysen}
 
@@ -1819,8 +1870,6 @@ Für jeden Knoten gibt es außerdem ein Schema, das ihn beschreibt.
 Es gibt in der Praxis sicher viele Fälle, in denen die Analyse nicht so einfach ist wie in diesem Beispiel, und auch mit dem hier vorgestellten Verfahren ist oft ein bisschen Ausprobieren vonnöten.
 Neben einer guten Intuition ist das Verfahren zusammen mit einer strengen Beachtung der Phrasenschemata aber die erfolgversprechendste Methode, Syntaxbäume zu konstruieren.
 
-\Np
-
 \Zusammenfassung{%
 Syntaktische Analysen relativ zu einer gegebenen Grammatik können systematisch aufgebaut werden.
 Man sucht vor allem nach kongruierenden Einheiten und nach valenzgebundenen Einheiten.
@@ -1843,6 +1892,24 @@ Es ist zu beachten, dass die Belege buchstäblich übernommen und orthographisch
   \item Durch die dortige Bautätigkeit bestehe [Unsicherheit, ob entsprechender Platz zur Verfügung stehe].
   \item Doch schnell ist die Kaiserin auch hier [der Wiederholung überdrüssig].
 \end{enumerate}
+
+\Uebung[\tristar]{} \label{exc:phrasen50} Überlegen Sie, welche Besonderheiten bei folgenden Konstruktionen mit Kardinalzahlwörtern zu berücksichtigen sind, inkl.\ der Orthographie.
+Konkret sollten Sie sich über die Wortklasse und die syntaktische Position der Wörter \textit{tausend} (ähnlich \textit{hundert}) und \textit{Millionen} (ähnlich \textit{Milliarden}, \textit{Billionen} usw.) in den Sätzen Gedanken machen.
+Als Indiz berücksichtigen Sie, dass im Deutschen positionsunabhängig nur Substantive großgeschrieben werden.
+
+\begin{exe}
+  \ex
+  \begin{xlist}
+    \ex{Die Mühe [einiger tausend Trainingsstunden] hat sich ausgezahlt.}
+    \ex{[Die Tausenden von Trainingsstunden] haben sich ausgezahlt.}
+  \end{xlist}
+  \ex
+  \begin{xlist}
+    \ex{[Viele Millionen begeisterter Zuschauer] sahen die FINA-Weltmeisterschaft.}
+    \ex{[Einige Millionen von begeisterten Zuschauern] sahen die FINA-Weltmeisterschaft.}
+  \end{xlist}
+\end{exe}
+
 
 \Uebung{phrasen02} \label{exc:phrasen02} Analysieren Sie die eingeklammerten PPs und AdvPs als Bäume.
 Alle eingebetteten Phrasen können Sie mit Dreiecken abkürzen.%
