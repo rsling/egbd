@@ -369,7 +369,7 @@ Ableitungen wie diese werden in Kapitel~\ref{sec:wortbildung} als \textit{Wortbi
 
 Es ist also in vielen Fällen möglich, über einen genau eingegrenzten morphologischen Paradigmenbegriff Wörter in Klassen einzuteilen.
 Allerdings sollen meist auch Wortklassen unterschieden werden, deren zugehörige Wörter in keinem morphologischen Paradigma stehen.
-Weil sie sich im Satzkontext ganz anders verhalten, unterscheidet man zum Beispiel gerne Adverben wie \textit{möglicherweise} von Präpositionen wie \textit{durch} und Komplementierern wie \textit{dass}.
+Weil sie sich im Satzkontext ganz anders verhalten, unterscheidet man zum Beispiel gerne Adverben wie \textit{möglicherweise} von Präpositionen wie \textit{durch} und Subjunktionen wie \textit{dass}.
 Sie alle stehen aber nicht in irgendeinem morphologischen Paradigma.
 Für die Unterscheidung dieser Klassen müssen andere Kriterien gefunden werden.
 
@@ -594,10 +594,10 @@ Keine andere Art von unflektierbaren Wörtern verhält sich so, und Filter~\ref{
 
 \WFiltTree{Präposition}{wfilt:prep}{nicht flektierbares Wort}{Hat das Wort eine einstellige Valenz und Kasusrektion?}{Präposition}{andere}
 
-\subsection{Komplementierer}
-\label{sec:komplementierer}
+\subsection{Subjunktion}
+\label{sec:subjunktion}
 
-\index{Komplementierer}
+\index{Subjunktion}
 
 Der nächste Filter verlangt nach einer Definition des Nebensatz-Begriffs (Definition~\ref{def:nebensatz}), auch wenn ausführlich über Nebensätze erst in Kapitel~\ref{sec:saetze} gesprochen wird.
 
@@ -607,38 +607,38 @@ Nebensätze sind syntaktisch abhängig, können also nicht alleine stehen.
 \index{Nebensatz}
 }
 
-In (\ref{ex:komplementierer033}) folgen einige Beispiele, um die Definition zu illustrieren.
+In (\ref{ex:subjunktion033}) folgen einige Beispiele, um die Definition zu illustrieren.
 Die potentiellen Nebensätze sind dabei in [~] gesetzt.
 
 \begin{exe}
-  \ex\label{ex:komplementierer033}\begin{xlist}
-    \ex[]{\label{ex:komplementierer034} Ich glaube, [dass dieser Nebensatz ein Verb enthält].}
-    \ex[]{\label{ex:komplementierer035}{} [Während die Spielzeit läuft], zählt jedes Tor.}
-    \ex[]{\label{ex:komplementierer036} Es fällt ihnen schwer [zu laufen].}
-    \ex[*]{\label{ex:komplementierer037} [Obwohl kein Tor fiel].}
+  \ex\label{ex:subjunktion033}\begin{xlist}
+    \ex[]{\label{ex:subjunktion034} Ich glaube, [dass dieser Nebensatz ein Verb enthält].}
+    \ex[]{\label{ex:subjunktion035}{} [Während die Spielzeit läuft], zählt jedes Tor.}
+    \ex[]{\label{ex:subjunktion036} Es fällt ihnen schwer [zu laufen].}
+    \ex[*]{\label{ex:subjunktion037} [Obwohl kein Tor fiel].}
   \end{xlist}
 \end{exe}
 
-In (\ref{ex:komplementierer034}) ist die Definition des Nebensatzes erfüllt, weil \textit{enthält} ein \textsc{Tempus}-Merkmal hat und damit finit ist.
+In (\ref{ex:subjunktion034}) ist die Definition des Nebensatzes erfüllt, weil \textit{enthält} ein \textsc{Tempus}-Merkmal hat und damit finit ist.
 Außerdem sind alle Ergänzungen des Verbs (der Nominativ \textit{dieser Nebensatz} und der Akkusativ \textit{ein Verb}) enthalten.
-In (\ref{ex:komplementierer035}) ist es ähnlich.
-In (\ref{ex:komplementierer036}) hingegen ist \textit{zu laufen} ein Infinitiv (ohne Tempusflexion) und ist daher nicht finit.
+In (\ref{ex:subjunktion035}) ist es ähnlich.
+In (\ref{ex:subjunktion036}) hingegen ist \textit{zu laufen} ein Infinitiv (ohne Tempusflexion) und ist daher nicht finit.
 Die Struktur \textit{zu laufen} kann daher nach der hier vertretenen Definition kein Nebensatz sein.
 Der Satz ist zweifelsohne grammatisch, aber es muss sich nach unserer Definition um eine andere Art von Einheit handeln.%
 \footnote{Es gibt auch andere Ansätze, in denen \textit{zu}-Infinitive wie Nebensätze behandelt werden.
 Ein guter Grund dafür ist, dass sich diese Infinitive im übergeordneten Satz relativ frei verhalten und dabei ähnliche grammatische Funktionen wie Nebensätze haben können.
 Das wird in Abschnitt~\ref{sec:kohaerenz} besprochen.}
-(\ref{ex:komplementierer037}) demonstriert schließlich, dass ein Nebensatz wie \textit{obwohl kein Tor fiel} normalerweise nicht alleine stehen kann.
-Nebensatzeinleiter sind laut Filter~\ref{wfilt:subjunktion} die \textit{Komplementierer}.
-Sie werden auch \textit{subordinierende Konjunktionen} oder \textit{Subjunktoren} genannt.
+(\ref{ex:subjunktion037}) demonstriert schließlich, dass ein Nebensatz wie \textit{obwohl kein Tor fiel} normalerweise nicht alleine stehen kann.
+Nebensatzeinleiter sind laut Filter~\ref{wfilt:subjunktion} die \textit{Subjunktionen}.
+Sie werden auch \textit{Komplementierer}, \textit{subordinierende Konjunktionen} oder \textit{Subjunktoren} genannt.
 
 
-\WFiltTree{Komplementierer}{wfilt:subjunktion}{andere\\aus Filter \ref{wfilt:prep}}{Kann das Wort einen Nebensatz einleiten?}{Komplementierer}{Partikel\slash Adverb}
+\WFiltTree{Subjunktion}{wfilt:subjunktion}{andere\\aus Filter \ref{wfilt:prep}}{Kann das Wort einen Nebensatz einleiten?}{Subjunktion}{Partikel\slash Adverb}
 
-Damit können wir die einleitenden Partikeln in (\ref{ex:komplementierer033}) einordnen.
-Weil \textit{dass} in (\ref{ex:komplementierer034}) und \textit{während} in (\ref{ex:komplementierer035}) Nebensatzstrukturen einleiten, sind sie gemäß Filter \ref{wfilt:subjunktion} Komplementierer.
-In (\ref{ex:komplementierer036}) ist \textit{zu} kein Komplementierer, weil die eingeleitete Struktur nicht Definition~\ref{def:nebensatz} erfüllt.
-In (\ref{ex:komplementierer037}) kommt \textit{obwohl} als Komplementierer vor, auch wenn insgesamt die Struktur nicht grammatisch ist.
+Damit können wir die einleitenden Partikeln in (\ref{ex:subjunktion033}) einordnen.
+Weil \textit{dass} in (\ref{ex:subjunktion034}) und \textit{während} in (\ref{ex:subjunktion035}) Nebensatzstrukturen einleiten, sind sie gemäß Filter \ref{wfilt:subjunktion} Subjunktionen.
+In (\ref{ex:subjunktion036}) ist \textit{zu} keine Subjunktion, weil die eingeleitete Struktur nicht Definition~\ref{def:nebensatz} erfüllt.
+In (\ref{ex:subjunktion037}) kommt \textit{obwohl} als Subjunktion vor, auch wenn insgesamt die Struktur nicht grammatisch ist.
 
 
 \subsection{Adverben, Adkopulas und Partikeln}
@@ -715,16 +715,16 @@ Es wird Filter~\ref{wfilt:advkopulaele} aufgestellt.
 
 \WFiltTree{Adverb und Adkopula}{wfilt:advkopulaele}{Adverb\slash Adkopula}{Tritt das Wort prototypisch mit einem Kopulaverb auf?}{Adkopula}{Adverb}
 
-\subsection{Satzäquivalente}
-\label{sec:satzaequivalente}
-
-\index{Satzäquivalent}
-
-Bei den \textit{Satzäquivalenten} (Filter~\ref{wfilt:satzaeq}) handelt es sich um eine Klasse, die eher für gesprochene Sprache -- zumindest aber für dialogische Sprache -- typisch ist.
-Wörter, die traditionell auch als \textit{Interjektionen} bezeichnet werden, gehören in die Gruppe der Satzäquivalente, also \textit{Ja!} oder \textit{Ohje!}
-
-\WFiltTree{Satzäquivalent}{wfilt:satzaeq}{Partikel}{Ist die Partikel wie ein Satz unabhängig verwendbar?}{Satzäquivalent}{andere Partikel}
-
+% \subsection{Satzäquivalente}
+% \label{sec:satzaequivalente}
+% 
+% \index{Satzäquivalent}
+% 
+% Bei den \textit{Satzäquivalenten} (Filter~\ref{wfilt:satzaeq}) handelt es sich um eine Klasse, die eher für gesprochene Sprache -- zumindest aber für dialogische Sprache -- typisch ist.
+% Wörter, die traditionell auch als \textit{Interjektionen} bezeichnet werden, gehören in die Gruppe der Satzäquivalente, also \textit{Ja!} oder \textit{Ohje!}
+% 
+% \WFiltTree{Satzäquivalent}{wfilt:satzaeq}{Partikel}{Ist die Partikel wie ein Satz unabhängig verwendbar?}{Satzäquivalent}{andere Partikel}
+ 
 \subsection{Konjunktionen}
 \label{sec:konjunktionen}
 
@@ -747,7 +747,7 @@ Bei den verbindenden Wörtern spricht man von \textit{Konjunktionen} (Filter~\re
 In der übrig bleibenden Kategorie der restlichen Partikeln finden sich jetzt Wörter wie \textit{wie}, \textit{als}, \textit{eben} oder \textit{doch}.
 Auch diese verhalten sich unterschiedlich, aber eine Restmenge bleibt realistisch gesehen bei der Klassifikation immer.
 
-\WFiltTree{Konjunktion}{wfilt:konjpart}{andere Partikel\\aus Filter \ref{wfilt:satzaeq}}{Kann die Partikel zwei gleichartige Konstituenten verbinden?}{Konjunktion}{Rest}
+\WFiltTree{Konjunktion}{wfilt:advkopulaele}{Partikel}{Kann die Partikel zwei gleichartige Konstituenten verbinden?}{Konjunktion}{Rest}
 
 \subsection{Gesamtübersicht}
 \label{sec:gesamtuebersicht}
@@ -761,7 +761,7 @@ Jede Klassifikation von Wörtern ist, wie eingangs schon erwähnt, ein Kompromis
 Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der traditionellen Wortarten auf Basis einer sauberen definitorischen Basis.
 
 \begin{figure}[!htbp]
-  \resizebox{0.75\textwidth}{!}{
+  \resizebox{0.9\textwidth}{!}{
   \begin{minipage}{\textwidth}
   \centering
   \begin{forest}
@@ -790,7 +790,7 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
             [\textbf{Präposition}, finall, yes]
             [\textit{andere}, intrme, no
               [{Leitet Neben-\\Sätze ein?}, decide
-                [\textbf{Komplementierer}, finall, yes]
+                [\textbf{Subjunktion}, finall, yes]
                 [{\textit{Partikel\slash}\\\textit{Adverb}}, intrme, no
                   [{Kann das Vor-\\feld besetzen?}, decide
                     [{\textit{Adverb\slash}\\\textit{Adkopula}}, intrme, yes
@@ -800,14 +800,14 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
                       ]
                     ]
                     [\textit{Partikel}, intrme, no
-                      [{Kann Sätze\\ersetzen?}, decide
-                        [\textbf{Satzäquivalent}, finall, yes]
-                        [\textit{andere}, intrme, no
+%                      [{Kann Sätze\\ersetzen?}, decide
+%                        [\textbf{Satzäquivalent}, finall, yes]
+%                        [\textit{andere}, intrme, no
                           [{Kann Konsti-\\tuenten verbinden?}, decide
                             [\textbf{Konjunktion}, finall, yes]
                             [\textit{Rest}, intrme, no]
-                          ]
-                        ]
+%                          ]
+%                        ]
                       ]
                     ]
                   ]
@@ -830,7 +830,7 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
   Nomina sind Substantive, Adjektive, Artikel und Pronomina.
   Nur Verben haben ein \textsc{Tempus}-Merkmal.
   Adverben können im Vorfeld stehen, Partikeln nicht.
-  Konjunktionen und Komplementierer bilden zwei völlig verschiedene Klassen, anders als die traditionelle Rede von den unterordnenden bzw.\ nebenordnenden (beiordnenden) Konjunktionen suggeriert.
+  Konjunktionen und Subjunktionen bilden zwei separate Klassen, anders als die traditionelle Rede von den unterordnenden bzw.\ nebenordnenden (beiordnenden) Konjunktionen suggeriert.
 }
 
 \Uebungen
@@ -839,7 +839,7 @@ Im Wesentlichen leistet unsere Klassifikation aber eine Rekonstruktion der tradi
 
 \begin{enumerate}
   \item Präpositionen: \textit{mit}, \textit{an}, \textit{neben} usw.
-  \item Komplementierer: \textit{während}, \textit{obwohl}, \textit{dass}, \textit{ob} usw.
+  \item Subjunktion: \textit{während}, \textit{obwohl}, \textit{dass}, \textit{ob} usw.
   \item Adverben: \textit{schnell}, \textit{gestern}, \textit{bedauerlicherweise}, \textit{oben} usw.
 \end{enumerate}
 
@@ -887,7 +887,7 @@ Rechnen Sie damit, dass einige Wörter mehrfach klassifiziert werden müssen.
   \item etwas
   \item aber
   \item rennen
-  \item hallo
+%  \item hallo
   \item mit
   \item erstaunt
   \item Abseits
