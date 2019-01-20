@@ -339,11 +339,11 @@
         ] {\color{\lsCoverFontColour}\lsBackBodyFont{\parindent=15pt\lsBackBody}};
  \node [  below right = 192.5mm and 97.5mm of CoverColouredRectangleBack.north west, 
           text width=4cm] {%
-    \colorbox{white}{
-      \begin{pspicture}(0,0)(4.1,1in)
-        \psbarcode[transx=.4,transy=.3]{\lsISBNcover}{includetext height=.7}{isbn}%
-      \end{pspicture}
-      }
+%     \colorbox{white}{
+%       \begin{pspicture}(0,0)(4.1,1in)
+%         \psbarcode[transx=.4,transy=.3]{\lsISBNcover}{includetext height=.7}{isbn}%
+%       \end{pspicture}
+%       }
     };
 }
 
@@ -798,7 +798,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{pst-barcode}          % for generating bar codes 
+% \usepackage{pst-barcode}          % for generating bar codes 
 \newcommand{\lsCoverFontColor}{white}
 \newcommand{\lsCoverBlockColor}{\lsSeriesColor} 
    
@@ -938,9 +938,9 @@
   \begin{textblock}{40}(105,200)
     \lsBackBodyFont\sffamily
     \colorbox{white}{%
-    \begin{pspicture}(0,0)(4.1,1in)
-    \psbarcode[transx=0.4,transy=0.3]{\lsISBNdigital}{includetext height=0.7}{isbn}
-    \end{pspicture}
+%     \begin{pspicture}(0,0)(4.1,1in)
+%     \psbarcode[transx=0.4,transy=0.3]{\lsISBNdigital}{includetext height=0.7}{isbn}
+%     \end{pspicture}
     }%  
   \end{textblock}}
 
