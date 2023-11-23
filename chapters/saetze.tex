@@ -1113,34 +1113,35 @@ Eine hierarchische Phrasenstruktur und das Feldermodell passen nicht wirklich zu
 \begin{figure}[!htbp]
   \centering
   \begin{forest}
-    [, phantom, l sep+=2em
-      [AdvP\Sub{2}, tier=preterminal, name=Vfnode
-        [\it wahrscheinlich, narroof, name=Vfterm]
-      ]
-      [\bf V\Sub{1}, tier=preterminal
-        [\it hat, name=Lskterm]
-      ]
-      [VP, calign=last, s sep+=0.5em
-        [NP, tier=preterminal
-          [\it Ischariot, narroof, name=Mffirstterm]
+
+      [S, phantom, l sep+=2em
+        [AdvP\Sub{2}, tier=preterminal, name=Vfnode
+          [\it wahrscheinlich, narroof, name=Vfterm]
         ]
-        [\Tii, tier=preterminal]
-        [NP, tier=preterminal
-          [\it dem Arzt, narroof]
+        [\bf V\Sub{1}, tier=preterminal
+          [\it hat, name=Lskterm]
         ]
-        [NP, tier=preterminal
-          [\it das Bild, narroof]
-        ]
-        [AdvP, tier=preterminal
-          [\it heimlich, narroof, name=Mflastterm]
-        ]
-        [\bf V, calign=last, name=Rsknode
-          [\bf V, tier=preterminal
-            [\it verkauft, name=Rskfirstterm]
+        [VP, calign=last, s sep+=0.5em
+          [NP, tier=preterminal
+            [\it Ischariot, narroof, name=Mffirstterm]
           ]
-          [\Ti, tier=preterminal, name=Rsklastterm]
+          [\Tii, tier=preterminal]
+          [NP, tier=preterminal
+            [\it dem Arzt, narroof]
+          ]
+          [NP, tier=preterminal
+            [\it das Bild, narroof]
+          ]
+          [AdvP, tier=preterminal
+            [\it heimlich, narroof, name=Mflastterm]
+          ]
+          [\bf V, calign=last, name=Rsknode
+            [\bf V, tier=preterminal
+              [\it verkauft, name=Rskfirstterm]
+            ]
+            [\Ti, tier=preterminal, name=Rsklastterm]
+          ]
         ]
-      ]
       {\draw ($(Vfterm.west |- Vfnode.north) + (-0.2,0.3)$) -- ($(Vfterm.east |- Vfnode.north) + (0.15,0.3)$) -- ($(Vfterm.south east) + (0.15,0)$) -- node [midway, below] {Vf} ($(Vfterm.south west) + (-0.2,0)$) -- cycle;}
       {\draw ($(Lskterm.west |- Vfnode.north) + (0.05,0.3)$) -- ($(Lskterm.east |- Vfnode.north) + (-0.05,0.3)$) -- ($(Lskterm.east |- Vfterm.south) + (-0.05,0)$) -- node [midway, below] {LSK} ($(Lskterm.west |- Vfterm.south) + (0.05,0)$) -- cycle;}
       {\draw ($(Mffirstterm.west |- Vfnode.north) + (-0.15,0.3)$) -- ($(Mflastterm.east |- Vfnode.north) + (0.25,0.3)$) -- ($(Mflastterm.east |- Vfterm.south) + (0.25,0)$) -- node [midway, below] {Mf} ($(Mffirstterm.west |- Vfterm.south) + (-0.15,0)$) -- cycle;}
